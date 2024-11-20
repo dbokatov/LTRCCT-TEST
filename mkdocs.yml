@@ -1,0 +1,105 @@
+---
+site_name: LTRCOL-2296 - From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
+site_description: LTRCOL-2296 - From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
+# must be same as "site_name"
+copyright: Copyright &copy; 2025 Cisco Systems Inc. All Rights Reserved.
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.instant
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - content.code.copy
+    - toc.integrate
+    - content.tooltips
+    - content.footnote.tooltips
+  custom_dir: docs/overrides
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom      
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  logo: template_assets/webexLogo91.png
+  favicon: template_assets/webex75.png
+extra:
+  generator: false
+extra_css:
+  - stylesheets/extra.css
+plugins:
+  - search
+   #- with-pdf:
+   #    cover_title: LTRCOL-2296
+   #    cover_subtitle: From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
+   #    cover_logo: template_assets/wx1Splash_new.gif
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: fade
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      skip_classes:
+      - custom-skip-class-name
+      auto_caption: true
+      caption_position: top   
+markdown_extensions:
+  - md_in_html
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+nav:
+  - Missions: index.md
+  - Main Labs:
+    - Lab Overview: ./main/overview.md
+    - Lab Guide:
+          - Pre-Requisites: ./main/PreRequisites.md
+          - Lab 1 XXXX: ./main/Lab1.md
+          - Lab 2 XXX: ./main/Lab2.md          
+          - Lab 3 XXX: ./main/Lab3.md
+    - Conclusion: ./main/conclusion.md
+  - Advanced Labs: ./advanced/Lab1.md
+  - Quick Links: quicklinks.md
+  - Ask a Question&nbsp<i class="fa-solid fa-hand" style="color:#63E6BE;"></i>: slido-QA-iFrame.md
+  
