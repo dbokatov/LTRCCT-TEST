@@ -18,20 +18,20 @@
 
 ``` mermaid
 stateDiagram-v2
-join_state --> "Main Missions"
+join_state --> Main_Missions
   state fork_state <<fork>>
     [*] --> fork_state
-    fork_state --> "Using Flow Templates"
-    fork_state --> "Routing Based on Language Preference"
-    fork_state --> "Using Business Hours"
-    fork_state --> "Subflows"
+    fork_state --> Using_Flow_Templates
+    fork_state --> Routing_Based_on_Language_Preference
+    fork_state --> Using_Business_Hours
+    fork_state --> Subflows
 
     state join_state <<join>>
-    "Using Flow Templates" --> join_state
-    "Routing Based on Language Preference" --> join_state
-    "Using Business Hours" --> join_state
-    "Subflows" --> join_state
-    join_state --> "Advanced Missions"
+    Using_Flow_Templates --> join_state
+    Routing_Based_on_Language_Preference --> join_state
+    Using_Business_Hours --> join_state
+    Subflows --> join_state
+    join_state --> Advanced_Missions
     State4 --> [*]
 ```
 
