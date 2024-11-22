@@ -1,51 +1,16 @@
-# Welcome to MkDocs
+# Welcome to LTRCOL-2296
+## From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+### Schedule
+| Time           | Description                          | Type           |
+| :------------: | :----------------------------------: | :------------: |
+| `9:00 - 9:20`  | Introduction  | Presentation |
+| `9:20 - 9:40`  | 1st Mission | together |
+| `9:40 - 11:00` | Main Missions | independently |
+| `11:00 - 11:15` | Break | together |
+| `11:15 - 11:30` | QUIZ | together |
+| `11:30 - 12:30` | Advanced Missions (self task) | independently |
+| `12:30 - 13:00` | Boss | independently |
 
-### Codeblock
-Some `code` goes here
 
-A codeblock
-```
-Some code here
-// some comment
-```
-
-Python example
-``` py linenums="1"
-def create_jira_task_with_attachment(jira_token, attachment_dict, responses_dict, responseID, webex_token):
-    # Jira REST API endpoint to create an issue
-    jira_url = "https://jira-eng-sjc12.cisco.com/jira"
-    #project_key = "22652" WxCC Masterdata Project
-    project_key = "21051"  # VOICE Project
-
-    # Body
-    summary = f"{responses_dict['Voice Channel']} - {responses_dict['Tenant Name']} - {responses_dict['App Center']}"
-    data = {}
-    description = ""
-    for keys, values in responses_dict.items():
-        description = f'{description} *{keys}* : {values}\n'
-```
-
-``` py hl_lines="3 8"
-def create_jira_task_with_attachment(jira_token, attachment_dict, responses_dict, responseID, webex_token):
-    # Jira REST API endpoint to create an issue
-    jira_url = "https://jira-eng-sjc12.cisco.com/jira"
-    #project_key = "22652" WxCC Masterdata Project
-    project_key = "21051"  # VOICE Project
-
-    # Body
-    summary = f"{responses_dict['Voice Channel']} - {responses_dict['Tenant Name']} - {responses_dict['App Center']}"
-    data = {}
-    description = ""
-    for keys, values in responses_dict.items():
-        description = f'{description} *{keys}* : {values}\n'
-```
-
-## Icons and Emojs
-
-:smile:
-:fontawesome-regular-face-laugh-wink:
-
-:fontawesome-brands-youtube:{ .youtube }
 
