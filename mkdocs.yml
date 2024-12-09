@@ -94,7 +94,7 @@ nav:
   - Main Labs:
     - Lab Overview: ./main/overview.md
     - Lab Guide:
-          - Pre-Requisites: ./main/PreRequisites.md
+          - Lab 0: Getting to know your environment ./main/PreRequisites.md
           - Lab 1 XXXX: ./main/Lab1.md
           - Lab 2 XXX: ./main/Lab2.md          
           - Lab 3 XXX: ./main/Lab3.md
