@@ -7,18 +7,21 @@ icon: material/bullseye-arrow
 
 ## Learning Objectives
 
-Welcome to the AI-powered Customer & Agent Experiences lab. This lab is considered an advanced lab. Take your time completing each of the steps. You have 24 hours to complete the lab with your pod user. The lab content will be available to you even after your pod is no longer available. 
+Welcome to **"From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer"** Instructor-led Lab
 
-In this lab, you will gain hands-on experience with Webex Contact Center's advanced AI solutions. This lab is designed to help you understand the Cisco Text-to-Speech engine and explore the capabilities of the Webex AI Agent, which utilizes built-in and proprietary models as well as natural language processing (NLP). You'll learn how to seamlessly escalate conversations from an AI agent to a human agent, ensuring efficient and intelligent customer interactions. 
+This advanced lab is designed to empower you with the skills to craft exceptional customer journeys using the **Webex Contact Center Flow Designer**. Over the course of this lab, you’ll work hands-on with features and integrations that bring intelligence and efficiency to every interaction. Take your time to explore and complete each step—you have 24 hours of pod access, and the lab content will remain available even after your pod expires for future reference.
+In this lab, you will:
+    • **Master Workflow Creation:** Learn how to build seamless workflows tailored to customer needs, including routing based on preferences and leveraging real-time data.
+    • **Leverage AI and Automation:** Explore integrations with pre-configured AI tools such as **Webex AI Agent** or interactive customer interactions and **Cisco Text-to-Speech** for dynamic responses.
+    • **Optimize Routing Logic:** Implement advanced routing capabilities, such as callback handling, last agent routing and using Global ariables to facilitate routing logic .
+    • **Invoking Flow API:** Advance decision-making by using the Analyzer database on the fly.
 
-In addition, we will cover several exciting AI-driven features such as Agent Wellness, which supports the well-being of agents during interactions, and Call Drop Summary, a feature that captures and summarizes previous dropped calls. These innovations demonstrate the power of AI in enhancing both customer and agent experiences. 
-
-To further enhance your learning, we have included bonus lab content. This will allow you to familiarize yourself with our Supervisor Desktop, future enhancements to streamline Agent and Supervisor sign-in, and future AI Agent capabilities. 
-
-Let’s dive in and explore how Webex AI is shaping the future of customer service and agent support. 
-
+Additionally, you will explore side missions for optional deep dives into:
+    • Event handling functionality for agent efficiency.
+    • Creating Post Call survey to measure customer satisfaction
+    • Changing Contact Center flow logic by using your phone only.
+    
 ## Disclaimer
-
-Although the lab design and configuration examples could be used as a reference, for design related questions please contact your representative at Cisco, or a Cisco partner.
-
+The lab design and configuration examples provided are for educational purposes. For production design queries, please consult your Cisco representative or an authorized Cisco partner.
+Let’s get started and discover how **Webex Contact Center Flow Designer** takes customer experiences from good to great!
 
