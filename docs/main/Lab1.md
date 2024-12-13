@@ -139,12 +139,12 @@ Flow Templates are designed to empower developers, speed up the development life
 14. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
 15. In ***Entry Point*** Settings section change the following:
 
-> Routing Flow: <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Routing Flow: <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
 
-> Version Label: ***Latest***
+    > Version Label: ***Latest***
 
 
-  ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
+![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
 --- 
 
@@ -225,6 +225,7 @@ Business Hours allows you to configure the operational hours of the contact cent
     ![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
 
 4. Connect **Business Hours** node exits as follow:
+
     > - **Working Hours** -> **WelcomePrompt** Node
     >
     > - **Holidays**, **Overrides** and **Default** -> New added **PlayMessage** node.
@@ -246,17 +247,17 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
     
-    ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
+   ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
-    !!! Note
-        We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
+   !!! Note
+       We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
 8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** entity. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
 
-    !!! Note
-        Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
+   !!! Note
+       Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
 
-    ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
+   ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
 9. Make a new call and make sure you hear the message we set in ***Step 6***.
 
