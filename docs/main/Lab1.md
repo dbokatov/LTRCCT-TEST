@@ -103,8 +103,8 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ### Configuration
 
-1.  Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile
-  Your login will be the *Admin Name* in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile
+  Your login will be the ***Admin Name*** in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 !!! Note 
     Remember to take up the offer from Chrome to save your password
@@ -118,23 +118,24 @@ Flow Templates are designed to empower developers, speed up the development life
 6. Name you flow as <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
 ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
-8. In the flow change Edit toggle from **OFF** to **ON**. Select ***Play Message*** node with label ***WelcomePrompt*** and on the Node settings modify ***Text-to-Speech Message*** to any greetings you like. This message will be the first message you hear while calling to your script.
-9. Select ***Queue*** node. On the ***General settings*** keep Static Queue checked and select queue <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy> from the drop down list
+7. In the flow change ***Edit*** toggle from **OFF** to **ON**. Select ***Play Message*** node with label ***WelcomePrompt*** and on the Node settings modify ***Text-to-Speech Message*** to any greetings you like. This message will be the first message you hear while calling to your script.
+8. Select ***Queue*** node. On the ***General settings*** keep Static Queue checked and select queue <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy> from the drop down list
 !!! Note
     As mentioned in ***Getting Started***, all queues have been pre-configured so you don't need to change them at current step.
 
-10. [Optional] Select ***Play Message*** node with label PlayMessage_* and on the ***Node settings*** modify ***Text-to-Speech Message*** to any message you like. This message will be played while the caller is waiting in the queue.
-11. On bottom right corner toggle ***Validation*** from ***Off*** to ***On*** to check for any potential flow errors and recommendations. 
+9. [Optional] Select ***Play Message*** node with label PlayMessage_* and on the ***Node settings*** modify ***Text-to-Speech Message*** to any message you like. This message will be played while the caller is waiting in the queue.
+10. On bottom right corner toggle ***Validation*** from ***Off*** to ***On*** to check for any potential flow errors and recommendations. 
+
 !!! Note
     You can ignore recommendations but cannot skip errors.
 
-12. Click Publish Flow
+11. Click Publish Flow
 ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-13. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
-14. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
-15. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
-16. In ***Entry Point*** Settings section change the following:
+12. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
+13. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
+14. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+15. In ***Entry Point*** Settings section change the following:
 > Routing Flow: <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
 > Version Label: ***Latest***
 ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
