@@ -232,37 +232,38 @@ Business Hours allows you to configure the operational hours of the contact cent
     >
     > - New added **PlayMessage** -> **Disconnect** contact
 
-  ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
+    ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
 
 5. Click on **Business Hours** node and select preconfigured Business Hours Entity **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**.
 
 6. Configure **PlayMessage** node as follows:
-     > Enable Text-To-Speech
-     >
-     > Select the Connector: Cisco Cloud Text-to-Speech
-     >
-     > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***
-     >
-     > Delete the Selection for Audio File
+
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: Cisco Cloud Text-to-Speech
+    >
+    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***
+    >
+    > Delete the Selection for Audio File
 
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
-    
-   ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
+    !!! Note
+        We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
-   !!! Note
-       We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
+    ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
+   
 8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** entity. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
 
-   !!! Note
-       Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
+    !!! Note
+        Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
 
-   ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
+    ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
 9. Make a new call and make sure you hear the message we set in ***Step 6***.
 
 10. Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from Override dropdown list. Then click **Save**.
 
-    ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
+     ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
 11. Make one more call to make sure you hear the original Welcome message of your vhoice you set on first steps of Main lab.
