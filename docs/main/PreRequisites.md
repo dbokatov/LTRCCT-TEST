@@ -93,11 +93,9 @@ Please ask for help when you need it
 
 ### Predefined configuration
 
-> Entry Point/Channels  <copy><w class = "attendee_out">attendeeID</w>_Channel</copy>
+> Entry Point/Channels: <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
 
-> Create a flow named <copy>yourLabID</copy>
-
-> Queue <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+> Queue: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
 
 > Agent:   <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>
 
@@ -109,6 +107,8 @@ Please ask for help when you need it
 
 More pre-configured entities will be mentioned during the lab missions if they have any.
 
+---
+
 ### Testing
 
 All call to Webex Contact center should be done from Webex App which has been pre-installed for you.
@@ -117,6 +117,7 @@ Use Supervisor credentials to login into it.
 !!! Note
     International dialing is not allowed so you won't be able to dial your cell phones unless you have a US number.
 
+---
 
 ### Browser Setup
 
@@ -125,6 +126,7 @@ Since we will be using the same Chrome browser for different roles we will use t
 ![profiles](../graphics/overview/17.png)
 ![profiles](../graphics/overview/18.png)
 
+---
 
 ### Creating Chrome user profiles
 
