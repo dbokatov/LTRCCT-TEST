@@ -93,12 +93,17 @@ Please ask for help when you need it
 
 ### Predefined configuration
 
-Entry Point/Channels:  **<w class = "attendee_out">attendeeID</w>_Channel**
-Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
-Agents:   **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>_Channel**
-Business Hours: **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**
-Webex App has been pre-installed on your Lab PC
-More pre0configured entities will be mentioned during the lab missions if they have any.
+- Entry Point/Channels:  **<w class = "attendee_out">attendeeID</w>_Channel**
+
+- Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
+
+- Agents:   **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**
+
+- Business Hours: **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**
+
+- Webex App has been pre-installed on your Lab PC
+
+More pre-configured entities will be mentioned during the lab missions if they have any.
 
 ### Testing
 
