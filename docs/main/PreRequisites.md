@@ -93,7 +93,7 @@ Please ask for help when you need it
 
 ### Predefined configuration
 
-> Entry Point/Channels:  <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+> Entry Point/Channels:  <copy><w class = "attendee_out">attendeeID</w>_Channel</copy>
 
 > Queue: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
 
