@@ -96,7 +96,7 @@ nav:
     - Lab Guide:
           - Lab 0 - Preconfiguration - Getting to know your environment: ./main/PreRequisites.md
           - Lab 1 Basic Call Routing (TTS, Language, Business Hours): ./main/Lab1.md
-          #  - Mission 1 Adding Call-back functionality to your flow: ./main/Lab1_Mission1.md
+                - Mission 1 Adding Call-back functionality to your flow: ./main/Lab1_Mission1.md
           #  - Mission 2 Work with Event Flow: ./main/Lab1_Mission2.md
           #  - Mission 3 Post Call Survey: ./main/Lab1_Mission3.md 
           #  - Mission 4 Using Custom Code Execution Node: ./main/Lab1_Mission4.md 
