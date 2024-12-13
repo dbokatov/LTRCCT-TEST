@@ -99,22 +99,24 @@ Flow Templates in Webex Contact Center are an essential feature for flow develop
 
 Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
 
+---
+
 ### Configuration
 
 1.  Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile
-  Your login will be the Admin Name in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+  Your login will be the *Admin Name* in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 !!! Note 
-  Remember to take up the offer from Chrome to save your password
+    Remember to take up the offer from Chrome to save your password
 
 ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
-2. This is the Administration interface for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and Click it
-3. Navigate to Flows, click on Manage Flows dropdown list and select Create Flows
-4. New Tab will be opened. Navigate to Flow Templates
-5. Choose Simple Inbound Call to Queue template and click Next. You can open View Details and to see observe flow structure and read flow description
-6. Name you flow as Main_Flow_attendeeID. Then click on Create Flow
-# (GIF 2-Create_Flow_Template.gif)
+2. This is the *Administration interface* for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and Click it
+3. Navigate to *Flows*, click on *Manage Flows* dropdown list and select *Create Flows*
+4. New Tab will be opened. Navigate to *Flow Templates*
+5. Choose *Simple Inbound Call to Queue template* and click *Next*. You can open View Details and to see observe flow structure and read flow description
+6. Name you flow as <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
+![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 8. In the flow change Edit toggle from OFF to ON. Select Play Message node with label WelcomePrompt and on the Node settings modify Text-to-Speech Message to any greetings you like. This message will be the first message you hear while calling to your script.
 9. Select Queue node. On the General settings keep Static Queue checked and select queue attendeeID_Queue from the drop down list
   Note: As mentioned in Lab 0, all queues have been pre-configured so you don't need to change them at current step.
