@@ -85,18 +85,60 @@ We’ll start by exploring Flow Templates for rapid setup, then dive into routin
 ### Why Flow Templates?
 Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
 
-  - Consistency and Standards: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
+  - **Consistency and Standards**: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
 
-  - Time Savings: Pre-built structures reduce the need to start from scratch, enabling faster setup and allowing more focus on customization.
+  - **Time Savings**: Pre-built structures reduce the need to start from scratch, enabling faster setup and allowing more focus on customization.
 
-  - Reduced Errors: Using tested templates lowers the risk of mistakes and minimizes troubleshooting.
+  - **Reduced Errors**: Using tested templates lowers the risk of mistakes and minimizes troubleshooting.
 
-  - Easy Onboarding: New developers or partners can learn quickly by using templates as guides.
+  - **Easy Onboarding**: New developers or partners can learn quickly by using templates as guides.
 
-  - Scalability: Templates allow developers to replicate and adapt solutions efficiently across different flows or deployments.
+  - **Scalability**: Templates allow developers to replicate and adapt solutions efficiently across different flows or deployments.
 
-  - Innovation: Developers can spend more time on unique features and integrations rather than reconfiguring basics.
+  - **Innovation**: Developers can spend more time on unique features and integrations rather than reconfiguring basics.
 
 Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
 
 ### Configuration
+
+1.  Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile
+  Your login will be the Admin Name in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+
+!!! Note 
+  Remember to take up the offer from Chrome to save your password
+
+![profiles](../graphics/Lab1/1-CH_Login.gif)
+
+2. This is the Administration interface for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and Click it
+3. Navigate to Flows, click on Manage Flows dropdown list and select Create Flows
+4. New Tab will be opened. Navigate to Flow Templates
+5. Choose Simple Inbound Call to Queue template and click Next. You can open View Details and to see observe flow structure and read flow description
+6. Name you flow as Main_Flow_attendeeID. Then click on Create Flow
+# (GIF 2-Create_Flow_Template.gif)
+8. In the flow change Edit toggle from OFF to ON. Select Play Message node with label WelcomePrompt and on the Node settings modify Text-to-Speech Message to any greetings you like. This message will be the first message you hear while calling to your script.
+9. Select Queue node. On the General settings keep Static Queue checked and select queue attendeeID_Queue from the drop down list
+  Note: As mentioned in Lab 0, all queues have been pre-configured so you don't need to change them at current step.
+10. [Optional] Select Play Message node with label PlayMessage_* and on the Node settings modify Text-to-Speech Message to any message you like. This message will be played while the caller is waiting in the queue.
+11. On bottom right corner toggle Validation from Off to On to check for any potential flow errors and recommendations. 
+  Note: You can ignore recommendations but cannot skip errors.
+12. Click Publish Flow
+(GIF 3-Publish_MainFlow.gif)
+13. In Popped up window click on dropdown menu to select Latest label, then click Publish
+14. Assign the Flow to your Channel (Entry Point) - Do this by first going to Channel > Search for your channel a attendeeID_Channel  where attendeeID is your attendeeID
+15. Click on attendeeID_Channel
+16. In Entry Point Settings section change the following:
+  - Routing Flow -> Main_Flow_attendeeID
+  - Version Label -> Latest
+(GIF 4-ChannelCreation.gif )
+
+
+Testing
+1. Open https://desktop.wxcc-us1.cisco.com/ and login with agent credentials you have been provided wxcclabs+agent_attendeeID@gmail.com. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+2. Select Desktop as a Telephony Option and Team attendeeID_Team. Click Submit. Allow browser to access Microphone by clicking Allow on ever visit.
+3. Make your agent Available and you're ready to make a call.
+5-Agent_Login.gif
+
+
+
+
+Summary: This lab may feel straightforward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
