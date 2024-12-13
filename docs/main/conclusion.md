@@ -1,8 +1,3 @@
----
-#icon: material/folder-open-outline
-icon: material/medal
----
-
 # Conclusion 
 
 We hope you enjoyed the hands-on experience of the Webex Virtual Agent Lab. Throughout the lab, you’ve gained valuable insights into Cisco’s Text-to-Speech engine and the functionality of the Webex AI Agent. You explored how the AI agent utilizes built-in models and NLP to deliver smooth, automated interactions, including the ability to escalate cases from a virtual agent to a human representative. These tools are designed to enhance and streamline customer service for more intelligent and efficient operations
