@@ -257,3 +257,21 @@
 .youtube {
   color: #EE0F0F;
 }
+copy::after{
+  /* content: " " url(../assets/copy-svgrepo-com.svg);    */
+  content: " \e14d";
+  font-family: "Material Icons";
+  
+  /* content: ' \f0c5';
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit; */
+  }
+  /* copy svg {
+      height:50px;
+     fill:#00bdeb;
+  } */
+  copy:hover::after {
+      color: #00bdeb;
+  }
