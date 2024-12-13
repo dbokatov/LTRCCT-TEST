@@ -109,14 +109,15 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note 
         Remember to take up the offer from Chrome to save your password
 
-![profiles](../graphics/Lab1/1-CH_Login.gif)
+  ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
 2. This is the ***Administration interface*** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and Click it
 3. Navigate to **Flows**, click on ***Manage Flows*** dropdown list and select ***Create Flows***
 4. New Tab will be opened. Navigate to ***Flow Templates***
 5. Choose ***Simple Inbound Call to Queue template*** and click ***Next***. You can open View Details and to see observe flow structure and read flow description
 6. Name you flow as <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
-![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
+
+  ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
 7. In the flow change ***Edit*** toggle from **OFF** to **ON**. Select ***Play Message*** node with label ***WelcomePrompt*** and on the Node settings modify ***Text-to-Speech Message*** to any greetings you like. This message will be the first message you hear while calling to your script.
 8. Select ***Queue*** node. On the ***General settings*** keep Static Queue checked and select queue <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy> from the drop down list
@@ -129,8 +130,9 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note
         You can ignore recommendations but cannot skip errors.
 
-11. Click Publish Flow
-![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
+11. Click **Publish** Flow
+  
+  ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
 12. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
 13. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
@@ -142,7 +144,7 @@ Flow Templates are designed to empower developers, speed up the development life
 > Version Label: ***Latest***
 
 
-![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
+  ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
 --- 
 
@@ -152,12 +154,13 @@ Flow Templates are designed to empower developers, speed up the development life
 2. Select **Desktop** as a ***Telephony Option*** and Team <copy>**<w class = "attendee_out">attendeeID</w>_Team**</copy>. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 3. Make your agent ***Available*** and you're ready to make a call.
 
-![profiles](../graphics/Lab1/5-Agent_Login.gif)
+  ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
 ### Summary
 This lab may feel straightforward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
 ---
+
 ---
 
 ### Enhance Your Flow by adding Language
@@ -169,19 +172,20 @@ This lab may feel straightforward for some, which is understandable; however, it
 
     ○ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
 
-    ○ Place a call to see verify/validate the speech
+    ○ Place a call to verify/validate the speech
 
 
+#### Configuration
 
 1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change the mode from **Read-only** to **Edit-on** mode
 2. Add a **Global Variable** named **Global_Language**
 
-![profiles](../graphics/Lab1/6-GlobalVar.gif)
+  ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
 3. Add a **SetVariable** node with variable **Global_Language** that was added to the flow from the previous step. Add **Set Value** as ***en-AU*** which is English (Australia)
 4. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
-![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
+  ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
 5. Make a test call by calling the Support Number provided, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
 Verify if the TTS language changed
@@ -207,50 +211,56 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
 
-![profiles](../graphics/Lab1/8-BH_Entity.gif)
+  ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
 2. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change the mode from Read-only to Edit-on mode
 3. Drag and drop following nodes to the canvas:
 
- > - **Business Hours**
- >
- > - **Play Message**
- >
- > - **Disconnect Contact**
+  > - **Business Hours**
+  >
+  > - **Play Message**
+  >
+  > - **Disconnect Contact**
 
-![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
+  ![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
 
 4. Connect **Business Hours** node exits as follow:
- > - **Working Hours** -> **WelcomePrompt** Node
- > - **Holidays**, **Overrides** and **Default** -> New added **PlayMessage** node.
- > - New added **PlayMessage** -> **Disconnect** contact
+  > - **Working Hours** -> **WelcomePrompt** Node
+  >
+  > - **Holidays**, **Overrides** and **Default** -> New added **PlayMessage** node.
+  >
+  > - New added **PlayMessage** -> **Disconnect** contact
 
 ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
 
 5. Click on **Business Hours** node and select preconfigured Business Hours Entity **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**.
 
 6. Configure **PlayMessage** node as follows:
-  > Enable Text-To-Speech
-  > Select the Connector: Cisco Cloud Text-to-Speech
-  > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***
-  > Delete the Selection for Audio File
+   > Enable Text-To-Speech
+   >
+   > Select the Connector: Cisco Cloud Text-to-Speech
+   >
+   > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***
+   >
+   > Delete the Selection for Audio File
 
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
-![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
+  ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
     !!! Note
         We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
 8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** entity. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
+
     !!! Note
         Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
 
-![profiles](../graphics/Lab1/12-Overrides_Config.gif)
+  ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
 9. Make a new call and make sure you hear the message we set in ***Step 6***.
 
 10. Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from Override dropdown list. Then click **Save**.
 
-![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
+  ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
 11. Make one more call to make sure you hear the original Welcome message of your vhoice you set on first steps of Main lab.
