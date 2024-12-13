@@ -96,14 +96,14 @@ nav:
       - Getting to know your environment: ./main/PreRequisites.md
   - Main Labs:
       - Lab Guide:
-          - "Basic Call Routing (TTS, Language, Business Hours)": ./main/Lab1.md
-          - "Mission 1: Adding Call-back functionality to your flow": ./main/Lab1_Mission1.md
-          - "Mission 2: Work with Event Flow": ./main/Lab1_Mission2.md
-          - "Mission 3: Post Call Survey": ./main/Lab1_Mission3.md
-          - "Mission 4: Using Custom Code Execution Node": ./main/Lab1_Mission4.md
-          - "Mission 5: Use Flow Analytics": ./main/Lab1_Mission5.md
-          - "Mission 6: AI in Action Part 1 (Scripted Agent)": ./main/Lab1_Mission6.md
-          - "Mission 7: AI in Action Part 2 (Autonomous Agent)": ./main/Lab1_Mission7.md
+          - Basic Call Routing (TTS, Language, Business Hours): ./main/Lab1.md
+          - Mission 1 Adding Call-back functionality to your flow: ./main/Lab1_Mission1.md
+          - Mission 2 Work with Event Flow: ./main/Lab1_Mission2.md
+          - Mission 3 Post Call Survey: ./main/Lab1_Mission3.md
+          - Mission 4 Using Custom Code Execution Node: ./main/Lab1_Mission4.md
+          - Mission 5 Use Flow Analytics": ./main/Lab1_Mission5.md
+          - Mission 6 AI in Action Part 1 (Scripted Agent): ./main/Lab1_Mission6.md
+          - Mission 7 AI in Action Part 2 (Autonomous Agent): ./main/Lab1_Mission7.md
       - Conclusion: ./main/conclusion.md
   - Advanced Labs: ./advanced/Lab1.md
     - Lab 2 XXX: ./main/Lab2.md         
