@@ -210,7 +210,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt1***. Finally the call should land on the ***$[0].queue***
+4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
@@ -221,7 +221,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
+6. **TO CHECK** Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
 
 7. Now we need to revert the configuration we made in step 24. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select None from Override dropdown list. Then click **Save**.
 
