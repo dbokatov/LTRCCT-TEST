@@ -81,5 +81,5 @@ Now, this functionality is directly supported within the Flow, allowing API call
 
 ### How it is now
 
-   ![profiles](../graphics/Lab2/HowItISNow.png)
+   ![profiles](../graphics/Lab2/HowItIsNow.png)
 
