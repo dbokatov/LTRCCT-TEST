@@ -88,7 +88,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
 1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
 
-    > Name: <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> 
+    > Name: <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> 
     > Type: **Boolean**
     > Default Value: **False**
     > 
@@ -98,7 +98,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
 
 
-2. Create a new flow with a name <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy>
+2. Create a new flow with a name <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>
     
 3. Add a **Collect Digits** node:
     
@@ -163,7 +163,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     ```
 
     !!! Note
-        In Request body we are going to change Default Value of Global Variable <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy>  from false to true
+        In Request body we are going to change Default Value of Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>  from false to true
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
     
@@ -233,7 +233,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > 
     > Locate your Inbound Channel (you can use the search):  <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
     > 
-    > Select the Routing Flow: <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Select the Routing Flow: <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>
     > 
     > Select the Version Label: **Latest**
     > 
@@ -243,16 +243,16 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
 ## Testing
    
-1. Open your <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> and make sure Default Value is set to False
+1. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> and make sure Default Value is set to False
     
 2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
         a. If "You have successfully modified your emergency configuration." you're good to proceed with step 3.
         b. If "Something went wrong. Please check your configuration and try again." then before proceeding you need to fix your flow. Call the instructor for assistance.
         
-3. Open your <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure Default Value is now set to True.
+3. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure Default Value is now set to True.
 
 
-4. Now the fun part. Open your Main_Flow_attendeeID we created in LAB A, make it editable and Global Variable <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> in General Settings
+4. Now the fun part. Open your Main_Flow_attendeeID we created in LAB A, make it editable and Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> in General Settings
 
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
@@ -262,12 +262,13 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > 
     > Connect the output False node edge from the Condition Node to Set Variable
     > 
-    > In the Expression section write an expresion {{<copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> == true}}
+    > In the Expression section write an expresion {{<copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> == true}}
             
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>: : 
         
     ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
-        
+
+
 6. Add a **Play Message** node and **Disconnect node**.
     
     > Connect the **TRUE** output node edge of the **Condition Node** node to this node
@@ -302,11 +303,11 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     
 9. Revert the Global Variable value from **True** to **False** in Control Hub. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
 
-    > Name: EmergencyGV_attendeeID    
+    > Name: <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>    
     >
-    > Type: Boolean
+    > Type: **Boolean**
     >
-    > Default Value: False
+    > Default Value: **False**
     
     ![Profiles](../graphics/Lab2/BM1-Test11-GV.gif)
     
