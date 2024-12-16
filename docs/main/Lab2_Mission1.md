@@ -87,6 +87,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
 
 1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
+
     > Name: <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> 
     > Type: **Boolean**
     > Default Value: **False**
@@ -99,8 +100,8 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
 2. Create a new flow with a name <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy>
     
-3. Add a **Collect Digits** node 
-    >
+3. Add a **Collect Digits** node:
+    
     > Rename node to **CollectPIN**
     >
     > Connect the **New Phone Contact** output node edge to this **Collect Digits** node
@@ -125,6 +126,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 5. Add **Condition Node** and rename it to **PIN_Check**
 
     > Connect the output node edge from the **Collect Digits** node to this node
+    >
     > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == "1111"}}***
     
     <span style="color: orange;">[Optional]</span> You can verify the expresion result by Clicking on **Test Expression** icon in the Expresion section
@@ -136,28 +138,32 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > Connect the **TRUE** output edge from the **PIN_Check** node to this node
     > 
     > Connector: **WxCC_API**
+    >
     > Request Path: **/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/*{ID}*** - change ***{ID}*** with Global Variable ID you created in **Step 2** of this mission.
+    >
     > Method: **PUT**
+    >
     > Content Type: **Application/JSON**
+    >
     > Request Body:
     ``` JSON
-        {
-             "active": true,
-             "agentEditable": false,
-             "agentViewable": false,
-             "variableType": "Boolean",
-             "defaultValue": "true",
-             "desktopLabel": "",
-             "id": "<***yourGlobalVariableID created in step 1***>",
-             "name": "<***yourGlobalVariable name created in step 1***>",
-             "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
-             "reportable": false,
-             "version": 1
-        }
+    {
+        "active": true,
+        "agentEditable": false,
+        "agentViewable": false,
+        "variableType": "Boolean",
+        "defaultValue": "true",
+        "desktopLabel": "",
+        "id": "<***yourGlobalVariableID created in step 1***>",
+        "name": "<***yourGlobalVariable name created in step 1***>",
+        "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+        "reportable": false,
+        "version": 1
+    }
     ```
 
     !!! Note
-        In Request body we are going to change Default Value of Global Variable EmergencyGV_attendeeID froim false to true
+        In Request body we are going to change Default Value of Global Variable <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy>  from false to true
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
     
@@ -166,7 +172,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > Connect the output node edge from the HTTP_PUT node to this node
     >
     > In the Expression section write an expresion {{HTTP_PUT.httpStatusCode == 200}}
-    >
+    
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
     
 8. Add a **Play Message** node 
@@ -183,94 +189,129 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     >
     > Text-to-Speech Message: **You have successfully modified your emergency configuration.**
     
-    ![Profiles](../graphics/Lab2/BM1-8-PlayOK.gif)
+    ![Profiles](../graphics/Lab2/BM1-9-PlayOK.gif)
     
-9. Add another Play Message node
-    Connect the HTTPStatusCode FALSE output node edge to this Play Message node
-    Connect the PIN_Check FALSE output node edge you created in step 5 to this Play Message node
-    Enable Text-To-Speech
-    Select the Connector: Cisco Cloud Text-to-Speech
-    Click the Add Text-to-Speech Message button
-    Delete the Selection for Audio File
-    Text-to-Speech Message: Something went wrong. Please check your configuration and try again.
-    BM1-9-PlayNotOK.gif
-    
-    10. Add Disconnect Contact
-    Connect both Play Message nodes created in steps 8 and 9 to this node
-    
-    11. Publish your flow
-    Turn on Validation at the bottom right corner of the flow builder
-    If there are no Flow Errors, Click Publish
-    Add a publish note
-    Add Version Label(s): Latest
-    Click Publish Flow
-    
-    Note: Remember to select "Return to Flow" after you publish your flow
-    
-    12. Map your flow to your inbound channel
-    Navigate to Control Hub > Contact Center > Channels
-    Locate your Inbound Channel (you can use the search): 
-    Select the Routing Flow: EmergencyFlow_attendeeID
-    Select the Version Label: Latest
-    Click Save in the lower right corner of the screen
+9. Add another **Play Message** node
 
-Quick Quiz: There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. 
+    > Connect the HTTPStatusCode FALSE output node edge to this Play Message node
+    >
+    > Connect the PIN_Check FALSE output node edge you created in step 5 to this Play Message node
+    >
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: Cisco Cloud Text-to-Speech
+    >
+    > Click the Add Text-to-Speech Message button
+    >
+    > Delete the Selection for Audio File
+    >
+    > Text-to-Speech Message: Something went wrong. Please check your configuration and try again.
+    
+    ![Profiles](../graphics/Lab2/BM1-8-PlayNotOK.gif)
+    
+    10. Add **Disconnect Contact**
+
+    > Connect both Play Message nodes created in steps 8 and 9 to this node
+    
+11. Publish your flow
+    > Turn on Validation at the bottom right corner of the flow builder
+    >
+    > If there are no Flow Errors, Click **Publish**
+    >
+    > Add a publish note
+    >
+    > Add Version Label(s): **Latest**
+    >
+    > Click **Publish Flow**
+    
+    !!! Note
+        Remember to select "Return to Flow" after you publish your flow
+    
+12. Map your flow to your inbound channel
+    
+    > Navigate to Control Hub > Contact Center > Channels
+    > 
+    > Locate your Inbound Channel (you can use the search):  <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    > 
+    > Select the Routing Flow: <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy>
+    > 
+    > Select the Version Label: **Latest**
+    > 
+    > Click **Save** in the lower right corner of the screen
+
+    <details><summary>Quick Quiz</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details>: 
 
 ## Testing
    
-    1. Open your EmergencyGV_attendeeID and make sure Default Value is set to False
+1. Open your <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> and make sure Default Value is set to False
     
-    2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
+2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
         a. If "You have successfully modified your emergency configuration." you're good to proceed with step 3.
         b. If "Something went wrong. Please check your configuration and try again." then before proceeding you need to fix your flow. Call the instructor for assistance.
         
-    3. Open your EmergencyGV_attendeeID again, refresh the page if it was opened and make sure Default Value is now set to True.
+3. Open your <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure Default Value is now set to True.
 
 
-    4. Now the fun part. Open your Main_Flow_attendeeID we created in LAB A, make it editable and Global Variable EmergencyGV_attendeeID in General Settings
-    BM1-Test4-GV.gif
+4. Now the fun part. Open your Main_Flow_attendeeID we created in LAB A, make it editable and Global Variable <copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> in General Settings
+
+    ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
-    5. Add Condition Node in between NewPhoneContact Node and SetVariable we created in LAB A for Language selection. 
-        Connect the output node edge of the NewPhoneContact  node to this node
-        Connect the output False node edge from the Condition Node to Set Variable
-        In the Expression section write an expresion {{EmergencyGV_attendeeID == true}}
-            Optional: You can Verify the expresion result by Clicking on Test Expression icon in the Expresion section
-        BM1-Test5-GV.gif
+5. Add Condition Node in between NewPhoneContact Node and SetVariable we created in LAB A for Language selection. 
+    
+    > Connect the output node edge of the NewPhoneContact  node to this node
+    > 
+    > Connect the output False node edge from the Condition Node to Set Variable
+    > 
+    > In the Expression section write an expresion {{<copy>**EmergencyGV_attendeeID_<w class = "attendee_out">attendeeID</w>**</copy> == true}}
+            
+    <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>: : 
         
-    6. Add a Play Message node and Disconnect node.
-        Connect the TRUE output node edge of the Condition Node node to this node
-        Connect the output node edge of Play Message node to DiscinnectContact node.
-        Enable Text-To-Speech
-        Select the Connector: Cisco Cloud Text-to-Speech
-        Click the Add Text-to-Speech Message button
-        Delete the Selection for Audio File
-        Text-to-Speech Message: Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.
-        BM1-Test6-GV.gif
+    ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
         
-    7. Because we are using only one number to make calls we need to map your attendeeID_Channel back to the Main_Flow_attendeeID
-    Navigate to Control Hub > Contact Center > Channels
-    Locate your Inbound Channel (you can use the search): 
-    Select the Routing Flow: Main_Flow_attendeeID
-    Select the Version Label: Latest
-    Click Save in the lower right corner of the screen
+6. Add a **Play Message** node and **Disconnect node**.
     
-    8. Make a call and you should hear the message we configured on step 6.
-    9. Once because we are using only one number to make calls we need to map your attendeeID_Channel back to the Main_Flow_attendeeID
-    Navigate to Control Hub > Contact Center > Channels
-    Locate your Inbound Channel (you can use the search): 
-    Select the Routing Flow: Main_Flow_attendeeID
-    Select the Version Label: Latest
-    Click Save in the lower right corner of the screen
-    10. Revert the Global Variable value from True to False in Control Hub
-
-    11. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
-Name: EmergencyGV_attendeeID    
-    Type: Boolean
-    Default Value: False
+    > Connect the **TRUE** output node edge of the **Condition Node** node to this node
+    > 
+    > Connect the output node edge of **Play Message** node to **DiscinnectContact node**.
+    > 
+    > Enable Text-To-Speech
+    > 
+    > Select the Connector: Cisco Cloud Text-to-Speech
+    > 
+    > Click the Add Text-to-Speech Message button
+    > 
+    > Delete the Selection for Audio File
+    > 
+    > Text-to-Speech Message: **Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.**
     
-    BM1-Test11-GV.gif
+    ![Profiles](../graphics/Lab2/BM1-Test6-GV.gif)
+        
+7. Because we are using only one number to make calls we need to map your **<w class = "attendee_out">attendeeID</w>_Channel** back to the **Main_Flow_<w class = "attendee_out">attendeeID</w>**
     
-    12. Make a test call again and you should hear the message configured in LAB A.
+    > Navigate to Control Hub > Contact Center > Channels
+    >
+    > Locate your Inbound Channel (you can use the search): <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    >
+    > Select the Routing Flow: <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
+    >
+    > Select the Version Label: **Latest**
+    >
+    > Click **Save** in the lower right corner of the screen
+    
+8. Make a call and you should hear the message we configured on **Step 6**.
+    
+9. Revert the Global Variable value from **True** to **False** in Control Hub. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
+
+    > Name: EmergencyGV_attendeeID    
+    >
+    > Type: Boolean
+    >
+    > Default Value: False
+    
+    ![Profiles](../graphics/Lab2/BM1-Test11-GV.gif)
+    
+10. Make a test call again and you should hear the message configured in Basic Lab at the very beginning.
 
 
-Summary: This lab shows how to quickly change the behavior of my our contact center logic in extreme situation without even login-in in to Control Hub.
+### Summary
+This lab shows how to quickly change the behavior of my our contact center logic in extreme situation without even login-in in to Control Hub.
