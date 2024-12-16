@@ -103,12 +103,13 @@ We are going to extend the same flow by adding additional functionality so the c
     > Delete the Selection for Audio File
     >
     > Under Custom Menu Links:
-    >
-    > Change 0 to 1, add Link Description as **Callback** 
-    >
-    > Click Add New as 2 with  Link Description **Stay in queue**
+    >>
+    >> Change first Digit Number 0 to 1, add Link Description as **Callback** 
+    >>
+    >> Add New Digit Number as 2 with Link Description **Stay in queue**
 
     ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
+
 
 
 4. Drag Collect Digits nodes
@@ -124,25 +125,26 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Delete the Selection for Audio File
     >   
-    > Advanced Settings
+    > Advanced Settings:
     >
-    > No-Input Timeout  5 
-    >
-    > Make Prompt Interruptible: True
-    >
-    > Minimum Digits: 11
-    >
-    > Maximum Digits: 11
+    >> No-Input Timeout  5 
+    >>
+    >> Make Prompt Interruptible: True
+    >>
+    >> Minimum Digits: 11
+    >>
+    >> Maximum Digits: 11
     >       
     > Connect **No-Input Timeout** to the front of the **NewNumber** node
     >
     > Connect Unmatched Entry to the front of the NewNumber node
     >   
-    > Connect Callback from **WantCallback** node created in step 3 to **NewNumber** node
+    > Connect **Callback** from **WantCallback** node created in step 3 to **NewNumber** node
     >
-    > Connect Stay in queue from **WantCallback** node created in step 3 to **Music** node
+    > Connect **Stay in queue** from **WantCallback** node created in step 3 to **Music** node
 
     ![profiles](../graphics/Lab1/AM1-NewNumber.gif)
+
 
 
 5. Drag one more Menu node
@@ -158,11 +160,11 @@ We are going to extend the same flow by adding additional functionality so the c
     > Delete the Selection for Audio File
     >
     >    
-    > Custom Menu Links
-    >
-    > Change 0 to 1, add Link Description as **Number OK**
-    >
-    > Click Add New as 2 with  Link Description **Number Not OK**
+    > Custom Menu Links:
+    >>
+    >> Change first Digit Number from 0 to 1, add Link Description as **Number OK**
+    >>
+    >> Add New Digit Number as 2 with  Link Description **Number Not OK**
     >
     > Connect **No-Input Timeout** to the front of the **VerifyNumber** node
     >
@@ -182,6 +184,7 @@ We are going to extend the same flow by adding additional functionality so the c
     > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
 
 
+
 7. Add **PlayMessage** node as follows:
     
     > Enable Text-To-Speech
@@ -195,7 +198,8 @@ We are going to extend the same flow by adding additional functionality so the c
     > Connect **CallBack** created in step 6 to **PlayMessage** node
     > Connect **PlayMessage** created in step 6 to **DisconnectCall** node
     
-    [profiles](../graphics/Lab1/AM1-SetCallBack.gif!)
+    ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
+
 
 
 8. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
