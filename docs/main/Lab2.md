@@ -149,77 +149,73 @@ Now, this functionality is directly supported within the Flow, allowing API call
     > Content Type: **Application/JSON**
     >
     > Copy this GraphQL query into the request body:
-```JSON
-{"query":"query lastTen($from:Long! $to:Long! $timeComparator:QueryTimeType $filter:TaskFilters){task(from:$from,to:$to,timeComparator:$timeComparator,filter:$filter){tasks{id status channelType createdTime endedTime origin destination direction terminationType isActive isCallback lastWrapupCodeName}}}","variables":{"from":"{{now() | epoch(inMillis=true) - 600000}}","to":"{{now() | epoch(inMillis=true)}}","timeComparator":"endedTime","filter":{"and":[{"status":{"equals":"ended"}},{"origin":{"equals":"{{NewPhoneContact.ANI}}"}},{"connectedCount":{"gte":1}}]}}}
-```
+    ```JSON
+    {"query":"query lastTen($from:Long! $to:Long! $timeComparator:QueryTimeType $filter:TaskFilters){task(from:$from,to:$to,timeComparator:$timeComparator,filter:$filter){tasks{id status channelType createdTime endedTime origin destination direction terminationType isActive isCallback lastWrapupCodeName}}}","variables":{"from":"{{now() | epoch(inMillis=true) - 600000}}","to":"{{now() | epoch(inMillis=true)}}","timeComparator":"endedTime","filter":{"and":[{"status":{"equals":"ended"}},{"origin":{"equals":"{{NewPhoneContact.ANI}}"}},{"connectedCount":{"gte":1}}]}}}
+    ```
     <details><summary>Expanded Query For Understanding (optional)</summary>
-```GraphQL
-query lastTen(
-  $from: Long!
-  $to: Long!
-  $timeComparator: QueryTimeType
-  $filter: TaskFilters
-) {
-  task(from: $from, to: $to, timeComparator: $timeComparator, filter: $filter) {
-    tasks {
-      id
-      status
-      channelType
-      createdTime
-      endedTime
-      origin
-      destination
-      direction
-      terminationType
-      isActive
-      isCallback
-      lastWrapupCodeName
-    }
-  }
-}
-```
-``` JSON
-Variables:
-{
-  "from": "{{now() | epoch(inMillis=true) - 600000}}", # time now - 10 minutes represented in EPOCH time(ms)
-  "to": "{{now() | epoch(inMillis=true)}}", # time now represented in EPOCH time(ms)
-  "timeComparator": "endedTime",
-  "filter": {
-    "and": [
-      {
-        "status": {
-          "equals": "ended"
-        }
-      },
-      {
-        "origin": {
-          "equals": "{{NewPhoneContact.ANI}}" # ANI or caller phone number
-        }
-      },
-      {
-        "connectedCount": {
-          "gte": 1
+    ```GraphQL
+    query lastTen(
+      $from: Long!
+      $to: Long!
+      $timeComparator: QueryTimeType
+      $filter: TaskFilters
+    ) {
+      task(from: $from, to: $to, timeComparator: $timeComparator, filter: $filter) {
+        tasks {
+          id
+          status
+          channelType
+          createdTime
+          endedTime
+          origin
+          destination
+          direction
+          terminationType
+          isActive
+          isCallback
+          lastWrapupCodeName
         }
       }
-    ]
-  } >
-    > Output Variable: **`previousID`**
-    >
-    > Path Expression: <copy>**`$.data.task.tasks[0].id`**</copy>
-   
-}
-```
-</details>
+    }
+    ```
+    ``` JSON
+    Variables:
+    {
+      "from": "{{now() | epoch(inMillis=true) - 600000}}", # time now - 10 minutes represented in EPOCH time(ms)
+      "to": "{{now() | epoch(inMillis=true)}}", # time now represented in EPOCH time(ms)
+      "timeComparator": "endedTime",
+      "filter": {
+        "and": [
+          {
+            "status": {
+              "equals": "ended"
+            }
+          },
+          {
+            "origin": {
+              "equals": "{{NewPhoneContact.ANI}}" # ANI or caller phone number
+            }
+          },
+          {
+            "connectedCount": {
+              "gte": 1
+            }
+          }
+        ]
+      }  
+    }
+    ```
+    </details>
      
-   > Parse Settings:
+    > Parse Settings:
     > 
     > Content Type: **JSON**
     >
     > Path Expression: <copy>`$.data.task.tasks[0].id`</copy>
    
 
-
 4.  Add a Condition node
+
     > Connect the output from the **HTTP Request** node to this node
     >
     > Expression: <copy>**`{{previousID is empty}}`**</copy>
