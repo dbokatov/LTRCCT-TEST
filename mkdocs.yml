@@ -106,8 +106,11 @@ nav:
             - "Mission 7: AI in Action Part 2 (Autonomous Agent)": ./main/Lab1_Mission7.md
       - Conclusion: ./main/conclusion.md
   - Advanced Labs:
-      - "Lab 1: Introduction to Advanced Concepts": ./advanced/Lab1.md
-      - "Lab 2: XXX": ./main/Lab2.md
-      - "Lab 3: XXX": ./main/Lab3.md
+      - Lab Guide:
+            - "Advacned Call Routing and Flow Simplification by using API Integration": ./main/Lab2.md
+            - "Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
+            - "Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
+            - "Mission 3: Preventing Callback duplication": ./main/Lab2_Mission3.md
+            - "Mission 4: Last Agent Routing": ./main/Lab2_Mission4.md
   - Quick Links: quicklinks.md
 
