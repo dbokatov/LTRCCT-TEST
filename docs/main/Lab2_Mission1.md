@@ -120,10 +120,10 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     >
     > Set checkbox in **Make Prompt Interruptible**
     
-    ![Profiles](../graphics/Lab2/BM1-3-CollectPI_ID.gif)
+    ![Profiles](../graphics/Lab2/BM1-3-Collect_PIN.gif)
 
     
-5. Add **Condition Node** and rename it to **PIN_Check**
+4. Add **Condition Node** and rename it to **PIN_Check**
 
     > Connect the output node edge from the **Collect Digits** node to this node
     >
@@ -133,7 +133,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
         
     ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
     
-6. Add **HTTP Node** to the flow and rename it to **HTTP_PUT**
+5. Add **HTTP Node** to the flow and rename it to **HTTP_PUT**
 
     > Connect the **TRUE** output edge from the **PIN_Check** node to this node
     > 
@@ -154,8 +154,8 @@ Consider a scenario where a supervisor needs ability to change routing decision 
         "variableType": "Boolean",
         "defaultValue": "true",
         "desktopLabel": "",
-        "id": "<***yourGlobalVariableID created in step 1***>",
-        "name": "<***yourGlobalVariable name created in step 1***>",
+        "id": "<yourGlobalVariableID created in step 1>",
+        "name": "<yourGlobalVariable name created in step 1>",
         "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
         "reportable": false,
         "version": 1
@@ -167,17 +167,17 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
     
-7. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the out put will be True and if other than **200** then **False**.
+6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the out put will be True and if other than **200** then **False**.
     
-    > Connect the output node edge from the HTTP_PUT node to this node
+    > Connect the output node edge from the **HTTP_PUT** node to this node
     >
-    > In the Expression section write an expresion {{HTTP_PUT.httpStatusCode == 200}}
+    > In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***
     
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
     
-8. Add a **Play Message** node 
+7. Add a **Play Message** node 
     
-    > Connect the **HTTPStatusCode* TRUE output node edge to this **Play Message** node
+    > Connect the **HTTPStatusCode** TRUE output node edge to this **Play Message** node
     >
     > Enable Text-To-Speech
     >
@@ -191,11 +191,11 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     
     ![Profiles](../graphics/Lab2/BM1-9-PlayOK.gif)
     
-9. Add another **Play Message** node
+8. Add another **Play Message** node
 
-    > Connect the HTTPStatusCode FALSE output node edge to this Play Message node
+    > Connect the **HTTPStatusCode** FALSE output node edge to this **Play Message** node
     >
-    > Connect the PIN_Check FALSE output node edge you created in step 5 to this Play Message node
+    > Connect the **PIN_Check** FALSE output node edge you created in **Step 5** to this **Play Message** node
     >
     > Enable Text-To-Speech
     >
@@ -205,15 +205,17 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: Something went wrong. Please check your configuration and try again.
+    > Text-to-Speech Message: **Something went wrong. Please check your configuration and try again.**
     
     ![Profiles](../graphics/Lab2/BM1-8-PlayNotOK.gif)
     
-    10. Add **Disconnect Contact**
+9. Add **Disconnect Contact**
 
-    > Connect both Play Message nodes created in steps 8 and 9 to this node
+    > Connect both **Play Message** nodes created in **Steps 8** and **9** to this node
     
-11. Publish your flow
+
+10. Publish your flow
+
     > Turn on Validation at the bottom right corner of the flow builder
     >
     > If there are no Flow Errors, Click **Publish**
@@ -227,7 +229,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     !!! Note
         Remember to select "Return to Flow" after you publish your flow
     
-12. Map your flow to your inbound channel
+11. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
     > 
@@ -246,25 +248,25 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 1. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> and make sure Default Value is set to False
     
 2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
-        a. If "You have successfully modified your emergency configuration." you're good to proceed with step 3.
-        b. If "Something went wrong. Please check your configuration and try again." then before proceeding you need to fix your flow. Call the instructor for assistance.
+        a. If **"You have successfully modified your emergency configuration."** you're good to proceed with step 3.
+        b. If **"Something went wrong. Please check your configuration and try again."** then before proceeding you need to fix your flow. Call the instructor for assistance.
         
-3. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure Default Value is now set to True.
+3. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
 
-4. Now the fun part. Open your Main_Flow_attendeeID we created in LAB A, make it editable and Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> in General Settings
+4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in LAB A, make it editable and add Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> in General Settings of the flow
 
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
-5. Add Condition Node in between NewPhoneContact Node and SetVariable we created in LAB A for Language selection. 
+5. Add **Condition** node in between **NewPhoneContact** node and **SetVariable** we created in LAB A for Language selection. 
     
-    > Connect the output node edge of the NewPhoneContact  node to this node
+    > Connect the output node edge of the **NewPhoneContact** node to this node
     > 
-    > Connect the output False node edge from the Condition Node to Set Variable
+    > Connect the output False node edge from the **Condition** Node to **Set Variable**
     > 
     > In the Expression section write an expresion {{<copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> == true}}
             
-    <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>: : 
+    <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
         
     ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
 
@@ -299,6 +301,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     >
     > Click **Save** in the lower right corner of the screen
     
+
 8. Make a call and you should hear the message we configured on **Step 6**.
     
 9. Revert the Global Variable value from **True** to **False** in Control Hub. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
@@ -310,6 +313,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > Default Value: **False**
     
     ![Profiles](../graphics/Lab2/BM1-Test11-GV.gif)
+    
     
 10. Make a test call again and you should hear the message configured in Basic Lab at the very beginning.
 
