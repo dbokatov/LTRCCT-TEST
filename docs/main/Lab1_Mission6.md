@@ -381,6 +381,4 @@ While the screenshots in this guide display all available languages, we advise y
 
 
 
-<p style="text-align:center"><strong>Congratulations, you have officially completed the Cisco Virtual Assistant lab! 🎉🎉 </strong></p>
-        
-<p style="text-align:center;"><img src="../images/webex-new-logo1.png" width="100"></p>
+<p style="text-align:center"><strong>Congratulations, you have officially completed the Cisco Virtual Assistant mission! 🎉🎉 </strong></p>
