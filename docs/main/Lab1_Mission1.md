@@ -191,7 +191,7 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: You call has been successfully scheduled for a callback. Good Bye.
+    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**
     >
     > Delete the Selection for Audio File
     >

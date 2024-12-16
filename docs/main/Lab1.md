@@ -105,10 +105,11 @@ Flow Templates are designed to empower developers, speed up the development life
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
    Your login will be the ***Admin Name*** in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   
    !!! Note 
        Remember to take up the offer from Chrome to save your password
 
-   ![profiles](../graphics/Lab1/1-CH_Login.gif)
+       ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
 2. This is the ***Administration interface*** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
 3. Navigate to **Flows**, click on ***Manage Flows*** dropdown list and select ***Create Flows***
