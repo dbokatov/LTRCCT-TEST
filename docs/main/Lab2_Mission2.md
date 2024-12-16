@@ -97,7 +97,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 ## Expected Result
 
-1. When call arrives fetch the data from **MockAPI* based on your Dialed Number
+1. When call arrives fetch the data from **MockAPI** based on your Dialed Number
 2. Write the data into respective preconfigured flow variables. These Variables are being used in all consequent nodes.
 3. Business Hours entity configured to cover EMEA timezone. Call should go through WorkingHours exit in normal behavior.
 4. Play Message nodes have been configured to play messages received from API call
@@ -119,7 +119,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 6. Name you flow as <copy>**DynamicVariables_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
 
-    ![Profiles](../graphics/Lab2/BM2-9-Chrometest.gif)
+    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
 
 7. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
     
@@ -135,13 +135,13 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 8. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***
     - Replace DNIS with provided DNIS number stripping +1
 
-<span style="color: orange;">[Example:]</span> If your number +14694096861, then your GET Query should be https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861
+    <span style="color: orange;">[Example:]</span> If your number +14694096861, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     - Open Chrome browser and past your URL. You should get the follwoing result
     
-![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
 
 9. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
-    > ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***
+    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***
 
 10. In the same node, under Parsing Settings add **[0]** after **$** sign. This needs to be done due to output structure of API response. 
     
@@ -156,7 +156,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
           - Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
           -In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
 
-    ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+         ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
 
 11. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
@@ -192,6 +192,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 18. Assign the Flow <copy>**DynamicVariables_<w class = "attendee_out">attendeeID</w>**</copy> to your Channel (Entry Point) - <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy> 
     
     > Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    >
     > In Entry Point Settings section change the following:
       - Routing Flow -> <copy>**DynamicVariables_<w class = "attendee_out">attendeeID</w>**</copy>
       - Version Label -> **Latest**
@@ -209,7 +210,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0]***.welcomePrompt1 and then ***$[0].welcomePrompt1***. Finally the call should land on the ***$[0].queue***
+4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt1***. Finally the call should land on the ***$[0].queue***
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
@@ -218,13 +219,13 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
     !!! Note
         Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 
 
-    ![Profiles](../graphics/Lab2/12-Overrides_Config.gif)
+    ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
 6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
 
 7. Now we need to revert the configuration we made in step 24. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select None from Override dropdown list. Then click **Save**.
 
-    ![Profiles](../graphics/Lab2/13-Revert_Overrides_Config.gif)
+    ![Profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif)
 
 
 ## Summary
