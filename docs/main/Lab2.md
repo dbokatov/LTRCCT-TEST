@@ -109,20 +109,18 @@ Now, this functionality is directly supported within the Flow, allowing API call
 
 ## Build
 
-1. Create an new flow
-
-    > Create a flow named ReturningCaller_attendeeID <copy>**ReturningCaller_<w class = "attendee_out">attendeeID</w>**</copy> then create a flow variable 
+1. Create a flow named <copy>**ReturningCaller_<w class = "attendee_out">attendeeID</w>**</copy> then create a flow variable 
+    
+    > Name: <copy>**previousID**</copy>
     >
-    > Name: <copy>previousID</copy>
-    >
-    > Type: String
+    > Type: **String**
     >
     > Default Value: empty
 
 
-2. Add a Play Message node for our welcome message
+2. Add a **Play Message** node for our welcome message
 
-    > Connect the New Phone Contact output node edge to this Play Message node
+    > Connect the **New Phone Contact** output node edge to this **Play Message** node
     >
     > Enable Text-To-Speech
     >
@@ -132,23 +130,23 @@ Now, this functionality is directly supported within the Flow, allowing API call
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: <copy>**Welcome to Lab 1 of Solutions use-cases and APIs.**</copy>
+    > Text-to-Speech Message: <copy>**Welcome to the advanced routing and API integrations lab.**</copy>
     >
 
 
-3. Add an HTTP Request node for our query
+3. Add an **HTTP Request** node for our query
 
-    > Connect the output node edge from the play message node to this node
+    > Connect the output node edge from the **Play message** node to this node
     > 
     > Select Use Authenticated Endpoint
     >
-    > Connector: WxCC_API
+    > Connector: **WxCC_API**
     > 
-    > Path: /search
+    > Path: **/search**
     > 
-    > Method: POST
+    > Method: **POST**
     > 
-    > Content Type: Application/JSON
+    > Content Type: **Application/JSON**
     >
     > Copy this GraphQL query into the request body:
 ```JSON
@@ -221,20 +219,20 @@ Variables:
 4.  Add a Condition node
     > Connect the output from the HTTP Request node to this node
     >
-    > Expression: <copy>`{{previousID is empty}}`</copy>
+    > Expression: <copy>**`{{previousID is empty}}`**</copy>
     >
-    > We will connect the True node in a future step.
+    > We will connect the **True** node in a future step.
     >
-    > Connect the False node edge to the Play Message node created in the next step.
+    > Connect the **False** node edge to the **Play Message** node created in the next step.
     >
 
-5. Add a Play Message node
+5. Add a **Play Message** node
 
-    > Connect the False node edge from the previous step to this node
+    > Connect the **False** node edge from the previous step to this node
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
     > Click the Add Text-to-Speech Message button
     >
@@ -243,49 +241,50 @@ Variables:
     > Text-to-Speech Message: <copy>**It looks like you were just working with an agent and had to call back in.  We are prioritizing this call for the next available agent.**</copy>
     >
 
-6.  Add a Queue Contact node
+6.  Add a **Queue Contact** node
 
-    >  Connect the output node edge from the Play Message node added in the last step to this node
+    >  Connect the output node edge from the **Play Message** node added in the last step to this node
     > 
     > Select Static Queue
     >
-    > Queue: <w class="Queue">yourQueueID</w>
+    > Queue: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
     >
     > Select Static Priority
     >
-    > Static Priority Value: P1
+    > Static Priority Value: **P1**
     >
 
-7.  Add a Subflow node
+7.  Add a **Subflow** node
+
     > In the Activity Library pane on the left side of the screen, click Subflows
     >
-    > Find the Subflow names WaitTreatment and drag it onto the flow canvas like you would any other node.
+    > Find the Subflow names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
     >
-    > Connect the output node edge from the Queue Contact node added in the previous step to this node.
+    > Connect the output node edge from the **Queue Contact** node added in the previous step to this node.
     >
-    > Subflow Label: Latest
+    > Subflow Label: **Latest**
     >
-    > Enable automatic updates: True
+    > Enable automatic updates: **True**
     >
-    > Subflow Input Variables: None
+    > Subflow Input Variables: **None**
     >
-    > Subflow Output Variables: None
+    > Subflow Output Variables: **None**
     >
-    > Connect the output node edge from this node to the Disconnect Contact node added in the next step.
+    > Connect the output node edge from this node to the **Disconnect Contact** node added in the next step.
 
 
 
-8. Add a Disconnect Contact node
+8. Add a **Disconnect Contact** node
 
 
-9. Add a Queue Contact node
-    > Connect the True node edge from the Condition node to this node
+9. Add a **Queue Contact** node
+    > Connect the **True** node edge from the **Condition** node to this node
     > 
     > Select Static Queue
     >
-    > Queue: <w class="Queue">yourQueueID</w>
+    > Queue: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
     >
-    > Connect the Output node edge from this node to the Subflow node
+    > Connect the **Output** node edge from this node to the **Subflow** node
 
 
 <details><summary>Check your flow</summary>![](./assets/lab1_flow.png)</details>
@@ -295,13 +294,13 @@ Variables:
 10.  Publish your flow
     > Turn on Validation at the bottom right corner of the flow builder
     >
-    > If there are no Flow Errors, Click Publish
+    > If there are no Flow Errors, Click **Publish**
     >
     > Add a publish note
     >
-    > Add Version Label(s): Live 
+    > Add Version Label(s): **Latest** 
     >
-    > Click Publish Flow
+    > Click **Publish** Flow
 
     !!! Note
       Remember to select "Return to Flow" after you publish your flow.
@@ -310,9 +309,9 @@ Variables:
 11. Map your flow to your inbound channel
     > Navigate to Control Hub > Contact Center > Channels
     >
-    > Locate your Inbound Channel (you can use the search): <copy><w class="EPname"></w></copy>
+    > Locate your Inbound Channel (you can use the search): <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
     >
-    > Select the Routing Flow: <copy><w class="POD"></w>_ReturningCaller</copy>
+    > Select the Routing Flow: <copy>**ReturningCaller_<w class = "attendee_out">attendeeID</w>**</copy>
     >
     > Select the Version Label: Live
     >
@@ -323,9 +322,9 @@ Variables:
 
 1. Launch the [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and log in selecting the Desktop option for your Voice connection.
 2. On your Agent Desktop, make sure your status is not set to available
-      1. Using Webex, place a call to your Inbound Channel number <copy><w class="EPDN"></w></copy>
+      1. Using Webex, place a call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
       2. After you hear the queue treatment start, you can abandon the call 
-3. Using Webex, place another call to your Inbound Channel number <copy><w class="EPDN"></w></copy>
+3. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
 4. On your Agent Desktop, set your status to available
       1. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
       2. After a few moments end the call and select a wrapup code.
@@ -337,7 +336,7 @@ Variables:
       1. Was the call queued with priority?
          1. Why or why not?
 7. Close the Debugger
-8. Using Webex, place another call to your Inbound Channel number <copy><w class="EPDN"></w></copy>
+8. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
 9. On your Agent Desktop, set your status to available
       1. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
       2. After a few moments end the call and select a wrapup code.
