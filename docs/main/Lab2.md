@@ -207,13 +207,13 @@ Variables:
 ```
 </details>
 
-> Parse Settings:
->
-> Content Type: JSON
->
-> - Output Variable: `previousID`
-> - Path Expression: <copy>`$.data.task.tasks[0].id`</copy>
->
+  > Parse Settings:
+  >
+  > Content Type: JSON
+  >
+  > - Output Variable: `previousID`
+  > - Path Expression: <copy>`$.data.task.tasks[0].id`</copy>
+  >
 
 
 4.  Add a Condition node
@@ -278,6 +278,7 @@ Variables:
 
 
 9. Add a **Queue Contact** node
+
     > Connect the **True** node edge from the **Condition** node to this node
     > 
     > Select Static Queue
@@ -287,11 +288,10 @@ Variables:
     > Connect the **Output** node edge from this node to the **Subflow** node
 
 
-<details><summary>Check your flow</summary>![](./assets/lab1_flow.png)</details>
-
----
+    <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/lab2_ReturnAgentflow.png)</details>
 
 10.  Publish your flow
+
     > Turn on Validation at the bottom right corner of the flow builder
     >
     > If there are no Flow Errors, Click **Publish**
@@ -307,6 +307,7 @@ Variables:
 
 
 11. Map your flow to your inbound channel
+    
     > Navigate to Control Hub > Contact Center > Channels
     >
     > Locate your Inbound Channel (you can use the search): <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
