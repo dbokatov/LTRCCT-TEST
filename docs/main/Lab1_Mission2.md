@@ -105,7 +105,8 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
 
-3. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. **<span style="color: red;">DO NOT Close this Tab</span>**
+3. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
+**<span style="color: red;">DO NOT Close this Tab</span>**
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
@@ -136,11 +137,14 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     ![profiles](../graphics/Lab1/AM2_httpevent.gif)
     
 5. <span style="color: orange;">[Optional]</span>: You can also modify **Screenpop** configuration in the same flow
+
     > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**
+    >
     > Screen Pop Desktop Label: **Cisco Live Amsterdam 2025 FAQ**
+    >
     > Display Settings: New browser Tab.
   
-   ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
+    ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
     
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
     
