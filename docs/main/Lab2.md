@@ -302,7 +302,7 @@ Now, this functionality is directly supported within the Flow, allowing API call
     > Click **Publish** Flow
 
     !!! Note
-      Remember to select "Return to Flow" after you publish your flow.
+        Remember to select "Return to Flow" after you publish your flow.
 
 
 11. Map your flow to your inbound channel
