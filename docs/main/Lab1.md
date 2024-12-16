@@ -109,7 +109,7 @@ Flow Templates are designed to empower developers, speed up the development life
    !!! Note 
        Remember to take up the offer from Chrome to save your password
 
-       ![profiles](../graphics/Lab1/1-CH_Login.gif)
+    ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
 2. This is the ***Administration interface*** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
 3. Navigate to **Flows**, click on ***Manage Flows*** dropdown list and select ***Create Flows***
@@ -268,3 +268,5 @@ Business Hours allows you to configure the operational hours of the contact cent
      ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
 11. Make one more call to make sure you hear the original Welcome message of your vhoice you set on first steps of Main lab.
+
+**Congratulations on completing another mission.**
