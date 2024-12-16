@@ -89,7 +89,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
 1. Create a **Global Variable** by accessing Flows -> Global Variable tab
     
-    > Name: **WhoIsCalling**
+    > Name: **WhoIsCalling_<w class = "attendee_out">attendeeID</w>**
     >
     > Variable Type: String
     >
@@ -100,7 +100,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     > Edit on Desktop: Yes
         
         
-2. Open you your **Main_Flow_<w class = "attendee_out">attendeeID</w>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling** Global Variable to the flow.
+2. Open you your **Main_Flow_<w class = "attendee_out">attendeeID</w>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<w class = "attendee_out">attendeeID</w>** Global Variable to the flow.
     
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
