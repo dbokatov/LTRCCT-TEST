@@ -78,12 +78,11 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 <br/>
 
 
-## Mission 1: Adding Call-back functionality to your flow
+### Story 
 
 Callback functionality is an essential feature in a modern contact center, providing a solution that enhances both customer satisfaction and operational efficiency.
 
-### Story 
-A customer calls a company’s sales line, interested in upgrading their service. The wait time is 20 minutes, but they’re in a busy store and can’t stay on hold. Instead, they request a callback.
+Imagine a customer calls a company’s sales line, interested in upgrading their service. The wait time is 20 minutes, but they’re in a busy store and can’t stay on hold. Instead, they request a callback.
 Having a callback option is a must-have feature—it ensures businesses don’t lose potential leads while providing a seamless, customer-friendly experience.
 
 ### Build
@@ -109,7 +108,8 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     >     - Click Add New as 2 with  Link Description **Stay in queue**
 
-    AM1-WantCallback.gif
+    ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
+
 
 4. Drag Collect Digits nodes
     Menu node:
@@ -142,7 +142,8 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Connect Stay in queue from **WantCallback** node created in step 3 to **Music** node
 
-    AM1-NewNumber.gif
+    ![profiles](../graphics/Lab1/AM1-NewNumber.gif)
+
 
 5. Drag one more Menu node
     
@@ -171,14 +172,16 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Connect **Number Not OK** from **VerifyNumber** node created in step 5 to **VerifyNumber** node
     
-    AM1-VerifyNumber.gif
-        
+    ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
+
+
 6. Add **Callback** node
     
     > Callback Dial Number select5  ***NewNumber.DigitsEntered*** from dropdown list
     >    
     > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
-        
+
+
 7. Add **PlayMessage** node as follows:
     
     > Enable Text-To-Speech
@@ -192,8 +195,9 @@ We are going to extend the same flow by adding additional functionality so the c
     > Connect **CallBack** created in step 6 to **PlayMessage** node
     > Connect **PlayMessage** created in step 6 to **DisconnectCall** node
     
-    AM1-SetCallBack.gif
-    
+    [profiles](../graphics/Lab1/AM1-SetCallBack.gif!)
+
+
 8. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
 
     
