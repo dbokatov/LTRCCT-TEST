@@ -84,6 +84,7 @@ In this lab, you will complete a mission to enhance customer feedback collection
 ### Mission Details
 
 Your mission is to:
+
 1. Integrate a preconfigured survey into the call flow using the Flow Designer.
 2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
 3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
@@ -92,23 +93,27 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
 ### Section to expand/collapse
 > **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
 Supported Survey Question Types in Webex Contact Center
-1. Customer Satisfaction (CSAT):
+
+1. **Customer Satisfaction (CSAT)**:
     - Purpose: Measure satisfaction with a specific interaction or service.
     - Example Question: "On a scale of 1 to 5, how satisfied are you with the service you received today?"
     - Use Case: Assess overall satisfaction at the end of a call or interaction.
-2. Customer Effort Score (CES):
+2. **Customer Effort Score (CES)**:
     - Purpose: Evaluate the ease of resolving a customer's issue or completing a task.
     - Example Question: "On a scale of 1 to 5, how easy was it to complete your task today?"
     - Use Case: Identify pain points in the customer journey or process efficiency.
-3. Net Promoter Score (NPS):
+3. **Net Promoter Score (NPS)**:
     - Purpose: Measure customer loyalty and the likelihood of recommending the service.
     - Example Question: "On a scale of 0 to 10, how likely are you to recommend our service to a friend or colleague?"
     - Use Case: Gauge long-term customer loyalty and brand advocacy.
 </details>
 
-### Pre-configured entities:
-    
+### Pre-configured entities:        
+     
+> Activity Name: **FeedbackSet**
+>
 > Survey: **CiscoLive2025_PCS**
 >
 > System defined GlobalVariable: **Global_FeedbackSurveyOptIn**. 
@@ -116,7 +121,8 @@ Supported Survey Question Types in Webex Contact Center
 
 <span style="color: orange;">[Optional]</span>
     In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to Configuration section
-> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+> **<details><summary>Create your own Survey<span style="color: orange;">[Optional]</span></summary>**
 ... To Add Survey creation steps...
 </details>
 
@@ -124,13 +130,17 @@ Supported Survey Question Types in Webex Contact Center
 1. Explore preconfigured Survey 
 2. Open you <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy> and add Set Variable node:
 
-> Activity Name: **FeedbackSet**
-> Variable: **Global_FeedbackSurveyOptIn**
-> Set Value: true
-> 
-> Delete connection between **NewPhoneContact** and **SetVariable** on which we configured Language while doing the Main Lab.
-> Connect **NewPhoneContact** to the front of the **NewNumber** node
-> Connect **FeedbackSet** to the front of the **SetVariable** node
+    > Activity Name: **FeedbackSet**
+    >
+    > Variable: **Global_FeedbackSurveyOptIn**
+    >
+    > Set Value: true
+    > 
+    > Delete connection between **NewPhoneContact** and **SetVariable** on which we configured Language while doing the Main Lab.
+    >
+    > Connect **NewPhoneContact** to the front of the **NewNumber** node
+    >
+    > Connect **FeedbackSet** to the front of the **SetVariable** node
         
 3. Open Event tab and delete **EndFlow_xkf** to which **HTTPRequest** is connected to.
 4. Drag **FeedbackV2**, **PlayMessage** and **DisconnectCall**
