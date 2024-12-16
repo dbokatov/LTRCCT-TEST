@@ -152,7 +152,7 @@ Now, this functionality is directly supported within the Flow, allowing API call
 ```JSON
 {"query":"query lastTen($from:Long! $to:Long! $timeComparator:QueryTimeType $filter:TaskFilters){task(from:$from,to:$to,timeComparator:$timeComparator,filter:$filter){tasks{id status channelType createdTime endedTime origin destination direction terminationType isActive isCallback lastWrapupCodeName}}}","variables":{"from":"{{now() | epoch(inMillis=true) - 600000}}","to":"{{now() | epoch(inMillis=true)}}","timeComparator":"endedTime","filter":{"and":[{"status":{"equals":"ended"}},{"origin":{"equals":"{{NewPhoneContact.ANI}}"}},{"connectedCount":{"gte":1}}]}}}
 ```
-> <details><summary>Expanded Query For Understanding (optional)</summary>
+    <details><summary>Expanded Query For Understanding (optional)</summary>
 ```GraphQL
 query lastTen(
   $from: Long!
@@ -202,22 +202,25 @@ Variables:
         }
       }
     ]
-  }
+  } >
+    > Output Variable: **`previousID`**
+    >
+    > Path Expression: <copy>**`$.data.task.tasks[0].id`**</copy>
+   
 }
 ```
 </details>
-
-  > Parse Settings:
-  >
-  > Content Type: JSON
-  >
-  > - Output Variable: `previousID`
-  > - Path Expression: <copy>`$.data.task.tasks[0].id`</copy>
-  >
+     
+   > Parse Settings:
+    > 
+    > Content Type: **JSON**
+    >
+    > Path Expression: <copy>`$.data.task.tasks[0].id`</copy>
+   
 
 
 4.  Add a Condition node
-    > Connect the output from the HTTP Request node to this node
+    > Connect the output from the **HTTP Request** node to this node
     >
     > Expression: <copy>**`{{previousID is empty}}`**</copy>
     >
