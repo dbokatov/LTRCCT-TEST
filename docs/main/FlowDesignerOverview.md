@@ -21,14 +21,14 @@ Use the Main Flow tab to script the primary flow based on the Trigger Event defi
 
 At any point during the execution of the Main Flow, the system triggers events that interrupt the Main Flow. For example, when an agent answers a phone call, the caller’s experience in the queue is interrupted. If you want to define unique behavior when these events are triggered, you can script optional Event Flows. Event Flows are asynchronous to the Main Flow. You can’t predict if or when an Event Flow will be triggered. For this reason, Event Flows are optional and are intended to extend the Main Flow functionality.
 
-    !!! Note
-        You can configure multiple event handling flows in the Event Flows canvas. Each event flow must have a unique start and end, with no shared activities.
+!!! Note
+    You can configure multiple event handling flows in the Event Flows canvas. Each event flow must have a unique start and end, with no shared activities.
 
 ### Zoom Toolbar
 
 The zoom toolbar in Flow Designer has **Global Properties**, zoom-in, and zoom-out buttons to display the Global Properties pane, and minimize or maximize the contents in the canvas.
 
-  - Global Properties: Click the ![profiles](../graphics/overview/GearIcon.png) icon to open the Global Properties pane.
+  - Global Properties: Click the ![](../graphics/overview/GearIcon.png) icon to open the Global Properties pane.
   
   - Zoom-in: Click the icon on the toolbar. When you reach the maximum limit, the button is disabled.
 
