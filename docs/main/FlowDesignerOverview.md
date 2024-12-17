@@ -34,12 +34,56 @@ The zoom toolbar in Flow Designer has **Global Properties**, zoom-in, and zoom-o
 
   - **Zoom-out**: Click the icon ![](../graphics/overview/ZoomOut.png)on the toolbar. When you reach the maximum limit, the button is disabled.
 
-  - **Fit to View**: Click the icon ![](../graphics/overview/FitToView.png) on the toolbar to 
+  - **Fit to View**: Click the icon ![](../graphics/overview/FitToView.png) in the toolbar to adjust the canvas view so the entire flow is visible.
 
   - **Copy and paste activities**: Click the icon ![](../graphics/overview/Copy.png) on the toolbar to copy and paste selected activities on the canvas.
 
-  - **Undo**: Click the icon  ![](../graphics/overview/Undo.png) on the toolbar to undo the last performed action.
+  - **Undo**: Click the icon ![](../graphics/overview/Undo.png) on the toolbar to undo the last performed action.
 
   - **Redo**: Click the icon ![](../graphics/overview/Redo.png) on the toolbar to redo the last performed action.
 
-  - **Arrange all**: Click the icon ![](../graphics/overview/ArrangeAll.png) on the toolbar to organize all the activities in the flowdesigner canvas
+  - **Arrange All**: Click the icon  ![](../graphics/overview/ArrangeAll.png) on the toolbar to organize all the activities in the flowdesigner canvas.
+
+
+### Canvas control actions and shortcut keys
+
+To enhance the efficiency and productivity of flow developers, the Flow Designer canvas provides the following options:
+
+  - **Undo-redo actions**: To undo and redo up to last 10 actions. Use the undo, redo buttons in thezoom toolbar or right-click on the canvas for the context menu.
+  
+  - **Cut, copy, and paste**: To cut, copy, and paste activites and links within and across flows, event flows, and subflows.
+  
+  - **Auto arrange**: To automatically organize all activities in the canvas for better understaning and easy maintenance.
+  
+  - **Display gridlines**: To change the background of the canvas from dot grid to line grid and vice-eversa.
+  
+  - **Snap to grid**: To align the activity to the grid line.
+  
+  - **Keyboard shortcuts**: To edit quickly using keyboard shortcuts. Click the help icon. Choose **Keyboard shortcuts** to view the list of available keyboard shortcuts.
+
+
+### Keyboard Shortcuts
+
+The Flow Designer canvas provides the following keyboard shortcuts:
+
+| **Shortcut Key** 			| **Description**		|
+| :-------------------------| :---------------------|
+| **General**               | 						|
+| Open Keyboard Shortcuts 	| Ctrl + Alt + K		|
+| **Tools**                 |                       |
+| H 						| Hand tool				|
+| Shift + A 				| Auto arrange			|
+| **Edit**                  | 						|
+| Ctrl + C 					| Copy					|
+| Ctrl + X 					| Cut					|
+| Ctrl + V 					| Paste					|
+| Ctrl + Z 					| Undo					|
+| Ctrl + Shift + Z 			| Redo					|
+| Backspace					| Delete				|
+| Ctrl + A 					| Select All			|
+| **View**                  | 						|
+| Ctrl + + 					| Zoom in				|
+| Ctrl + - 					| Zoom out				|
+| Ctrl + Scroll 			| Zoom in or out		|
+| Shift + Scroll 			| Scroll left or right	|
+| Shift + 1 				| Fit to view			|
