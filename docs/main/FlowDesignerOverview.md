@@ -28,16 +28,18 @@ At any point during the execution of the Main Flow, the system triggers events t
 
 The zoom toolbar in Flow Designer has **Global Properties**, zoom-in, and zoom-out buttons to display the Global Properties pane, and minimize or maximize the contents in the canvas.
 
-  - Global Properties: Click the ![](../graphics/overview/GearIcon.png) icon to open the Global Properties pane.
+  - **Global Properties**: Click the ![](../graphics/overview/GearIcon.png) icon to open the Global Properties pane.
   
-  - Zoom-in: Click the icon on the toolbar. When you reach the maximum limit, the button is disabled.
+  - **Zoom-in**: Click the icon ![](../graphics/overview/ZoomIn.png) on the toolbar. When you reach the maximum limit, the button is disabled.
 
-  - Zoom-out: Click the icon on the toolbar. When you reach the maximum limit, the button is disabled.
+  - **Zoom-out**: Click the icon ![](../graphics/overview/ZoomOut.png)on the toolbar. When you reach the maximum limit, the button is disabled.
 
-  - Copy and paste activities: Click the icon on the toolbar to copy and paste selected activities on the canvas. For more information, see Copy and Paste Activities.
+  - **Fit to View**: Click the icon ![](../graphics/overview/FitToView.png) on the toolbar to 
 
-  - Undo:Click the Undo icon on the toolbar to undo the last performed action.
+  - **Copy and paste activities**: Click the icon ![](../graphics/overview/Copy.png) on the toolbar to copy and paste selected activities on the canvas.
 
-  - Redo: Click the Redo icon on the toolbar to redo the last performed action.
+  - **Undo**: Click the icon  ![](../graphics/overview/Undo.png) on the toolbar to undo the last performed action.
 
-  - Arrange all: Click the Arrange All icon on the toolbar to organize all the activities in the flowdesigner canvas
+  - **Redo**: Click the icon ![](../graphics/overview/Redo.png) on the toolbar to redo the last performed action.
+
+  - **Arrange all**: Click the icon ![](../graphics/overview/ArrangeAll.png) on the toolbar to organize all the activities in the flowdesigner canvas
