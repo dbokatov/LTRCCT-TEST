@@ -1,3 +1,9 @@
+---
+#icon: material/folder-open-outline
+icon: material/bullseye-arrow
+---
+
+
 <script>
  function update () {
     const form = document.forms['attendee-form'];
