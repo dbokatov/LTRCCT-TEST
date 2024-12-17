@@ -92,8 +92,9 @@ markdown_extensions:
 nav:
   - Missions: index.md
   - Getting Started:
-      - Overview: ./main/overview.md
+      - Lab Overview: ./main/overview.md
       - Getting to know your environment: ./main/PreRequisites.md
+      - Flow Designer Overview: ./main/FlowDesignerOverview.md
   - Main Labs:
       - Lab Guide:
             - "Basic Call Routing (TTS, Language, Business Hours)": ./main/Lab1.md
