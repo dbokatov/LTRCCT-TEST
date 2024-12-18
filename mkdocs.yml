@@ -102,9 +102,9 @@ nav:
             - "Mission 2: Adding Call-back functionality to your flow": ./main/Lab1_Mission2.md
             - "Mission 3: Work with Event Flow": ./main/Lab1_Mission3.md
             - "Mission 4: Post Call Survey": ./main/Lab1_Mission4.md
-            - "Mission 6: Use Flow Analytics": ./main/Lab1_Mission5.md
-            - "Mission 7: AI in Action Part 1 (Scripted Agent)": ./main/Lab1_Mission6.md
-            - "Mission 8: AI in Action Part 2 (Autonomous Agent)": ./main/Lab1_Mission7.md
+            - "Mission 5: Use Flow Analytics": ./main/Lab1_Mission5.md
+            - "Mission 6: AI in Action Part 1 (Scripted Agent)": ./main/Lab1_Mission6.md
+            - "Mission 7: AI in Action Part 2 (Autonomous Agent)": ./main/Lab1_Mission7.md
       - Conclusion: ./main/conclusion.md
   - Advanced Labs:
       - Lab Guide:
