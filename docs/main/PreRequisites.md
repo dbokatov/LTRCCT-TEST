@@ -168,3 +168,5 @@ You can customize each profile to be easily identifiable with a name and/or icon
 ![profiles](../graphics/overview/term_3.png)
 
 We will use the **Admin** profile first in the next section.
+
+<script src='../template_assets/load.js'><script>
