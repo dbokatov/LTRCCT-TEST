@@ -111,6 +111,8 @@ Please ask for help when you need it
 
 > Webex App has been pre-installed on your Lab PC
 
+> Assigned Inbound Channel Number: <copy><w class="EPDN">Provided by proctor</w></copy>
+
 More pre-configured entities will be mentioned during the lab missions if they have any.
 
 ---
