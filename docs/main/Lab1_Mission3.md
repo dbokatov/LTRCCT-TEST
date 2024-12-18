@@ -77,106 +77,84 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 <br/>
 
-### Overview
+### What is an Event Flow?
 
-In this lab, you will complete a mission to enhance customer feedback collection by integrating a survey into the Webex Contact Center call flow. The lab is designed to be simple yet practical, focusing on minimal configuration within the Flow Designer, while leveraging a preconfigured survey template.
+An Event Flow in Webex Contact Center is a workflow triggered by specific events in the customer interaction process, such as call arrival, agent assignment, call disconnection or actions within the IVR.
 
-### Mission Details
+Event flows enable a wide range of scenarios, with one common use case being the ability to update an external database with data collected during a call—either from the IVR or through interaction with a live agent.
 
-Your mission is to:
-
-1. Integrate a preconfigured survey into the call flow using the Flow Designer.
-2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
-3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
-
-The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
-
-### Section to expand/collapse
-> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
-
-Supported Survey Question Types in Webex Contact Center
-
-1. **Customer Satisfaction (CSAT)**:
-    - Purpose: Measure satisfaction with a specific interaction or service.
-    - Example Question: "On a scale of 1 to 5, how satisfied are you with the service you received today?"
-    - Use Case: Assess overall satisfaction at the end of a call or interaction.
-2. **Customer Effort Score (CES)**:
-    - Purpose: Evaluate the ease of resolving a customer's issue or completing a task.
-    - Example Question: "On a scale of 1 to 5, how easy was it to complete your task today?"
-    - Use Case: Identify pain points in the customer journey or process efficiency.
-3. **Net Promoter Score (NPS)**:
-    - Purpose: Measure customer loyalty and the likelihood of recommending the service.
-    - Example Question: "On a scale of 0 to 10, how likely are you to recommend our service to a friend or colleague?"
-    - Use Case: Gauge long-term customer loyalty and brand advocacy.
-</details>
-
-### Pre-configured entities:        
-     
-> Activity Name: **FeedbackSet**
->
-> Survey: **CiscoLive2025_PCS**
->
-> System defined GlobalVariable: **Global_FeedbackSurveyOptIn**. 
->
-
-<span style="color: orange;">[Optional]</span>
-    In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to Configuration section
-
-> **<details><summary>Create your own Survey<span style="color: orange;">[Optional]</span></summary>**
-... To Add Survey creation steps...
-</details>
+In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_blank"}**, a tool that acts as a temporary mailbox for online notifications, to capture and test data sent via webhooks. We’ll send a simple **POST** request containing call data and information provided by the agent during the call.
 
 ### Configuration
-1. Explore preconfigured Survey 
-2. Open you <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy> and add Set Variable node:
 
-    > Activity Name: **FeedbackSet**
+1. Create a **Global Variable** by accessing Flows -> Global Variable tab
+    
+    > Name: **WhoIsCalling_<w class = "attendee_out">attendeeID</w>**
     >
-    > Variable: **Global_FeedbackSurveyOptIn**
+    > Variable Type: String
     >
-    > Set Value: true
-    > 
-    > Delete connection between **NewPhoneContact** and **SetVariable** on which we configured Language while doing the Main Lab.
+    > Make agent viewable: Yes
     >
-    > Connect **NewPhoneContact** to the front of the **NewNumber** node
+    > Desktop label: Who Is Calling?
     >
-    > Connect **FeedbackSet** to the front of the **SetVariable** node
+    > Edit on Desktop: Yes
         
-3. Open Event tab and delete **EndFlow_xkf** to which **HTTPRequest** is connected to.
-4. Drag **FeedbackV2**, **PlayMessage** and **DisconnectCall**
-    **FeedbacV2**
-    > SurveyMethod -> VoiceBased:  **CiscoLive2025_PCS**
-    >        
-    > Connect **HTTPRequest** to **FeedbackV2** node
-    >
-    > Connect **FeedbackV2** node to **Disconnect** node
-    >
-    > Connect **FeedbackV2** Undefined Error to **DisconnectCall** node
-            
-    **PlayMessage**
+        
+2. Open you your **Main_Flow_<w class = "attendee_out">attendeeID</w>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<w class = "attendee_out">attendeeID</w>** Global Variable to the flow.
     
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: Cisco Cloud Text-to-Speech
-    >
-    > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***
-    >
-    > Delete the Selection for Audio File
-    >
-    > Connect **PlayMessage** created to **DisconnectCall** node
-    >       
-            
-5. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
-
-
-### Testing
-1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com** and become Available 
-2. Make a test call and accept the call by Agent.
-3. Finish the call by Agent so the caller could stay on the line. 
-4. Now the caller should hear prompts configured in **CiscoLive2025_PCS**. Complete the survey.
-5. To check Survey responses got to ***Control Hub -> Contact Center -> Surveys***. For **CiscoLive2025_PCS** click on Download and select Survey response period get a CSV file with provided answers.
+    ![profiles](../graphics/Lab1/AM2_GV.gif)
     
+
+3. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
+**<span style="color: red;">DO NOT Close this Tab</span>**
+
+    ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
+    
+4. Go back to your flow, remove connection between AgentDisconnect and EndFlow_xkf and add HTTP node in between these nodes.
+      
+    > Use Authenticated Endpoint: Off
+    >
+    > Request URL: Paste your unique URL copied on step 3 from **https://webhook.site/**.
+    >
+    > Method: **POST**
+    >
+    > Content Type: **Application/JSON**
+    >
+    > Request Body:  
+    ```JSON
+    {
+    "DNIS":"{{NewPhoneContact.DNIS}}",
+    "ANI":"{{NewPhoneContact.ANI}}",
+    "InteractionId":"{{NewPhoneContact.InteractionId}}",
+    "Language":"{{Global_Language}}",
+    "WhoCalls":"{{WhoIsCalling}}"
+    }
+    ```
+
     !!! Note
-        If you create your own Survey as described in Optional section of this mission you might not see Survey response as it has delay in edited surveys
-        
-**Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**
+        We are building a dictionary with values generated by flow, language we set in main lab and also WhoIsCalling value which will be provided by agent in agent desktop.
+    
+    ![profiles](../graphics/Lab1/AM2_httpevent.gif)
+    
+5. <span style="color: orange;">[Optional]</span>: You can also modify **Screenpop** configuration in the same flow
+
+    > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**
+    >
+    > Screen Pop Desktop Label: **Cisco Live Amsterdam 2025 FAQ**
+    >
+    > Display Settings: New browser Tab.
+  
+    ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
+    
+7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+    
+### Testing
+    
+1. Make sure you're logged in as Agent **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com** and set status to Available.
+2. Make a call to your test number and if success you should hear Welcome message and then accept the call by agent.
+3. In agent interaction panel change  Who Is Calling? to any text you like then click Save and End the call.
+4. On **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 
+
+![profiles](../graphics/Lab1/AM2_Testing.gif)
+
+**Congratulations on Completing Mission 2 of Lab A where you have learnt how to use events in your flows.**
