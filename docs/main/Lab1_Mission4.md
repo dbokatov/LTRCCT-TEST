@@ -120,17 +120,17 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 <span style="color: orange;">[Optional]</span>
     In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to Configuration section
 
-> **<details><summary>Create your own Survey<span style="color: orange;">[Optional]</span></summary>**
+> **<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
 > 
-> 1. In Control Hub -> Contact Center open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
+> 1. In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
 > 
 > 2. Enter survey name in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
 >
->   ![profiles](../graphics/Lab1/PCS1.gif) 
+>    ![profiles](../graphics/Lab1/PCS1.gif) 
 >
 > 3. Edit **Welcome note** and **Thank you note** by uploading the following files. Download files to your desktop prior uploading to survey. 
 >
->   [profiles](../graphics/Lab1/PCS_Welcome.gif) 
+>    ![profiles](../graphics/Lab1/PCS_Welcome.gif) 
 >
 > 4. Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question.
 > 
@@ -138,7 +138,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 > 
 > 6. Click *Next**. You can ignore **Error Handling** configuration page. Click **Save**
 > 
->   ![profiles](../graphics/Lab1/PCS_questions.gif) 
+>    ![profiles](../graphics/Lab1/PCS_questions.gif) 
 > 
 </details>
 
@@ -164,7 +164,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     >
     > Connect **FeedbackSet** to the front of the **SetVariable** node
 
-  ![profiles](../graphics/Lab1/PCS_SetVar.gif)
+    ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
 3. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Main Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
 
@@ -192,7 +192,9 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     >
     > Connect **PlayMessage** created to **DisconnectCall** node
     >       
-![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
+
+  ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
+
 5. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
 
