@@ -93,22 +93,22 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
 ### Section to expand/collapse
 > **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
-
-Supported Survey Question Types in Webex Contact Center
-
-1. **Customer Satisfaction (CSAT)**:
-    - Purpose: Measure satisfaction with a specific interaction or service.
-    - Example Question: "On a scale of 1 to 5, how satisfied are you with the service you received today?"
-    - Use Case: Assess overall satisfaction at the end of a call or interaction.
-2. **Customer Effort Score (CES)**:
-    - Purpose: Evaluate the ease of resolving a customer's issue or completing a task.
-    - Example Question: "On a scale of 1 to 5, how easy was it to complete your task today?"
-    - Use Case: Identify pain points in the customer journey or process efficiency.
-3. **Net Promoter Score (NPS)**:
-    - Purpose: Measure customer loyalty and the likelihood of recommending the service.
-    - Example Question: "On a scale of 0 to 10, how likely are you to recommend our service to a friend or colleague?"
-    - Use Case: Gauge long-term customer loyalty and brand advocacy.
-</details>
+> 
+> Supported Survey Question Types in Webex Contact Center
+> 
+> 1. **Customer Satisfaction (CSAT)**:
+>     - Purpose: Measure satisfaction with a specific interaction or service.
+>     - Example Question: "On a scale of 1 to 5, how satisfied are you with the service you received today?"
+>     - Use Case: Assess overall satisfaction at the end of a call or interaction.
+> 2. **Customer Effort Score (CES)**:
+>     - Purpose: Evaluate the ease of resolving a customer's issue or completing a task.
+>     - Example Question: "On a scale of 1 to 5, how easy was it to complete your task today?"
+>     - Use Case: Identify pain points in the customer journey or process efficiency.
+> 3. **Net Promoter Score (NPS)**:
+>     - Purpose: Measure customer loyalty and the likelihood of recommending the service.
+>     - Example Question: "On a scale of 0 to 10, how likely are you to recommend our service to a friend or colleague?"
+>   - Use Case: Gauge long-term customer loyalty and brand advocacy.
+> </details>
 
 ### Pre-configured entities:        
      
