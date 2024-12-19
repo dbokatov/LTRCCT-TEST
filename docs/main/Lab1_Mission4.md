@@ -112,9 +112,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
 ### Pre-configured entities:        
      
-> Activity Name: **FeedbackSet**
->
-> Survey: **CiscoLive2025_PCS**
+> Survey: **PCS-2025**
 >
 > System defined GlobalVariable: **Global_FeedbackSurveyOptIn**. 
 >
@@ -123,12 +121,36 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to Configuration section
 
 > **<details><summary>Create your own Survey<span style="color: orange;">[Optional]</span></summary>**
-... To Add Survey creation steps...
+> 
+> 1. In Control Hub -> Contact Center open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
+> 
+> 2. Enter survey name in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
+>
+>   ![profiles](../graphics/Lab1/PCS1.gif) 
+>
+> 3. Edit **Welcome note** and **Thank you note** by uploading the following files. Download files to your desktop prior uploading to survey. 
+>
+>   [profiles](../graphics/Lab1/PCS_Welcome.gif) 
+>
+> 4. Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question.
+> 
+> 5. Upload respective audio prompts. Prompts can be downloaded by clicking on the following links.
+> 
+> 6. Click *Next**. You can ignore **Error Handling** configuration page. Click **Save**
+> 
+>   ![profiles](../graphics/Lab1/PCS_questions.gif) 
+> 
 </details>
 
 ### Configuration
 1. Explore preconfigured Survey 
-2. Open you <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy> and add Set Variable node:
+  ![profiles](../graphics/Lab1/PCS_Explore.gif)
+
+2. Open you <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+  ![profiles](../graphics/Lab1/PCS_addGV.gif)
+
+
+3. Drag Set Variable node to canvas:
 
     > Activity Name: **FeedbackSet**
     >
@@ -141,13 +163,16 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     > Connect **NewPhoneContact** to the front of the **NewNumber** node
     >
     > Connect **FeedbackSet** to the front of the **SetVariable** node
-        
-3. Open Event tab and delete **EndFlow_xkf** to which **HTTPRequest** is connected to.
+
+  ![profiles](../graphics/Lab1/PCS_SetVar.gif)
+
+3. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Main Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
+
 4. Drag **FeedbackV2**, **PlayMessage** and **DisconnectCall**
     
     **FeedbacV2**
     
-    > SurveyMethod -> VoiceBased:  **CiscoLive2025_PCS**
+    > SurveyMethod -> VoiceBased:  **PCS-2025**
     >        
     > Connect **HTTPRequest** to **FeedbackV2** node
     >
@@ -167,7 +192,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     >
     > Connect **PlayMessage** created to **DisconnectCall** node
     >       
-            
+![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
 5. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
 
@@ -175,7 +200,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com** and become Available 
 2. Make a test call and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 
-4. Now the caller should hear prompts configured in **CiscoLive2025_PCS**. Complete the survey.
+4. Now the caller should hear prompts configured in **PCS-2025**. Complete the survey.
 5. To check Survey responses got to ***Control Hub -> Contact Center -> Surveys***. For **CiscoLive2025_PCS** click on Download and select Survey response period get a CSV file with provided answers.
     
     !!! Note
