@@ -98,19 +98,19 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
 
 2. So far we have already made couple of calls so you can select latest by clicking on any interaction.
 
-    !!! Note
-       - You can search your call by Intercation ID
-       - Filter by Date Range and by Label
+  !!! Note
+      - You can search your call by Intercation ID
+      - Filter by Date Range and by Label
 
 3. Observe the execution path, with visual indicators highlighting the flow nodes being executed.
-4. By Clicking on each Activity Name you will see it's details. ***Examples: Entry point ID, Flow Label, DNIS, selected Business Hours, also TTS value and what events were triggered.***
+4. By clicking on each activity name you will see it's details. ***Examples: Entry point ID, Flow Label, DNIS, selected Business Hours, also TTS value and what events were triggered.***
 
     ![profiles](../graphics/Lab1/FlowDebug1.gif)
 
 5. Spend some time to explore the tool. Identify bottlenecks, loops, or errors if any. 
 6. As an option, you can break something in your flow and see how Debug tool shows that error.
 
-By leveraging the Debug Tool effectively, you can ensure your call flows function as intended, providing a seamless experience for both customers and agents.
+By leveraging the **Debug Tool** effectively, you can ensure your call flows function as intended, providing a seamless experience for both customers and agents.
 
 ---
 
@@ -127,21 +127,26 @@ Flow Analytics feature is designed to provide flow developer, administrators and
 ### Why Flow Analytics Important
 
 1. **Performance Monitoring**: Tracks key metrics, such as flow usage, execution frequency, and processing times, helping you assess flow efficiency.
-2. **Behavior Analysis**: Identifies patterns in customer interactions and highlights potential issues, such as abandoned calls or long routing times.
+2. **Behavior Analysis**: Identifies patterns in customer interactions and highlights potential issues, such as abandoned calls or potential loops.
 3. **Proactive Optimization**: Offers data-driven insights to fine-tune flow configurations, ensuring optimal performance and alignment with business objectives.
 
 ### How to Use the Flow Analytics Tool
 
 1. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** in Flow Designer and navigate to the Flow Analytics Tool.
 
-2. Specify a DateTime range for the report. All calls we made happened today hence select Today option.
+2. Specify a DateTime range for the report. All calls we made happened today hence select **Today** option.
 
 3. Review visualizations and reports showing flow metrics, such as:
-  - Total flow Executions
-  - Execution paths and their frequency
-  - Avarage flow duraion
-  - Average activities per contact
-  - Activity errors | Activity error %
+    
+    - Total flow Executions
+    
+    - Execution paths and their frequency
+    
+    - Avarage flow duraion
+    
+    - Average activities per contact
+    
+    - Activity errors | Activity error %
 
     ![profiles](../graphics/Lab1/FlowAnalytics1.gif)
 
