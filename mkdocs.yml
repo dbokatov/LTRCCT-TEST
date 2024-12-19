@@ -97,23 +97,23 @@ nav:
       - Flow Designer Overview: ./main/FlowDesignerOverview.md
   - Main Labs:
       - Lab Guide:
-            - "Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1.md
-            - "Mission 1: Using Business Hours to add flexibility": ./main/Lab1_Mission1.md
-            - "Mission 2: Adding Call-back functionality to your flow": ./main/Lab1_Mission2.md
-            - "Mission 3: Work with Event Flow": ./main/Lab1_Mission3.md
-            - "Mission 4: Post Call Survey": ./main/Lab1_Mission4.md
-            - "Mission 5: Use Flow Analytics": ./main/Lab1_Mission5.md
+            - [Done] "Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1.md
+            - [Done] "Mission 1: Using Business Hours to add flexibility": ./main/Lab1_Mission1.md
+            - [Done] "Mission 2: Adding Call-back functionality to your flow": ./main/Lab1_Mission2.md
+            - [Done] "Mission 3: Work with Event Flow": ./main/Lab1_Mission3.md
+            - [Done] "Mission 4: Post Call Survey": ./main/Lab1_Mission4.md
+            - "Mission 5: Use Flow Analytics and Debug": ./main/Lab1_Mission5.md
             - "Mission 6: AI in Action (Scripted Agent)": ./main/Lab1_Mission6.md
             - "Mission 7: AI in Action (Autonomous Agent)": ./main/Lab1_Mission7.md
       - Conclusion: ./main/conclusion.md
   - Advanced Labs:
       - Lab Guide:
-            - "Advacned Call Routing and Flow Simplification by using API Integration": ./main/Lab2.md
-            - "Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
-            - "Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
+            - [Done] "Advacned Call Routing and Flow Simplification by using API Integration": ./main/Lab2.md
+            - [Done] "Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
+            - [Done] "Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
             - "Mission 3: Preventing Callback duplication": ./main/Lab2_Mission3.md
             - "Mission 4: Last Agent Routing": ./main/Lab2_Mission4.md
-            - "Mission 5: Agent Greeting": ./main/Lab2_Mission5.md
-            - "Mission 6: Using Custom Code Execution Node": ./main/Lab2_Mission6.md
+            - [Pending PM] "Mission 5: Agent Greeting": ./main/Lab2_Mission5.md
+            - [Pending PM] "Mission 6: Using Custom Code Execution Node": ./main/Lab2_Mission6.md
   - Quick Links: quicklinks.md
 
