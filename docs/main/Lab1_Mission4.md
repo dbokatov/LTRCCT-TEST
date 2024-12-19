@@ -122,21 +122,21 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
 > **<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
 > 
-> 1. In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
+> - In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
 > 
-> 2. Enter survey name in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
+> - Enter survey name in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
 >
 >    ![profiles](../graphics/Lab1/PCS1.gif) 
 >
-> 3. Edit **Welcome note** and **Thank you note** by uploading the following files. Download files to your desktop prior uploading to survey. 
+> - Edit **Welcome note** and **Thank you note** by uploading the following files. Download files to your desktop prior uploading to survey. 
 >
 >    ![profiles](../graphics/Lab1/PCS_Welcome.gif) 
 >
-> 4. Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question.
+> - Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question.
 > 
-> 5. Upload respective audio prompts. Prompts can be downloaded by clicking on the following links.
+> - Upload respective audio prompts. Prompts can be downloaded by clicking on the following links.
 > 
-> 6. Click *Next**. You can ignore **Error Handling** configuration page. Click **Save**
+> - Click *Next**. You can ignore **Error Handling** configuration page. Click **Save**
 > 
 >    ![profiles](../graphics/Lab1/PCS_questions.gif) 
 > 
@@ -193,7 +193,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     > Connect **PlayMessage** created to **DisconnectCall** node
     >       
 
-  ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
+    ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
 
 5. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
