@@ -138,7 +138,7 @@ query($from: Long!, $to: Long!)
     filter: {
       and: [
        { callbackData: { equals: { callbackNumber: "14085267209" } } }
-       { lastEntryPoint: { name: { equals: "140_Channel" } } }
+       { lastEntryPoint: { name: { equals: "**<w class = "attendee_out">attendeeID</w>_Channel**" } } }
       ]
     }
   ) {
