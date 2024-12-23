@@ -219,18 +219,18 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 
 8. Add **PlayMessage** and **DisconnectContact** nodes: 
     
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: Cisco Cloud Text-to-Speech
-    >
-    > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**
-    >
-    > Delete the Selection for Audio File
-    >
-    > Connect **True** exit path of **Condition** node created in step 7 to **PlayMessage** node
-    > Connect this **PlayMessage** to **DisconnectCall** node
+      > Enable Text-To-Speech
+      >
+      > Select the Connector: Cisco Cloud Text-to-Speech
+      >
+      > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**
+      >
+      > Delete the Selection for Audio File
+      >
+      > Connect **True** exit path of **Condition** node created in step 7 to **PlayMessage** node
+      > Connect this **PlayMessage** to **DisconnectCall** node
 
-    ![profiles](../graphics/Lab2/L2M3-5.gif)
+      ![profiles](../graphics/Lab2/L2M3-5.gif)
 
 9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
