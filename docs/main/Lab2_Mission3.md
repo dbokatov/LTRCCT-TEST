@@ -203,14 +203,14 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 
  7. Add a **Condition** node
     
-    > 
-    > Connect **Set Variable** created in previous step to this node
-    >
-    > Connect **False** exit path to existing CallBack node
-    > 
-    > We will connect **True** exit path in next step
-    >
-    > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
+      > 
+      > Connect **Set Variable** created in previous step to this node
+      >
+      > Connect **False** exit path to existing CallBack node
+      > 
+      > We will connect **True** exit path in next step
+      >
+      > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
     
       !!! Note:
           Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on. In our case the expression returns True only when httpStatusCode equals **200**, callbackStatus is **Not Processed** and callbackConnectTime is **-1**
