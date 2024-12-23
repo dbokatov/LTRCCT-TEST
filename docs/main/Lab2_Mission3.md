@@ -118,6 +118,8 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
       >
       > Default Value: **empty**
 
+      ![profiles](../graphics/Lab2/L2M3-1.gif)
+
 5. Add an HTTP Request node for our query
     
     >
@@ -125,7 +127,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     >
     > We will connct HTTP node in next step
     >
-    > Activity Label: HTTPRequest_CallBackSearch
+    > Activity Label: **HTTPRequest_CallBackSearch**
     >
     > Select Use Authenticated Endpoint
     >
@@ -183,6 +185,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > - Output Variable: `callbackConnectTime`
     > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`</copy>
     >
+      ![profiles](../graphics/Lab2/L2M3-2.gif)
 ---
 
 6. Add **Set Veriable** node
@@ -190,28 +193,31 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     >
     > Connect **HTTPRequest_CallBackSearch** to this node
     >
-    > We will connct Set Variable node in next step
+    > We will connct **Set Variable** node in next step
     >
     > Variable: **searchresult**
     >
     > Set To Variable: **HTTPRequest_CallBackSearch**
     >
+    ![profiles](../graphics/Lab2/L2M3-3.gif)
 
- 7. Add a Condition node
+ 7. Add a **Condition** node
     
     > 
-    > Connect Set Variable created in previous step to this node
+    > Connect **Set Variable** created in previous step to this node
     >
     > Connect **False** exit path to existing CallBack node
     > 
     > We will connect **True** exit path in next step
     >
     > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
-    >
-    >  !!! Note:
-           Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on.
+    
+    !!! Note:
+        Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on. In our case the expression returns True only when httpStatusCode equals **200**, callbackStatus is **Not Processed** and callbackConnectTime is **-1**
 
-8. Add **PlayMessage** and **DisconnectContact** nodes:
+    ![profiles](../graphics/Lab2/L2M3-3.gif)
+
+8. Add **PlayMessage** and **DisconnectContact** nodes: 
     
     > Enable Text-To-Speech
     >
@@ -224,6 +230,8 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Connect **True** exit path of **Condition** node created in step 7 to **PlayMessage** node
     > Connect this **PlayMessage** to **DisconnectCall** node
 
+    ![profiles](../graphics/Lab2/L2M3-5.gif)
+
 9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
 ## Testing
@@ -232,6 +240,11 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 2. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**
 3. While keeping you agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**.
 4. You should hear a message configured in Step 8 of the current mission.
-5. Click on Analyze to visualy observe the call flow.
+5. Click on Analyze to visualy observe the call flow. Make sure you're viewing latest Published Version.
+6. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
+7. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debuger. 
+8. Click on SetVariable, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the step 6 of the cusrrent mission configuration. 
+
+![profiles](../graphics/Lab2/L2M3-6.gif)
 
 **Congratulations on completing another mission.**
