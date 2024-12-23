@@ -96,14 +96,14 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Type: **String**
     >
     > Default Value: **empty**
-    > ---
+    
     >
     > Name: **callbackConnectTime**
     >
     > Type: **String**
     >
     > Default Value: **empty**
-    > ---
+    
     >
     > Name: **searchresult**
     >
@@ -126,7 +126,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     >
     > Copy this GraphQL query into the request body:
 ```JSON
-{"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"14085267209\" } } }\n       { lastEntryPoint: { name: { equals: \"**<w class = "attendee_out">attendeeID</w>_Channel**\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
+{"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"14085267209\" } } }\n       { lastEntryPoint: { name: { equals: \"${attendeeID}_Channel\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}", "attendeeID": "<w class="attendee_out">attendeeID</w>"}}
 ```
 > <details><summary>Expanded Query For Understanding (optional)</summary>
 ```GraphQL
