@@ -85,7 +85,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
       This task relies on completing Mission 2 of the Main Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
 
 
-## Build:
+## Build
 
 1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to On
 
