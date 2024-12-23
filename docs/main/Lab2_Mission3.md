@@ -125,60 +125,61 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Content Type: Application/JSON
     >
     > Copy this GraphQL query into the request body:
-```JSON
-{"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"14085267209\" } } }\n       { lastEntryPoint: { name: { equals: \"${attendeeID}_Channel\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}", "attendeeID": "<w class="attendee_out">attendeeID</w>"}}
-```
-> <details><summary>Expanded Query For Understanding (optional)</summary>
-```GraphQL
-query($from: Long!, $to: Long!)
-{
-  taskDetails(
-      from: $from
-      to: $to
-    filter: {
-      and: [
-       { callbackData: { equals: { callbackNumber: "14085267209" } } }
-       { lastEntryPoint: { name: { equals: "**<w class = "attendee_out">attendeeID</w>_Channel**" } } }
-      ]
-    }
-  ) {
-    tasks {
-      callbackData {
-        callbackRequestTime
-        callbackConnectTime
-        callbackNumber
-        callbackStatus
-        callbackOrigin
-        callbackType
+    ```JSON
+    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"{{NewNumber.DigitsEntered}}\" } } }\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
+    ```
+    > <details><summary>Expanded Query For Understanding (optional)</summary>
+    ```GraphQL
+    query($from: Long!, $to: Long!)
+    {
+      taskDetails(
+          from: $from
+          to: $to
+        filter: {
+          and: [
+           { callbackData: { equals: { callbackNumber: "{{NewNumber.DigitsEntered}}" } } }
+           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
+          ]
+        }
+      ) {
+        tasks {
+          callbackData {
+            callbackRequestTime
+            callbackConnectTime
+            callbackNumber
+            callbackStatus
+            callbackOrigin
+           callbackType
+          }
+           lastEntryPoint {
+            id
+            name
+          }
+        }
       }
-       lastEntryPoint {
-        id
-        name
-      }
     }
-  }
-}
-```
-</details>
+    ```
+    </details>
 
-> Parse Settings:
->
-> Content Type: JSON
->
-> - Output Variable: `callbackStatus`
-> - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackStatus`</copy>
->
-> - Output Variable: `callbackConnectTime`
-> - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`</copy>
->
+    > Parse Settings:
+    >
+    > Content Type: JSON
+    >
+    > - Output Variable: `callbackStatus`
+    > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackStatus`</copy>
+    >
+    > - Output Variable: `callbackConnectTime`
+    > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`</copy>
+    >
 ---
 
 6. Add a Condition node
-> Connect the output node edge from teh HTTP Request node to this node
-> 
-> Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_g1g.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
->
-> Connect the False node in a existing **Callback** node step.
->
-> We will connect the True node in a future step.
->
+
+    > Connect the output node edge from teh HTTP Request node to this node
+    > 
+    > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
+    >
+    > Connect the False node in a existing **Callback** node step.
+    >
+    > We will connect the True node in a future step.
+    >
