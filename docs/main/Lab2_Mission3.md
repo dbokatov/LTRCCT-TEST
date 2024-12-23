@@ -120,7 +120,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 
       ![profiles](../graphics/Lab2/L2M3-1.gif)
 
-5. Add an HTTP Request node for our query
+3. Add an **HTTP Request** node for our query
     
     >
     > Connect VeriNumber Option 1 to this HTTP node
@@ -188,7 +188,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
       ![profiles](../graphics/Lab2/L2M3-2.gif)
 ---
 
-6. Add **Set Veriable** node
+4. Add **Set Veriable** node
     
     >
     > Connect **HTTPRequest_CallBackSearch** to this node
@@ -201,7 +201,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     >
     ![profiles](../graphics/Lab2/L2M3-3.gif)
 
- 7. Add a **Condition** node
+5. Add a **Condition** node
     
       > 
       > Connect **Set Variable** created in previous step to this node
@@ -218,7 +218,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 
     ![profiles](../graphics/Lab2/L2M3-3.gif)
 
-8. Add **PlayMessage** and **DisconnectContact** nodes: 
+6. Add **PlayMessage** and **DisconnectContact** nodes: 
     
       > Enable Text-To-Speech
       >
@@ -228,24 +228,24 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
       >
       > Delete the Selection for Audio File
       >
-      > Connect **True** exit path of **Condition** node created in step 7 to **PlayMessage** node
+      > Connect **True** exit path of **Condition** node created in **Step 7** to **PlayMessage** node
       > Connect this **PlayMessage** to **DisconnectCall** node
 
       ![profiles](../graphics/Lab2/L2M3-5.gif)
 
-9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
 ## Testing
     
 1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
 2. Make sure your **Main_Flow_<w class = "attendee_out">attendeeID</w>** is assigned to **<w class = "attendee_out">attendeeID</w>_Channel**. If not, do that (refer to previous very first Mission where this step was explained in details).
 3. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**
-4. While keeping you agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**.
-5. You should hear a message configured in Step 8 of the current mission.
-6. Click on Analyze to visualy observe the call flow. Make sure you're viewing latest Published Version.
+4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**.
+5. You should hear a message configured in **Step 6** of the current mission.
+6. Click on **Analyze** to visualy observe the call flow. Make sure you're viewing latest Published Version.
 7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
 8. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debuger. 
-9. Click on SetVariable, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the step 6 of the cusrrent mission configuration. 
+9. Click on **SetVariable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the cusrrent mission configuration. 
 
 ![profiles](../graphics/Lab2/L2M3-6.gif)
 
