@@ -92,6 +92,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 2. Add 3 new flow variables: 
 
   - Callback Status variable:
+
     >
     > Name: **callbackStatus**
     >
@@ -100,6 +101,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Default Value: **empty**
     
   - Callback Connect Time variable:
+
     >
     > Name: **callbackConnectTime**
     >
@@ -108,6 +110,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Default Value: **empty**
     
   - Search Result variable:
+
     >
     > Name: **searchresult**
     >
@@ -116,6 +119,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Default Value: **empty**
 
 5. Add an HTTP Request node for our query
+
     >
     > Connect VeriNumber Option 1 to this HTTP node
     >
@@ -203,8 +207,8 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     >
     > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
     >
-    !!! Note:
-        Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on.
+      !!! Note:
+          Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on.
 
 8. Add **PlayMessage** and **DisconnectContact** nodes:
     
