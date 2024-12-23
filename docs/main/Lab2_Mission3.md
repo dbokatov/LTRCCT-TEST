@@ -91,12 +91,15 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 
 2. Add 3 new flow variables: 
 
+  - Callback Status variable:
+    >
     > Name: **callbackStatus**
     >
     > Type: **String**
     >
     > Default Value: **empty**
     
+  - Callback Connect Time variable:
     >
     > Name: **callbackConnectTime**
     >
@@ -104,6 +107,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     >
     > Default Value: **empty**
     
+  - Search Result variable:
     >
     > Name: **searchresult**
     >
@@ -112,7 +116,12 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Default Value: **empty**
 
 5. Add an HTTP Request node for our query
-    > Connect the output node edge from the Play Message node to this node
+    >
+    > Connect VeriNumber Option 1 to this HTTP node
+    >
+    > We will connct HTTP node in next step
+    >
+    > Activity Label: HTTPRequest_CallBackSearch
     >
     > Select Use Authenticated Endpoint
     >
@@ -125,6 +134,7 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
     > Content Type: Application/JSON
     >
     > Copy this GraphQL query into the request body:
+    >
     ```JSON
     {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"{{NewNumber.DigitsEntered}}\" } } }\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
     ```
@@ -163,23 +173,60 @@ In this task, you will enhance the functionality of the main flow 140 by introdu
 
     > Parse Settings:
     >
-    > Content Type: JSON
-    >
+    > - Content Type: JSON
     > - Output Variable: `callbackStatus`
     > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackStatus`</copy>
-    >
     > - Output Variable: `callbackConnectTime`
     > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`</copy>
     >
 ---
 
-6. Add a Condition node
+6. Add **Set Veriable** node
+    >
+    > Connect **HTTPRequest_CallBackSearch** to this node
+    >
+    > We will connct Set Variable node in next step
+    >
+    > Variable: **searchresult**
+    >
+    > Set To Variable: **HTTPRequest_CallBackSearch**
+    >
 
-    > Connect the output node edge from teh HTTP Request node to this node
+ 7. Add a Condition node
+    
     > 
+    > Connect Set Variable created in previous step to this node
+    >
+    > Connect **False** exit path to existing CallBack node
+    > 
+    > We will connect **True** exit path in next step
+    >
     > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
     >
-    > Connect the False node in a existing **Callback** node step.
+    !!! Note:
+        Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on.
+
+8. Add **PlayMessage** and **DisconnectContact** nodes:
+    
+    > Enable Text-To-Speech
     >
-    > We will connect the True node in a future step.
+    > Select the Connector: Cisco Cloud Text-to-Speech
     >
+    > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**
+    >
+    > Delete the Selection for Audio File
+    >
+    > Connect **True** exit path of **Condition** node created in step 7 to **PlayMessage** node
+    > Connect this **PlayMessage** to **DisconnectCall** node
+
+9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+
+## Testing
+    
+1. Make sure you're logged in as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+2. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**
+3. While keeping you agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**.
+4. You should hear a message configured in Step 8 of the current mission.
+5. Click on Analyze to visualy observe the call flow.
+
+**Congratulations on completing another mission.**
