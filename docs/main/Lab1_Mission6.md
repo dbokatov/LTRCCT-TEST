@@ -120,32 +120,32 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 2. Select Start Fresh and name the new flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**.
 
- ![Profiles](../graphics/Lab1/L1M6_TaskBot_CreateFlow.gif)  
+   ![Profiles](../graphics/Lab1/L1M6_TaskBot_CreateFlow.gif)  
 
 3. Make sure the Edit button at the top is set to "ON". Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
 
     !!! Note
         Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> `VirtualAgent` also present on the Activity Library for Backward Compatability.
 
-  > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node
-  >
-  > Connect the Handled outputs to **DisconnectContact** 
-  >
-  > Connect the Escalated outputs to **DisconnectContact** 
-  >
-  > Connect the Errored outputs to **DisconnectContact** 
-  >
-  > Set Static Contact Center AI Config
-  >
-  > Contact Center AI Config: **Webex CCAI Config**
-  >
-  > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025**
+    > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node
+    >
+    > Connect the Handled outputs to **DisconnectContact** 
+    >
+    > Connect the Escalated outputs to **DisconnectContact** 
+    >
+    > Connect the Errored outputs to **DisconnectContact** 
+    >
+    > Set Static Contact Center AI Config
+    >
+    > Contact Center AI Config: **Webex CCAI Config**
+    >
+    > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025**
 
 
 4. On bottom right corner toggle ***Validation*** from ***Off*** to ***On***
 5.  Click **Publish** Flow. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
 
- ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowAddVA.gif)  
+   ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowAddVA.gif)  
 
 6. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
 7. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
@@ -155,7 +155,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     > Version Label: ***Latest***
 
- ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
+   ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
 
 
 9. Dial Support Number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** to test the Virtual Agent over a voice call.
