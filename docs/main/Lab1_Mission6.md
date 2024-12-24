@@ -165,39 +165,33 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 ### Updating Bot Responses
 
 !!! note "Step Objective"
-    In this Step:
+    In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
 
-    1. We will learn how to update bot responses and test these changes both in preview mode and by making a live call , Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
+1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
-- From the Control Hub Go to Contact center and the under Quick Links, open the `Webex AI Agent`. If you encounter an authentication error due to inactivity, log out from the control hub, log back in, and then access the Webex `Webex AI Agent`.
+2. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
-![Profiles](../graphics/temp/1_CH2Bot.gif)  
-
-
-- Click on the bot  Wx1\_bot\_<w class = "attendee_out">attendeeID</w>  that you created earlier.
-- Go to the Responses tab on the left-hand panel.
-- Select the Welcome message.
-
-![Profiles](../graphics/temp/5-ChangeResp1.gif)  
+    ![Profiles](../graphics/Lab1/L1M6_OpenWebexAI.gif)  
 
 
-- Update the text to "Welcome to Cumulus Healthcare. How may I assist you today?" for the Default (web) channel.
+3. Click on the bot **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025** that you created earlier. Then go to the **Responses** tab on the left-hand panel.
+    
+    >
+    > Select the **Welcome message** in *Default message**
+    > Update the text to **Welcome to Cumulus Healthcare. How may I assist you today?** for the Default (web) channel.
+    > Navigate to the Voice Channel and update the text to **Welcome to Cumulus Healthcare. How may I assist you today?**
+    > Click on the update button to confirm the changes. Make the bot live by clicking on the `Make Live` button
 
-- Navigate to the Voice Channel and update the text to "Welcome to Cumulus Healthcare. How may I assist you today?"
-
-- Click on the update button to confirm the changes.Make the bot live by clicking on the `Make Live` button
-
-
-![Profiles](../graphics/temp/5-ChangeResp2.gif)  
-
-
-- click on `Preview` to test if the Greeting has been successfully updated.
-
-![Profiles](../graphics/temp/5-Validatechange.gif)  
+    ![Profiles](../graphics/Lab1/L1M6_UpdateResponse.gif) 
 
 
+4. Click on `Preview` to test if the Greeting has been successfully updated.
 
-### Step 4: Adding New Intents & Entities
+    ![Profiles](../graphics/Lab1/L1M6_UpdateResponsePreview.gif)
+
+---
+
+### Adding New Intents & Entities
 
 <!-- md:option type:note -->
 !!! note "Step Objective"
