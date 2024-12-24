@@ -198,7 +198,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 <!-- md:option type:note -->
 !!! note "Step Objective"
-   In this step, we will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a broader range of user inputs. These updates will be tested in both preview mode and during a live call to confirm that the bot correctly identifies the new intents and entities and provides appropriate responses.
+    In this step, we will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a broader range of user inputs. These updates will be tested in both preview mode and during a live call to confirm that the bot correctly identifies the new intents and entities and provides appropriate responses.
 
 
 1. To expedite the completion of this lab, it is recommended to remove all languages except the default language(English), and proceed with the lab.
@@ -217,7 +217,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     - ***I would like a referral for a cardiologist.***
     - ***I need a referral to visit a neurologist.***
 
-   ![Profiles](../graphics/Lab1/L1M6_AddUtterance.gif) 
+    ![Profiles](../graphics/Lab1/L1M6_AddUtterance.gif) 
 
 
 4. Click on **Link entity** and add **patient phone number** as an entity.
