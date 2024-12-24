@@ -103,17 +103,18 @@ nav:
             - "[Done] Mission 3: Work with Event Flow": ./main/Lab1_Mission3.md
             - "[Done] Mission 4: Post Call Survey": ./main/Lab1_Mission4.md
             - "[Done] Mission 5: Using Flow Designer Tools": ./main/Lab1_Mission5.md
-            - "Mission 6: AI in Action (Scripted Agent)": ./main/Lab1_Mission6.md
-            - "Mission 7: AI in Action (Autonomous Agent)": ./main/Lab1_Mission7.md
+            - "[Done] Mission 6: AI in Action (Scripted Agent)": ./main/Lab1_Mission6.md
+            - "[New idea] Mission 7: Seamless AI to Human Agent Handoffs": ./main/Lab1_Mission8.md
+            - "Mission 8: AI in Action (Autonomous Agent)": ./main/Lab1_Mission8.md
       - Conclusion: ./main/conclusion.md
   - Advanced Labs:
       - Lab Guide:
-            - "**[Done]** Advacned Call Routing and Flow Simplification by using API Integration": ./main/Lab2.md
-            - "**[Done]** Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
-            - "**[Done]** Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
-            - "**[Done]** Mission 3: Preventing Callback duplication": ./main/Lab2_Mission3.md
+            - "[Pending GIFs] Advacned Call Routing and Flow Simplification by using API Integration": ./main/Lab2.md
+            - "[Done] Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
+            - "[Done] Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
+            - "[Done] Mission 3: Preventing Callback duplication": ./main/Lab2_Mission3.md
             - "[Pending GIFs] Mission 4: Last Agent Routing": ./main/Lab2_Mission4.md
-            - "**[Pending PM]** Mission 5: Agent Greeting": ./main/Lab2_Mission5.md
-            - "**[Pending PM]** Mission 6: Using Custom Code Execution Node": ./main/Lab2_Mission6.md
+            - "[Pending PM] Mission 5: Agent Greeting": ./main/Lab2_Mission5.md
+            - "[Pending PM] Mission 6: Using Custom Code Execution Node": ./main/Lab2_Mission6.md
   - Quick Links: quicklinks.md
 
