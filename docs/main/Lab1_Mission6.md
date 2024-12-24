@@ -268,61 +268,48 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 !!! note "Step Objective"
     In this step, we will learn how to enhance the bot's capabilities by adding training data using generative AI and validate the changes by making a call.
 
-1. Return to the "Referral Request" intent that you created in the previous exercise.
+1. Return to the **Referral Request** intent that you created in the previous exercise.
 
 2. Click on the "Generate" button to utilize Generative AI for creating additional training phrases.
 
-3. Enter a description such as "generate intents for requesting a referral to different doctor specialties from primary care." Set the Number of Variants to "10", which will determine the number of new phrases to be generated.
+3. Enter a description such as "generate intents for requesting a referral to different doctor specialties from primary care." Set the Number of Variants to **10**, which will determine the number of new phrases to be generated.
 
-![Profiles](../graphics/temp/7-CreateGenAIIntent.gif)  
-
-
-- Once the new phrases are generated, click on the "Save" button located in the top right corner to add them to your intent.
+     ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif)  
 
 
-- After saving, navigate back to the Training tab and click on the "Train" button to incorporate the new generative data into the bot's model.
+4. Once the new phrases are generated, click on the **Save** button located in the top right corner to add them to your intent.
+5. Navigate back to the Training tab and click on the **Train** button to incorporate the new generative data into the bot's model.
+6. Add a comment such as "added generative training data" to keep track of this specific update.
+7. Click on the **Make Live** button situated in the top right corner to apply the changes to the live version of your bot.
+8. Confirm the update by clicking on **Make Live** in the modal that appears.
 
+     ![Profiles](../graphics/Lab1/L1M6_TrainNMakeLive.gif)  
 
-- Add a comment such as "added generative training data" to keep track of this specific update.
+9. Test the updated bot flow by using the **Preview** button and inputting queries related to the new training data.
 
-- Click on the "Make Live" button situated in the top right corner to apply the changes to the live version of your bot.
+     ![Profiles](../graphics/Lab1/L1M6_PreviewNTest.gif)
 
+---
 
-- Confirm the update by clicking on "Make Live" in the modal that appears.
-
-![Profiles](../graphics/temp/7-TrainNMakeLive.gif)  
-
-
-- Test the updated bot flow by using the "Preview" button and inputting queries related to the new training data.
-
-![Profiles](../graphics/temp/7-PreviewNTest.gif)  
-
-
-### Step 6: Bot Transcripts & Analytics
+### Bot Transcripts & Analytics
 
 !!! note "Step Objective"
-    In this Step:
-
-    1. We will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
+    In this Step We will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
     
 
-- Click on "Sessions" in the left-hand panel of your bot builder interface to view all the call history. Click on any Session ID to delve into a more detailed analysis of that particular interaction.
+1. Click on **Sessions** in the left-hand panel of your bot builder interface to view all the call history. Click on any Session ID to delve into a more detailed analysis of that particular interaction.
 
-- If you encounter encrypted content, click on "Decrypt Content" to proceed with the review.
+2. If you encounter encrypted content, click on **Decrypt Content** to proceed with the review.
 
-- Review the transcript for the selected interaction to gain insights into how the conversation unfolded.
+3. Review the transcript for the selected interaction to gain insights into how the conversation unfolded.
 
-![Profiles](../graphics/temp/8-AnalyzeSession.gif)  
+    ![Profiles](../graphics/Lab1/L1M6_AnalyzeSession.gif)
 
+4. Click on individual messages from the user to examine the intents and entities identified by the Virtual Agent during the conversation.
 
-- Click on individual messages from the user to examine the intents and entities identified by the Virtual Agent during the conversation.
+5. By carefully analyzing these transcripts and analytics, you can identify areas for improvement, understand user behavior, and refine the Virtual Agent's performance accordingly. 
 
-
-- By carefully analyzing these transcripts and analytics, you can identify areas for improvement, understand user behavior, and refine the Virtual Agent's performance accordingly.
-
-![Profiles](../graphics/temp/8-AnzlyeDepDive.gif)  
-
-
+    ![Profiles](../graphics/Lab1/L1M6_AnalyzeDeepDive.gif)
 
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed the Cisco Virtual Assistant mission! 🎉🎉 </strong></p>
