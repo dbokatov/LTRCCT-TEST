@@ -195,94 +195,81 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 <!-- md:option type:note -->
 !!! note "Step Objective"
-    In this Step, 
-
-    1. We will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a wider range of user inputs. 
-
-    2. We will test these updates in both preview mode and through a live call, confirming that the bot correctly identifies the new intents and entities and provides appropriate responses.
+   In this step, we will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a broader range of user inputs. These updates will be tested in both preview mode and during a live call to confirm that the bot correctly identifies the new intents and entities and provides appropriate responses.
 
 
-To expedite the completion of this lab, it is recommended to remove all languages except the default language(English), and proceed with the lab.
-
-While the screenshots in this guide display all available languages, we advise you to retain only English for simplicity.
+1. To expedite the completion of this lab, it is recommended to remove all languages except the default language(English), and proceed with the lab.
 
 <!-- md:option type:warning -->
 !!! warning "README"
-    After disabling all the languages please make sure to hit on **Update bot** and you should see a green **`Bot updated`** message that confirms the action. 
+    After disabling all the languages please make sure to hit on **Save changes** and you should see a green **`Agent updated`** message that confirms the action. 
 
 
-![Profiles](../graphics/temp/Disable_Language.gif)  
-
-
+    ![Profiles](../graphics/Lab1/L1M6_LangRemoval.gif)
 
 
 
-- Navigate to the Training Tab from the left-hand panel and click on the "Create Intent" button located in the top right corner.
-
-
-- Add a new intent by providing the intent name as "ReferralRequest" and include the following two utterances:
+2. Navigate to the Training Tab from the left-hand panel and click on the "Create Intent" button located in the top right corner.
+3. Add a new intent by providing the intent name as "ReferralRequest" and include the following two utterances:
 
   - "I would like a referral for a cardiologist."
   - "I need a referral to visit a neurologist."
 
-![Profiles](../graphics/temp/6-CreateIntent.gif)  
+   ![Profiles](../graphics/Lab1/L1M6_AddUtterance.gif) 
 
 
-- Click on `Link entity` and add `patient phone number` as an entity.
+4. Click on `Link entity` and add `patient phone number` as an entity.
+    > Check the "Required" checkbox 
+    > Select the template key as `askPhoneNumber`, which will be used to prompt the patient for their phone number.
+    
 
-- Check the "Required" checkbox and select the template key as `askPhoneNumber`, which will be used to prompt the patient for their phone number.
+5. Again, click on `Link Entity` and add `patient dob` (date of birth) 
+    > 
+    > Check **Required** checkbox
+    > 
+    > Select the template key as "askPatientDob". When this intent is matched, it will trigger the Virtual Agent to ask the user to provide their phone number and date of birth for verification purposes.
 
-- Again, click on `Link Entity` and add `patient dob` (date of birth) as a required entity with the template key as "askPatientDob". When this intent is matched, it will trigger the Virtual Agent to ask the user to provide their phone number and date of birth for verification purposes.
-
-![Profiles](../graphics/temp/6-LinkIntent.gif)  
-
-
-- At the bottom of the `Final Template Key` section, click on `Create new`.
-
-- Create a new template with the name `ReferralResp` and with the text:
-
- "Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?"
-
- - Click on "Save".
+    ![Profiles](../graphics/Lab1/L1M6_AddLinkEntity.gif) 
 
 
+6. On the same page at the bottom, clivk on Response drop-down list with `Final Template Key` and scroll down to `Create new`.
 
-![Profiles](../graphics/temp/6-finalResp.gif)  
+    > 
+    > Template key: `ReferralResp`
+    > 
+    > Text Response (Optional): **Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?**
+    >
+    > Click **Create**
 
+ 7. Click on "Save".
 
-- Return to the Training tab and click on the `Train` button to update the bot's understanding with the new intent and entities.
-
-
-- Add a comment such as `Added referral request intent` to track the changes.
-
-- Click on `Make Live` to update the live version of the bot with these changes.
-
-- Provide a description for the update and choose `Make Live` or `Make Live both` if there are other unsaved changes pending.
-
-![Profiles](../graphics/temp/6-Train&makelive.gif)  
+    ![Profiles](../graphics/Lab1/L1M6_AddResponse.gif) 
 
 
-- Use the "Preview" feature to test the bot flow with the input query: "I need a referral for a cardiologist".
-- You can also test this interaction in voice mode by dialing the PSTN number assigned to your pod.
+8. Return to the Training tab and click on the `Train` button to update the bot's understanding with the new intent and entities.
+9. Add a comment such as `Added referral request intent` to track the changes.
+10. Click on `Make Live` to update the live version of the bot with these changes.
+11. Provide a description for the update and choose `Make Live` or `Make Live both` if there are other unsaved changes pending.
 
-![Profiles](../graphics/temp/6-testandvalidate .gif)  
+    ![Profiles](../graphics/Lab1/L1M6_Train&makelive.gif) 
 
+12. Use the **Preview** feature to test the bot flow with the input query: "I need a referral for a cardiologist".
+13. You can also test this interaction in voice mode by dialing the Supported Number assigned to your pod.
 
+    ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif) 
 
-### Step 5: Adding Training Data using Generative AI
+---
+
+### Adding Training Data using Generative AI
 
 !!! note "Step Objective"
-    In this Step, 
+    In this step, we will learn how to enhance the bot's capabilities by adding training data using generative AI and validate the changes by making a call.
 
-    1. We will learn how to enhance your bot's capabilities by adding training data using Generative AI
+1. Return to the "Referral Request" intent that you created in the previous exercise.
 
-    2. We will make a call to validate the change
+2. Click on the "Generate" button to utilize Generative AI for creating additional training phrases.
 
-- Return to the "Referral Request" intent that you created in the previous exercise.
-
-- Click on the "Generate" button to utilize Generative AI for creating additional training phrases.
-
-- Enter a description such as "generate intents for requesting a referral to different doctor specialties from primary care." Set the Number of Variants to "10", which will determine the number of new phrases to be generated.
+3. Enter a description such as "generate intents for requesting a referral to different doctor specialties from primary care." Set the Number of Variants to "10", which will determine the number of new phrases to be generated.
 
 ![Profiles](../graphics/temp/7-CreateGenAIIntent.gif)  
 
