@@ -89,120 +89,80 @@ This lab is designed to provide an in-depth understanding of the Webex AI  Agent
 
 ## Overview
 
-The exercises are designed to provide a hands-on understanding of creating Cisco Virtual Agents.
+The mission s designed to provide a hands-on understanding of creating Cisco Virtual Agents, covering key tasks such as creating a virtual agent using a template, integrating the bot with flow for voice calls, updating bot responses, adding new intents and entities, enhancing training data using generative AI, and leveraging bot transcripts and analytics for insights.
 
-- Step 1: Creating a Virtual Agent using a Template
-- Step 2: Integrating the bot with Flow for Voice call
-- Step 3: Updating Bot Responses
-- Step 4: Adding New Intents & Entities
-- Step 5: Adding Training Data using Generative AI
-- Step 6: Bot Transcripts & Analytics
-- Step 7: Generative Fallback with ChatGPT
+## Build
 
-## Step by Step Guide
+### Creating a AI Agent using a Template
 
-### Step 1: Creating a AI Agent using a Template
+1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
-<!-- md:option type:note -->
+2. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
-!!! note "Step Objective"
-    In this step, We will learned how to:
+  ![Profiles](../graphics/Lab2/L1M6_OpenWebexAI.gif)  
 
-    1) Create a Webex AI bot. 
+3. Click on **Create agent** to create a new bot. Select the **Appointment Booking** Template and click on **Next** button.
+4. Agent Name **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025** and click Create
+5. Make the bot live by clicking on the **Make Live** button on the top right.
+6. Enter **v1** in the popup modal which appears after clicking on **Make Live**.
 
-    2) Test the bot in preview mode to ensure proper functionality.
+ ![Profiles](../graphics/Lab2/L1M6_TaskBot_Create.gif)  
 
-- Log in to the Control Hub using the contact center `admin` credentials.
-- Go to Contact Center from the left side navigation panel, and under Quick Links, click on `Webex AI Agent`
+7. Click on the `Preview` button on the top right side to test the bot. Try the bot flow by typing "I would like to cancel an appointment" and continue the conversation.
 
+ ![Profiles](../graphics/Lab2/L1M6_TaskBot_Preview.gif)  
 
-![Profiles](../graphics/temp/1_CH2Bot.gif)  
+---
 
-- Click on "New Task Bot" to create a new bot.
-- Select the `Appointment Booking` Template and click on `Next` button
+### Integrating the Bot with Flow for Voice Calls
 
+1. In Control Hub navigate to **Flows**, click on ***Manage Flows*** dropdown list and select ***Create Flows***
 
-![Profiles](../graphics/temp/2_CreatingBot_1.gif)  
+2. Select Start Fresh and name the new flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**.
 
+ ![Profiles](../graphics/Lab2/L1M6_TaskBot_CreateFlow.gif)  
 
+3. Make sure the Edit button at the top is set to "ON". Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
 
-- Update the Bot Name to Wx1\_bot\_<w class = "attendee_out">attendeeID</w> where <w class = "attendee_out">attendeeID</w> is your attendeeID. Click on `Import` to create the bot.
-- Make the bot live by clicking on the `Make Live` button on the top right.
-- Enter `v1` in the popup modal which appears after clicking on `Make Live`.
-- Click on the `Preview` button on the top right side to test the bot.
+    !!! Note
+        Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> `VirtualAgent` also present on the Activity Library for Backward Compatability.
 
-![Profiles](../graphics/temp/2_CreatingBot_2.gif)  
-
-
-
-- Try the bot flow by typing "I would like to cancel an appointment" and continue the conversation.
-
-![Profiles](../graphics/temp/3-cancelappt.gif)  
-
-
-- Go back and click on New Chat to initiate a new chat for "booking a new appointment" by typing "I would like to book an appointment" and continue the conversation.
-
-![Profiles](../graphics/temp/9.png)  
+  > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node
+  >
+  > Connect the Handled outputs to **DisconnectContact** 
+  >
+  > Connect the Escalated outputs to **DisconnectContact** 
+  >
+  > Connect the Errored outputs to **DisconnectContact** 
+  >
+  > Set Static Contact Center AI Config
+  >
+  > Contact Center AI Config: **Webex CCAI Config**
+  >
+  > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025**
 
 
-### Step 2: Integrating the Bot with Flow for Voice Calls
+4. On bottom right corner toggle ***Validation*** from ***Off*** to ***On***
+5.  Click **Publish** Flow. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
 
-<!-- md:option type:note -->
+ ![Profiles](../graphics/Lab2/L1M6_TaskBot_FlowAddVA.gif)  
 
-!!! note "Step Objective"
-    In this Step, we will learn how to:
+6. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
+7. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+8. In ***Entry Point*** Settings section change the following:
 
-    1. Integrate the Webex AI Bot with the Flow Builder.
-    
-    2. We will test the integration by making a test call and verifying the bot's initial response, ensuring that it functions as expected.
+    > Routing Flow: <copy>**TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
 
-- Log into Control Hub using your contact center admin credentials. Select 'Contact Center' from the left panel and then navigate to 'Flows' from the left panel.
+    > Version Label: ***Latest***
 
-- Click on "Manage Flows", then select "Create Flow".
-
-- Name the new flow Wx1\_VA\_<w class = "attendee_out">attendeeID</w> where <w class = "attendee_out">attendeeID</w> is your attendeeID.
-
-![Profiles](../graphics/temp/4-CreateFlow.gif)  
+ ![Profiles](../graphics/Lab2/L1M6_TaskBot_FlowtoEP.gif)  
 
 
+9. Dial Support Number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** to test the Virtual Agent over a voice call.
 
-- Make sure the Edit button at the top is set to "ON". Then, drag and drop the "Virtual Agent V2" activity from the left panel onto the canvas.
-- Drag and Drop `VirtualAgentV2` Activity on to the canvas, please make sure to use `VirtualAgentV2`Activity  there could not `VirtualAgent` also present on the Activity Library for Backward Compatability 
-- Connect the "New Phone Contact" activity to the `VirtualAgentV2` activity by dragging a line between them.
-- Click on the `VirtualAgentV2` activity to configure it. In the right-side panel, select `Webex CCAI Config` as the Contact Center AI Config 
-from the dropdown menu.
-- From the Virtual Agent dropdown, choose the bot you created in Step 1, labeled  `Wx1\_bot\_<w class = "attendee_out">attendeeID</w>`.
-- From the left side panel, find and select the `DisconnectContact` activity.
-- Drag and drop the `DisconnectContact` activity onto the canvas, placing it in your flow.
-- Connect the handled, escalated, and errored outputs from the `VirtualAgentV2` activity to the `DisconnectContact` activity.
+---
 
-![Profiles](../graphics/temp/4-createVAFlow.gif)  
-
-
-
-- Activate the validation by turning the `Validation` button `ON`. Make sure there are no errors in your flow.
-- Click on the "Publish Flow" button. 
-- As a best practice select `Live`  click on `Publish Flow`.
-
-
-![Profiles](../graphics/temp/4-ValidateVAFlow.gif)  
-
-
-
-- Click on `Channels` under Customer Experience on the left hand side navigation panel
-- Search on the top search bar with Wx1\_EP\_<w class = "attendee_out">attendeeID</w> where <w class = "attendee_out">attendeeID</w> is your attendeeID. 
-- search for Routing flow  with your `attendeeID` Wx1\_VA\_<w class = "attendee_out">attendeeID</w>
-- Update the Routing Flow to Wx1\_VA\_<w class = "attendee_out">attendeeID</w>.
-- Select the correct `Version Label` either `Latest` or `Live`
-- Note down the Support Number and then click on Save.
-- Dial the  Support Number from your mobile phone to test the Virtual Agent over a voice call.
-
-![Profiles](../graphics/temp/4-CreatEPTagFlow.gif)  
-
-
-
-
-### Step 3: Updating Bot Responses
+### Updating Bot Responses
 
 !!! note "Step Objective"
     In this Step:
