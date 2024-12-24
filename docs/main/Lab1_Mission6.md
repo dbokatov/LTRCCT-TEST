@@ -125,7 +125,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 3. Make sure the Edit button at the top is set to "ON". Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
 
     !!! Note
-        Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> `VirtualAgent` also present on the Activity Library for Backward Compatability.
+        Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatability.
 
     > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node
     >
@@ -177,15 +177,18 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 3. Click on the bot **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025** that you created earlier. Then go to the **Responses** tab on the left-hand panel.
     
     >
-    > Select the **Welcome message** in *Default message**
+    > Select the **Welcome message** in **Default message**
+    >
     > Update the text to **Welcome to Cumulus Healthcare. How may I assist you today?** for the Default (web) channel.
+    >
     > Navigate to the Voice Channel and update the text to **Welcome to Cumulus Healthcare. How may I assist you today?**
-    > Click on the update button to confirm the changes. Make the bot live by clicking on the `Make Live` button
+    >
+    > Click on the update button to confirm the changes. Make the bot live by clicking on the **Make Live** button
 
     ![Profiles](../graphics/Lab1/L1M6_UpdateResponse.gif) 
 
 
-4. Click on `Preview` to test if the Greeting has been successfully updated.
+4. Click on **Preview** to test if the Greeting has been successfully updated.
 
     ![Profiles](../graphics/Lab1/L1M6_UpdateResponsePreview.gif)
 
@@ -202,58 +205,58 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 <!-- md:option type:warning -->
 !!! warning "README"
-    After disabling all the languages please make sure to hit on **Save changes** and you should see a green **`Agent updated`** message that confirms the action. 
+    After disabling all the languages please make sure to hit on **Save changes** and you should see a green **Agent updated** message that confirms the action. 
 
 
     ![Profiles](../graphics/Lab1/L1M6_LangRemoval.gif)
 
 
 
-2. Navigate to the Training Tab from the left-hand panel and click on the "Create Intent" button located in the top right corner.
-3. Add a new intent by providing the intent name as "ReferralRequest" and include the following two utterances:
+2. Navigate to the Training Tab from the left-hand panel and click on the **Create Intent** button located in the top right corner.
+3. Add a new intent by providing the intent name as ***ReferralRequest*** and include the following two utterances:
 
-  - "I would like a referral for a cardiologist."
-  - "I need a referral to visit a neurologist."
+    - ***I would like a referral for a cardiologist.***
+    - ***I need a referral to visit a neurologist.***
 
    ![Profiles](../graphics/Lab1/L1M6_AddUtterance.gif) 
 
 
-4. Click on `Link entity` and add `patient phone number` as an entity.
-    > Check the "Required" checkbox 
-    > Select the template key as `askPhoneNumber`, which will be used to prompt the patient for their phone number.
+4. Click on **Link entity** and add **patient phone number** as an entity.
+    > Check the **Required** checkbox 
+    > Select the template key as **askPhoneNumber**, which will be used to prompt the patient for their phone number.
     
 
-5. Again, click on `Link Entity` and add `patient dob` (date of birth) 
+5. Again, click on **Link Entity** and add **patient dob** (date of birth) 
     > 
     > Check **Required** checkbox
     > 
-    > Select the template key as "askPatientDob". When this intent is matched, it will trigger the Virtual Agent to ask the user to provide their phone number and date of birth for verification purposes.
+    > Select the template key as **askPatientDob**. When this intent is matched, it will trigger the Virtual Agent to ask the user to provide their phone number and date of birth for verification purposes.
 
-    ![Profiles](../graphics/Lab1/L1M6_AddLinkEntity.gif) 
+     ![Profiles](../graphics/Lab1/L1M6_AddLinkEntity.gif) 
 
 
-6. On the same page at the bottom, clivk on Response drop-down list with `Final Template Key` and scroll down to `Create new`.
+6. On the same page at the bottom, clivk on Response drop-down list with **Final Template Key** and scroll down to **Create new**.
 
     > 
-    > Template key: `ReferralResp`
+    > Template key: ***ReferralResp***
     > 
-    > Text Response (Optional): **Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?**
+    > Text Response (Optional): ***Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?***
     >
     > Click **Create**
 
- 7. Click on "Save".
+ 7. Click on **Save**.
 
-    ![Profiles](../graphics/Lab1/L1M6_AddResponse.gif) 
+     ![Profiles](../graphics/Lab1/L1M6_AddResponse.gif) 
 
 
-8. Return to the Training tab and click on the `Train` button to update the bot's understanding with the new intent and entities.
-9. Add a comment such as `Added referral request intent` to track the changes.
-10. Click on `Make Live` to update the live version of the bot with these changes.
-11. Provide a description for the update and choose `Make Live` or `Make Live both` if there are other unsaved changes pending.
+8. Return to the Training tab and click on the **Train** button to update the bot's understanding with the new intent and entities.
+9. Add a comment such as ***Added referral request intent*** to track the changes.
+10. Click on **Make Live** to update the live version of the bot with these changes.
+11. Provide a description for the update and choose **Make Live** or **Make Live both** if there are other unsaved changes pending.
 
     ![Profiles](../graphics/Lab1/L1M6_Train&makelive.gif) 
 
-12. Use the **Preview** feature to test the bot flow with the input query: "I need a referral for a cardiologist".
+12. Use the **Preview** feature to test the bot flow with the input query: ***I need a referral for a cardiologist***.
 13. You can also test this interaction in voice mode by dialing the Supported Number assigned to your pod.
 
     ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif) 
