@@ -99,18 +99,18 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 2. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
-  ![Profiles](../graphics/Lab2/L1M6_OpenWebexAI.gif)  
+    ![Profiles](../graphics/Lab2/L1M6_OpenWebexAI.gif)  
 
 3. Click on **Create agent** to create a new bot. Select the **Appointment Booking** Template and click on **Next** button.
 4. Agent Name **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025** and click Create
 5. Make the bot live by clicking on the **Make Live** button on the top right.
 6. Enter **v1** in the popup modal which appears after clicking on **Make Live**.
 
- ![Profiles](../graphics/Lab2/L1M6_TaskBot_Create.gif)  
+   ![Profiles](../graphics/Lab2/L1M6_TaskBot_Create.gif)  
 
-7. Click on the `Preview` button on the top right side to test the bot. Try the bot flow by typing "I would like to cancel an appointment" and continue the conversation.
+7. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing "I would like to cancel an appointment" and continue the conversation.
 
- ![Profiles](../graphics/Lab2/L1M6_TaskBot_Preview.gif)  
+   ![Profiles](../graphics/Lab2/L1M6_TaskBot_Preview.gif)  
 
 ---
 
