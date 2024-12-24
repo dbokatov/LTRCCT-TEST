@@ -108,7 +108,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Create.gif)  
 
-7. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing "I would like to cancel an appointment" and continue the conversation.
+7. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing ***I would like to cancel an appointment*** and continue the conversation.
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Preview.gif)  
 
@@ -116,7 +116,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ### Integrating the Bot with Flow for Voice Calls
 
-1. In Control Hub navigate to **Flows**, click on ***Manage Flows*** dropdown list and select ***Create Flows***
+1. In Control Hub navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
 2. Select Start Fresh and name the new flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**.
 
@@ -135,25 +135,25 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     >
     > Connect the Errored outputs to **DisconnectContact** 
     >
-    > Set Static Contact Center AI Config
+    > Set **Static Contact Center AI Config**
     >
     > Contact Center AI Config: **Webex CCAI Config**
     >
     > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025**
 
 
-4. On bottom right corner toggle ***Validation*** from ***Off*** to ***On***
-5.  Click **Publish** Flow. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
+4. On bottom right corner toggle **Validation** from **Off** to **On**
+5.  Click **Publish** Flow. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowAddVA.gif)  
 
-6. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
-7. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
-8. In ***Entry Point*** Settings section change the following:
+6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel**<w class = "attendee_out">attendeeID</w>_Channel**.
+7. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
+8. In **Entry Point** Settings section change the following:
 
     > Routing Flow: <copy>**TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
 
-    > Version Label: ***Latest***
+    > Version Label: **Latest**
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
 
@@ -179,9 +179,9 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     >
     > Select the **Welcome message** in **Default message**
     >
-    > Update the text to **Welcome to Cumulus Healthcare. How may I assist you today?** for the Default (web) channel.
+    > Update the text to **"Welcome to Cumulus Healthcare. How may I assist you today?"** for the Default (web) channel.
     >
-    > Navigate to the Voice Channel and update the text to **Welcome to Cumulus Healthcare. How may I assist you today?**
+    > Navigate to the Voice Channel and update the text to **"Welcome to Cumulus Healthcare. How may I assist you today?"**
     >
     > Click on the update button to confirm the changes. Make the bot live by clicking on the **Make Live** button
 
@@ -203,13 +203,12 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 1. To expedite the completion of this lab, it is recommended to remove all languages except the default language(English), and proceed with the lab.
 
-<!-- md:option type:warning -->
-!!! warning "README"
-    After disabling all the languages please make sure to hit on **Save changes** and you should see a green **Agent updated** message that confirms the action. 
+    <!-- md:option type:warning -->
+    !!! warning "README"
+        After disabling all the languages please make sure to hit on **Save changes** and you should see a green **Agent updated** message that confirms the action. 
 
 
-    ![Profiles](../graphics/Lab1/L1M6_LangRemoval.gif)
-
+        ![Profiles](../graphics/Lab1/L1M6_LangRemoval.gif)
 
 
 2. Navigate to the Training Tab from the left-hand panel and click on the **Create Intent** button located in the top right corner.
@@ -222,17 +221,21 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 
 4. Click on **Link entity** and add **patient phone number** as an entity.
+
+    >
     > Check the **Required** checkbox 
+    >
     > Select the template key as **askPhoneNumber**, which will be used to prompt the patient for their phone number.
     
 
 5. Again, click on **Link Entity** and add **patient dob** (date of birth) 
+
     > 
     > Check **Required** checkbox
     > 
     > Select the template key as **askPatientDob**. When this intent is matched, it will trigger the Virtual Agent to ask the user to provide their phone number and date of birth for verification purposes.
 
-     ![Profiles](../graphics/Lab1/L1M6_AddLinkEntity.gif) 
+      ![Profiles](../graphics/Lab1/L1M6_AddLinkEntity.gif) 
 
 
 6. On the same page at the bottom, clivk on Response drop-down list with **Final Template Key** and scroll down to **Create new**.
@@ -250,13 +253,13 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 
 8. Return to the Training tab and click on the **Train** button to update the bot's understanding with the new intent and entities.
-9. Add a comment such as ***Added referral request intent*** to track the changes.
+9. Add a comment such as ***"Added referral request intent"*** to track the changes.
 10. Click on **Make Live** to update the live version of the bot with these changes.
 11. Provide a description for the update and choose **Make Live** or **Make Live both** if there are other unsaved changes pending.
 
     ![Profiles](../graphics/Lab1/L1M6_Train&makelive.gif) 
 
-12. Use the **Preview** feature to test the bot flow with the input query: ***I need a referral for a cardiologist***.
+12. Use the **Preview** feature to test the bot flow with the input query: ***"I need a referral for a cardiologist"***.
 13. You can also test this interaction in voice mode by dialing the Supported Number assigned to your pod.
 
     ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif) 
@@ -272,16 +275,16 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 2. Click on the "Generate" button to utilize Generative AI for creating additional training phrases.
 
-3. Enter a description such as "generate intents for requesting a referral to different doctor specialties from primary care." Set the Number of Variants to **10**, which will determine the number of new phrases to be generated.
+3. Enter a description such as ***"generate intents for requesting a referral to different doctor specialties from primary care."*** Set the Number of Variants to **10**, which will determine the number of new phrases to be generated.
 
      ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif)  
 
 
 4. Once the new phrases are generated, click on the **Save** button located in the top right corner to add them to your intent.
 5. Navigate back to the Training tab and click on the **Train** button to incorporate the new generative data into the bot's model.
-6. Add a comment such as "added generative training data" to keep track of this specific update.
+6. Add a comment such as ***"added generative training data"*** to keep track of this specific update.
 7. Click on the **Make Live** button situated in the top right corner to apply the changes to the live version of your bot.
-8. Confirm the update by clicking on **Make Live** in the modal that appears.
+8. Confirm the update by clicking on **Make Live** or **Make Live both** if there are other unsaved changes pending.
 
      ![Profiles](../graphics/Lab1/L1M6_TrainNMakeLive.gif)  
 
