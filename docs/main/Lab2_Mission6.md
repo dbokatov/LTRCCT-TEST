@@ -350,6 +350,5 @@ When a customer calls back into the contact center within ten minutes of their l
       2. If you called another Inbound Channel number with the same flow logic, would your call be prioritized?
          1. How could you change this behavior? 
 
-
-# Once you have completed the testing, let the instructor know.
 ---
+<p style="text-align:center"><strong>Congratulations, you have officially completed Routing Returning Callers mission! 🎉🎉 </strong></p>
