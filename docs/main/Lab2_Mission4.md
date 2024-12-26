@@ -209,35 +209,35 @@ By the end of this lab, you will:
 ## Test 4
 1. Click on the AI assistant icon located on the top left navigation panel.
 
-  ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
+    ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
 
 2. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** and initiate a conversation with below
 
-<!-- md:option type:note -->
-
-!!! note "Sample Conversation"
-
-    "I would like to Book  an appointment"
-
-     What date are you considering for your visit 
-
-     "Nov 20th"
-
-     Could tell us preferred time for your visit 
-
-     "3PM"
-
-     Which doctor you want appointment with
+  <!-- md:option type:note -->
   
-     "Dr John"
-
-     What is name of the  patience 
-
-     "Peter<any name>"
-
-     Could you tell us patience Date of Birth
-
-     "Please transfer me to an agent "
+  !!! note "Sample Conversation"
+  
+      "I would like to Book  an appointment"
+  
+       What date are you considering for your visit 
+  
+       "Nov 20th"
+  
+       Could tell us preferred time for your visit 
+  
+       "3PM"
+  
+       Which doctor you want appointment with
+    
+       "Dr John"
+  
+       What is name of the  patience 
+  
+       "Peter<any name>"
+  
+       Could you tell us patience Date of Birth
+  
+       "Please transfer me to an agent "
 
 3. During the interaction with the virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** Answer the call on the agent desktop upon receiving the ring notification.
 
