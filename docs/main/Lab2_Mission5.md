@@ -329,7 +329,7 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Select the Routing Flow: **LastAgentRouting_<w class = "attendee_out">attendeeID</w>**
     >
-    > Select the Version Label: Live
+    > Select the Version Label: **Latest**
     >
     > Click Save in the lower right corner of the screen
 
@@ -340,11 +340,11 @@ A common request for returning customers calling into a contact center is to wor
 2. On your Agent Desktop, set your status to available
       1. Using Webex, place a call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
       2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      3. In the Agent Desktop you will see a new field in Call Information section where you can edit the Simulated CSAT.  Enter a value of <copy>2.9</copy> and click save.
+      3. In the Agent Desktop you will see a new field in Call Information section where you can edit the Simulated CSAT.  Enter a value of <copy>**2.9**</copy> and click save.
       4. After a few moments end the call and select a wrapup code.
 3. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
       1. You should be offered the call, click on the accept button.
-      2. Enter a value of <copy>3.7</copy> in for Simulated CSAT and click save.
+      2. Enter a value of <copy>**3.7**</copy> in for Simulated CSAT and click save.
       3. After a few moments end the call and select a wrapup code.
 4. In your Flow:
       1. Open the debugger
@@ -359,7 +359,7 @@ A common request for returning customers calling into a contact center is to wor
 7. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
 8. After you hear the queue treatment start, change your status to available on the agent desktop.
       1. You should be offered the call, click on the accept button.
-      2. Enter a value of <copy>2.8</copy> in for Simulated CSAT and click save.
+      2. Enter a value of <copy>**2.8**</copy> in for Simulated CSAT and click save.
       3. After a few moments end the call and select a wrapup code.
 9. In your Flow:
       1. Open the debugger
