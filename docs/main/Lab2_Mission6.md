@@ -1,3 +1,8 @@
+---
+#icon: material/folder-open-outline
+icon: material/medal
+---
+
 <script>
  function update () {
     const form = document.forms['attendee-form'];

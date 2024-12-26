@@ -115,7 +115,7 @@ nav:
             - "[New idea] Mission 4: Seamless AI to Human Agent Handoffs": ./main/Lab2_Mission4.md
             - "[Pending GIF] Mission 5: Last Agent Routing": ./main/Lab2_Mission5.md
             - "[Done] Mission 6: Routing Returning Callers": ./main/Lab2_Mission6.md
-            - "[Pending PM] Mission 7: Agent Greetings": ./main/Lab1_Mission7.md
+            - "[Pending PM] Mission 7: Agent Greetings": ./main/Lab2_Mission7.md
             - "[Pending PM] Mission 8: Using Custom Code Execution Node": ./main/Lab2_Mission8.md
   - Quick Links: quicklinks.md
 
