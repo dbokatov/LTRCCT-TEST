@@ -313,7 +313,7 @@ When a customer calls back into the contact center within ten minutes of their l
     >
     > Select the Routing Flow: <copy>**ReturningCaller_<w class = "attendee_out">attendeeID</w>**</copy>
     >
-    > Select the Version Label: Live
+    > Select the Version Label: **Latest**
     >
     > Click Save in the lower right corner of the screen
 
