@@ -78,3 +78,20 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 <br/>
 
 # Mission 4: Seamless AI to Human Agent Handoffs
+
+## Objectives
+
+This lab is designed to explore how to pass contextual intelligence from AI Agents to Webex Contact Center agents. It involves leveraging AI Summaries for Webex AI  agent conversational transcripts . By completing this lab, you will gain practical skills and knowledge on how to provide the right context to agents to better handle customer queries.
+
+By the end of this lab, you will:
+
+  - Understand how to effectively transfer and hand off to Human Agents.
+  - Learn how to provide the relevant call context to Human Agents.
+
+## Build
+
+1. Before you start this lab, please make sure the webex contact center **<w class = "attendee_out">attendeeID</w>_Channel** is set your **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**
+
+    ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
+
+2. 
