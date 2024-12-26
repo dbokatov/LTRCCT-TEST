@@ -125,7 +125,7 @@ By the end of this lab, you will:
   
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish**  
 
-### Quick test before we proceed
+### Test 1:
 
 
 1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
@@ -146,10 +146,104 @@ By the end of this lab, you will:
     GIF
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** .
 
-### Quick test before we proceed
-1. Make sure your agent is **Available** and if not login to you Desktop as explained in previous Quick Test (see above)
+### Test 2:
+1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
 2. Dial into the same support and observe that the conversation transcript is **Not available** on the Agent Desktop when **Enable Conversation Transcript** is unchecked.
 
     GIF
 
 ### Routing Based on Last Intent
+
+1. <span style="color: red;">**[IMPORTANT]**</span> Please make sure to Enable the Virtual Agent transcript by checking **Enable Conversation Transcript** option for the **Virtual Agent V2** activity. Select the **Virtual Agent V2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**. 
+
+2. Enable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
+
+3. Add new flow variable: 
+    
+    >
+    > Name: **last_intent**
+    >
+    > Type: **String**
+    >
+    > Default Value: **empty**
+
+4. Drag and drop the **Parse** activity to the flow
+
+    >
+    > Connect the **Escalated** output from the **Virtual Agent V2** activity to the **Parse** activity.
+    >
+    > Output variable: **VirtualAgentV2.MetaData**
+    > Content Type: **JSON**
+    > Output Variable: **last_intent**
+    > Path Expression: **$.previous-intent.name**
+
+5. Drag and drop the **Condition** activity to the flow
+
+    >
+    > Connect the **Parse** activity to the **Condition** activity.
+    >
+    > Connect the **False** output from the **Condition** activity to the **Queue Contact** activity
+    > 
+    > Condition : **{{ last_intent == "Book appointment" }}**
+
+6. Add **PlayMessage**: 
+    
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    >
+    > Click the Add Text-to-Speech Message button and paste text: **Routing to an agent skilled at booking an appointment.**
+    >
+    > Delete the Selection for Audio File
+    >
+    > Connect **True** exit path of **Condition** node created in **Step 5** to this **PlayMessage** node
+    > 
+
+7. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** 
+
+## Test 3
+    
+1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
+2. Make a call to your test number. During your interaction with the Virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** If the last intent was "Book appointment", you will hear the Text-to-Speech message: **"Routing to an agent skilled at booking an appointment."** Answer the call on the agent desktop when it rings.
+
+## Test 4
+1. Click on the AI assistant icon located on the top left navigation panel.
+
+  ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
+
+2. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** and initiate a conversation with below
+
+<!-- md:option type:note -->
+
+!!! note "Sample Conversation"
+
+    "I would like to Book  an appointment"
+
+     What date are you considering for your visit 
+
+     "Nov 20th"
+
+     Could tell us preferred time for your visit 
+
+     "3PM"
+
+     Which doctor you want appointment with
+  
+     "Dr John"
+
+     What is name of the  patience 
+
+     "Peter<any name>"
+
+     Could you tell us patience Date of Birth
+
+     "Please transfer me to an agent "
+
+3. During the interaction with the virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** Answer the call on the agent desktop upon receiving the ring notification.
+
+4. Observe that, after answering the call, a summary of the Virtual Agent interaction is now displayed on the agent desktop
+
+  ![profiles](../graphics/Lab2/L2M4_ValidateAgentSummary.gif)
+
+<p style="text-align:center"><strong>Congratulations, you have officially completed the Intelligent Virtual Agent Handoffs mission! 🎉🎉 </strong></p>
+
