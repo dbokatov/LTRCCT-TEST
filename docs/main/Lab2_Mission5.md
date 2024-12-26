@@ -303,8 +303,7 @@ A common request for returning customers calling into a contact center is to wor
     > Subflow Output Variables: **None**
     >
    
-
-    <details><summary>Check your flow</summary>![](./graphics/Lab2/lab2_LARwCSAT.png)</details>
+    <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
 10.  Publish your flow
 
@@ -318,8 +317,8 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Click **Publish** Flow
 
-    !!! Note:
-        Remember to select "Return to Flow" after you publish your flow.
+      !!! Note:
+          Remember to select "Return to Flow" after you publish your flow.
 
 
 11. Map your flow to your inbound channel
