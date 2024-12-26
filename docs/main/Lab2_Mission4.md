@@ -114,7 +114,7 @@ By the end of this lab, you will:
       > 
 
     - **Play Music**
-    
+
       >
       > Create a loop by connecting the Play Music activity back to itself - to create a music loop, following the diagram provided.
       >
@@ -140,4 +140,16 @@ By the end of this lab, you will:
 
 ### Disable Virtual Agent Transcript
 
-1. 
+1. Open your flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to **On** if it's not.
+2. Select the **Virtual Agent v2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**.
+3. Disable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
+    GIF
+4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** .
+
+### Quick test before we proceed
+1. Make sure your agent is **Available** and if not login to you Desktop as explained in previous Quick Test (see above)
+2. Dial into the same support and observe that the conversation transcript is **Not available** on the Agent Desktop when **Enable Conversation Transcript** is unchecked.
+
+    GIF
+
+### Routing Based on Last Intent

@@ -89,7 +89,7 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
 
 ## Build
 
-1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to On
+1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to **On**
 
 2. Add 3 new flow variables: 
 
