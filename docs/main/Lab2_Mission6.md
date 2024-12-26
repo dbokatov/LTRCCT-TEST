@@ -74,13 +74,13 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 # Mission 6: Routing Returning Callers
 
-    !!! Note
-        We are intentionally adding a bit of complexity to this lab by removing GIFs and screenshots. This approach will help you gain a deeper understanding of how to build and configure Webex Contact Center logic.
-        If you encounter any difficulties while configuring steps in this mission, feel free to ask one of the instructors for assistance.
+!!! Note
+    We are intentionally adding a bit of complexity to this lab by removing GIFs and screenshots. This approach will help you gain a deeper understanding of how to build and configure Webex Contact Center logic.
+    If you encounter any difficulties while configuring steps in this mission, feel free to ask one of the instructors for assistance.
 
 
 ## Story
-> When a customer calls back into the contact center within ten minutes of their last call ending, we can assume there was a dropped call, missed callback, or they need additional assistance from their last interaction.  We are going to prioritize their call in the queue so that they can finish their business.
+When a customer calls back into the contact center within ten minutes of their last call ending, we can assume there was a dropped call, missed callback, or they need additional assistance from their last interaction.  We are going to prioritize their call in the queue so that they can finish their business.
 
 ### High Level Explanation
 1. New call comes into the flow
