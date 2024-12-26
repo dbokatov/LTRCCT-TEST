@@ -77,6 +77,8 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 <br/>
 
+# Mission 2: Routing facilitation
+
 ## Objective
 
 The primary objective of this new feature is to enhance nodes activities to include a dynamic variable-based selection option to make you flow smaller and simpler to adjust.

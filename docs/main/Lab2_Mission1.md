@@ -77,6 +77,8 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 <br/>
 
+# Mission 1: HTTP API POST to Control Hub (Emergency config change)
+
 ## Story
 
 Consider a scenario where a supervisor needs ability to change routing decision during an emergency without accessing admin portal. It can be done by changing the **Default Value** of GlobalVariable via API PUT call from False to True and use Condition in main IVR script to do routing decision. 
