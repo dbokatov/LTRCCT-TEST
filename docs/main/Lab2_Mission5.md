@@ -93,6 +93,11 @@ A common request for returning customers calling into a contact center is to wor
 3. If the agent is available, we will route the call to that agent
 4. If the agent is not available or if no recent good CSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
 
+!!! Note
+    We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
+
+    Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
+
 
 ## Preconfigured elements
 1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
@@ -128,11 +133,12 @@ A common request for returning customers calling into a contact center is to wor
     >
     > There are no values to set because it has already been configured globally
 
+      ![profiles](../graphics/Lab2/L2M5_CreateFlow.gif)
 
 3. Add a **Play Message** node 
     
     >
-    > Connect the ** New Phone Contact** node edge to this **Play Message** node
+    > Connect the **New Phone Contact** node edge to this **Play Message** node
     >
     > Enable Text-To-Speech
     >
@@ -142,23 +148,24 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: <copy>***Welcome to Mission 5 of Advanced routing lab.***</copy>
-    
+    > Text-to-Speech Message: <copy>***Welcome to Mission 5 of Advanced Routing mission.***</copy>
 
-3.  Add an HTTP Request node for our query
+      ![profiles](../graphics/Lab2/L2M5_PlayMessage.gif)
+
+3.  Add an **HTTP Request** node for our query
     
     >
     > Connect the output node edge from the **Play Message** node to this node
     >
     > Select Use Authenticated Endpoint
     >
-    > Connector: WxCC_API
+    > Connector: **WxCC_API**
     > 
-    > Path: /search
+    > Path: **/search**
     > 
-    > Method: POST
+    > Method: **POST**
     > 
-    > Content Type: Application/JSON
+    > Content Type: **Application/JSON**
     >
     > Copy this GraphQL query into the request body:
     ```JSON
@@ -225,7 +232,7 @@ A common request for returning customers calling into a contact center is to wor
 
     > Parse Settings:
     >
-    > Content Type: JSON
+    > - Content Type: JSON
     >
     > - Output Variable: `agentID`
     > - Path Expression: <copy>`$.data.task.tasks[0].owner.id`</copy>
@@ -234,51 +241,56 @@ A common request for returning customers calling into a contact center is to wor
     > - Path Expression: <copy>`$.data.task.tasks[0].simulatedCSAT.value`</copy>
     >
 
-4. Add a **Condition node**
+      ![profiles](../graphics/Lab2/L2M5_HTTPRequest.gif)
+
+4. Add a **Condition** node
 
     >
     > Connect the output node edge from teh **HTTP Request** node to this node
     > 
     > We will connect the **True** node in a future step.
     >
-    > Connect the False node edge to the Queue To Agent node created in the next step.
-    >
     > Expression: <copy>`{{agentID is empty}}`</copy>
     >
-
+      ![profiles](../graphics/Lab2/L2M5_Condition.gif)
 
 5.  Add a **Queue To Agent** node
 
     >
-    > Agent Variable: agentID
+    > Connect the **False** node edge of the **Condition** node created in previous step to this **Queue To Agent**.
+    > 
+    > Agent Variable: **agentID**
     >
-    > Agent Lookup Type: ID
+    > Agent Lookup Type: **ID**
     >
-    > Set Contact Priority: True
+    > Set Contact Priority: **True**
     >
     > Select Static Priority
     >
-    > Static Priority Value: P1
+    > Static Priority Value: **P1**
     >
     > Reporting Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
     >
-    > Park Contact if Agent Unavailable: False
+    > Park Contact if Agent Unavailable: **False**
     >
     > Recovery Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
     >
-    > Connect the Output and Error node edges to the Queue Contact node created in the next step
 
+
+      ![profiles](../graphics/Lab2/L2M5_QtoAgent.gif)
 
 6. Add a **Queue Contact** node
 
     >
-    > Connect the **True** node edge from the **Condition** node to this node
+    > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
+    >
+    > Connect the **True** node edge from the **Condition** node created in **Step 4** to this node
     > 
     > Select Static Queue
     >
     > Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
     >
-    > 
+      ![profiles](../graphics/Lab2/L2M5_QueueContact.gif)
 
 
 7. Add a **Subflow** node and **DisconnectContact** node
@@ -288,8 +300,6 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Find the **Subflow** names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
     >
-    > Connect the output node edge from the **Queue Contact** node added in the previous step to this node.
-    > 
     > Connect the output node edge from this node to the **DisconnectContact** node.
     >
     > Connect the **Queue Contact** node edge that we created in previous step to this **Subflow** node
@@ -302,7 +312,8 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Subflow Output Variables: **None**
     >
-   
+      ![profiles](../graphics/Lab2/L2M5_Subflow.gif)   
+
     <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
 10.  Publish your flow
@@ -317,8 +328,8 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Click **Publish** Flow
 
-      !!! Note:
-          Remember to select "Return to Flow" after you publish your flow.
+       !!! Note:
+         Remember to select "Return to Flow" after you publish your flow.
 
 
 11. Map your flow to your inbound channel
@@ -333,6 +344,7 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Click Save in the lower right corner of the screen
 
+      ![profiles](../graphics/Lab2/L2M5_Publish&EPmap.gif)  
 ---
 
 ## Testing
