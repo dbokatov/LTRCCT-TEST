@@ -102,23 +102,26 @@ By the end of this lab, you will:
 
     - **DisconnetConnect**
     - **Queue Contact** activity onto the Flow from the left side panel
-        >
-        > Connect the **Escalated** path from the **Virtual Agent V2** activity to the **Queue Contact** activity.
-        >
-        > Connect the **Queue Contact** activity to the **Play Music** activity
-        >
-        > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
-        > 
-        > Queue name: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
-        > 
+
+      >
+      > Connect the **Escalated** path from the **Virtual Agent V2** activity to the **Queue Contact** activity.
+      >
+      > Connect the **Queue Contact** activity to the **Play Music** activity
+      >
+      > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
+      > 
+      > Queue name: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+      > 
+
     - **Play Music**
-        >
-        > Create a loop by connecting the Play Music activity back to itself - to create a music loop, following the diagram provided.
-        >
-        > Connect the **Failure** path from the **Play Music** activity to the **Disconnect Contact** activity.
-        > 
-        > Music File: **defaultmusic_on_hold.wav**
-        >
+    
+      >
+      > Create a loop by connecting the Play Music activity back to itself - to create a music loop, following the diagram provided.
+      >
+      > Connect the **Failure** path from the **Play Music** activity to the **Disconnect Contact** activity.
+      > 
+      > Music File: **defaultmusic_on_hold.wav**
+      >
   
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish**  
 
