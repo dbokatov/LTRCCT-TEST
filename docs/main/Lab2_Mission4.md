@@ -100,7 +100,6 @@ By the end of this lab, you will:
 
 3. Switch the Edit button to on to enable Edit mode in the flow builder then drag and drop following nodes:
 
-    - **DisconnetConnect**
     - **Queue Contact** activity onto the Flow from the left side panel
 
       >
@@ -268,12 +267,12 @@ By the end of this lab, you will:
         "Please transfer me to an agent "
 
 5. Answer the call on the agent desktop when it rings.
-6. Go back to your flow and click on Analyze tab at the bottom of the canvas. Observe the last call behavior.
+6. Go back to your flow and click on **Analyze** tab at the bottom of the canvas. Observe the last call behavior.
 7. Open Debug tool and open your last call. Click on **VA_Metadata** which is our renames Set Variable. See that metadata from **VirtualAgentV2_<*>.MetaData** was written into **vameta** flow variable we created on **Step 3**.
   ![profiles](../graphics/Lab2/L2M4_Handoff_Analyze&Debug.gif)
 
 8. Copy JSON from debuger and paste it into [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} Inputs.
-9. Chande Debug mode to Design in FlowDesigner and copy the path from Parse node into JSONPath of the [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}. You should get last intent name as "Book Apppointement"
+9. Change Debug mode to Design in Flow Designer and copy the path from Parse node into JSONPath of the [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}. You should get last intent name as "Book Apppointement"
 
   ![profiles](../graphics/Lab2/L2M4_Handoff_JSONPath.gif)
 
