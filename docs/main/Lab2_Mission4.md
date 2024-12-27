@@ -239,7 +239,7 @@ By the end of this lab, you will:
 
     ![profiles](../graphics/Lab2/L2M4_HandoffCondition&Validation.gif)
 
-## Test 3
+### Test 3
     
 1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
 2. Make a call to your test number. During your interaction with the Virtual Agent start requesting for an appointement and then request a transfer to a live agent by saying, **"Please transfer me to an Agent."** If the last intent was "Book appointment", you will hear the Text-to-Speech message: **"Routing to an agent skilled at booking an appointment."**. 
@@ -279,7 +279,7 @@ By the end of this lab, you will:
 
   ![profiles](../graphics/Lab2/L2M4_Handoff_JSONPath.gif)
 
-## Test 4
+### Test 4
 1. Click on the AI assistant icon located on the top left navigation panel.
 
     ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
