@@ -79,6 +79,9 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 # Mission 4: Seamless AI to Human Agent Handoffs
 
+> !!! Note
+      This task relies on completing Mission 6 of the Main Labs. Ensure that mission is completed to have a fully functional AI Scripted Agent feature in the Contact Center.
+
 ## Objectives
 
 This lab is designed to explore how to pass contextual intelligence from AI Agents to Webex Contact Center agents. It involves leveraging AI Summaries for Webex AI  agent conversational transcripts . By completing this lab, you will gain practical skills and knowledge on how to provide the right context to agents to better handle customer queries.
