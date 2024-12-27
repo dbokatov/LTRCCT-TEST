@@ -125,6 +125,8 @@ By the end of this lab, you will:
   
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish**  
 
+    ![profiles](../graphics/Lab2/L2M4_HandoffQueue.gif)
+
 ### Test 1:
 
 
@@ -138,19 +140,22 @@ By the end of this lab, you will:
 
 5. Once the call is answered, disconnect the call by clicking on the **End** button.
 
+    ![profiles](../graphics/Lab2/L2M4_Test1_Handoff.gif)
+
 ### Disable Virtual Agent Transcript
 
 1. Open your flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to **On** if it's not.
 2. Select the **Virtual Agent v2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**.
 3. Disable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
-    GIF
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** .
+
+    ![profiles](../graphics/Lab2/L2M4_HandoffDisableTranscript.gif)
 
 ### Test 2:
 1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
 2. Dial into the same support and observe that the conversation transcript is **Not available** on the Agent Desktop when **Enable Conversation Transcript** is unchecked.
 
-    GIF
+    ![profiles](../graphics/Lab2/L2M4_Test2_Handoff.gif)
 
 ### Routing Based on Last Intent
 
@@ -158,7 +163,9 @@ By the end of this lab, you will:
 
 2. Enable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
 
-3. Add new flow variable: 
+    ![profiles](../graphics/Lab2/L2M4_HandoffEnableTranscript.gif)
+
+3. Add 2 new flow variables: 
     
     >
     > Name: **last_intent**
@@ -166,16 +173,41 @@ By the end of this lab, you will:
     > Type: **String**
     >
     > Default Value: **empty**
+    >
+    > Name: **vameta**
+    >
+    > Type: **JSON**
+    >
+    > Default Value: **{}**
+    >
+
+    ![profiles](../graphics/Lab2/L2M4_HandoffFlowVar.gif)
+
+
+4. Drag **Set Variable** node to canvas:
+
+    > Activity Name: **VA_Metadata**
+    >
+    > Variable: **vameta**
+    >
+    > Set To Variable: **VirtualAgentV2_<*>.MetaData**
+    > 
+    > Connect **Escalated** edge of **VirtualAgent** to the **VA_Metadata** node
+    >
+
+    ![profiles](../graphics/Lab2/L2M4_HandoffSetVar.gif)
 
 4. Drag and drop the **Parse** activity to the flow
 
     >
-    > Connect the **Escalated** output from the **Virtual Agent V2** activity to the **Parse** activity.
+    > Connect the **VA_Metadata** activity to the **Parse** activity.
     >
-    > Output variable: **VirtualAgentV2.MetaData**
+    > Input variable: **VirtualAgentV2_<*>.MetaData**
     > Content Type: **JSON**
     > Output Variable: **last_intent**
     > Path Expression: **$.previous-intent.name**
+
+    ![profiles](../graphics/Lab2/L2M4_HandoffParse.gif)
 
 5. Drag and drop the **Condition** activity to the flow
 
@@ -198,20 +230,17 @@ By the end of this lab, you will:
     >
     > Connect **True** exit path of **Condition** node created in **Step 5** to this **PlayMessage** node
     > 
+    > Connect **PlayMessage** node to **QueueContact**
+    >
 
 7. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** 
+
+    ![profiles](../graphics/Lab2/L2M4_HandoffCondition&Validation.gif)
 
 ## Test 3
     
 1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
-2. Make a call to your test number. During your interaction with the Virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** If the last intent was "Book appointment", you will hear the Text-to-Speech message: **"Routing to an agent skilled at booking an appointment."** Answer the call on the agent desktop when it rings.
-
-## Test 4
-1. Click on the AI assistant icon located on the top left navigation panel.
-
-    ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
-
-2. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** and initiate a conversation with below
+2. Make a call to your test number. During your interaction with the Virtual Agent start requesting for an appointement and then request a transfer to a live agent by saying, **"Please transfer me to an Agent."** If the last intent was "Book appointment", you will hear the Text-to-Speech message: **"Routing to an agent skilled at booking an appointment."**. 
 
     <!-- md:option type:note -->
     
@@ -220,7 +249,7 @@ By the end of this lab, you will:
     
         What date are you considering for your visit 
     
-        "Nov 20th"
+        "Feb 20th"
     
         Could tell us preferred time for your visit 
     
@@ -237,6 +266,23 @@ By the end of this lab, you will:
         Could you tell us patience Date of Birth
     
         "Please transfer me to an agent "
+
+5. Answer the call on the agent desktop when it rings.
+6. Go back to your flow and click on Analyze tab at the bottom of the canvas. Observe the last call behavior.
+7. Open Debug tool and open your last call. Click on **VA_Metadata** which is our renames Set Variable. See that metadata from **VirtualAgentV2_<*>.MetaData** was written into **vameta** flow variable we created on **Step 3**.
+  ![profiles](../graphics/Lab2/L2M4_Handoff_Analyze&Debug.gif)
+
+8. Copy JSON from debuger and paste it into [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} Inputs.
+9. Chande Debug mode to Design in FlowDesigner and copy the path from Parse node into JSONPath of the [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}. You should get last intent name as "Book Apppointement"
+
+  ![profiles](../graphics/Lab2/L2M4_Handoff_JSONPath.gif)
+
+## Test 4
+1. Click on the AI assistant icon located on the top left navigation panel.
+
+    ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
+
+2. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** and initiate a conversation with below
 
 3. During the interaction with the virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** Answer the call on the agent desktop upon receiving the ring notification.
 
