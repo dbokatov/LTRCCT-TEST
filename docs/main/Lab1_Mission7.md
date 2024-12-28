@@ -106,9 +106,9 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 1. <span style="color: red;">[IMPORTANT]</span> Download source files. Choose either any or all files from the following list:
   
   > 
-  > **Amsterdam Tourist Guide**
+  > [Download File **Amsterdam Tourist Guide**](./graphics/download/Amsterdam_Tourist_Guide.txt)
   >
-  > **Cisco Live 2025 Amsterdam FAQ**
+  > [Download File**Cisco Live 2025 Amsterdam FAQ**](./graphics/download/Cisco-Live-2025-Amsterdam.pdf)
 
 2. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
@@ -149,16 +149,16 @@ In current mission you will have an options to create a knowledge bases (KB). KB
     >
     > Knowledge base: **<w class = "attendee_out">attendeeID</w>_AI_KB**
     > 
-    > Agent's goal.: <copy>***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***</copy>
+    > Agent's goal: <copy>***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***</copy>
     > 
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentCreate.gif)
 
-11. Toggle **Allow agent handover** settings on **AI agent settings** page and click **Save Changes**. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.
+11. Toggle **Allow agent handover** setting on **AI agent settings** page and click **Save Changes**. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentAllowHandoff.png)
 
-12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**
+12. Click on **Preview** to test your AI Agent and ask the following: <copy>**"I'm looking for an Italian restaurant close to RAI."**</copy>
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentPreview.png)
 
@@ -219,7 +219,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
     ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_AddQueue.gif)  
 
-6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel**<w class = "attendee_out">attendeeID</w>_Channel**.
+6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel **<w class = "attendee_out">attendeeID</w>_Channel**.
 7. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
 8. In **Entry Point** Settings section change the following:
 
@@ -232,4 +232,16 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 9. Dial Support Number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** to test the Autonomous Virtual Agent over a voice call.
 
 
+## Testing
 
+1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+2. Select **Desktop** as a ***Telephony Option*** and Team <copy>**<w class = "attendee_out">attendeeID</w>_Team**</copy>. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+3. Make your agent ***Available*** and you're ready to make a call.
+
+    ![profiles](../graphics/Lab1/5-Agent_Login.gif)
+
+4. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** channel and during the conversation with the virtual Agent ask something about restaurants in Amsterdam or places where you can go and watch historical.
+
+5. Any time during conversation request to connect you with a live agent. The call will be transferred to your agent.
+
+<p style="text-align:center"><strong>Congratulations, you have officially completed the Autonomous Virtual Agent mission! 🎉🎉 </strong></p>
