@@ -137,7 +137,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     >
     > Set **Static Contact Center AI Config**
     >
-    > Contact Center AI Config: **Webex CCAI Config**
+    > Contact Center AI Config: **Webex AI Agent (Scripted)**
     >
     > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025**
 
