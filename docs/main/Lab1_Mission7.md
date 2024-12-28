@@ -106,7 +106,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 1. <span style="color: red;">[IMPORTANT]</span> Download source files. Choose either any or all files from the following list:
   
   > 
-  > [Download File **Amsterdam Tourist Guide**](./graphics/download/Amsterdam_Tourist_Guide.txt)
+  > [Download **Amsterdam_Tourist_Guide.txt**](https://github.com/WebexCC-SA/LTRCOL-2296/blob/main/docs/graphics/download/Amsterdam_Tourist_Guide.txt)
   >
   > [Download File**Cisco Live 2025 Amsterdam FAQ**](./graphics/download/Cisco-Live-2025-Amsterdam.pdf)
 
