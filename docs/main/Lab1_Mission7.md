@@ -149,5 +149,9 @@ In the following steps describe how to upload 1 file to your KB but you can uplo
 10. <span style="color: orange;">[Optional]</span>If you want to **Allow agent handover** toggle respective settings on **AI agent settings** page and click **Save Changes**
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentAllowHandoff.png)
+
+11. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**
+
+    ![Profiles](../graphics/Lab1/L1M7_AIAgentPreview.png)
   
 ## Flow Designer
