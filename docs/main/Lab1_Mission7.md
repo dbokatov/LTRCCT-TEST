@@ -103,7 +103,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
 ### Creating a Knowldge Base
 
-1. <span style="color: red;">[IMPORTANT]</span> [Download](https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing) source files from shared folder. Choose either any or all files from the following list:
+1. <span style="color: red;">[IMPORTANT]</span> [Download](https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing){:target="_blank"} source files from shared folder. Choose either any or all files from the following list:
     
     > 
     > **Amsterdam_Tourist_Guide.txt**
