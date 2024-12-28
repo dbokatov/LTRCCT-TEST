@@ -104,7 +104,7 @@ nav:
             - "[Done] Mission 4: Post Call Survey": ./main/Lab1_Mission4.md
             - "[Done] Mission 5: Using Flow Designer Tools": ./main/Lab1_Mission5.md
             - "[Done] Mission 6: AI in Action (Scripted Agent)": ./main/Lab1_Mission6.md
-            - "[To Complete] Mission 7: AI in Action (Autonomous Agent)": ./main/Lab1_Mission7.md
+            - "[Done] Mission 7: AI in Action (Autonomous Agent)": ./main/Lab1_Mission7.md
       - Conclusion: ./main/Lab1_Conclusion.md
   - Advanced Labs:
       - Lab Guide:
