@@ -56,28 +56,28 @@ layout: post
     <td>wxcclabs+supvr_ID<w class = "attendee_out">AttendeeID</w>@gmail.com</td>
   </tr>
   <tr>
-    <td style="background-color: #d9edf7; font-weight: bold;">Entrypoint Name</td>
-    <td><w class = "attendee_out">AttendeeID</w>_EP</td>
+    <td style="background-color: #d9edf7; font-weight: bold;">EntryPoint/Channel Name</td>
+    <td><w class = "attendee_out">attendeeID</w>_Channel</td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Team</td>
-    <td><w class = "attendee_out">AttendeeID</w>_Team1</td>
+    <td><w class = "attendee_out">AttendeeID</w>_Team</td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Queue</td>
-    <td><w class = "attendee_out">AttendeeID</w>_Team2</td>
+    <td><w class = "attendee_out">attendeeID</w>_Queue</td>
   </tr>  
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Agent Desktop Profile</td>
-    <td>Lab2352_DesktopProfile</td>
+    <td>CLTS_DesktopProfile</td>
   </tr> 
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Supervisor Desktop Profile</td>
-    <td>Lab2352_DesktopProfile_Sup</td>
+    <td>CLTS_DesktopProfile</td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Multimedia Profile</td>
-    <td><w class = "attendee_out">AttendeeID</w>_MMP</td>
+    <td>Default_Multimedia_Profile</td>
   </tr>    
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Control Hub</td>
