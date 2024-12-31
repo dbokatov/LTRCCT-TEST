@@ -258,20 +258,28 @@
   color: #EE0F0F;
 }
 copy::after{
-  /* content: " " url(../template_assets/copy-svgrepo-com.svg);    */
+    content: "\f0c5"; /* Font Awesome code for the copy icon */
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+copy:hover::after {
+  color: #00bdeb;
+}
+  /* content: " " url(../template_assets/copy-svgrepo-com.svg);    
   content: " \e14d";
-  font-family: "Material Icons";
+  font-family: "Material Icons";*/
   
   /* content: ' \f0c5';
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
-  text-decoration: inherit; */
-  }
+  text-decoration: inherit; 
+  }*/
   /* copy svg {
       height:50px;
      fill:#00bdeb;
   } */
-  copy:hover::after {
-      color: #00bdeb;
-  }
+
