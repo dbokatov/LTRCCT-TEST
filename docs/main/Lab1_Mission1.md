@@ -80,7 +80,8 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 ## Using Business Hours in Your Flow to add flexibility
 
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
-<button class="copy-button" data-copy-text="specific line or word">Copy</button>
+<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
+
 
 ### **Step Objective:**
   - We continue to use same flow we created in previous section
