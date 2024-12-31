@@ -39,6 +39,7 @@ theme:
 extra:
   generator: false
 extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
   - stylesheets/extra.css
 extra_javascript:
   - js/copy-button.js
