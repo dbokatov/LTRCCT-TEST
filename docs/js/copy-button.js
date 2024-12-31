@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const copyIcons = document.querySelectorAll(".copy-icon");
+    const copyIcons = document.querySelectorAll(".copy");
     copyIcons.forEach(icon => {
         icon.addEventListener("click", function() {
             const textToCopy = icon.getAttribute("data-copy-text");
