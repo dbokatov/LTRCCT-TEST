@@ -17,6 +17,7 @@ theme:
     - toc.integrate
     - content.tooltips
     - content.footnote.tooltips
+    - codehilite
   custom_dir: docs/overrides
   palette:
     # Palette toggle for light mode
