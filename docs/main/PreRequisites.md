@@ -120,7 +120,7 @@ More pre-configured entities will be mentioned during the lab missions if they h
 ### Testing
 
 All call to Webex Contact center should be done from Webex App which has been pre-installed for you as well as pre-logined to it.
-To make a test just open Webex App and dial provided test number assigned to you.
+To make a test just open Webex App and dial provided Support Number assigned to you.
 
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
