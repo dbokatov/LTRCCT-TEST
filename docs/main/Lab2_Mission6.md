@@ -301,7 +301,7 @@ When a customer calls back into the contact center within ten minutes of their l
     >
     > Click **Publish** Flow
 
-    !!! Note:
+      !!! Note:
         Remember to select "Return to Flow" after you publish your flow.
 
 

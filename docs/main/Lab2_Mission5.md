@@ -328,9 +328,8 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Click **Publish** Flow
 
-       !!! Note:
-         Remember to select "Return to Flow" after you publish your flow.
-
+      !!! Note:
+        Remember to select "Return to Flow" after you publish your flow.
 
 11. Map your flow to your inbound channel
     
