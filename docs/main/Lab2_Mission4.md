@@ -101,7 +101,7 @@ By the end of this lab, you will:
 
 2. In **Control Hub** select **Contact Center** from the left panel and then navigate to Flows from the left panel. Search and open your flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**. 
 
-3. Switch the Edit button to on to enable Edit mode in the flow builder then drag and drop following nodes:
+3. Switch the Edit button to **On** to enable Edit mode in the flow builder then drag and drop following nodes:
 
     - **Queue Contact** activity onto the Flow from the left side panel
 

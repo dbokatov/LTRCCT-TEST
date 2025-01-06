@@ -84,7 +84,7 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 In this task, you will enhance the functionality of the **Main_Flow_<w class = "attendee_out">attendeeID</w>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
 
 > !!! Note
-      This task relies on completing Mission 2 of the Main Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
+      This task relies on completing Mission 2 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
 
 
 ## Build
@@ -184,7 +184,7 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
     > - Content Type: JSON
     > - Output Variable: `callbackStatus`
     > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackStatus`</copy>
-    > - Output Variable: `callbackConnectTime`
+    > - Add New Output Variable: `callbackConnectTime`
     > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`</copy>
     >
       ![profiles](../graphics/Lab2/L2M3-2.gif)

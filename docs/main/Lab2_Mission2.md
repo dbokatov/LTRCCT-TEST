@@ -86,7 +86,7 @@ The primary objective of this new feature is to enhance nodes activities to incl
 You will learn how to use **Dynamic Variables** in multiple nodes including **GoTo**, **Business Hours**, **Queue** and other nodes. 
 
 
-## Steps Objective:
+## Steps Objective
     
   - We are going to use new Flow Template Dynamic Variable Support
   - Most of the settings in nodes settings are going to be variables.
@@ -121,7 +121,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 6. Name you flow as <copy>**DynamicVariables_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
 
-    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    ![Profiles](../graphics/Lab2/BM2_2-7_DynFlowCreate.gif)
 
 7. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
     
@@ -216,7 +216,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
-5. You can do the same trick we did in LAB A and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** entity. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select Overrides_Hours from Override dropdown list. Then click Save.
+5. You can do the same trick we did in Mission 1 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** entity. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
     
     !!! Note
         Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 
@@ -225,7 +225,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 6. **TO CHECK** Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
 
-7. Now we need to revert the configuration we made in step 24. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select None from Override dropdown list. Then click **Save**.
+7. Now we need to revert the configuration we made in Step 1. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select **None** from Override dropdown list. Then click **Save**.
 
     ![Profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif)
 
