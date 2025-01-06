@@ -106,7 +106,9 @@ Flow Templates are designed to empower developers, speed up the development life
 ### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format <span class="copy copy-icon" data-copy-text="wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com"> **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</span>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format <span class="copy copy-icon" data-copy-text="wxcclabs+admin_ID<attendee_out>attendeeID</attendee_out>@gmail.com">
+    <strong>wxcclabs+admin_ID<attendee_out>attendeeID</attendee_out>@gmail.com</strong>
+</span>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
    
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
