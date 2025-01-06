@@ -113,7 +113,7 @@ nav:
       - Conclusion: ./main/Lab1_Conclusion.md
   - Advanced Labs:
       - Lab Guide:
-            - "[Done] Advacned Call Routing and Flow Simplification by using API Integration": ./main/Lab2.md
+            - "[Done] Advacned Call Routing and Flow Simplification by using API Integration Overview": ./main/Lab2.md
             - "[Done] Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
             - "[Done] Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
             - "[Done] Mission 3: Preventing Callback duplication": ./main/Lab2_Mission3.md

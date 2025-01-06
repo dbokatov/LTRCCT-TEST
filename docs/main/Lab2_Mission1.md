@@ -94,7 +94,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > Type: **Boolean**
     > Default Value: **False**
     > 
-    > Copy your new created **Global Variable** name and ID and Name to a notepad. We are going to use them ID in API request in further steps.
+    > Copy your new created **Global Variable** **ID** and **Name** to a notepad. We are going to use them in API request in further steps.
     >
 
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
@@ -131,11 +131,11 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     >
     > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == "1111"}}***
     
-    <span style="color: orange;">[Optional]</span> You can verify the expresion result by Clicking on **Test Expression** icon in the Expresion section
+    <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
         
     ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
     
-5. Add **HTTP Node** to the flow and rename it to **HTTP_PUT**
+5. Add **HTTP Request** node to the flow and rename it to **HTTP_PUT**
 
     > Connect the **TRUE** output edge from the **PIN_Check** node to this node
     > 
@@ -165,17 +165,19 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     ```
 
     !!! Note
-        In Request body we are going to change Default Value of Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>  from false to true
+        In Request body we are going to change Default Value of Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>  from ***false*** to ***true***
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
     
-6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the out put will be True and if other than **200** then **False**.
+6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
     
     > Connect the output node edge from the **HTTP_PUT** node to this node
     >
     > In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***
     
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
+
+    <details><summary>**Quick Quiz**</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
     
 7. Add a **Play Message** node 
     
@@ -243,7 +245,6 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > 
     > Click **Save** in the lower right corner of the screen
 
-    <details><summary>Quick Quiz</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details>: 
 
 ## Testing
    
