@@ -99,14 +99,13 @@ Flow Templates in Webex Contact Center are an essential feature for flow develop
 
 Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
 
-<span class="copy copy-icon" data-copy-text="CopyTEST"> TEST Copy</span>
 
 ---
 
 ### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format**wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
    
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
@@ -128,9 +127,9 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note
         As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
 
-9. <span style="color: orange;">[Optional]</span> Select **Play Message** node with label PlayMessage_* and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
+9. <span style="color: orange;">[Optional]</span> Select **Play Message** node and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
 
-10. On bottom right corner toggle ***Validation*** from ***Off*** to ***On*** to check for any potential flow errors and recommendations. 
+10. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
     !!! Note
         You can ignore recommendations but cannot skip errors.
@@ -156,12 +155,12 @@ Flow Templates are designed to empower developers, speed up the development life
 ### Testing
 
 1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select **Desktop** as a ***Telephony Option*** and Team **<w class = "attendee_out">attendeeID</w>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
-3. Make your agent ***Available*** and you're ready to make a call.
+2. Select **Desktop** as a **Telephony Option** and Team **<w class = "attendee_out">attendeeID</w>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+3. Make your agent **Available** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Open your Webex App and dial the number of your Channel provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
+4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
 
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
@@ -198,7 +197,7 @@ This lab may feel straightforward for some, which is understandable; however, it
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
-5. Make a test call from Webex App by calling the Support Number provided, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
+5. Make a test call from Webex App by calling the Support Number, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
 Verify if the TTS language changed
 
 **Congratulations on completing another mission.**
