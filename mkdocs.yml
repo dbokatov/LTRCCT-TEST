@@ -123,4 +123,5 @@ nav:
             - "[Pending PM] Mission 7: Using Custom Code Execution Node": ./main/Lab2_Mission7.md
       - Conclusion: ./main/Lab2_Conclusion.md
   - Quick Links: quicklinks.md
+  - Ask a Question<i class="fa-solid fa-hand" style="color:#63E6BE;"></i>: slido-QA-iFrame.md
 
