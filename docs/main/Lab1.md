@@ -99,14 +99,14 @@ Flow Templates in Webex Contact Center are an essential feature for flow develop
 
 Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
 
-<span class="copy copy-icon" data-copy-text="CopyTEST">TEST Copy</span>
+<span class="copy copy-icon" data-copy-text="CopyTEST"> TEST Copy</span>
 
 ---
 
 ### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format <span class="copy copy-icon" data-copy-text="wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com"> **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</span>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
    
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
@@ -117,7 +117,7 @@ Flow Templates are designed to empower developers, speed up the development life
 3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 4. New Tab will be opened. Navigate to **Flow Templates**
 5. Choose ***Simple Inbound Call to Queue template*** and click **Next**. You can open View Details and to see observe flow structure and read flow description
-6. Name you flow as <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
+6. Name you flow as **Main_Flow_<w class = "attendee_out">attendeeID</w>**. Then click on Create Flow
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
@@ -140,7 +140,7 @@ Flow Templates are designed to empower developers, speed up the development life
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
 12. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
-13. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel**<w class = "attendee_out">attendeeID</w>_Channel**.
+13. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<w class = "attendee_out">attendeeID</w>_Channel**.
 14. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
 15. In **Entry Point** Settings section change the following:
 
@@ -155,8 +155,8 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ### Testing
 
-1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select **Desktop** as a ***Telephony Option*** and Team <copy>**<w class = "attendee_out">attendeeID</w>_Team**</copy>. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+2. Select **Desktop** as a ***Telephony Option*** and Team **<w class = "attendee_out">attendeeID</w>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 3. Make your agent ***Available*** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
@@ -165,6 +165,8 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ### Summary
 This lab may feel straightforward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
+
+   ![profiles](../graphics/Lab1/111.gif)
 
 ---
 
@@ -182,7 +184,7 @@ This lab may feel straightforward for some, which is understandable; however, it
     ○ Place a call to verify/validate the speech
 
 
-### Configuration
+### Build
 
 1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change the mode from **Read-only** to **Edit-on** mode
 2. Add a **Global Variable** named **Global_Language**
