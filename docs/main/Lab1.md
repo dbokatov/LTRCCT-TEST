@@ -57,7 +57,7 @@
 </style>
 
 
- Please **`submit the form below with your Attendee or pod ID`**. All configuration entries in the lab guide will be renamed to include your pod ID.
+ Please **`submit the form below with your Attendee ID`**. All configuration entries in the lab guide will be renamed to include your Attendee ID.
 {: .block-warning }
 
 <script>
@@ -106,8 +106,7 @@ Flow Templates are designed to empower developers, speed up the development life
 ### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format <span class="copy copy-icon" data-copy-text="wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com">
-    **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</span>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format**wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
    
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 

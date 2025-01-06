@@ -62,7 +62,7 @@ icon: material/medal
 </style>
 
 
- Please **`submit the form below with your Attendee or pod ID`**. All configuration entries in the lab guide will be renamed to include your pod ID.
+ Please **`submit the form below with your Attendee ID`**. All configuration entries in the lab guide will be renamed to include your Attendee ID.
 {: .block-warning }
 
 <script>

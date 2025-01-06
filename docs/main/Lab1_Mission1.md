@@ -62,7 +62,7 @@ icon: material/medal
 </style>
 
 
- Please **Please submit the form below with your Attendee ID in 3 digits long format (e.g. if your attendee ID is 51, please enter 051) and click Save. All configuration items in the lab guide will be renamed with that prefix.
+ Please **`submit the form below with your Attendee ID`**. All configuration entries in the lab guide will be renamed to include your Attendee ID.
 {: .block-warning }
 
 <script>
