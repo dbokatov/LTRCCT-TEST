@@ -14,24 +14,3 @@
 
 ## Missions
 
-
-
-``` mermaid
-stateDiagram-v2
-join_state --> Main_Missions
-  state fork_state <<fork>>
-    [*] --> fork_state
-    fork_state --> Using_Flow_Templates
-    fork_state --> Routing_Based_on_Language_Preference
-    fork_state --> Using_Business_Hours
-    fork_state --> Subflows
-
-    state join_state <<join>>
-    Using_Flow_Templates --> join_state
-    Routing_Based_on_Language_Preference --> join_state
-    Using_Business_Hours --> join_state
-    Subflows --> join_state
-    join_state --> Advanced_Missions
-    State4 --> [*]
-```
-
