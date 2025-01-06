@@ -119,8 +119,10 @@ More pre-configured entities will be mentioned during the lab missions if they h
 
 ### Testing
 
-All call to Webex Contact center should be done from Webex App which has been pre-installed for you.
-Use Supervisor credentials to login into it.
+All call to Webex Contact center should be done from Webex App which has been pre-installed for you as well as pre-logined to it.
+To make a test just open Webex App and dial provided test number assigned to you.
+
+   ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
 !!! Note
     International dialing is not allowed so you won't be able to dial your cell phones unless you have a US number.

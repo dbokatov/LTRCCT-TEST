@@ -163,10 +163,12 @@ Flow Templates are designed to empower developers, speed up the development life
 
 4. Open your Webex App and dial the number of your Channel provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
 
+   ![profiles](../graphics/Lab1/WxApp_Test.gif)
+
 ### Summary
 This lab may feel straightforward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
-   ![profiles](../graphics/Lab1/111.gif)
+
 
 ---
 
