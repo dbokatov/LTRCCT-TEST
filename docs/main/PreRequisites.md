@@ -127,7 +127,7 @@ Use Supervisor credentials to login into it.
 
 ---
 
-### Browser Setup
+### Browser Setup [TO BE REMOVED as we are going to pre-configure workstations prior the lab]
 
 Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab. We will create the user profiles below - Admin, Agent 1, Agent 2 and Supervisor
 

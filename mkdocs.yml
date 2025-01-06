@@ -97,8 +97,8 @@ nav:
   - Getting Started:
       - Lab Overview: ./main/overview.md
       - Getting to know your environment: ./main/PreRequisites.md
-      - Flow Designer Overview: ./main/FlowDesignerOverview.md
-  - Main Labs:
+      - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
+  - Fundamental Labs:
       - Lab Guide:
             - "[Done] Main Mission: Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1.md
             - "[Done] Mission 1: Using Business Hours to add flexibility": ./main/Lab1_Mission1.md
