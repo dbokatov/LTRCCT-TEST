@@ -1,6 +1,7 @@
 ---
 site_name: LTRCCT-2296 - From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
 site_description: LTRCCT-2296 - From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
+site_author: Dimitri Bokatov, Yaroslav Bondar, Taylan Kucuk
 # must be same as "site_name"
 copyright: Copyright &copy; 2025 Cisco Systems Inc. All Rights Reserved.
 theme:
@@ -44,10 +45,10 @@ extra_javascript:
   - js/copy-button.js
 plugins:
   - search
-   #- with-pdf:
-   #    cover_title: LTRCCT-2296
-   #    cover_subtitle: From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer
-   #    cover_logo: template_assets/wx1Splash_new.gif
+  - with-pdf:
+      cover_title: LTRCCT-2296
+      cover_subtitle: "From Good to Great: Enhancing Customer Experience with the Webex Contact Center Flow Designer"
+      cover_logo: template_assets/Cisco-Live-White-Blue-APJC.svg
   - glightbox:
       touchNavigation: true
       loop: false
@@ -93,7 +94,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
 nav:
-  - Missions: index.md
+  - Home: index.md
   - Getting Started:
       - Lab Overview: ./main/overview.md
       - Getting to know your environment: ./main/PreRequisites.md
