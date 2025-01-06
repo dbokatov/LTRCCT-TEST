@@ -112,9 +112,8 @@ We are going to extend the same flow by adding additional functionality so the c
 
 
 
-4. Drag Collect Digits nodes
-    Menu node:
-
+4. Drag **Collect Digits** nodes
+    
     > Rename Activity Label to **NewNumber**
     >
     > Enable Text-To-Speech
@@ -179,7 +178,7 @@ We are going to extend the same flow by adding additional functionality so the c
 
 6. Add **Callback** node
     
-    > Callback Dial Number select5  ***NewNumber.DigitsEntered*** from dropdown list
+    > Callback Dial Number select  ***NewNumber.DigitsEntered*** from dropdown list
     >    
     > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
 
@@ -207,8 +206,8 @@ We are going to extend the same flow by adding additional functionality so the c
     
 ### Testing
     
-1. Make sure you re logged in as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**
+1. Make sure you're logged in as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+2. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209** as a callback number. Use DialPad to provide Cisco TAC number then confirm when asked.
 3. Once done another message about successful scheduling should play.
 4. Make your agent **Available**. Contact Center will reserve you right away and propose to answer a callback call.
 

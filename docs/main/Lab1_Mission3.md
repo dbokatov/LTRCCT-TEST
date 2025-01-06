@@ -87,7 +87,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
 ### Configuration
 
-1. Create a **Global Variable** by accessing Flows -> Global Variable tab
+1. Create a **Global Variable** by accessing Flows then Global Variable tab
     
     > Name: **WhoIsCalling_<w class = "attendee_out">attendeeID</w>**
     >
@@ -110,11 +110,11 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow, remove connection between AgentDisconnect and EndFlow_xkf and add HTTP node in between these nodes.
+4. Go back to your flow, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
       
     > Use Authenticated Endpoint: Off
     >
-    > Request URL: Paste your unique URL copied on step 3 from **https://webhook.site/**.
+    > Request URL: Paste your unique URL copied on Step 3 from **https://webhook.site/**.
     >
     > Method: **POST**
     >
@@ -150,9 +150,9 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     
 ### Testing
     
-1. Make sure you're logged in as Agent **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com** and set status to Available.
+1. Make sure you're logged in as Agent **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com** and set status to **Available**.
 2. Make a call to your test number and if success you should hear Welcome message and then accept the call by agent.
-3. In agent interaction panel change  Who Is Calling? to any text you like then click Save and End the call.
+3. In agent interaction panel change **Who Is Calling?** to any text you like then click **Save** and End the call.
 4. On **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 
 
 ![profiles](../graphics/Lab1/AM2_Testing.gif)

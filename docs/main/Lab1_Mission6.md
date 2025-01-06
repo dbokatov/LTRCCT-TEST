@@ -122,7 +122,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_CreateFlow.gif)  
 
-3. Make sure the Edit button at the top is set to "ON". Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
+3. Make sure the Edit button at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
 
     !!! Note
         Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatability.
@@ -147,7 +147,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowAddVA.gif)  
 
-6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel**<w class = "attendee_out">attendeeID</w>_Channel**.
+6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<w class = "attendee_out">attendeeID</w>_Channel**.
 7. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
 8. In **Entry Point** Settings section change the following:
 
@@ -164,8 +164,8 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ### Updating Bot Responses
 
-!!! note "Step Objective"
-    In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
+#### Step Objective
+In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
@@ -196,19 +196,13 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ### Adding New Intents & Entities
 
-<!-- md:option type:note -->
-!!! note "Step Objective"
-    In this step, we will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a broader range of user inputs. These updates will be tested in both preview mode and during a live call to confirm that the bot correctly identifies the new intents and entities and provides appropriate responses.
+#### Step Objective
+In this step, we will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a broader range of user inputs. These updates will be tested in both preview mode and during a live call to confirm that the bot correctly identifies the new intents and entities and provides appropriate responses.
 
 
-1. To expedite the completion of this lab, it is recommended to remove all languages except the default language(English), and proceed with the lab.
+1. To expedite the completion of this lab, it is recommended to remove all languages except the default language(English), and proceed with the lab. After disabling all the languages please make sure to hit on **Save changes** and you should see a green **Agent updated** message that confirms the action. 
 
-    <!-- md:option type:warning -->
-    !!! warning "README"
-        After disabling all the languages please make sure to hit on **Save changes** and you should see a green **Agent updated** message that confirms the action. 
-
-
-        ![Profiles](../graphics/Lab1/L1M6_LangRemoval.gif)
+    ![Profiles](../graphics/Lab1/L1M6_LangRemoval.gif)
 
 
 2. Navigate to the Training Tab from the left-hand panel and click on the **Create Intent** button located in the top right corner.
@@ -253,13 +247,13 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 
 8. Return to the Training tab and click on the **Train** button to update the bot's understanding with the new intent and entities.
-9. Add a comment such as ***"Added referral request intent"*** to track the changes.
+9. Add a comment such as ***Added referral request intent*** to track the changes.
 10. Click on **Make Live** to update the live version of the bot with these changes.
 11. Provide a description for the update and choose **Make Live** or **Make Live both** if there are other unsaved changes pending.
 
     ![Profiles](../graphics/Lab1/L1M6_Train&makelive.gif) 
 
-12. Use the **Preview** feature to test the bot flow with the input query: ***"I need a referral for a cardiologist"***.
+12. Use the **Preview** feature to test the bot flow with the input query: ***I need a referral for a cardiologist***.
 13. You can also test this interaction in voice mode by dialing the Supported Number assigned to your pod.
 
     ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif) 
@@ -268,8 +262,8 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ### Adding Training Data using Generative AI
 
-!!! note "Step Objective"
-    In this step, we will learn how to enhance the bot's capabilities by adding training data using generative AI and validate the changes by making a call.
+#### Step Objective
+In this step, we will learn how to enhance the bot's capabilities by adding training data using generative AI and validate the changes by making a call.
 
 1. Return to the **Referral Request** intent that you created in the previous exercise.
 
@@ -296,8 +290,8 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ### Bot Transcripts & Analytics
 
-!!! note "Step Objective"
-    In this Step We will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
+#### Step Objective
+In this Step We will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
     
 
 1. Click on **Sessions** in the left-hand panel of your bot builder interface to view all the call history. Click on any Session ID to delve into a more detailed analysis of that particular interaction.

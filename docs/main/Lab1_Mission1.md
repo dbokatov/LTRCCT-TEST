@@ -93,7 +93,7 @@ Business Hours allows you to configure the operational hours of the contact cent
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
 
-#### Configuration
+#### Build
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
 
@@ -112,11 +112,11 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 4. Connect **Business Hours** node exits as follow:
 
-    > - **Working Hours** -> **WelcomePrompt** Node
+    > - **Working Hours** connect to **WelcomePrompt** node
     >
-    > - **Holidays**, **Overrides** and **Default** -> New added **PlayMessage** node.
+    > - **Holidays**, **Overrides** and **Default** connect to new added **PlayMessage** node.
     >
-    > - New added **PlayMessage** -> **Disconnect** contact
+    > - New added **PlayMessage** connect to **Disconnect** contact
 
     ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
 
@@ -133,7 +133,8 @@ Business Hours allows you to configure the operational hours of the contact cent
     > Delete the Selection for Audio File
 
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
-    !!! Note
+     
+     !!! Note
         We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
     ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
@@ -146,12 +147,17 @@ Business Hours allows you to configure the operational hours of the contact cent
 
     ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-9. Make a new call and make sure you hear the message we set in ***Step 6***.
+### Testing
 
-10. Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from Override dropdown list. Then click **Save**.
+1. Open your Webex App and dial the Support Number provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration. Make sure you hear the message we set in ***Step 6***.
+
+
+### Post Testin steps
+
+1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from **Override** dropdown list. Then click **Save**.
 
      ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
-11. Make one more call to make sure you hear the original Welcome message of your vhoice you set on first steps of Main lab.
+11. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of Main Mission of Fundamental Lab.
 
 **Congratulations on completing another mission.**

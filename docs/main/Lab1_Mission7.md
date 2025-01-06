@@ -91,7 +91,7 @@ The Autonomous AI Agent for performing actions can handle various tasks, includi
 
 In current mission you will have an options to create a knowledge bases (KB). KB might contain information from different sources. It can be one or all from the following list. It is up to you. 
 
-1. KB that will be used in AI agent to provide answers about Amsterdam: places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center, aka **Amsterdam Tourist Guide**.
+1. KB that will be used in AI agent to provide answers about Amsterdam (aka **Amsterdam Tourist Guide**): places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center.
 
 2. KB that can provide you information about current Cisco Live 2025 event: Schedules, session, rooms as well as how to get help and support.
 
@@ -122,7 +122,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
     ![Profiles](../graphics/Lab1/L1M7_AIKBCreate.gif)
 
-6. Click Add File or drag and drop one or both of the following files:
+6. Click **Add File** or drag and drop one or both of the following files:
 
     - **Amsterdam Tourist Guide** - TXT file information for tourists: places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center 
     - **Cisco Live 2025 Amsterdam FAQ** - bunch of PDF files about Cisco Live 2025 Amsterdam event.
@@ -135,7 +135,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 9. On **Define agent** page select the following, then click next:
     
     > 
-    > What type of agent are you building?: **Autonoous**
+    > What type of agent are you building?: **Autonomous**
     >
     > What's your agent's main function?: **Answer questions**
 
@@ -172,7 +172,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
     ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_CreateFlow.gif)  
 
-3. Make sure the Edit button at the top is set to "ON". Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activities from the left panel onto the canvas.
+3. Make sure the Edit button at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activities from the left panel onto the canvas.
 
     !!! Note
         Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatability.

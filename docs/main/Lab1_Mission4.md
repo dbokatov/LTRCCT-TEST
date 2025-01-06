@@ -118,7 +118,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 >
 
 <span style="color: orange;">[Optional]</span>
-    In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to Configuration section
+    In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to **Build** section below
 
 > **<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
 > 
@@ -142,7 +142,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 > 
 </details>
 
-### Configuration
+### Build
 1. Explore preconfigured Survey 
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
@@ -150,7 +150,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
   ![profiles](../graphics/Lab1/PCS_addGV.gif)
 
 
-3. Drag Set Variable node to canvas:
+3. Drag **Set Variable** node to canvas:
 
     > Activity Name: **FeedbackSet**
     >
@@ -166,7 +166,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
     ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
-3. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Main Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
+3. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
 
 4. Drag **FeedbackV2**, **PlayMessage** and **DisconnectCall**
     
@@ -206,6 +206,6 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 5. To check Survey responses got to ***Control Hub -> Contact Center -> Surveys***. For **CiscoLive2025_PCS** click on Download and select Survey response period get a CSV file with provided answers.
     
     !!! Note
-        If you create your own Survey as described in Optional section of this mission you might not see Survey response as it has delay in edited surveys
+        If you create your own Survey as described in Optional section of this mission you might not see Survey response immediately as it has delay in edited surveys
         
 **Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**
