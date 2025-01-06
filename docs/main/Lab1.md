@@ -77,9 +77,9 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 
 ### Enhancing the caller experience: The foundation of call routing techniques
-Imagine you’re calling into your contact center, eager for quick, personalized assistance. Behind the scenes, a sophisticated flow is in motion, designed to seamlessly route your call based on your preferences and needs. In this lab, we'll step into the role of a flow designer, configuring key elements that ensure each caller’s journey is smooth and efficient.
+Imagine calling a contact center, seeking quick, personalized help. Behind the scenes, a flow smoothly routes your call based on your needs.
 
-We’ll start by exploring Flow Templates for rapid setup, then dive into routing configurations, using conditions like language preference to enhance customer experience. You’ll also learn how subflows can simplify complex processes by breaking them into manageable parts. By the end, you’ll have the skills to create a foundational flow setup, ready to handle real-world scenarios."
+In this lab, you’ll configure key flow elements for efficient caller journeys. Explore Flow Templates, set up routing with conditions like language preference, and use subflows to simplify processes. By the end, you'll be ready to design flows for real-world scenarios.
 
 
 ### Why Flow Templates?
@@ -99,27 +99,29 @@ Flow Templates in Webex Contact Center are an essential feature for flow develop
 
 Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
 
+<span class="copy copy-icon" data-copy-text="CopyTEST">TEST Copy</span>
+
 ---
 
-#### Configuration
+#### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be the ***Admin Name*** in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
    
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
     !!! Note 
         Remember to take up the offer from Chrome to save your password
 
-2. This is the ***Administration interface*** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
-3. Navigate to **Flows**, click on ***Manage Flows*** dropdown list and select ***Create Flows***
-4. New Tab will be opened. Navigate to ***Flow Templates***
-5. Choose ***Simple Inbound Call to Queue template*** and click ***Next***. You can open View Details and to see observe flow structure and read flow description
+2. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
+3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+4. New Tab will be opened. Navigate to **Flow Templates**
+5. Choose ***Simple Inbound Call to Queue template*** and click **Next**. You can open View Details and to see observe flow structure and read flow description
 6. Name you flow as <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>. Then click on Create Flow
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
-7. In the flow change ***Edit*** toggle from **OFF** to **ON**. Select ***Play Message*** node with label ***WelcomePrompt*** and on the Node settings modify ***Text-to-Speech Message*** to any greetings you like. This message will be the first message you hear while calling to your script.
+7. In the flow change **Edit** toggle from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 8. Select ***Queue*** node. On the ***General settings*** keep Static Queue checked and select queue <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy> from the drop down list
     
     !!! Note
