@@ -76,13 +76,13 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
     The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only
 
 
-### Enhancing the caller experience: The foundation of call routing techniques
+## Enhancing the caller experience: The foundation of call routing techniques
 Imagine calling a contact center, seeking quick, personalized help. Behind the scenes, a flow smoothly routes your call based on your needs.
 
 In this lab, you’ll configure key flow elements for efficient caller journeys. Explore Flow Templates, set up routing with conditions like language preference, and use subflows to simplify processes. By the end, you'll be ready to design flows for real-world scenarios.
 
 
-### Why Flow Templates?
+## Why Flow Templates?
 Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
 
   - **Consistency and Standards**: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
@@ -103,7 +103,7 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ---
 
-#### Build
+### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
    Your login will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
@@ -122,12 +122,14 @@ Flow Templates are designed to empower developers, speed up the development life
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
 7. In the flow change **Edit** toggle from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
-8. Select ***Queue*** node. On the ***General settings*** keep Static Queue checked and select queue <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy> from the drop down list
+
+8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<w class = "attendee_out">attendeeID</w>_Queue** from the drop down list
     
     !!! Note
-        As mentioned in ***Getting Started***, all queues have been pre-configured so you don't need to change them at current step.
+        As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
 
-9. <span style="color: orange;">[Optional]</span> Select ***Play Message*** node with label PlayMessage_* and on the ***Node settings*** modify ***Text-to-Speech Message*** to any message you like. This message will be played while the caller is waiting in the queue.
+9. <span style="color: orange;">[Optional]</span> Select **Play Message** node with label PlayMessage_* and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
+
 10. On bottom right corner toggle ***Validation*** from ***Off*** to ***On*** to check for any potential flow errors and recommendations. 
 
     !!! Note
@@ -137,27 +139,29 @@ Flow Templates are designed to empower developers, speed up the development life
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-12. In Popped up window click on dropdown menu to select ***Latest*** label, then click ***Publish***
-13. Assign the Flow to your ***Channel (Entry Point)*** - Do this by first going to ***Channel*** > Search for your channel <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>.
-14. Click on <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
-15. In ***Entry Point*** Settings section change the following:
+12. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
+13. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel**<w class = "attendee_out">attendeeID</w>_Channel**.
+14. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
+15. In **Entry Point** Settings section change the following:
 
-    > Routing Flow: <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Routing Flow: **Main_Flow_<w class = "attendee_out">attendeeID</w>**
 
-    > Version Label: ***Latest***
+    > Version Label: **Latest**
 
 
 ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
 --- 
 
-#### Testing
+### Testing
 
 1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
 2. Select **Desktop** as a ***Telephony Option*** and Team <copy>**<w class = "attendee_out">attendeeID</w>_Team**</copy>. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 3. Make your agent ***Available*** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
+
+4. Open your Webex App and dial the number of your Channel provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
 
 ### Summary
 This lab may feel straightforward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
@@ -166,7 +170,7 @@ This lab may feel straightforward for some, which is understandable; however, it
 
 ---
 
-### Enhance Your Flow by adding Language
+## Enhance Your Flow by adding Language
 
 **Step Objective:**
   - We are going to use same flow we created in previous section
@@ -178,7 +182,7 @@ This lab may feel straightforward for some, which is understandable; however, it
     ○ Place a call to verify/validate the speech
 
 
-#### Configuration
+### Configuration
 
 1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change the mode from **Read-only** to **Edit-on** mode
 2. Add a **Global Variable** named **Global_Language**
@@ -190,7 +194,7 @@ This lab may feel straightforward for some, which is understandable; however, it
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
-5. Make a test call by calling the Support Number provided, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
+5. Make a test call from Webex App by calling the Support Number provided, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
 Verify if the TTS language changed
 
 **Congratulations on completing another mission.**
