@@ -43,6 +43,7 @@ extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - js/copy-button.js
+  - js/attendee-id.js
 plugins:
   - search
   - with-pdf:
