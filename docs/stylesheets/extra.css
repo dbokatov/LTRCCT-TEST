@@ -264,23 +264,11 @@
   font-style: normal;
   text-decoration: inherit;
   display: inline-block; /* Ensure the icon is visible */
+  margin-left: 5px; /* Optional: Add space between text and icon */
+
 }
 
 .copy:hover::after {
   color: #00bdeb;
 }
-  /* content: " " url(../template_assets/copy-svgrepo-com.svg);    
-  content: " \e14d";
-  font-family: "Material Icons";*/
   
-  /* content: ' \f0c5';
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit; 
-  }*/
-  /* copy svg {
-      height:50px;
-     fill:#00bdeb;
-  } */
-
