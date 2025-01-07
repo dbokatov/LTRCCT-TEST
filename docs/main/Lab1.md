@@ -7,13 +7,13 @@ Your Queue ID is:
 
 Your EP ID is: 
     <span class="attendee-id-container">
-        <span class="attendee-id-placeholder" data-suffix="_EP">Loading...</span>
+        <span class="attendee-id-placeholder" data-suffix="_EP">Your_Attendee_ID</span>_EP
         <span class="copy"></span>
     </span>
     
 Your Admin Email is: 
     <span class="attendee-id-container">
-        <span class="attendee-id-placeholder" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>
+        admin_ID<span class="attendee-id-placeholder" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com
         <span class="copy"></span>
     </span>
 
