@@ -2,25 +2,58 @@
 #icon: material/folder-open-outline
 icon: material/medal
 ---
-<!DOCTYPE html>
+<script>
+    // Function to initialize and handle form submission
+    function setupAttendeeForm() {
+        const form = document.getElementById('attendee-form');
+        const displayAttendee = document.getElementById('display-attendee');
+
+        // Load stored Attendee ID on page load
+        const storedAttendeeID = localStorage.getItem('attendeeID');
+        if (storedAttendeeID) {
+            document.getElementById('attendee').value = storedAttendeeID;
+            displayAttendee.textContent = storedAttendeeID;
+        }
+
+        // Handle form submission
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const attendeeIDInput = form.elements['attendee'].value;
+
+            if (attendeeIDInput && attendeeIDInput !== 'Your Attendee ID') {
+                // Store the Attendee ID in local storage
+                localStorage.setItem('attendeeID', attendeeIDInput);
+
+                // Update the displayed Attendee ID
+                displayAttendee.textContent = attendeeIDInput;
+            }
+        });
+    }
+
+    // Wait for the DOM content to be fully loaded
+    document.addEventListener('DOMContentLoaded', setupAttendeeForm);
+</script>
+
 <style>
-  /* Style for the button */
-  button {
-    background-color: black; /* Set the background color to black */
-    color: white; /* Set the text color to white */
-    border: none; /* Remove the border */
-    padding: 10px 20px; /* Add some padding for better appearance */
-    cursor: pointer; /* Show a pointer cursor on hover */
-  }
+    /* Style for the button */
+    button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
 
-   /* Style for the input element */
-  input[type="text"] {
-    border: 2px solid black; /* Set the border thickness to 2px */
-    padding: 5px; /* Add some padding for better appearance */
-
+    /* Style for the input element */
+    input[type="text"] {
+        border: 2px solid black;
+        padding: 5px;
+    }
 </style>
-<body>
-    <h2>Please submit the form below with your <b>Attendee ID</b>. All configuration entries in the lab guide will be renamed to include your Attendee ID.</h2>
+
+<!-- Markdown content with embedded HTML -->
+<div>
+    <h2>Please submit the form below with your Attendee ID</h2>
     <form id="attendee-form">
         <label for="attendee">Attendee ID:</label>
         <input type="text" id="attendee" name="attendee" placeholder="Enter your Attendee ID" required>
@@ -29,38 +62,8 @@ icon: material/medal
 
     <br>
 
-    <p>Your stored Attendee ID is: <span class="copy" data-copy-text="admin_ID"><w class="attendee_out">No ID stored</w></span></p>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('attendee-form');
-            const attendeeDisplay = document.querySelector('.attendee_out');
-            const storedAttendeeID = localStorage.getItem('attendeeID');
-
-            // Display stored ID on page load, if available
-            if (storedAttendeeID) {
-                attendeeDisplay.textContent = storedAttendeeID;
-            }
-
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                const attendeeIDInput = form.elements['attendee'].value;
-                
-                // Store the Attendee ID in local storage
-                localStorage.setItem('attendeeID', attendeeIDInput);
-
-                // Update the displayed Attendee ID
-                attendeeDisplay.textContent = attendeeIDInput;
-                
-                // Optionally, update the data-copy-text attribute dynamically
-                const copyElement = document.querySelector('.copy');
-                copyElement.setAttribute('data-copy-text', `admin_ID${attendeeIDInput}`);
-            });
-        });
-    </script>
-
-</body>
-</html>
+    <p>Your stored Attendee ID is: <span id="display-attendee">No ID stored</span></p>
+</div>
 
 
 
