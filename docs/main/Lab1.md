@@ -3,9 +3,8 @@
 Your Attendee ID is: <span class="attendee-id-placeholder">Loading...</span>
 
 Your Attendee ID is: 
-<span class="copy attendee-id-container" data-copy-text="specific line or word">
+<span class="copy attendee-id-container" data-copy-text="admin_ID">
     <span class="attendee-id-placeholder">Loading...</span>
-    <i class="fas fa-copy"></i>
 </span>
 
 
