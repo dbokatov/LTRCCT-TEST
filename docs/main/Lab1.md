@@ -2,9 +2,11 @@
 
 Your Attendee ID is: <span class="attendee-id-placeholder">Loading...</span>
 
-Please ensure your ID is correct for event access.
-
-Another section mentioning your Attendee ID: <span class="attendee-id-placeholder">Loading...</span>
+Your Attendee ID is: 
+<span class="copy attendee-id-container" data-copy-text="specific line or word">
+    <span class="attendee-id-placeholder">Loading...</span>
+    <i class="fas fa-copy"></i>
+</span>
 
 
 !!! Note
