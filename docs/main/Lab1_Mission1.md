@@ -2,84 +2,86 @@
 #icon: material/folder-open-outline
 icon: material/medal
 ---
-
 <script>
- function update () {
-    const form = document.forms['attendee-form'];
-    if (form) {
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const inputs = Array.from(form.querySelectorAll('input'));
-        const values = inputs.reduce((acc, input) => {
-          acc[input.id + '_out'] = input.value;
-          return acc;
-        }, {});
+    // Function to initialize and handle form submission
+    function setupAttendeeForm() {
+        const form = document.getElementById('attendee-form');
+        const displayAttendee = document.getElementById('display-attendee');
 
-        Object.entries(values).forEach(([id, value]) => {
-          const elements = document.getElementsByClassName(id);
-          Array.from(elements).forEach(element => {
-
-            console.log(element.innerHTML);
-            if(Number(element.innerHTML) > 99 ){
-               console.log(`Got a 99+ attendee: ${element.innerHTML}`);
-               element.innerHTML = value;
-             }
-            else{
-               console.log(`Got a sub 99 attendee: ${element.innerHTML}`);
-               if(element.innerHTML.includes('gmail.com'))
-               {
-                element.innerHTML = `0${value}`;
-                }
-               else{
-                element.innerHTML = value;
-               }
-                }
-          });
-        });
-        const attendeeIDInput = form.elements['attendeeID'];
-       if (attendeeIDInput && attendeeIDInput.value !== 'Your_Attendee_ID') {
-          localStorage.setItem('attendeeID', attendeeIDInput.value);
+        // Load stored Attendee ID on page load
+        const storedAttendeeID = localStorage.getItem('attendeeID');
+        if (storedAttendeeID) {
+            document.getElementById('attendee').value = storedAttendeeID;
+            displayAttendee.textContent = storedAttendeeID;
         }
-      });
+
+        // Handle form submission
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const attendeeIDInput = form.elements['attendee'].value;
+
+            if (attendeeIDInput && attendeeIDInput !== 'Your Attendee ID') {
+                // Store the Attendee ID in local storage
+                localStorage.setItem('attendeeID', attendeeIDInput);
+
+                // Update the displayed Attendee ID
+                displayAttendee.textContent = attendeeIDInput;
+            }
+        });
     }
-  };
+
+    // Wait for the DOM content to be fully loaded
+    document.addEventListener('DOMContentLoaded', setupAttendeeForm);
 </script>
+
 <style>
-  /* Style for the button */
-  button {
-    background-color: black; /* Set the background color to black */
-    color: white; /* Set the text color to white */
-    border: none; /* Remove the border */
-    padding: 10px 20px; /* Add some padding for better appearance */
-    cursor: pointer; /* Show a pointer cursor on hover */
-  }
+    /* Style for the button */
+    button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
 
-   /* Style for the input element */
-  input[type="text"] {
-    border: 2px solid black; /* Set the border thickness to 2px */
-    padding: 5px; /* Add some padding for better appearance */
-
+    /* Style for the input element */
+    input[type="text"] {
+        border: 2px solid black;
+        padding: 5px;
+    }
 </style>
 
+<!-- Markdown content with embedded HTML -->
+<div>
+    <h2>Please submit the form below with your Attendee ID</h2>
+    <form id="attendee-form">
+        <label for="attendee">Attendee ID:</label>
+        <input type="text" id="attendee" name="attendee" placeholder="Enter your Attendee ID" required>
+        <button type="submit">Save</button>
+    </form>
 
- Please **`submit the form below with your Attendee ID`**. All configuration entries in the lab guide will be renamed to include your Attendee ID.
-{: .block-warning }
+    <br>
 
-<script>
-document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID" 
-</script>
-<form id="attendee-form">
-  <label for="attendee">Attendee ID:</label>
-  <input type="text" id="attendee" name="attendee" onChange="update()"><br>
-<br>
-  <button onclick="update()">Save</button>
-</form>
+    <p>Your stored Attendee ID is: <span id="display-attendee">No ID stored</span></p>
+</div>
 
-<br/>
+
 
 ## Using Business Hours in Your Flow to add flexibility
 
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
+
+Test 1:
+<span class="copy" data-copy-text="admin_ID">
+  <w class="attendee_out">attendeeID</w>
+</span>
+
+Test 2:
+**<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**
+
+Test 3:
+<span class="copy copy-icon" data-copy-text="wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com">
+
 
 ### **Step Objective:**
   - We continue to use same flow we created in previous section
