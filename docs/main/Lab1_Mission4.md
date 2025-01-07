@@ -81,17 +81,6 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 In this lab, you will complete a mission to enhance customer feedback collection by integrating a survey into the Webex Contact Center call flow. The lab is designed to be simple yet practical, focusing on minimal configuration within the Flow Designer, while leveraging a preconfigured survey template.
 
-### Mission Details
-
-Your mission is to:
-
-1. Integrate a preconfigured survey into the call flow using the Flow Designer.
-2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
-3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
-
-The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
-
-### Section to expand/collapse
 > **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 > 
 > Supported Survey Question Types in Webex Contact Center
@@ -109,6 +98,16 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 >     - Example Question: "On a scale of 0 to 10, how likely are you to recommend our service to a friend or colleague?"
 >   - Use Case: Gauge long-term customer loyalty and brand advocacy.
 > </details>
+
+### Mission Details
+
+Your mission is to:
+
+1. Integrate a preconfigured survey into the call flow using the Flow Designer.
+2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
+3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
+
+The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
 
 ### Pre-configured entities:        
      
@@ -143,7 +142,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 </details>
 
 ### Build
-1. Explore preconfigured Survey 
+1. Explore preconfigured Survey. In Control Center go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
 2. Open you <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
