@@ -89,19 +89,15 @@ icon: material/medal
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
 Test 1:
-<span class="copy" data-copy-text="admin_ID">
-  <span id="attendee-id-placeholder">You attendeeID</span>
+wxcclabs+admin_ID<span class="copy" data-copy-text="wxcclabs+admin_ID@gmail.com">
+  <span id="attendee-id-placeholder">AttendeeID</span>
 </span>
 
 1. Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
 2. Your stored Attendee ID is: <span id="display-attendee">No ID stored</span>
 
 Test 2:
-<span id="attendee-id-placeholder">You attendeeID</span>_Bussiness_Hours
-**<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**
-
-Test 3:
-<span class="copy copy-icon" data-copy-text="wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com">
+**<span id="attendee-id-placeholder">AttendeeID</span>_Bussiness_Hours**
 
 
 ### **Step Objective:**
