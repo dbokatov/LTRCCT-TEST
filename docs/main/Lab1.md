@@ -1,23 +1,4 @@
 
-Your Queue ID is: 
-    Queue_<span class="attendee-id-container">
-        <span class="attendee-id-placeholder" data-prefix="Queue_">Your_Attendee_ID</span>
-        <span class="copy"></span>
-    </span>
-
-Your EP ID is: 
-    <span class="attendee-id-container">
-        <span class="attendee-id-placeholder" data-suffix="_EP">Your_Attendee_ID</span>_EP
-        <span class="copy"></span>
-    </span>
-    
-Your Admin Email is: 
-    <span class="attendee-id-container">
-        admin_ID<span class="attendee-id-placeholder" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com
-        <span class="copy"></span>
-    </span>
-
-
 !!! Note
     The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only
 
@@ -51,7 +32,7 @@ Flow Templates are designed to empower developers, speed up the development life
 ### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format <span class="attendee-id-container">**wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com**<span class="copy"></span></span>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
@@ -62,13 +43,13 @@ Flow Templates are designed to empower developers, speed up the development life
 4. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 5. New Tab will be opened. Navigate to **Flow Templates**
 6. Choose ***Simple Inbound Call to Queue template*** and click **Next**. You can open View Details and to see observe flow structure and read flow description
-7. Name you flow as **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**. Then click on Create Flow
+7. Name you flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**. Then click on Create Flow
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
 8. In the flow change **Edit** toggle from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
-9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue** from the drop down list
+9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span>** from the drop down list
     
     !!! Note
         As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
@@ -85,7 +66,7 @@ Flow Templates are designed to empower developers, speed up the development life
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
 13. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
-14. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**.
+14. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**.
 15. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 16. In **Entry Point** Settings section change the following:
 
