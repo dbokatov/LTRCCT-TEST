@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
         const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
-        const containers = document.querySelectorAll('.attendee-id-container');
+        const placeholders = document.querySelectorAll('.attendee-id-placeholder');
 
-        containers.forEach(function(container) {
-            const placeholder = container.querySelector('.attendee-id-placeholder');
-            if (placeholder) {
-                placeholder.textContent = attendeeID;
-            }
+        placeholders.forEach(function(placeholder) {
+            const prefix = placeholder.getAttribute('data-prefix') || '';
+            const suffix = placeholder.getAttribute('data-suffix') || '';
+            const fullText = `${prefix}${attendeeID}${suffix}`;
 
-            // Update the data-copy-text attribute
-            container.setAttribute('data-copy-text', `admin_ID${attendeeID}`);
+            // Update the placeholder text
+            placeholder.textContent = fullText;
+
+            // Optionally update data-copy-text if needed for copying the whole text
+            placeholder.setAttribute('data-copy-text', fullText);
 
             // Add click event to copy the text
-            container.addEventListener('click', function() {
-                const textToCopy = container.getAttribute('data-copy-text');
-                navigator.clipboard.writeText(textToCopy).then(() => {
+            placeholder.addEventListener('click', function() {
+                navigator.clipboard.writeText(fullText).then(() => {
                     console.log("Text copied to clipboard");
                 }).catch(err => {
                     console.error("Could not copy text: ", err);
