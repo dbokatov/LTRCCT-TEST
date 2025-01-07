@@ -7,25 +7,33 @@ icon: material/medal
     function setupAttendeeForm() {
         const form = document.getElementById('attendee-form');
         const displayAttendee = document.getElementById('display-attendee');
+        const attendeeInput = document.getElementById('attendee');
 
         // Load stored Attendee ID on page load
         const storedAttendeeID = localStorage.getItem('attendeeID');
         if (storedAttendeeID) {
-            document.getElementById('attendee').value = storedAttendeeID;
+            attendeeInput.value = storedAttendeeID;
             displayAttendee.textContent = storedAttendeeID;
         }
+
+        // Restrict input to only allow three digits
+        attendeeInput.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '').slice(0, 3);
+        });
 
         // Handle form submission
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-            const attendeeIDInput = form.elements['attendee'].value;
+            const attendeeIDInput = attendeeInput.value;
 
-            if (attendeeIDInput && attendeeIDInput !== 'Your Attendee ID') {
+            if (attendeeIDInput && attendeeIDInput.length === 3) {
                 // Store the Attendee ID in local storage
                 localStorage.setItem('attendeeID', attendeeIDInput);
 
                 // Update the displayed Attendee ID
                 displayAttendee.textContent = attendeeIDInput;
+            } else {
+                alert('Please enter exactly 3 digits.');
             }
         });
     }
@@ -56,7 +64,7 @@ icon: material/medal
     <h2>Please submit the form below with your Attendee ID</h2>
     <form id="attendee-form">
         <label for="attendee">Attendee ID:</label>
-        <input type="text" id="attendee" name="attendee" placeholder="Enter your Attendee ID" required>
+        <input type="text" id="attendee" name="attendee" placeholder="Enter 3 digits" required>
         <button type="submit">Save</button>
     </form>
 
@@ -73,10 +81,13 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 Test 1:
 <span class="copy" data-copy-text="admin_ID">
-  <w class="attendee_out">attendeeID</w>
+  <span id="display-attendee">You attendeeID</span>
 </span>
 
+
+
 Test 2:
+<span id="display-attendee">You attendeeID</span>_Bussiness_Hours
 **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**
 
 Test 3:
