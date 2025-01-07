@@ -1,14 +1,3 @@
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
-        const attendeePlaceholder = document.getElementById('attendee-id-placeholder');
-
-        if (attendeePlaceholder) {
-            attendeePlaceholder.textContent = attendeeID;
-        }
-    });
-</script>
-
 Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
 Please ensure your ID is correct for event access.
 
@@ -49,7 +38,7 @@ Flow Templates are designed to empower developers, speed up the development life
    Your login will be of the format **wxcclabs+admin_ID<span id="attendee-id-placeholder">AttendeeID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
-our login will be of the format wxcclabs+admin_ID<span id="attendee-id-placeholder">AttendeeID</span>@gmail.com. You will see another login screen with OKTA on it where you may 
+Please ensure your ID is correct for event access.
 
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
