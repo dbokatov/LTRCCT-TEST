@@ -35,7 +35,7 @@ layout: post
     <label for="attendee">Attendee ID:</label>
     <input type="text" id="attendee" name="attendee" onChange="update()" style="border: 2px solid black; padding: 5px; border-radius: 4px; background-color: orange;"><br>
     <br>
-    <button type="button" onclick="update()" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Save</button>
+    <button type="button" onclick="update()" style="background-color:rgb(3, 3, 3); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Save</button>
     </form>
     <script>
     document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID";
