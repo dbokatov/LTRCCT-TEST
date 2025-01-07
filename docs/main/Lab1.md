@@ -8,6 +8,11 @@ Your Attendee ID is:
 </span>
 
 
+Your Queue is: <span class="attendee-id-placeholder" data-prefix="Queue_">Your_Attendee_ID</span><
+Your EP is: <span class="attendee-id-placeholder" data-prefix="EP_">Your_Attendee_ID</span>
+Your Flow is: <span class="attendee-id-placeholder" data-suffix="_Flow">Your_Attendee_ID</span>
+Your Admin Email is: <span class="attendee-id-placeholder" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>
+
 !!! Note
     The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only
 
