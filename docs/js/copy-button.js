@@ -10,10 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update the placeholder text
             placeholder.textContent = fullText;
 
-            // Optionally update data-copy-text if needed for copying the whole text
-            placeholder.setAttribute('data-copy-text', fullText);
-
-            // Add click event to copy the text
+            // Set up click event to copy the full text
             placeholder.addEventListener('click', function() {
                 navigator.clipboard.writeText(fullText).then(() => {
                     console.log("Text copied to clipboard");
