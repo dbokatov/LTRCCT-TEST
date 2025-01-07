@@ -3,16 +3,6 @@
 icon: material/medal
 ---
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
-        const attendeePlaceholder = document.getElementById('attendee-id-placeholder');
-
-        if (attendeePlaceholder) {
-            attendeePlaceholder.textContent = attendeeID;
-        }
-    });
-</script>
-<script>
     // Function to initialize and handle form submission
     function setupAttendeeForm() {
         const form = document.getElementById('attendee-form');
@@ -50,6 +40,15 @@ icon: material/medal
 
     // Wait for the DOM content to be fully loaded
     document.addEventListener('DOMContentLoaded', setupAttendeeForm);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
+        const attendeePlaceholder = document.getElementById('attendee-id-placeholder');
+
+        if (attendeePlaceholder) {
+            attendeePlaceholder.textContent = attendeeID;
+        }
+    });
 </script>
 
 <style>
@@ -94,8 +93,8 @@ Test 1:
   <span id="attendee-id-placeholder">You attendeeID</span>
 </span>
 
-Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
-
+1. Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
+2. Your stored Attendee ID is: <span id="display-attendee">No ID stored</span>
 
 Test 2:
 <span id="attendee-id-placeholder">You attendeeID</span>_Bussiness_Hours
