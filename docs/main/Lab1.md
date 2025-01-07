@@ -1,33 +1,12 @@
-## Welcome to the Event
-
-Your Attendee ID is: <span class="attendee-id-placeholder">Loading...</span>
-
-Your Attendee ID is: 
-<span class="copy attendee-id-container" data-copy-text="admin_ID">
-    <span class="attendee-id-placeholder">Loading...</span>
-</span>
-
-
-Your Queue is: <span class="attendee-id-placeholder" data-prefix="Queue_">Your_Attendee_ID</span>
-
-<p>Your Queue ID is: 
-    <span class="attendee-id-placeholder copy" data-prefix="Queue_">Your_Attendee_ID</span>
-</p>
-<p>Your EP ID is: 
-    <span class="attendee-id-placeholder copy" data-suffix="_EP">Your_Attendee_ID</span>
-</p>
-<p>Your Admin Email is: 
-    <span class="attendee-id-placeholder copy" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>
-</p>
 
 Your Queue ID is: 
-    <span class="attendee-id-placeholder copy" data-prefix="Queue_">Your_Attendee_ID</span>
+    Queue_<span class="attendee-id-placeholder copy" data-prefix="Queue_">Your_Attendee_ID</span>
 
 Your EP ID is: 
-    <span class="attendee-id-placeholder copy" data-suffix="_EP">Your_Attendee_ID</span>
+    <span class="attendee-id-placeholder copy" data-suffix="_EP">Your_Attendee_ID</span>_EP
 
 Your Admin Email is: 
-    <span class="attendee-id-placeholder copy" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>
+    admin_ID<span class="attendee-id-placeholder copy" data-prefix="admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com
 
 
 !!! Note
