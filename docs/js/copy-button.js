@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
             placeholder.textContent = fullText;
 
             // Set up click event to copy the full text
-            placeholder.addEventListener('click', function() {
+            const container = placeholder.parentElement;
+            container.addEventListener('click', function() {
                 navigator.clipboard.writeText(fullText).then(() => {
                     console.log("Text copied to clipboard");
                 }).catch(err => {
@@ -19,4 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
-    });
+});
