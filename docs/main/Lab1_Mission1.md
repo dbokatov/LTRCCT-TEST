@@ -3,6 +3,16 @@
 icon: material/medal
 ---
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
+        const attendeePlaceholder = document.getElementById('attendee-id-placeholder');
+
+        if (attendeePlaceholder) {
+            attendeePlaceholder.textContent = attendeeID;
+        }
+    });
+</script>
+<script>
     // Function to initialize and handle form submission
     function setupAttendeeForm() {
         const form = document.getElementById('attendee-form');
@@ -61,7 +71,7 @@ icon: material/medal
 
 <!-- Markdown content with embedded HTML -->
 <div>
-    <h2>Please submit the form below with your Attendee ID</h2>
+    <h2>Please submit the form below with your Attendee ID. All configuration entries in the lab guide will be renamed to include your Attendee ID.</h2>
     <form id="attendee-form">
         <label for="attendee">Attendee ID:</label>
         <input type="text" id="attendee" name="attendee" placeholder="Enter 3 digits" required>
@@ -81,13 +91,14 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 Test 1:
 <span class="copy" data-copy-text="admin_ID">
-  <span id="display-attendee">You attendeeID</span>
+  <span id="attendee-id-placeholder">You attendeeID</span>
 </span>
 
+Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
 
 
 Test 2:
-<span id="display-attendee">You attendeeID</span>_Bussiness_Hours
+<span id="attendee-id-placeholder">You attendeeID</span>_Bussiness_Hours
 **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**
 
 Test 3:
