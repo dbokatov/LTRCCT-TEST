@@ -68,17 +68,9 @@ layout: post
     <td><w class = "attendee_out">attendeeID</w>_Queue</td>
   </tr>  
   <tr>
-    <td style="background-color: #d9edf7; font-weight: bold;">Agent Desktop Profile</td>
-    <td>CLTS_DesktopProfile</td>
-  </tr> 
-  <tr>
-    <td style="background-color: #d9edf7; font-weight: bold;">Supervisor Desktop Profile</td>
-    <td>CLTS_DesktopProfile</td>
-  </tr>
-  <tr>
-    <td style="background-color: #d9edf7; font-weight: bold;">Multimedia Profile</td>
-    <td>Default_Multimedia_Profile</td>
-  </tr>    
+    <td style="background-color: #d9edf7; font-weight: bold;">Bussiness Hours</td>
+    <td><w class = "attendee_out">attendeeID</w>_Queue</td>
+  </tr>     
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Control Hub</td>
     <td><a href="https://admin.webex.com/">https://admin.webex.com/</a></td>
