@@ -69,7 +69,7 @@ layout: post
   </tr>  
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Bussiness Hours</td>
-    <td><w class = "attendee_out">attendeeID</w>_Queue</td>
+    <td><w class = "attendee_out">attendeeID</w>_Bussiness_Hours</td>
   </tr>     
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Control Hub</td>
