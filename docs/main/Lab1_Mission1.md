@@ -2,84 +2,75 @@
 #icon: material/folder-open-outline
 icon: material/medal
 ---
-
-<script>
- function update () {
-    const form = document.forms['attendee-form'];
-    if (form) {
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const inputs = Array.from(form.querySelectorAll('input'));
-        const values = inputs.reduce((acc, input) => {
-          acc[input.id + '_out'] = input.value;
-          return acc;
-        }, {});
-
-        Object.entries(values).forEach(([id, value]) => {
-          const elements = document.getElementsByClassName(id);
-          Array.from(elements).forEach(element => {
-
-            console.log(element.innerHTML);
-            if(Number(element.innerHTML) > 99 ){
-               console.log(`Got a 99+ attendee: ${element.innerHTML}`);
-               element.innerHTML = value;
-             }
-            else{
-               console.log(`Got a sub 99 attendee: ${element.innerHTML}`);
-               if(element.innerHTML.includes('gmail.com'))
-               {
-                element.innerHTML = `0${value}`;
-                }
-               else{
-                element.innerHTML = value;
-               }
-                }
-          });
-        });
-        const attendeeIDInput = form.elements['attendeeID'];
-       if (attendeeIDInput && attendeeIDInput.value !== 'Your_Attendee_ID') {
-          localStorage.setItem('attendeeID', attendeeIDInput.value);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendee ID Form</title>
+    <style>
+        .copy::after {
+            content: "\f0c5"; /* Font Awesome copy icon */
+            font-family: "FontAwesome";
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            margin-left: 5px; /* Add some space before the icon */
         }
-      });
-    }
-  };
-</script>
-<style>
-  /* Style for the button */
-  button {
-    background-color: black; /* Set the background color to black */
-    color: white; /* Set the text color to white */
-    border: none; /* Remove the border */
-    padding: 10px 20px; /* Add some padding for better appearance */
-    cursor: pointer; /* Show a pointer cursor on hover */
-  }
+        .copy:hover::after {
+            color: #00bdeb;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-   /* Style for the input element */
-  input[type="text"] {
-    border: 2px solid black; /* Set the border thickness to 2px */
-    padding: 5px; /* Add some padding for better appearance */
+    <h2>Please submit the form below with your Attendee ID</h2>
+    <form id="attendee-form">
+        <label for="attendee">Attendee ID:</label>
+        <input type="text" id="attendee" name="attendee" placeholder="Enter your Attendee ID" required>
+        <button type="submit">Save</button>
+    </form>
 
-</style>
+    <br>
 
+    <p>Your stored Attendee ID is: <span class="copy" data-copy-text="admin_ID"><w class="attendee_out">No ID stored</w></span></p>
 
- Please **`submit the form below with your Attendee ID`**. All configuration entries in the lab guide will be renamed to include your Attendee ID.
-{: .block-warning }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('attendee-form');
+            const attendeeDisplay = document.querySelector('.attendee_out');
+            const storedAttendeeID = localStorage.getItem('attendeeID');
 
-<script>
-document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID" 
-</script>
-<form id="attendee-form">
-  <label for="attendee">Attendee ID:</label>
-  <input type="text" id="attendee" name="attendee" onChange="update()"><br>
-<br>
-  <button onclick="update()">Save</button>
-</form>
+            // Display stored ID on page load, if available
+            if (storedAttendeeID) {
+                attendeeDisplay.textContent = storedAttendeeID;
+            }
 
-<br/>
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const attendeeIDInput = form.elements['attendee'].value;
+                
+                // Store the Attendee ID in local storage
+                localStorage.setItem('attendeeID', attendeeIDInput);
+
+                // Update the displayed Attendee ID
+                attendeeDisplay.textContent = attendeeIDInput;
+                
+                // Optionally, update the data-copy-text attribute dynamically
+                const copyElement = document.querySelector('.copy');
+                copyElement.setAttribute('data-copy-text', `admin_ID${attendeeIDInput}`);
+            });
+        });
+    </script>
+
+</body>
+</html>
 
 ## Using Business Hours in Your Flow to add flexibility
 
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
+
 Test 1:
 <span class="copy" data-copy-text="admin_ID">
   <w class="attendee_out">attendeeID</w>
