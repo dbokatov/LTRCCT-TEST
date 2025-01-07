@@ -3,29 +3,24 @@
 icon: material/medal
 ---
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendee ID Form</title>
-    <style>
-        .copy::after {
-            content: "\f0c5"; /* Font Awesome copy icon */
-            font-family: "FontAwesome";
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: inherit;
-            margin-left: 5px; /* Add some space before the icon */
-        }
-        .copy:hover::after {
-            color: #00bdeb;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+<style>
+  /* Style for the button */
+  button {
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set the text color to white */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
 
-    <h2>Please submit the form below with your Attendee ID</h2>
+   /* Style for the input element */
+  input[type="text"] {
+    border: 2px solid black; /* Set the border thickness to 2px */
+    padding: 5px; /* Add some padding for better appearance */
+
+</style>
+<body>
+    <h2>Please submit the form below with your <b>Attendee ID</b>. All configuration entries in the lab guide will be renamed to include your Attendee ID.</h2>
     <form id="attendee-form">
         <label for="attendee">Attendee ID:</label>
         <input type="text" id="attendee" name="attendee" placeholder="Enter your Attendee ID" required>
@@ -66,6 +61,8 @@ icon: material/medal
 
 </body>
 </html>
+
+
 
 ## Using Business Hours in Your Flow to add flexibility
 
