@@ -9,43 +9,11 @@ layout: post
 ---
 
 
-<script>
-    function update(){them = Array.from(document.querySelectorAll("input")).reduce((acc, input) => ({...acc, [input.id + "_out"] : input.value}),{});
-   Object.entries(them).forEach((entry) => {
-    Array.from(document.getElementsByClassName(entry[0])).forEach((element,index) => 
-    {
-      console.log(document.getElementsByClassName(entry[0])[index].innerHTML); 
-      document.getElementsByClassName(entry[0])[index].innerHTML = entry[1];
-    })})
-
-  event.preventDefault()
-   if(document.forms["attendee-form"][1].value != "Your_Attendee_ID"){
-    localStorage.setItem("attendeeID",document.forms["attendee-form"][1].value)
-  }  
-  }
-</script>
-
-!!! tip "Please **`submit the form below with your Attendee ID`**. All configuration entries in the lab guide will be renamed to include your Attendee ID."
-
-    <script>
-    document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID"; 
-    update();
-    </script>
-    <form id="attendee-form">
-    <label for="attendee">Attendee ID:</label>
-    <input type="text" id="attendee" name="attendee" onChange="update()" style="border: 2px solid black; padding: 5px; border-radius: 4px; background-color: white;"><br>
-    <br>
-    <button type="button" onclick="update()" style="background-color:rgb(3, 3, 3); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Save</button>
-    </form>
-    <script>
-    document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID";
-    update();
-    </script>
 
 <table>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Administrator Login</td>
-    <td>wxcclabs+admin_ID<w class = "attendee_out">AttendeeID</w>@gmail.com</td>
+    <td><span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span></td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Agent Login</td>
