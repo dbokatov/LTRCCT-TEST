@@ -46,7 +46,7 @@ Flow Templates are designed to empower developers, speed up the development life
 ### Build
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format **wxcclabs+admin_ID<span id="attendee-id-placeholder">AttendeeID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
    
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
@@ -57,13 +57,13 @@ Flow Templates are designed to empower developers, speed up the development life
 3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 4. New Tab will be opened. Navigate to **Flow Templates**
 5. Choose ***Simple Inbound Call to Queue template*** and click **Next**. You can open View Details and to see observe flow structure and read flow description
-6. Name you flow as **Main_Flow_<w class = "attendee_out">attendeeID</w>**. Then click on Create Flow
+6. Name you flow as **Main_Flow_<span id="attendee-id-placeholder">AttendeeID</span>**. Then click on Create Flow
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
 7. In the flow change **Edit** toggle from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
-8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<w class = "attendee_out">attendeeID</w>_Queue** from the drop down list
+8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span id="attendee-id-placeholder">AttendeeID</span>_Queue** from the drop down list
     
     !!! Note
         As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
@@ -80,11 +80,11 @@ Flow Templates are designed to empower developers, speed up the development life
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
 12. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
-13. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<w class = "attendee_out">attendeeID</w>_Channel**.
-14. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
+13. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<span id="attendee-id-placeholder">AttendeeID</span>_Channel**.
+14. Click on **<span id="attendee-id-placeholder">AttendeeID</span>_Channel**
 15. In **Entry Point** Settings section change the following:
 
-    > Routing Flow: **Main_Flow_<w class = "attendee_out">attendeeID</w>**
+    > Routing Flow: **Main_Flow_<span id="attendee-id-placeholder">AttendeeID</span>**
 
     > Version Label: **Latest**
 
@@ -95,13 +95,13 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ### Testing
 
-1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select **Desktop** as a **Telephony Option** and Team **<w class = "attendee_out">attendeeID</w>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+agent_ID<span id="attendee-id-placeholder">AttendeeID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+2. Select **Desktop** as a **Telephony Option** and Team **<span id="attendee-id-placeholder">AttendeeID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 3. Make your agent **Available** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
+4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span id="attendee-id-placeholder">AttendeeID</span>_Channel** configuration.
 
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
@@ -128,7 +128,7 @@ This lab may feel straightforward for some, which is understandable; however, it
 
 ### Build
 
-1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change the mode from **Read-only** to **Edit-on** mode
+1. Open your flow **Main_Flow_<span id="attendee-id-placeholder">AttendeeID</span>** and change the mode from **Read-only** to **Edit-on** mode
 2. Add a **Global Variable** named **Global_Language**
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
@@ -138,7 +138,7 @@ This lab may feel straightforward for some, which is understandable; however, it
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
-5. Make a test call from Webex App by calling the Support Number, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration.
+5. Make a test call from Webex App by calling the Support Number, which is configured in your **<span id="attendee-id-placeholder">AttendeeID</span>_Channel** configuration.
 Verify if the TTS language changed
 
 **Congratulations on completing another mission.**
