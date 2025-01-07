@@ -17,27 +17,27 @@ layout: post
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Agent Login</td>
-    <td>wxcclabs+agent_ID<w class = "attendee_out">AttendeeID</w>@gmail.com</td>
+    <td><span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span></td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Supervisor Login</td>
-    <td>wxcclabs+supvr_ID<w class = "attendee_out">AttendeeID</w>@gmail.com</td>
+    <td><span class="attendee-id-container">wxcclabs+supvr_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+supvr_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span></td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">EntryPoint/Channel Name</td>
-    <td><w class = "attendee_out">attendeeID</w>_Channel</td>
+    <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span></td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Team</td>
-    <td><w class = "attendee_out">AttendeeID</w>_Team</td>
+    <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy"></span></span></td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Queue</td>
-    <td><w class = "attendee_out">attendeeID</w>_Queue</td>
+    <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span></td>
   </tr>  
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Bussiness Hours</td>
-    <td><w class = "attendee_out">attendeeID</w>_Bussiness_Hours</td>
+    <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span></td>
   </tr>     
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Control Hub</td>
