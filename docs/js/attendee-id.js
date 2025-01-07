@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
-    const attendeePlaceholder = document.getElementById('attendee-id-placeholder');
+    const placeholders = document.querySelectorAll('.attendee-id-placeholder');
 
-    if (attendeePlaceholder) {
-        attendeePlaceholder.textContent = attendeeID;
-    }
+    placeholders.forEach(function(placeholder) {
+        placeholder.textContent = attendeeID;
+    });
 });
