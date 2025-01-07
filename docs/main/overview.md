@@ -2,7 +2,6 @@
 #icon: material/folder-open-outline
 icon: material/bullseye-arrow
 ---
-
 <script>
     // Function to initialize and handle form submission
     function setupAttendeeForm() {
@@ -41,8 +40,6 @@ icon: material/bullseye-arrow
 
     // Wait for the DOM content to be fully loaded
     document.addEventListener('DOMContentLoaded', setupAttendeeForm);
-    
-    });
 </script>
 
 <style>
@@ -64,7 +61,7 @@ icon: material/bullseye-arrow
 
 <!-- Markdown content with embedded HTML -->
 <div>
-    <h2>Please submit the form below with your Attendee ID. All configuration entries in the lab guide will be renamed to include your Attendee ID.</h2>
+    <h2>Please submit the form below with your Attendee ID</h2>
     <form id="attendee-form">
         <label for="attendee">Attendee ID:</label>
         <input type="text" id="attendee" name="attendee" placeholder="Enter 3 digits" required>
@@ -73,7 +70,7 @@ icon: material/bullseye-arrow
 
     <br>
 
-    <p>Your stored Attendee ID is: <span id="display-attendee">No Attendee ID stored</span></p>
+    <p>Your stored Attendee ID is: <span id="display-attendee">No ID stored</span></p>
 </div>
 
 # Overview
