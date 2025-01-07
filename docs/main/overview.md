@@ -70,7 +70,8 @@ icon: material/bullseye-arrow
 
 <!-- Markdown content with embedded HTML -->
 <div>
-    <h2>Please submit the form below with your Attendee ID. All configuration entries in the lab guide will be renamed to include your Attendee ID.</h2>
+    <h2>Please submit the form below with your Attendee ID.</h2> 
+    <h3>All configuration entries in the lab guide will be renamed to include your Attendee ID.</h3>
     <form id="attendee-form">
         <label for="attendee">Attendee ID:</label>
         <input type="text" id="attendee" name="attendee" placeholder="Enter 3 digits" required>
@@ -79,7 +80,7 @@ icon: material/bullseye-arrow
 
     <br>
 
-    <p>Your stored Attendee ID is: <span id="display-attendee">No ID stored</span></p>
+    <p>Your stored Attendee ID is: <b><span id="display-attendee">No ID stored</span></b></p>
 </div>
 
 # Overview
