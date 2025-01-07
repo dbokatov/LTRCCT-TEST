@@ -1,5 +1,10 @@
-Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
+## Welcome to the Event
+
+Your Attendee ID is: <span class="attendee-id-placeholder">Loading...</span>
+
 Please ensure your ID is correct for event access.
+
+Another section mentioning your Attendee ID: <span class="attendee-id-placeholder">Loading...</span>
 
 
 !!! Note
@@ -36,9 +41,6 @@ Flow Templates are designed to empower developers, speed up the development life
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
    Your login will be of the format **wxcclabs+admin_ID<span id="attendee-id-placeholder">AttendeeID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
-
-Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
-Please ensure your ID is correct for event access.
 
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
