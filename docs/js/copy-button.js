@@ -1,21 +1,24 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const copyElements = document.querySelectorAll(".copy");
+document.addEventListener('DOMContentLoaded', function() {
+        const attendeeID = localStorage.getItem('attendeeID') || 'Not Set';
+        const containers = document.querySelectorAll('.attendee-id-container');
 
-    copyElements.forEach(copyElement => {
-        const attendeeElement = copyElement.querySelector(".attendee_out");
-        if (attendeeElement) {
-            const attendeeID = attendeeElement.textContent || attendeeElement.innerText;
-            const currentText = copyElement.getAttribute("data-copy-text");
-            copyElement.setAttribute("data-copy-text", currentText + attendeeID);
-        }
+        containers.forEach(function(container) {
+            const placeholder = container.querySelector('.attendee-id-placeholder');
+            if (placeholder) {
+                placeholder.textContent = attendeeID;
+            }
 
-        copyElement.addEventListener("click", function() {
-            const textToCopy = copyElement.getAttribute("data-copy-text");
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                console.log("Text copied to clipboard");
-            }).catch(err => {
-                console.error("Could not copy text: ", err);
+            // Update the data-copy-text attribute
+            container.setAttribute('data-copy-text', `admin_ID${attendeeID}`);
+
+            // Add click event to copy the text
+            container.addEventListener('click', function() {
+                const textToCopy = container.getAttribute('data-copy-text');
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    console.log("Text copied to clipboard");
+                }).catch(err => {
+                    console.error("Could not copy text: ", err);
+                });
             });
         });
     });
-});
