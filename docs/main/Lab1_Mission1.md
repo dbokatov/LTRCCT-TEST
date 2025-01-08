@@ -8,21 +8,23 @@ icon: material/medal
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
 Test 1:
-wxcclabs+admin_ID<span class="copy" data-copy-text="wxcclabs+admin_ID@gmail.com">
-  <span id="attendee-id-placeholder">AttendeeID</span>
-</span>
+<span class="attendee-id-placeholder" data-suffix="Any_Variable"></span>_Team<span class="copy"></span>
 
-1. Your Attendee ID is: <span id="attendee-id-placeholder">Loading...</span>
-2. Your stored Attendee ID is: <span id="display-attendee">No ID stored</span>
+Test 2: (no copy)
+**<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+**wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**
+**<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** 
+**Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
 
-Test 2:
-**<span id="attendee-id-placeholder">AttendeeID</span>_Bussiness_Hours**
+Test 3: (copy)
+**<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**
 
+**<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**
 
 ### **Step Objective:**
-  - We continue to use same flow we created in previous section
+  - We continue to use same flow we created in previous Mission 1 of the Fundamental Lab
 
-  - Business Hours entity **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** has been configured for you and contains the following settings:
+  - Business Hours entity **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span>** has been configured for you and contains the following settings:
     
     ○ **Working Hours** - Define time during which contact center will be operational. Each working hours contains one or more shifts. We can configure different schedules for different time zones
     
