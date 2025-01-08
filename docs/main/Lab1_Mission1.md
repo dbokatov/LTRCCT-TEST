@@ -8,7 +8,7 @@ icon: material/medal
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
 Test 1:
-123Team<span class="copy"></span>
+**<span class="attendee-id-container">1234567Team<span class="copy"></span></span>**
 
 Test 2: (no copy)
 **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
@@ -24,7 +24,7 @@ Test 3: (copy)
 
 **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**
 
-### **Step Objective:**
+### **Step Objective**
   - We continue to use same flow we created in previous Mission 1 of the Fundamental Lab
 
   - Business Hours entity **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span>** has been configured for you and contains the following settings:
