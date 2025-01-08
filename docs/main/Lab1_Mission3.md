@@ -17,7 +17,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
 1. Create a **Global Variable** by accessing Flows then Global Variable tab
     
-    > Name: **WhoIsCalling_<w class = "attendee_out">attendeeID</w>**
+    > Name: **<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy"></span></span>**
     >
     > Variable Type: String
     >
@@ -28,7 +28,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     > Edit on Desktop: Yes
         
         
-2. Open you your **Main_Flow_<w class = "attendee_out">attendeeID</w>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<w class = "attendee_out">attendeeID</w>** Global Variable to the flow.
+2. Open you your ***Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** Global Variable to the flow.
     
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
@@ -40,7 +40,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     
 4. Go back to your flow, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
       
-    > Use Authenticated Endpoint: Off
+    > Use Authenticated Endpoint: **Off**
     >
     > Request URL: Paste your unique URL copied on Step 3 from **https://webhook.site/**.
     >
@@ -78,7 +78,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     
 ### Testing
     
-1. Make sure you're logged in as Agent **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com** and set status to **Available**.
+1. Make sure you're logged in as Agent **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and set status to **Available**.
 2. Make a call to your test number and if success you should hear Welcome message and then accept the call by agent.
 3. In agent interaction panel change **Who Is Calling?** to any text you like then click **Save** and End the call.
 4. On **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 

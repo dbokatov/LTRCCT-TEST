@@ -60,8 +60,8 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
      
-         !!!Note
-            We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
+    !!! Note
+        We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
     ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 

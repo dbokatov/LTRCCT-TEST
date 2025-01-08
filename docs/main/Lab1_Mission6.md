@@ -23,14 +23,14 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ### Creating a AI Agent using a Template
 
-1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 2. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
     ![Profiles](../graphics/Lab1/L1M6_OpenWebexAI.gif)  
 
 3. Click on **Create agent** to create a new bot. Select the **Appointment Booking** Template and click on **Next** button.
-4. Agent Name **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025** and click Create
+4. Agent Name **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_TaskBot_CL2025">Your_Attendee_ID</span>_TaskBot_CL2025<span class="copy"></span></span>** and click **Create**
 5. Make the bot live by clicking on the **Make Live** button on the top right.
 6. Enter **v1** in the popup modal which appears after clicking on **Make Live**.
 
@@ -46,7 +46,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 1. In Control Hub navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-2. Select Start Fresh and name the new flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**.
+2. Select **Start Fresh** and name the new flow **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**.
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_CreateFlow.gif)  
 
@@ -67,7 +67,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     >
     > Contact Center AI Config: **Webex AI Agent (Scripted)**
     >
-    > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025**
+    > Virtual Agent: **<span class="attendee-id-placeholder" data-suffix="_TaskBot_CL2025">Your_Attendee_ID</span>_TaskBot_CL2025**
 
 
 4. On bottom right corner toggle **Validation** from **Off** to **On**
@@ -75,18 +75,18 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowAddVA.gif)  
 
-6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<w class = "attendee_out">attendeeID</w>_Channel**.
+6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**.
 7. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
 8. In **Entry Point** Settings section change the following:
 
-    > Routing Flow: <copy>**TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Routing Flow: **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**
 
     > Version Label: **Latest**
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
 
 
-9. Dial Support Number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** to test the Virtual Agent over a voice call.
+9. Dial Support Number assigned to your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** to test the Virtual Agent over a voice call.
 
 ---
 
@@ -95,14 +95,14 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 #### Step Objective
 In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
 
-1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 2. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
     ![Profiles](../graphics/Lab1/L1M6_OpenWebexAI.gif)  
 
 
-3. Click on the bot **<w class = "attendee_out">attendeeID</w>_TaskBot_CL2025** that you created earlier. Then go to the **Responses** tab on the left-hand panel.
+3. Click on the bot **<span class="attendee-id-placeholder" data-suffix="_TaskBot_CL2025">Your_Attendee_ID</span>_TaskBot_CL2025** that you created earlier. Then go to the **Responses** tab on the left-hand panel.
     
     >
     > Select the **Welcome message** in **Default message**

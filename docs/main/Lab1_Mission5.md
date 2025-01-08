@@ -21,7 +21,7 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
 
 ### How to Use the Debug Tool
 
-1. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** in Flow Designer and navigate to the Debug Tool.
+1. Open your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in Flow Designer and navigate to the Debug Tool.
 
 2. So far we have already made couple of calls so you can select latest by clicking on any interaction.
 
@@ -59,7 +59,7 @@ Flow Analytics feature is designed to provide flow developer, administrators and
 
 ### How to Use the Flow Analytics Tool
 
-1. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** in Flow Designer and navigate to the Flow Analytics Tool.
+1. Open your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in Flow Designer and navigate to the Flow Analytics Tool.
 
 2. Specify a DateTime range for the report. All calls we made happened today hence select **Today** option.
 

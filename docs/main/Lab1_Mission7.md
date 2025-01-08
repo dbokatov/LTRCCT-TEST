@@ -17,13 +17,7 @@ The Autonomous AI Agent for performing actions can handle various tasks, includi
 
 ## Mission overview
 
-In current mission you will have an options to create a knowledge bases (KB). KB might contain information from different sources. It can be one or all from the following list. It is up to you. 
-
-1. KB that will be used in AI agent to provide answers about Amsterdam (aka **Amsterdam Tourist Guide**): places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center.
-
-2. KB that can provide you information about current Cisco Live 2025 event: Schedules, session, rooms as well as how to get help and support.
-
-3. You can use any source of information you like. Just Google it to find FAQ you like and save it as on of supported file formats: *pdf, docx, doc, txt, xlsx, xls, csv*. Each file cannot exceed **20MB** in size.
+In current mission you would need to create a knowledge bases (KB). You are going to build a KB for your AI agent to provide answers about Amsterdam (aka **Amsterdam Tourist Guide**): places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center.
 
 ---
 
@@ -36,9 +30,8 @@ In current mission you will have an options to create a knowledge bases (KB). KB
     > 
     > **Amsterdam_Tourist_Guide.txt**
     >
-    > **Cisco-Live-2025-Amsterdam.pdf**
 
-2. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+2. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 3. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
@@ -46,15 +39,11 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
 4. In AI Agent Builder navigate to **Knowledge** from left hand side menu panel. 
 
-5. Click **Create Knowledge Base**, provide Knowledge base name as **<w class = "attendee_out">attendeeID</w>_AI_KB**, then click **Create**.
+5. Click **Create Knowledge Base**, provide Knowledge base name as **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span></span>**, then click **Create**.
 
     ![Profiles](../graphics/Lab1/L1M7_AIKBCreate.gif)
 
-6. Click **Add File** or drag and drop one or both of the following files:
-
-    - **Amsterdam Tourist Guide** - TXT file information for tourists: places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center 
-    - **Cisco Live 2025 Amsterdam FAQ** - bunch of PDF files about Cisco Live 2025 Amsterdam event.
-    - Your file or files if you decide to use them. If you face chalenges with this please call your instructor.
+6. Click **Add File** or drag and drop the files **Amsterdam Tourist Guide** you downloaded from external drive on **Step 1** - TXT file information for tourists: places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center 
 
     ![Profiles](../graphics/Lab1/L1M7_AIKBFileUpload.gif)
 
@@ -69,13 +58,13 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
 10. On **Set up profile** provide te following information, then click **Create**:
 
-    > Agent Name: **<w class = "attendee_out">attendeeID</w>_AutoAI_Lab**
+    > Agent Name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span class="copy"></span></span>**
     >
     > System ID is created automatically
     >
     > AI engine: **Nova**
     >
-    > Knowledge base: **<w class = "attendee_out">attendeeID</w>_AI_KB**
+    > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span></span>**
     > 
     > Agent's goal: <copy>***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***</copy>
     > 
@@ -86,7 +75,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentAllowHandoff.png)
 
-12. Click on **Preview** to test your AI Agent and ask the following: <copy>**"I'm looking for an Italian restaurant close to RAI."**</copy>
+12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentPreview.png)
 
@@ -96,7 +85,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
 1. In Control Hub navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-2. Select Start Fresh and name the new flow <copy>**AutonomousAI_Flow_<w class = "attendee_out">attendeeID</w>**</copy>.
+2. Select Start Fresh and name the new flow **<span class="attendee-id-container">AutonomousAI_Flow_<span class="attendee-id-placeholder" data-prefix="AutonomousAI_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**
 
     ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_CreateFlow.gif)  
 
@@ -115,7 +104,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
     >
     > Contact Center AI Config: **Webex AI Agent (Autonomous)**
     >
-    > Virtual Agent: **<w class = "attendee_out">attendeeID</w>_AutoAI_Lab**
+    > Virtual Agent: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span class="copy"></span></span>**
 
     ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_AddVAv2.gif)  
 
@@ -130,7 +119,7 @@ In current mission you will have an options to create a knowledge bases (KB). KB
       >
       > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
       > 
-      > Queue name: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+      > Queue name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span>**
       > 
 
     - **Play Music**
@@ -147,28 +136,28 @@ In current mission you will have an options to create a knowledge bases (KB). KB
 
     ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_AddQueue.gif)  
 
-6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel **<w class = "attendee_out">attendeeID</w>_Channel**.
-7. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
+6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**.
+7. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 8. In **Entry Point** Settings section change the following:
 
-    > Routing Flow: **AutonomousAI_Flow_<w class = "attendee_out">attendeeID</w>**
+    > Routing Flow: **<span class="attendee-id-container">AutonomousAI_Flow_<span class="attendee-id-placeholder" data-prefix="AutonomousAI_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**
 
     > Version Label: **Latest**
 
     ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_FlowtoEP.gif)  
 
-9. Dial Support Number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** to test the Autonomous Virtual Agent over a voice call.
+9. Dial Support Number assigned to your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** to test the Autonomous Virtual Agent over a voice call.
 
 
 ## Testing
 
-1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select **Desktop** as a ***Telephony Option*** and Team <copy>**<w class = "attendee_out">attendeeID</w>_Team**</copy>. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+1. Your Agent desktop session should be still active but if not, use Chrome Agent Profile to open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+2. Select **Desktop** as a ***Telephony Option*** and Team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 3. Make your agent ***Available*** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** channel and during the conversation with the virtual Agent ask something about restaurants in Amsterdam or places where you can go and watch historical.
+4. Dial the support number assigned to your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** channel and during the conversation with the virtual Agent ask something about restaurants in Amsterdam or places where you can go and watch historical.
 
 5. Any time during conversation request to connect you with a live agent. The call will be transferred to your agent.
 
