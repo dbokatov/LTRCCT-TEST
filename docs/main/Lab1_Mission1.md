@@ -7,23 +7,6 @@ icon: material/medal
 
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
-Test 1:
-**<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="1234567Team"></span>1234567Team<span class="copy"></span></span>**
-
-Test 2: (no copy)
-**<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-
-**wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**
-
-**<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** 
-
-**Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
-
-Test 3: (copy)
-**<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**
-
-**<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**
-
 ### **Step Objective**
   - We continue to use same flow we created in previous Mission 1 of the Fundamental Lab
 
@@ -36,13 +19,16 @@ Test 3: (copy)
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
 
+Test1: 
+<span class="attendee-id-placeholder" data-suffix="112233Channel"></span>112233Channel<span class="copy"></span>
+
 #### Build
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
 
     ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
-2. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change the mode from Read-only to Edit-on mode
+2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change the mode from Read-only to Edit-on mode
 3. Drag and drop following nodes to the canvas:
 
     > - **Business Hours**
@@ -63,7 +49,7 @@ Test 3: (copy)
 
     ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
 
-5. Click on **Business Hours** node and select preconfigured Business Hours Entity **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**.
+5. Click on **Business Hours** node and select preconfigured Business Hours Entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** .
 
 6. Configure **PlayMessage** node as follows:
 
@@ -83,7 +69,7 @@ Test 3: (copy)
     ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
    
-8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** entity. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
+8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
 
     !!! Note
         Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
@@ -92,12 +78,12 @@ Test 3: (copy)
 
 ### Testing
 
-1. Open your Webex App and dial the Support Number provided to you, which is configured in your **<w class = "attendee_out">attendeeID</w>_Channel** configuration. Make sure you hear the message we set in ***Step 6***.
+1. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration. Make sure you hear the message we set in ***Step 6***.
 
 
-### Post Testin steps
+### Post Testing steps
 
-1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<w class = "attendee_out">attendeeID</w>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from **Override** dropdown list. Then click **Save**.
+1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from **Override** dropdown list. Then click **Save**.
 
      ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
