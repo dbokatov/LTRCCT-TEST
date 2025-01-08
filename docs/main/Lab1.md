@@ -83,7 +83,7 @@ Flow Templates are designed to empower developers, speed up the development life
 ### Testing
 
 1. Use Chrome Agent Profile to open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select **Desktop** as a **Telephony Option** and Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+2. Select **Desktop** as a **Telephony Option** and Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
 3. Make your agent **Available** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
@@ -93,7 +93,7 @@ Flow Templates are designed to empower developers, speed up the development life
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
 ### Summary
-This lab may feel straightforward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
+This lab may feel straight forward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
 
 
