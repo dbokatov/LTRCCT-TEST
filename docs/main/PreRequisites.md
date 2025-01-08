@@ -75,10 +75,6 @@ $shortcut = $shell.CreateShortcut("$DesktopPath\WxCC Admin.lnk")
 $shortcut.TargetPath = "%PROGRAMFILES%\Google\Chrome\Application\chrome.exe"
 $Shortcut.Arguments = "--user-data-dir=%USERPROFILE%\chromeProfiles\admin"
 $Shortcut.Save()
-$shortcut = $shell.CreateShortcut("$DesktopPath\WxCC Supervisor.lnk")
-$shortcut.TargetPath = "%PROGRAMFILES%\Google\Chrome\Application\chrome.exe"
-$Shortcut.Arguments = "--user-data-dir=%USERPROFILE%\chromeProfiles\Supervisor"
-$Shortcut.Save()
 $shortcut = $shell.CreateShortcut("$DesktopPath\WxCC Agent1.lnk")
 $shortcut.TargetPath = "%PROGRAMFILES%\Google\Chrome\Application\chrome.exe"
 $Shortcut.Arguments = "--user-data-dir=%USERPROFILE%\chromeProfiles\Agent1"
