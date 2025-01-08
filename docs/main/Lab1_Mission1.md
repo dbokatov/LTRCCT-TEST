@@ -10,7 +10,7 @@ Business Hours allows you to configure the operational hours of the contact cent
 ### **Step Objective**
   - We continue to use same flow we created in previous Mission 1 of the Fundamental Lab
 
-  - Business Hours entity **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span>** has been configured for you and contains the following settings:
+  - Business Hours entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** has been configured for you and contains the following settings:
     
     ○ **Working Hours** - Define time during which contact center will be operational. Each working hours contains one or more shifts. We can configure different schedules for different time zones
     
@@ -19,16 +19,13 @@ Business Hours allows you to configure the operational hours of the contact cent
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
 
-Test1: 
-<span class="attendee-id-placeholder" data-suffix="112233Channel"></span>112233Channel<span class="copy"></span>
-
 #### Build
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
 
     ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
-2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change the mode from Read-only to Edit-on mode
+2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Read-only** to **Edit: ON** mode
 3. Drag and drop following nodes to the canvas:
 
     > - **Business Hours**
@@ -63,8 +60,8 @@ Test1:
 
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
      
-     !!! Note
-        We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
+         !!!Note
+            We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
     ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
