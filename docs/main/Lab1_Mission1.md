@@ -8,7 +8,7 @@ icon: material/medal
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
 Test 1:
-**<span class="attendee-id-container">1234567Team<span class="copy"></span></span>**
+**<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="1234567Team"></span>1234567Team<span class="copy"></span></span>**
 
 Test 2: (no copy)
 **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
