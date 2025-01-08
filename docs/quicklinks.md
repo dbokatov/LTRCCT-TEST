@@ -40,11 +40,11 @@ layout: post
     <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span></td>
   </tr>     
   <tr>
-    <td style="background-color: #d9edf7; font-weight: bold;">Control Hub</td>
-    <td><a href="https://admin.webex.com/">https://admin.webex.com/</a></td>
+    <td style="background-color: #d9edf7; font-weight: bold;">Control Hub</td>    
+    <td><a href="https://admin.webex.com/" target="_blank">https://admin.webex.com/</a></td>
   </tr>
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold;">Agent Desktop</td>
-    <td><a href="https://desktop.wxcc-us1.cisco.com/">https://desktop.wxcc-us1.cisco.com/</a></td>
+    <td><a href="https://desktop.wxcc-us1.cisco.com/" target="_blank">https://desktop.wxcc-us1.cisco.com/</a></td>
   </tr>
 </table>
