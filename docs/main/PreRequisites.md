@@ -25,19 +25,19 @@ Please ask for help when you need it
 
 ### Predefined configuration
 
-> Entry Point/Channels:  <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+> Entry Point/Channels:  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**
 
-> Queue:  <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+> Queue:  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span>**
 
-> Agent:   <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>
+> Agent:   **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**
 
-> Supervisor:   <copy>**wxcclabs+supvr_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>
+> Supervisor:   **<span class="attendee-id-container">wxcclabs+supvr_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+supvr_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**
 
-> Business Hours: <copy>**<w class = "attendee_out">attendeeID</w>_Bussiness_Hours**</copy>
+> Business Hours: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span>**
 
 > Webex App has been pre-installed on your Lab PC
 
-> Assigned Inbound Channel Number: <copy><w class="EPDN">Provided by proctor</w></copy>
+> Assigned Inbound Channel Number: **Provided by Lab Instructor**
 
 More pre-configured entities will be mentioned during the lab missions if they have any.
 
