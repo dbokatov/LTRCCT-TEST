@@ -19,16 +19,16 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     
     > Name: **<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy"></span></span>**
     >
-    > Variable Type: String
+    > Variable Type: **String**
     >
-    > Make agent viewable: Yes
+    > Make agent viewable: **Yes**
     >
-    > Desktop label: Who Is Calling?
+    > Desktop label: **Who Is Calling?**<span class="copy copy-icon" data-copy-text="Who Is Calling?"></span>
     >
-    > Edit on Desktop: Yes
+    > Edit on Desktop: **Yes**
         
         
-2. Open you your ***Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** Global Variable to the flow.
+2. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** Global Variable to the flow.
     
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
@@ -42,7 +42,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
       
     > Use Authenticated Endpoint: **Off**
     >
-    > Request URL: Paste your unique URL copied on Step 3 from **https://webhook.site/**.
+    > Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook.site/</span>*.
     >
     > Method: **POST**
     >
@@ -66,9 +66,9 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     
 5. <span style="color: orange;">[Optional]</span>: You can also modify **Screenpop** configuration in the same flow
 
-    > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**
+    > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**<span class="copy copy-icon" data-copy-text="https://www.ciscolive.com/emea/faqs.html"></span>
     >
-    > Screen Pop Desktop Label: **Cisco Live Amsterdam 2025 FAQ**
+    > Screen Pop Desktop Label: **Cisco Live Amsterdam 2025 FAQ**<span class="copy copy-icon" data-copy-text="Cisco Live Amsterdam 2025 FAQ"></span>
     >
     > Display Settings: New browser Tab.
   
@@ -85,4 +85,4 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
 ![profiles](../graphics/Lab1/AM2_Testing.gif)
 
-**Congratulations on Completing Mission 2 of Lab A where you have learnt how to use events in your flows.**
+**Congratulations on completing another mission where you have learnt how to use events in your flows.**

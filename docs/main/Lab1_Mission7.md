@@ -66,7 +66,7 @@ In current mission you would need to create a knowledge bases (KB). You are goin
     >
     > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span></span>**
     > 
-    > Agent's goal: <copy>***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***</copy>
+    > Agent's goal: ***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***<span class="copy copy-icon" data-copy-text="You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information."></span>
     > 
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentCreate.gif)
@@ -75,7 +75,7 @@ In current mission you would need to create a knowledge bases (KB). You are goin
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentAllowHandoff.png)
 
-12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**
+12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**<span class="copy copy-icon" data-copy-text="I'm looking for an Italian restaurant close to RAI."></span>
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentPreview.png)
 

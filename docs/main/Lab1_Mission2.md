@@ -17,21 +17,21 @@ We are going to extend the same flow by adding additional functionality so the c
 2. Delete  connection from **Queue** node to **Music** 
 3. Drag **Menu** node:
 
-    > Rename Activity Label to **WantCallback**
+    > Rename Activity Label to **WantCallback**<span class="copy copy-icon" data-copy-text="WantCallback"></span>
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***
+    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy copy-icon" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."></span>
     >
     > Delete the Selection for Audio File
     >
     > Under Custom Menu Links:
     >>
-    >> Change first Digit Number 0 to 1, add Link Description as **Callback** 
+    >> Change first Digit Number **0** to **1**, add Link Description as **Callback** 
     >>
-    >> Add New Digit Number as 2 with Link Description **Stay in queue**
+    >> Add New Digit Number as **2** with Link Description **Stay in queue**
 
     ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
 
@@ -39,25 +39,25 @@ We are going to extend the same flow by adding additional functionality so the c
 
 4. Drag **Collect Digits** nodes
     
-    > Rename Activity Label to **NewNumber**
+    > Rename Activity Label to **NewNumber**<span class="copy copy-icon" data-copy-text="NewNumber"></span>
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **Please enter your 11 digits phone number to which we should call you back.**
+    > Click the Add Text-to-Speech Message button and paste text: **Please enter your 11 digits phone number to which we should call you back.**<span class="copy copy-icon" data-copy-text="Please enter your 11 digits phone number to which we should call you back."></span>
     >
     > Delete the Selection for Audio File
     >   
     > Advanced Settings:
     >
-    >> No-Input Timeout  5 
+    >> No-Input Timeout  **5** 
     >>
-    >> Make Prompt Interruptible: True
+    >> Make Prompt Interruptible: **True**
     >>
-    >> Minimum Digits: 11
+    >> Minimum Digits: **11**
     >>
-    >> Maximum Digits: 11
+    >> Maximum Digits: **11**
     >       
     > Connect **No-Input Timeout** to the front of the **NewNumber** node
     >
@@ -73,22 +73,22 @@ We are going to extend the same flow by adding additional functionality so the c
 
 5. Drag one more Menu node
     
-    > Rename Activity Label to **VerifyNumber**
+    > Rename Activity Label to **VerifyNumber**<span class="copy copy-icon" data-copy-text="VerifyNumber"></span>
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number.**
+    > Click the Add Text-to-Speech Message button and paste text: **You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number.**<span class="copy copy-icon" data-copy-text="You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number."></span>
     >
     > Delete the Selection for Audio File
     >
     >    
     > Custom Menu Links:
     >>
-    >> Change first Digit Number from 0 to 1, add Link Description as **Number OK**
+    >> Change first Digit Number from **0** to **1**, add Link Description as **Number OK**
     >>
-    >> Add New Digit Number as 2 with  Link Description **Number Not OK**
+    >> Add New Digit Number as **2** with  Link Description **Number Not OK**
     >
     > Connect **No-Input Timeout** to the front of the **VerifyNumber** node
     >
@@ -96,7 +96,7 @@ We are going to extend the same flow by adding additional functionality so the c
     >    
     > Connect **NewNumber** created in step 4 to **VerifyNumber** node
     >
-    > Connect **Number Not OK** from **VerifyNumber** node created in step 5 to **VerifyNumber** node
+    > Connect **Number Not OK** from **VerifyNumber** node created in Step 5 to **VerifyNumber** node
     
     ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
 
@@ -113,9 +113,9 @@ We are going to extend the same flow by adding additional functionality so the c
     
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**
+    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy copy-icon" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."></span>
     >
     > Delete the Selection for Audio File
     >

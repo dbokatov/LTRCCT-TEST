@@ -19,16 +19,6 @@ Business Hours allows you to configure the operational hours of the contact cent
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
 
-TEST1
-
- I'm YARIK!!!!<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
-
-Test2
-<span class="attendee-id-container">
-        MY_STATIC_TEXT
-        <span class="copy"></span>
-    </span>
-
 #### Build
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section

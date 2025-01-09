@@ -73,17 +73,17 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 1. Explore preconfigured Survey. In Control Center go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
-2. Open you <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+2. Open you **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
   ![profiles](../graphics/Lab1/PCS_addGV.gif)
 
 
 3. Drag **Set Variable** node to canvas:
 
-    > Activity Name: **FeedbackSet**
+    > Activity Name: **FeedbackSet**<span class="copy copy-icon" data-copy-text="FeedbackSet"></span>
     >
-    > Variable: **Global_FeedbackSurveyOptIn**
+    > Variable: **Global_FeedbackSurveyOptIn**<span class="copy copy-icon" data-copy-text="Global_FeedbackSurveyOptIn"></span>
     >
-    > Set Value: true
+    > Set Value: **true**
     > 
     > Delete connection between **NewPhoneContact** and **SetVariable** on which we configured Language while doing the Main Lab.
     >
@@ -99,7 +99,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     
     **FeedbacV2**
     
-    > SurveyMethod -> VoiceBased:  **PCS-2025**
+    > SurveyMethod -> VoiceBased:  **PCS-2025**<span class="copy copy-icon" data-copy-text="PCS-2025"></span>
     >        
     > Connect **HTTPRequest** to **FeedbackV2** node
     >
@@ -113,7 +113,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     >
     > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***
+    > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy copy-icon" data-copy-text="Something went wrong on Feedback node. Please call later."></span>
     >
     > Delete the Selection for Audio File
     >

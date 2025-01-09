@@ -36,7 +36,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Create.gif)  
 
-7. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing ***I would like to cancel an appointment*** and continue the conversation.
+7. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing ***"I would like to cancel an appointment"***<span class="copy copy-icon" data-copy-text="I would like to cancel an appointment"></span> and continue the conversation.
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Preview.gif)  
 
@@ -76,7 +76,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowAddVA.gif)  
 
 6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**.
-7. Click on **<w class = "attendee_out">attendeeID</w>_Channel**
+7. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 8. In **Entry Point** Settings section change the following:
 
     > Routing Flow: **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**
@@ -107,9 +107,9 @@ In this Step We will learn how to update bot responses and test these changes bo
     >
     > Select the **Welcome message** in **Default message**
     >
-    > Update the text to **"Welcome to Cumulus Healthcare. How may I assist you today?"** for the Default (web) channel.
+    > Update the text to **"Welcome to Cumulus Healthcare. How may I assist you today?"**<span class="copy copy-icon" data-copy-text="Welcome to Cumulus Healthcare. How may I assist you today?"></span> for the Default (web) channel.
     >
-    > Navigate to the Voice Channel and update the text to **"Welcome to Cumulus Healthcare. How may I assist you today?"**
+    > Navigate to the Voice Channel and update the text to **"Welcome to Cumulus Healthcare. How may I assist you today?"**<span class="copy copy-icon" data-copy-text="Welcome to Cumulus Healthcare. How may I assist you today?"></span>
     >
     > Click on the update button to confirm the changes. Make the bot live by clicking on the **Make Live** button
 
@@ -136,8 +136,8 @@ In this step, we will learn how to add new intents and entities to enhance the b
 2. Navigate to the Training Tab from the left-hand panel and click on the **Create Intent** button located in the top right corner.
 3. Add a new intent by providing the intent name as ***ReferralRequest*** and include the following two utterances:
 
-    - ***I would like a referral for a cardiologist.***
-    - ***I need a referral to visit a neurologist.***
+    - ***I would like a referral for a cardiologist.***<span class="copy copy-icon" data-copy-text="I would like a referral for a cardiologist."></span>
+    - ***I need a referral to visit a neurologist.***<span class="copy copy-icon" data-copy-text="I need a referral to visit a neurologist."></span>
 
     ![Profiles](../graphics/Lab1/L1M6_AddUtterance.gif) 
 
@@ -163,9 +163,9 @@ In this step, we will learn how to add new intents and entities to enhance the b
 6. On the same page at the bottom, clivk on Response drop-down list with **Final Template Key** and scroll down to **Create new**.
 
     > 
-    > Template key: ***ReferralResp***
+    > Template key: ***ReferralResp***<span class="copy copy-icon" data-copy-text="ReferralResp"></span>
     > 
-    > Text Response (Optional): ***Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?***
+    > Text Response (Optional): ***Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?***<span class="copy copy-icon" data-copy-text="Your request has been logged and will be reviewed by our team. You will receive a callback once it's approved. Is there anything else I can assist you with?"></span>
     >
     > Click **Create**
 
@@ -181,7 +181,7 @@ In this step, we will learn how to add new intents and entities to enhance the b
 
     ![Profiles](../graphics/Lab1/L1M6_Train&makelive.gif) 
 
-12. Use the **Preview** feature to test the bot flow with the input query: ***I need a referral for a cardiologist***.
+12. Use the **Preview** feature to test the bot flow with the input query: ***I need a referral for a cardiologist***<span class="copy copy-icon" data-copy-text="I need a referral for a cardiologist"></span>.
 13. You can also test this interaction in voice mode by dialing the Supported Number assigned to your pod.
 
     ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif) 
@@ -197,14 +197,14 @@ In this step, we will learn how to enhance the bot's capabilities by adding trai
 
 2. Click on the "Generate" button to utilize Generative AI for creating additional training phrases.
 
-3. Enter a description such as ***"generate intents for requesting a referral to different doctor specialties from primary care."*** Set the Number of Variants to **10**, which will determine the number of new phrases to be generated.
+3. Enter a description such as ***"generate intents for requesting a referral to different doctor specialties from primary care."***<span class="copy copy-icon" data-copy-text="generate intents for requesting a referral to different doctor specialties from primary care."></span> Set the Number of Variants to **10**, which will determine the number of new phrases to be generated.
 
      ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif)  
 
 
 4. Once the new phrases are generated, click on the **Save** button located in the top right corner to add them to your intent.
 5. Navigate back to the Training tab and click on the **Train** button to incorporate the new generative data into the bot's model.
-6. Add a comment such as ***"added generative training data"*** to keep track of this specific update.
+6. Add a comment such as ***"added generative training data"***<span class="copy copy-icon" data-copy-text="added generative training data"></span> to keep track of this specific update.
 7. Click on the **Make Live** button situated in the top right corner to apply the changes to the live version of your bot.
 8. Confirm the update by clicking on **Make Live** or **Make Live both** if there are other unsaved changes pending.
 
