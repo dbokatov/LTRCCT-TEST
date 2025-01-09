@@ -17,13 +17,13 @@ We are going to extend the same flow by adding additional functionality so the c
 2. Delete  connection from **Queue** node to **Music** 
 3. Drag **Menu** node:
 
-    > Rename Activity Label to **WantCallback**<span class="copy copy-icon" data-copy-text="WantCallback"></span>
+    > Rename Activity Label to **WantCallback**<span class="copy-static" title="Click to copy!" data-copy-text="WantCallback"><span class="copy"></span></span>
     >
     > Enable Text-To-Speech
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy copy-icon" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.laBlaBla"><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
     >
@@ -39,13 +39,13 @@ We are going to extend the same flow by adding additional functionality so the c
 
 4. Drag **Collect Digits** nodes
     
-    > Rename Activity Label to **NewNumber**<span class="copy copy-icon" data-copy-text="NewNumber"></span>
+    > Rename Activity Label to **NewNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewNumber"><span class="copy"></span></span>
     >
     > Enable Text-To-Speech
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **Please enter your 11 digits phone number to which we should call you back.**<span class="copy copy-icon" data-copy-text="Please enter your 11 digits phone number to which we should call you back."></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
     >   
@@ -73,13 +73,13 @@ We are going to extend the same flow by adding additional functionality so the c
 
 5. Drag one more Menu node
     
-    > Rename Activity Label to **VerifyNumber**<span class="copy copy-icon" data-copy-text="VerifyNumber"></span>
+    > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
     >
     > Enable Text-To-Speech
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number.**<span class="copy copy-icon" data-copy-text="You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number."></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" title="Click to copy!" data-copy-text="You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
     >
@@ -115,7 +115,7 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy copy-icon" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."></span>
+    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" title="Click to copy!" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
     >
