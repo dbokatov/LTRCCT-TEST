@@ -13,12 +13,17 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
   ![Profiles](../graphics/Lab2/ChangeGV.png) 
 
+
+Test 1
+
+
+
 ## Build
 
 
 1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
 
-    > Name: <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> 
+    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy"></span></span>**
     > Type: **Boolean**
     > Default Value: **False**
     > 
@@ -28,7 +33,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
 
 
-2. Create a new flow with a name <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>
+2. Create a new flow with a name **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     
 3. Add a **Collect Digits** node:
     
@@ -93,7 +98,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     ```
 
     !!! Note
-        In Request body we are going to change Default Value of Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>  from ***false*** to ***true***
+        In Request body we are going to change Default Value of Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**  from ***false*** to ***true***
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
     
@@ -165,9 +170,9 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     
     > Navigate to Control Hub > Contact Center > Channels
     > 
-    > Locate your Inbound Channel (you can use the search):  <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**
     > 
-    > Select the Routing Flow: <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Select the Routing Flow: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy"></span></span>**
     > 
     > Select the Version Label: **Latest**
     > 
@@ -176,7 +181,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
 ## Testing
    
-1. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> and make sure Default Value is set to False
+1. Open your Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure Default Value is set to **False**
     
 2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
         a. If **"You have successfully modified your emergency configuration."** you're good to proceed with step 3.
@@ -185,7 +190,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 3. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
 
-4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in LAB A, make it editable and add Global Variable <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> in General Settings of the flow
+4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in LAB A, make it editable and add Global Variable <**EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in General Settings of the flow
 
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
@@ -195,7 +200,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > 
     > Connect the output False node edge from the **Condition** Node to **Set Variable**
     > 
-    > In the Expression section write an expresion {{<copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> == true}}
+    > In the Expression section write an expresion {{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}
             
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
         
@@ -220,13 +225,13 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     
     ![Profiles](../graphics/Lab2/BM1-Test6-GV.gif)
         
-7. Because we are using only one number to make calls we need to map your **<w class = "attendee_out">attendeeID</w>_Channel** back to the **Main_Flow_<w class = "attendee_out">attendeeID</w>**
+7. Because we are using only one number to make calls we need to map your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** back to the **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     
     > Navigate to Control Hub > Contact Center > Channels
     >
-    > Locate your Inbound Channel (you can use the search): <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**
     >
-    > Select the Routing Flow: <copy>**Main_Flow_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Select the Routing Flow: **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**
     >
     > Select the Version Label: **Latest**
     >
@@ -237,7 +242,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     
 9. Revert the Global Variable value from **True** to **False** in Control Hub. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
 
-    > Name: <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy>    
+    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy"></span></span>** 
     >
     > Type: **Boolean**
     >
