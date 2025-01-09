@@ -19,6 +19,9 @@ Business Hours allows you to configure the operational hours of the contact cent
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
 
+TEST1
+<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
+
 #### Build
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
@@ -54,7 +57,7 @@ Business Hours allows you to configure the operational hours of the contact cent
     >
     > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***
+    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.*** 
     >
     > Delete the Selection for Audio File
 
