@@ -79,7 +79,7 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" title="Click to copy!" data-copy-text="You entered** *{{NewNumber.DigitsEntered}}***. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy"></span></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***You entered*** *{{NewNumber.DigitsEntered}}****. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" data-copy-text="You entered {{NewNumber.DigitsEntered}}. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy" title="Click to copy!"></span></span>
     >
     > Delete the Selection for Audio File
     >
@@ -115,7 +115,7 @@ We are going to extend the same flow by adding additional functionality so the c
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" title="Click to copy!" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy"></span></span>
+    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
     >
     > Delete the Selection for Audio File
     >
@@ -132,7 +132,7 @@ We are going to extend the same flow by adding additional functionality so the c
 ### Testing
     
 1. Make sure you're logged in as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209** as a callback number. Use DialPad to provide Cisco TAC number then confirm when asked.
+2. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use DialPad to provide Cisco TAC number then confirm when asked.
 3. Once done another message about successful scheduling should play.
 4. Make your agent **Available**. Contact Center will reserve you right away and propose to answer a callback call.
 
