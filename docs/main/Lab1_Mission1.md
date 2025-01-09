@@ -18,12 +18,6 @@ Business Hours allows you to configure the operational hours of the contact cent
     
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
-  - <span class="copy copy-icon" data-copy-text="TEXT"></span>
-
-  - <span class="copy" title="Click to copy!">📋</span>
-
-  - <span class="attendee-id-container">TEXT<span class="copy" title="Click to copy!" data-copy-text="TEXT"></span></span>
-
 #### Build
 
 1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
@@ -59,7 +53,7 @@ Business Hours allows you to configure the operational hours of the contact cent
     >
     > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***<span class="copy-static" title="Click to copy!"data-copy-text="It's not working hours currently. Please call later. Goodbye."><span class="copy" title="Click to copy!"></span></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***<span class="copy-static" title="Click to copy!"data-copy-text="It's not working hours currently. Please call later. Goodbye."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
 
@@ -92,17 +86,3 @@ Business Hours allows you to configure the operational hours of the contact cent
 11. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of Main Mission of Fundamental Lab.
 
 **Congratulations on completing another mission.**
-
-
-
-  - **<span class="static-text-copy">This is the static text to copy.</span>**
-
-  - blablabla **<span class="static-text-copy">blablabla</span>**
-
-**<span class="static-text-copy">Main_Flow</span><span class="copy"></span></span>**
-
-**<span class="copy-static" data-copy-text="This is the configured static text.">Click here to copy static text.</span>**
-
-**<span class="copy-static" data-copy-text="BlaBlaBla"><span class="copy"></span></span>**
-
-BlaBlaBla<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
