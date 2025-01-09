@@ -197,7 +197,7 @@ Test 1
 
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
-5. Add **Condition** node in between **NewPhoneContact** node and **SetVariable** we created in LAB A for Language selection. 
+5. Add **Condition**: 
     
     > Connect the output node edge of the **NewPhoneContact** node to this node
     > 
