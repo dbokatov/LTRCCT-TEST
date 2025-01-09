@@ -21,7 +21,7 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 TEST1
 
-I'm YARIK!!!!<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
+ I'm YARIK!!!!<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
 
 Test2
 <span class="attendee-id-container">
@@ -64,7 +64,7 @@ Test2
     >
     > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.*** 
+    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.*** <span class="copy copy-icon" data-copy-text="It's not working hours currently. Please call later. Goodbye."></span>
     >
     > Delete the Selection for Audio File
 
