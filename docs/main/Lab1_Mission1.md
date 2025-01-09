@@ -102,3 +102,5 @@ Business Hours allows you to configure the operational hours of the contact cent
 **<span class="static-text-copy">Main_Flow</span><span class="copy"></span></span>**
 
 **<span class="copy-static" data-copy-text="This is the configured static text.">Click here to copy static text.</span>**
+
+**<span class="copy-static" data-copy-text="BlaBlaBla"><span class="copy"></span></span>**
