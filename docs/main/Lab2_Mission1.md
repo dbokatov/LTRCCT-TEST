@@ -33,7 +33,7 @@ Test 1
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
 
 
-2. Create a new flow with a name **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+2. Create a new flow with a name **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     
 3. Add a **Collect Digits** node:
     
@@ -51,7 +51,7 @@ Test 1
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: **Please enter 4 digits pin code to activate emergency flow.**
+    > Text-to-Speech Message: ***Please enter 4 digits pin code to activate emergency flow.***<span class="copy-static" data-copy-text="Please enter 4 digits pin code to activate emergency flow."><span class="copy" title="Click to copy!"></span></span>
     >
     > Set checkbox in **Make Prompt Interruptible**
     
@@ -62,7 +62,7 @@ Test 1
 
     > Connect the output node edge from the **Collect Digits** node to this node
     >
-    > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == "1111"}}***
+    > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == 1111}}***<span class="copy-static" data-copy-text="{{ CollectPIN.DigitsEntered == 1111}}"><span class="copy" title="Click to copy!"></span></span>
     
     <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
         
@@ -74,7 +74,7 @@ Test 1
     > 
     > Connector: **WxCC_API**
     >
-    > Request Path: **/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/*{ID}*** - change ***{ID}*** with Global Variable ID you created in **Step 2** of this mission.
+    > Request Path: **/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/*{ID}***<span class="copy-static" data-copy-text="/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/{ID}"><span class="copy" title="Click to copy!"></span></span> - change ***{ID}*** with Global Variable ID you created in **Step 2** of this mission.
     >
     > Method: **PUT**
     >
@@ -106,7 +106,7 @@ Test 1
     
     > Connect the output node edge from the **HTTP_PUT** node to this node
     >
-    > In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***
+    > In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 200}}"><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
 
@@ -118,13 +118,13 @@ Test 1
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
     > Click the Add Text-to-Speech Message button
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: **You have successfully modified your emergency configuration.**
+    > Text-to-Speech Message: ***You have successfully modified your emergency configuration.***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-9-PlayOK.gif)
     
@@ -136,13 +136,13 @@ Test 1
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
     > Click the Add Text-to-Speech Message button
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: **Something went wrong. Please check your configuration and try again.**
+    > Text-to-Speech Message: ***Something went wrong. Please check your configuration and try again.***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-8-PlayNotOK.gif)
     
@@ -184,10 +184,10 @@ Test 1
 1. Open your Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure Default Value is set to **False**
     
 2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
-        a. If **"You have successfully modified your emergency configuration."** you're good to proceed with step 3.
-        b. If **"Something went wrong. Please check your configuration and try again."** then before proceeding you need to fix your flow. Call the instructor for assistance.
+    > a. If ***"You have successfully modified your emergency configuration."***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span> you're good to proceed with step 3.
+    > b. If ***"Something went wrong. Please check your configuration and try again."***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span> then before proceeding you need to fix your flow. Call the instructor for assistance.
         
-3. Open your <copy>**EmergencyGV_<w class = "attendee_out">attendeeID</w>**</copy> again, refresh the page if it was opened and make sure **Default Value** is now set to True.
+3. Open your Global Variable **EmergencyGV_<w class = "attendee_out">attendeeID</w>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
 
 4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in LAB A, make it editable and add Global Variable <**EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in General Settings of the flow
@@ -200,7 +200,7 @@ Test 1
     > 
     > Connect the output False node edge from the **Condition** Node to **Set Variable**
     > 
-    > In the Expression section write an expresion {{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}
+    > [To Mofify Copy] In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
             
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
         
@@ -215,13 +215,13 @@ Test 1
     > 
     > Enable Text-To-Speech
     > 
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     > 
     > Click the Add Text-to-Speech Message button
     > 
     > Delete the Selection for Audio File
     > 
-    > Text-to-Speech Message: **Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.**
+    > Text-to-Speech Message: ***Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.***<span class="copy-static" data-copy-text="Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later."><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-Test6-GV.gif)
         
