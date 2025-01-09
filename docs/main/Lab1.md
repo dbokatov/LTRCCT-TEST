@@ -40,36 +40,37 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note 
         Remember to take up the offer from Chrome to save your password
 
-3. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
-4. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
-5. New Tab will be opened. Navigate to **Flow Templates**
-6. Choose ***Simple Inbound Call to Queue template*** and click **Next**. You can open View Details and to see observe flow structure and read flow description
-7. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**. Then click on Create Flow
+2. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
+3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+4. New Tab will be opened. Navigate to **Flow Templates**
+5. Choose ***Simple Inbound Call to Queue template*** and click **Next**. You can open View Details and to see observe flow structure and read flow description
+6. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**. Then click on Create Flow
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
-8. **Edit** should be set to **ON** when you create new flow, but if not switch it from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+7. **Edit** should be set to **ON** when you create new flow, but if not switch it from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
-9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span>** from the drop down list
+8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span>** from the drop down list
     
     !!! Note
         As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
 
-10. <span style="color: orange;">[Optional]</span> Select **Play Message** node and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
+9. <span style="color: orange;">[Optional]</span> Select **Play Message** node and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
 
-11. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
+10. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
     !!! Note
         You can ignore recommendations but cannot skip errors.
 
-12. Click **Publish** Flow
+11. Click **Publish** Flow
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-13. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
-14. Assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**.
-15. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-16. In **Entry Point** settings section change the following, then click **Save** button:
+12. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**.
+
+13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy"></span></span>**.
+14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+15. In **Entry Point** settings section change the following, then click **Save** button:
 
     > Routing Flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
 

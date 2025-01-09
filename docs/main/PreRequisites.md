@@ -9,7 +9,7 @@ icon: material/bullseye-arrow
 ## Learning Objectives
 1. Ensure that you have access to the email with instructions and credentials to access your lab. It is an email with the subject line - WebexCC: Cisco Live Lab Access. If you do not, please ask your lab proctor now.
 2. Understand your configuration instructions
-3. Familiarize yourself how we will use Google Chrome profiles to simulate the situations for this lab
+3. Familiarize yourself how we will use Google Chrome profiles to simulate various scenarios covered in the next labs.
 
 ### Know before you start
 
@@ -19,7 +19,7 @@ icon: material/bullseye-arrow
 4. All your configurations should contain your attendee ID so the lab users don't step over each other's configurations
 5. Each of you has been provided with the phone number to dial (Entry point DN), 1 agents, 1 Supervisor and 1 admin.
 6. We are going to use built-in Cisco Text to Speech for playing all messages in the lab.
-Please ask for help when you need it
+7. Please ask for help when you need it
 
 ---
 
@@ -46,7 +46,7 @@ More pre-configured entities will be mentioned during the lab missions if they h
 ### Testing
 
 All call to Webex Contact center should be done from Webex App which has been pre-installed for you as well as pre-logined to it.
-To make a test just open Webex App and dial provided Support Number assigned to you.
+To make a test just open Webex App and dial the provided Support Number assigned to you.
 
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
