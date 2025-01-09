@@ -18,7 +18,9 @@ Business Hours allows you to configure the operational hours of the contact cent
     
     ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
-<span class="copy copy-icon" data-copy-text="TEXT"></span>
+  - <span class="copy copy-icon" data-copy-text="TEXT"></span>
+
+  - <span class="copy" title="Click to copy!">📋</span>
 
 #### Build
 
