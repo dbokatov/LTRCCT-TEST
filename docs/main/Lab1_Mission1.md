@@ -95,18 +95,8 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 
 
-  - <span class="copy"></span>
-  
-  - **<span class="attendee-id-container">Main_Flow<span data-prefix="Main_Flow_"></span><span class="copy"></span></span>**
-
-  - **<span class="attendee-id-container">Main_Flow<span class="copy"></span></span>**
-
-  -                                       Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>
-
-  - **<span class="attendee-id-container">wxcclabs+supvr_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+supvr_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**
-
-  - **<span class="attendee-id-container">wxcclabs+supvr_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+supvr_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**
-
   - **<span class="static-text-copy">This is the static text to copy.</span>**
 
   - blablabla **<span class="static-text-copy">blablabla</span>**
+
+**<span class="static-text-copy">Main_Flow</span><span class="copy"></span></span>**
