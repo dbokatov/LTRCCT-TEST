@@ -203,7 +203,7 @@ Test 1
     > 
     > Connect the output False node edge from the **Condition** Node to **Set Variable**
     > 
-    > **[Copy doesn't work. to fix]* In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
+    > **[Copy doesn't work. to fix]** In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
             
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
         
