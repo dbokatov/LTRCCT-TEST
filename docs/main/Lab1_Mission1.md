@@ -20,7 +20,14 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 
 TEST1
-<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
+
+I'm YARIK!!!!<span class="copy copy-icon" data-copy-text="I'm YARIK!!!!"></span>
+
+Test2
+<span class="attendee-id-container">
+        MY_STATIC_TEXT
+        <span class="copy"></span>
+    </span>
 
 #### Build
 
