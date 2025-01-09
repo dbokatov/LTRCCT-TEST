@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Handle static text copy functionality
-        const staticTextElements = document.querySelectorAll('.static-text-copy');
-
-        staticTextElements.forEach(function (staticElement) {
-            const staticText = staticElement.textContent.trim(); // Get the static text
-
-        // Set up click event to copy the static text
-            staticElement.addEventListener('click', function () {
-                navigator.clipboard.writeText(staticText).then(() => {
-                    console.log("Static text copied to clipboard");
-                }).catch(err => {
-                    console.error("Could not copy static text: ", err);
-                });
-            });
-        });
+         // Handle static configurable text copy functionality
+         const staticTextElements = document.querySelectorAll('.copy-static');
+            
+         staticTextElements.forEach(function (staticElement) {
+             const staticText = staticElement.getAttribute('data-copy-text'); // Get configured static text
+        
+             // Set up click event to copy the static text
+             staticElement.addEventListener('click', function () {
+                 navigator.clipboard.writeText(staticText).then(() => {
+                     console.log("Static text copied to clipboard");
+                 }).catch(err => {
+                     console.error("Could not copy static text: ", err);
+                 });
+             });
+         });
 });
