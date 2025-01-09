@@ -184,13 +184,16 @@ Test 1
 1. Open your Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure Default Value is set to **False**
     
 2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
-      > a. If ***"You have successfully modified your emergency configuration."***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span> you're good to proceed with step 3.
-      > b. If ***"Something went wrong. Please check your configuration and try again."***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span> then before proceeding you need to fix your flow. Call the instructor for assistance.
-        
+
+    > a. If ***"You have successfully modified your emergency configuration."***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span> you're good to proceed with step 3.
+    >
+    > b. If ***"Something went wrong. Please check your configuration and try again."***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span> then before proceeding you need to fix your flow. Call the instructor for assistance.
+     >
+
 3. Open your Global Variable **EmergencyGV_<w class = "attendee_out">attendeeID</w>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
 
-4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in LAB A, make it editable and add Global Variable <**EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in General Settings of the flow
+4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in Mission 1 of Fundamental Labs, make it editable and add Global Variable <**EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in General Settings of the flow
 
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
@@ -200,7 +203,7 @@ Test 1
     > 
     > Connect the output False node edge from the **Condition** Node to **Set Variable**
     > 
-    > [To Mofify Copy] In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
+    > **[Copy doesn't work. to fix]* In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
             
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
         
