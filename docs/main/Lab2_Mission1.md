@@ -62,7 +62,7 @@ Test 1
 
     > Connect the output node edge from the **Collect Digits** node to this node
     >
-    > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == 1111}}***<span class="copy-static" data-copy-text="{{ CollectPIN.DigitsEntered == 1111}}"><span class="copy" title="Click to copy!"></span></span>
+    > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{ CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
     
     <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
         

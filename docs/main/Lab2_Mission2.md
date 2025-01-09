@@ -62,8 +62,8 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
 
-8. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***
-    - Replace DNIS with provided DNIS number stripping +1
+8. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}"><span class="copy" title="Click to copy!"></span></span>
+    - Replace DNIS with the provided DNIS number stripping +1
 
     <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     - Open Chrome browser and past your URL. You should get the follwoing result
@@ -71,9 +71,9 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
     ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
 
 9. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
-    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***
+    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
-10. In the same node, under Parsing Settings add **[0]** after **$** sign. This needs to be done due to output structure of API response. 
+10. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
     
     !!! Note
         Templates contain basic configuration and requres adjusting per usecase scenario. 
@@ -119,13 +119,17 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 17. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
 
-18. Assign the Flow **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** to your Channel (Entry Point) - **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** 
+18. Map your flow to your inbound channel
     
-    > Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-    >
-    > In Entry Point Settings section change the following:
-      - Routing Flow -> **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-      - Version Label -> **Latest**
+    > Navigate to Control Hub > Contact Center > Channels
+    > 
+    > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Select the Routing Flow: **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Select the Version Label: **Latest**
+    > 
+    > Click **Save** in the lower right corner of the screen
 
     ![Profiles](../graphics/Lab2/BM2-18-ChannelChange.gif)
 
@@ -144,14 +148,14 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
-5. You can do the same trick we did in Mission 1 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
+5. You can do the same trick we did in Mission 2 Step 8 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
     
     !!! Note
         Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 
 
     ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-6. **TO CHECK** Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
+6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
 
 7. Now we need to revert the configuration we made in Step 1. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select **None** from Override dropdown list. Then click **Save**.
 
