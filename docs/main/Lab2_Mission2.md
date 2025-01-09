@@ -35,7 +35,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 ## Steps
 
 1. Login into Control Hub [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile if your session has been expired.
-    Your login will be the Admin Name in the email you received. It will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+    Your login will be the Admin Name in the email you received. It will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
     ![Profiles](../graphics/Lab1/1-CH_Login.gif)
 
@@ -47,7 +47,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 5. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
-6. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy"></span></span>**. Then click on Create Flow
+6. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow
 
     ![Profiles](../graphics/Lab2/BM2_2-7_DynFlowCreate.gif)
 
@@ -119,12 +119,12 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 17. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
 
-18. Assign the Flow **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy"></span></span>** to your Channel (Entry Point) - **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** 
+18. Assign the Flow **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** to your Channel (Entry Point) - **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** 
     
     > Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
     >
     > In Entry Point Settings section change the following:
-      - Routing Flow -> **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy"></span></span>**
+      - Routing Flow -> **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
       - Version Label -> **Latest**
 
     ![Profiles](../graphics/Lab2/BM2-18-ChannelChange.gif)
@@ -132,7 +132,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 ## Testing
 
-1. Use Chrome Agent Profile to open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+1. Use Chrome Agent Profile to open <span style="color: blue;">**Agent Desktop**</span><span class="copy-static" title="Click to copy URL!" data-copy-text="https://desktop.wxcc-us1.cisco.com/"><span class="copy"></span></span> and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
 
 2. Select **Desktop** as a ***Telephony Option*** and Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 
@@ -144,7 +144,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
-5. You can do the same trick we did in Mission 1 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
+5. You can do the same trick we did in Mission 1 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
     
     !!! Note
         Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 
