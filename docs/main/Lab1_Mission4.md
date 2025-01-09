@@ -73,15 +73,15 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 1. Explore preconfigured Survey. In Control Center go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
-2. Open you **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy"></span></span>**, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+2. Open you **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
   ![profiles](../graphics/Lab1/PCS_addGV.gif)
 
 
 3. Drag **Set Variable** node to canvas:
 
-    > Activity Name: **FeedbackSet**<span class="copy copy-icon" data-copy-text="FeedbackSet"></span>
+    > Activity Name: **FeedbackSet**<span class="copy-static" title="Click to copy!" data-copy-text="FeedbackSet"><span class="copy"></span></span>
     >
-    > Variable: **Global_FeedbackSurveyOptIn**<span class="copy copy-icon" data-copy-text="Global_FeedbackSurveyOptIn"></span>
+    > Variable: **Global_FeedbackSurveyOptIn**<span class="copy-static" title="Click to copy!" data-copy-text="Global_FeedbackSurveyOptIn"><span class="copy"></span></span>
     >
     > Set Value: **true**
     > 
@@ -99,7 +99,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     
     **FeedbacV2**
     
-    > SurveyMethod -> VoiceBased:  **PCS-2025**<span class="copy copy-icon" data-copy-text="PCS-2025"></span>
+    > SurveyMethod -> VoiceBased:  **PCS-2025**<span class="copy-static" title="Click to copy!" data-copy-text="PCS-2025"><span class="copy"></span></span>
     >        
     > Connect **HTTPRequest** to **FeedbackV2** node
     >
@@ -113,7 +113,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     >
     > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy copy-icon" data-copy-text="Something went wrong on Feedback node. Please call later."></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy-static" title="Click to copy!" data-copy-text="Something went wrong on Feedback node. Please call later."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
     >
@@ -126,7 +126,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
 
 ### Testing
-1. Your Agent desktop session should be still active but if not, use Chrome Agent Profile to open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
+1. Your Agent desktop session should be still active but if not, use Chrome Agent Profile to open <span style="color: blue;">[Optional]</span><span class="copy-static" title="Click to copy URL!" data-copy-text="https://desktop.wxcc-us1.cisco.com/"><span class="copy"></span></span> and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
 2. Make a test call and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 
 4. Now the caller should hear prompts configured in **PCS-2025**. Complete the survey.
