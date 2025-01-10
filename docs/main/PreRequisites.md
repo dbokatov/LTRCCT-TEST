@@ -19,20 +19,12 @@ icon: material/bullseye-arrow
 7. Please ask for help when you need it
 
 TEST
-Click the icon <img src="../graphics/overview/Desktop_Icon.png" alt="Desktop Icon" width="70" height="70">
 
-
-<img align="middle" src="../graphics/overview/Desktop_Icon.png"  width="70" height="70" />  
-<br/>
-<br/>
-
-bla
-
-<img align="middle" src="../graphics/overview/Desktop_Icon.png" width="1000" />  
-<br/>
+<img src="../graphics/overview/Desktop_Icon.png"/>  
 <br/>
 
 test text
+
 ---
 
 ### Predefined configuration
