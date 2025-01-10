@@ -99,7 +99,7 @@ nav:
   - Getting Started:
       - Lab Overview: ./main/overview.md
       - Getting to know your environment: ./main/PreRequisites.md
-      - [TEMP PAGE] Chrome and Webex App Setup: ./main/Browser_and_Desktop_Setup.md 
+      - Chrome and Webex App Setup: ./main/Browser_and_Desktop_Setup.md 
       ## - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
   - Fundamental Labs:
       - Lab Guide:
