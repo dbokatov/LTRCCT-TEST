@@ -23,11 +23,11 @@ By the end of this lab, you will:
 
 ### Transfer to Human Agent
 
-1. Before you start this lab, please make sure the webex contact center **<w class = "attendee_out">attendeeID</w>_Channel** is set your **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**
+1. Before you start this lab, please make sure the webex contact center **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** is set your **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
 
-2. In **Control Hub** select **Contact Center** from the left panel and then navigate to Flows from the left panel. Search and open your flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>**. 
+2. In **Control Hub** select **Contact Center** from the left panel and then navigate to Flows from the left panel. Search and open your flow **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. 
 
 3. Switch the Edit button to **On** to enable Edit mode in the flow builder then drag and drop following nodes:
 
@@ -40,7 +40,7 @@ By the end of this lab, you will:
       >
       > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
       > 
-      > Queue name: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+      > Queue name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
       > 
 
     - **Play Music**
@@ -50,7 +50,7 @@ By the end of this lab, you will:
       >
       > Connect the **Failure** path from the **Play Music** activity to the **Disconnect Contact** activity.
       > 
-      > Music File: **defaultmusic_on_hold.wav**
+      > Music File: **defaultmusic_on_hold.wav**<span class="copy-static" data-copy-text="defaultmusic_on_hold.wav"><span class="copy" title="Click to copy!"></span></span>
       >
   
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish**  
@@ -60,13 +60,13 @@ By the end of this lab, you will:
 ### Test 1:
 
 
-1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided <copy>**wxcclabs+agent_ID<w class = "attendee_out">attendeeID</w>@gmail.com**</copy>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select **Desktop** as a ***Telephony Option*** and Team <copy>**<w class = "attendee_out">attendeeID</w>_Team**</copy>. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+1. Open [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+2. Select **Desktop** as a ***Telephony Option*** and Team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 3. Make your agent ***Available*** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** channel and during the conversation with the virtual Agent, say, **"Please transfer me to an Agent."** Answer the call on the agent desktop when you receive a ring notification and verify the trasciption is passed to Agent Desktop.
+4. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel and during the conversation with the virtual Agent, say, **"Please transfer me to an Agent."** Answer the call on the agent desktop when you receive a ring notification and verify the trasciption is passed to Agent Desktop.
 
 5. Once the call is answered, disconnect the call by clicking on the **End** button.
 
@@ -74,7 +74,7 @@ By the end of this lab, you will:
 
 ### Disable Virtual Agent Transcript
 
-1. Open your flow **TaskBot_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to **On** if it's not.
+1. Open your flow **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change Edit mode to **On** if it's not.
 2. Select the **Virtual Agent v2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**.
 3. Disable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
 4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** .
@@ -98,17 +98,17 @@ By the end of this lab, you will:
 3. Add 2 new flow variables: 
     
     >
-    > Name: **last_intent**
+    > Name: **`last_intent`**<span class="copy-static" data-copy-text="last_intent"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Type: **String**
+    > Type: **`String`**<span class="copy-static" data-copy-text="String"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Default Value: **empty**
+    > Default Value: **`empty`**
     >
-    > Name: **vameta**
+    > Name: **`vameta`**<span class="copy-static" data-copy-text="vameta"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Type: **JSON**
+    > Type: **`JSON`**<span class="copy-static" data-copy-text="JSON"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Default Value: **{}**
+    > Default Value: **`{}`**<span class="copy-static" data-copy-text="{}"><span class="copy" title="Click to copy!"></span></span>
     >
 
     ![profiles](../graphics/Lab2/L2M4_HandoffFlowVar.gif)
@@ -116,16 +116,17 @@ By the end of this lab, you will:
 
 4. Drag **Set Variable** node to canvas:
 
-    > Activity Name: **VA_Metadata**
+    > Activity Name: **`VA_Metadata`**<span class="copy-static" data-copy-text="VA_Metadata"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Variable: **vameta**
+    > Variable: **`vameta`**<span class="copy-static" data-copy-text="vameta"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **VirtualAgentV2_<span style="color: red;">**<*>**</span>.MetaData**
+    > Set To Variable: **`VirtualAgentV2_`<span style="color: red;">**<span style="color: red;">**<>**</span>**</span>`.MetaData`**
     > 
-    > Connect **Escalated** edge of **VirtualAgent** to the **VA_Metadata** node
+    > Connect **`Escalated`** edge of **VirtualAgent** to the **VA_Metadata** node
     >
-      !!! Note
-        **VirtualAgentV2_<span style="color: red;">**<*>**</span> in VirtualAgentV2 is autogenerated and is different in all cases. You shouldn't be confused as you have onbly one VirtualAgentV2 node in the current flow
+
+        !!! Note
+            **VirtualAgentV2_<span style="color: red;">**<*>**</span> in VirtualAgentV2 is autogenerated and is different in all cases. You shouldn't be confused as you have onbly one VirtualAgentV2 node in the current flow
 
 
     ![profiles](../graphics/Lab2/L2M4_HandoffSetVar.gif)
@@ -135,10 +136,10 @@ By the end of this lab, you will:
     >
     > Connect the **VA_Metadata** activity to the **Parse** activity.
     >
-    > Input variable: **VirtualAgentV2_<*>.MetaData**
-    > Content Type: **JSON**
-    > Output Variable: **last_intent**
-    > Path Expression: **$.previous-intent.name**
+    > Input variable: **`VirtualAgentV2_`<span style="color: red;">**<span style="color: red;">**<>**</span>**</span>`.MetaData`**
+    > Content Type: **`JSON`**<span class="copy-static" data-copy-text="JSON"><span class="copy" title="Click to copy!"></span></span>
+    > Output Variable: **`last_intent`**<span class="copy-static" data-copy-text="last_intent"><span class="copy" title="Click to copy!"></span></span>
+    > Path Expression: **`$.previous-intent.name`**<span class="copy-static" data-copy-text="$.previous-intent.name"><span class="copy" title="Click to copy!"></span></span>
 
     ![profiles](../graphics/Lab2/L2M4_HandoffParse.gif)
 
@@ -157,7 +158,7 @@ By the end of this lab, you will:
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **Routing to an agent skilled at booking an appointment.**
+    > Click the Add Text-to-Speech Message button and paste text: **Routing to an agent skilled at booking an appointment.**<span class="copy-static" data-copy-text="Routing to an agent skilled at booking an appointment."><span class="copy" title="Click to copy!"></span></span>
     >
     > Delete the Selection for Audio File
     >
@@ -215,7 +216,7 @@ By the end of this lab, you will:
 
     ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
 
-2. Dial the support number assigned to your **<w class = "attendee_out">attendeeID</w>_Channel** and initiate a conversation with below
+2. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and initiate a conversation with below
 
 3. During the interaction with the virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** Answer the call on the agent desktop upon receiving the ring notification.
 

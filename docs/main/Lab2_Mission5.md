@@ -35,12 +35,12 @@ A common request for returning customers calling into a contact center is to wor
 
 ## Build
 
-1. Create a flow named <copy>**LastAgentRouting_<w class = "attendee_out">attendeeID</w>**</copy> and add these flow variables:
+1. Create a flow named **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and add these flow variables:
   
     - Callback Status variable:
     
       >
-      > Name: <copy>**agentID**</copy>
+      > Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
@@ -49,13 +49,13 @@ A common request for returning customers calling into a contact center is to wor
     - Callback Connect Time variable:
       
       >
-      > Name: <copy>**queriedCSAT**</copy>
+      > Name: <**queriedCSAT**<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **Decimal**
       >
-      > Default Value: <copy>**0.0**</copy>
+      > Default Value: **0.0**<span class="copy-static" data-copy-text="0.0"><span class="copy" title="Click to copy!"></span></span>
 
-2. Add the Global Variable **simulatedCSAT** to the flow
+2. Add the Global Variable **simulatedCSAT**<span class="copy-static" data-copy-text="simulatedCSAT"><span class="copy" title="Click to copy!"></span></span> to the flow
 
     >
     > There are no values to set because it has already been configured globally
@@ -69,13 +69,13 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
     > Click the Add Text-to-Speech Message button
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: <copy>***Welcome to Mission 5 of Advanced Routing mission.***</copy>
+    > Text-to-Speech Message: ***Welcome to Mission 5 of Advanced Routing mission.***<span class="copy-static" data-copy-text="Welcome to Mission 5 of Advanced Routing mission."><span class="copy" title="Click to copy!"></span></span>
 
       ![profiles](../graphics/Lab2/L2M5_PlayMessage.gif)
 
@@ -159,13 +159,13 @@ A common request for returning customers calling into a contact center is to wor
 
     > Parse Settings:
     >
-    > - Content Type: JSON
+    > - Content Type: **JSON**
     >
-    > - Output Variable: `agentID`
-    > - Path Expression: <copy>`$.data.task.tasks[0].owner.id`</copy>
+    > - Output Variable: `agentID`<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.task.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Output Variable: `queriedCSAT`
-    > - Path Expression: <copy>`$.data.task.tasks[0].simulatedCSAT.value`</copy>
+    > - Output Variable: `queriedCSAT`<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.task.tasks[0].simulatedCSAT.value`<span class="copy-static" data-copy-text="$.data.task.tasks[0].simulatedCSAT.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
       ![profiles](../graphics/Lab2/L2M5_HTTPRequest.gif)
@@ -177,7 +177,7 @@ A common request for returning customers calling into a contact center is to wor
     > 
     > We will connect the **True** node in a future step.
     >
-    > Expression: <copy>`{{agentID is empty}}`</copy>
+    > Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
       ![profiles](../graphics/Lab2/L2M5_Condition.gif)
 
@@ -186,9 +186,9 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Connect the **False** node edge of the **Condition** node created in previous step to this **Queue To Agent**.
     > 
-    > Agent Variable: **agentID**
+    > Agent Variable: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Agent Lookup Type: **ID**
+    > Agent Lookup Type: **ID**<span class="copy-static" data-copy-text="ID"><span class="copy" title="Click to copy!"></span></span>
     >
     > Set Contact Priority: **True**
     >
@@ -196,11 +196,11 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Static Priority Value: **P1**
     >
-    > Reporting Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
+    > Reporting Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
     > Park Contact if Agent Unavailable: **False**
     >
-    > Recovery Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
+    > Recovery Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
 
 
@@ -215,7 +215,7 @@ A common request for returning customers calling into a contact center is to wor
     > 
     > Select Static Queue
     >
-    > Queue: **<w class = "attendee_out">attendeeID</w>_Queue**
+    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
       ![profiles](../graphics/Lab2/L2M5_QueueContact.gif)
 
@@ -262,9 +262,9 @@ A common request for returning customers calling into a contact center is to wor
     
     > Navigate to Control Hub > Contact Center > Channels
     >
-    > Locate your Inbound Channel (you can use the search): <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Select the Routing Flow: **LastAgentRouting_<w class = "attendee_out">attendeeID</w>**
+    > Select the Routing Flow: **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
     > Select the Version Label: **Latest**
     >
@@ -276,13 +276,13 @@ A common request for returning customers calling into a contact center is to wor
 ## Testing
 1. Launch the [Agent Desktop](https://desktop.wxcc-us1.cisco.com/) and log in using the Desktop option.
 2. On your Agent Desktop, set your status to available
-      1. Using Webex, place a call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+      1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      3. In the Agent Desktop you will see a new field in Call Information section where you can edit the Simulated CSAT.  Enter a value of <copy>**2.9**</copy> and click save.
+      3. In the Agent Desktop you will see a new field in Call Information section where you can edit the Simulated CSAT.  Enter a value of **2.9**<span class="copy-static" data-copy-text="2.9"><span class="copy" title="Click to copy!"></span></span> and click save.
       4. After a few moments end the call and select a wrapup code.
-3. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       1. You should be offered the call, click on the accept button.
-      2. Enter a value of <copy>**3.7**</copy> in for Simulated CSAT and click save.
+      2. Enter a value of **3.7**<span class="copy-static" data-copy-text="3.7"><span class="copy" title="Click to copy!"></span></span> in for Simulated CSAT and click save.
       3. After a few moments end the call and select a wrapup code.
 4. In your Flow:
       1. Open the debugger
@@ -294,10 +294,10 @@ A common request for returning customers calling into a contact center is to wor
       1. Did the second call get routed to your agent via the Queue To Agent node?
          1. Why or why not
 6. On your Agent Desktop, set your status to not be available
-7. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+7. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 8. After you hear the queue treatment start, change your status to available on the agent desktop.
       1. You should be offered the call, click on the accept button.
-      2. Enter a value of <copy>**2.8**</copy> in for Simulated CSAT and click save.
+      2. Enter a value of **2.8**<span class="copy-static" data-copy-text="2.8"><span class="copy" title="Click to copy!"></span></span> in for Simulated CSAT and click save.
       3. After a few moments end the call and select a wrapup code.
 9. In your Flow:
       1. Open the debugger
@@ -309,7 +309,7 @@ A common request for returning customers calling into a contact center is to wor
          1. Why?
          2. What will happen if you call in again starting in the Available status?
 11. Make sure that you are in Available status on the agent desktop.
-12. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+12. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       1. You should be offered the call, click on the accept button.
       2. After a few moments end the call and select a wrapup code.
 13. In your Flow:

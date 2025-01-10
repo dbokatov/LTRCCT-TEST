@@ -9,7 +9,7 @@ icon: material/medal
 
 ## Story 
 
-In this task, you will enhance the functionality of the **Main_Flow_<w class = "attendee_out">attendeeID</w>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
+In this task, you will enhance the functionality of the <span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
 
 > !!! Note
       This task relies on completing Mission 2 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
@@ -17,14 +17,14 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
 
 ## Build
 
-1. Open your flow **Main_Flow_<w class = "attendee_out">attendeeID</w>** and change Edit mode to **On**
+1. Open your flow <span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change Edit mode to **On**
 
 2. Add 3 new flow variables: 
 
     - Callback Status variable:
     
       >
-      > Name: **callbackStatus**
+      > Name: **callbackStatus**<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
@@ -33,7 +33,7 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
     - Callback Connect Time variable:
       
       >
-      > Name: **callbackConnectTime**
+      > Name: **callbackConnectTime**<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
@@ -42,7 +42,7 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
     - Search Result variable:
       
       >
-      > Name: **searchresult**
+      > Name: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
@@ -57,17 +57,17 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
     >
     > We will connct HTTP node in next step
     >
-    > Activity Label: **HTTPRequest_CallBackSearch**
+    > Activity Label: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
     >
     > Select Use Authenticated Endpoint
     >
-    > Connector: WxCC_API
+    > Connector: **WxCC_API**
     > 
-    > Path: /search
+    > Path: **/search**
     > 
-    > Method: POST
+    > Method: **POST**
     > 
-    > Content Type: Application/JSON
+    > Content Type: **Application/JSON**
     >
     > Copy this GraphQL query into the request body:
     >
@@ -110,10 +110,10 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
     > Parse Settings:
     >
     > - Content Type: JSON
-    > - Output Variable: `callbackStatus`
-    > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackStatus`</copy>
-    > - Add New Output Variable: `callbackConnectTime`
-    > - Path Expression: <copy>`$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`</copy>
+    > - Output Variable: `callbackStatus`<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackStatus`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackStatus"><span class="copy" title="Click to copy!"></span></span>
+    > - Add New Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
     >
       ![profiles](../graphics/Lab2/L2M3-2.gif)
 ---
@@ -125,9 +125,9 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
     >
     > We will connct **Set Variable** node in next step
     >
-    > Variable: **searchresult**
+    > Variable: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **HTTPRequest_CallBackSearch**
+    > Set To Variable: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
     >
     ![profiles](../graphics/Lab2/L2M3-3.gif)
 
@@ -140,21 +140,21 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
       > 
       > We will connect **True** exit path in next step
       >
-      > Expression: <copy>`{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`</copy>
+      > Expression: `{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`<span class="copy-static" data-copy-text="{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}"><span class="copy" title="Click to copy!"></span></span>
 
 
       > !!! Note
           Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on. In our case the expression returns True only when httpStatusCode equals **200**, callbackStatus is **Not Processed** and callbackConnectTime is **-1**
 
-    ![profiles](../graphics/Lab2/L2M3-3.gif)
+    ![profiles](../graphics/Lab2/L2M3-4.gif)
 
 6. Add **PlayMessage** and **DisconnectContact** nodes: 
     
       > Enable Text-To-Speech
       >
-      > Select the Connector: Cisco Cloud Text-to-Speech
+      > Select the Connector: **Cisco Cloud Text-to-Speech**
       >
-      > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**
+      > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
       >
       > Delete the Selection for Audio File
       >
@@ -168,9 +168,9 @@ In this task, you will enhance the functionality of the **Main_Flow_<w class = "
 ## Testing
     
 1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make sure your **Main_Flow_<w class = "attendee_out">attendeeID</w>** is assigned to **<w class = "attendee_out">attendeeID</w>_Channel**. If not, do that (refer to previous very first Mission where this step was explained in details).
-3. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**
-4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**.
+2. Make sure your <span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** is assigned to **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. If not, do that (refer to previous very first Mission where this step was explained in details).
+3. Make a call to your test number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>
+4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
 5. You should hear a message configured in **Step 6** of the current mission.
 6. Click on **Analyze** to visualy observe the call flow. Make sure you're viewing latest Published Version.
 7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
