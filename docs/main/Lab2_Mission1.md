@@ -181,7 +181,7 @@ Test 1
 
 ## Testing
    
-1. Open your Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure Default Value is set to **False**
+1. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False**
     
 2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
 
@@ -190,10 +190,10 @@ Test 1
     > b. If ***"Something went wrong. Please check your configuration and try again."***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span> then before proceeding you need to fix your flow. Call the instructor for assistance.
      >
 
-3. Open your Global Variable **EmergencyGV_<w class = "attendee_out">attendeeID</w>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
+3. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
 
-4. Now the fun part. Open your **Main_Flow_<w class = "attendee_out">attendeeID</w>** we created in Mission 1 of Fundamental Labs, make it editable and add Global Variable <**EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in General Settings of the flow
+4. Now the fun part. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** we created in Mission 1 of Fundamental Labs, make it editable and add Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False** in General Settings of the flow
 
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
