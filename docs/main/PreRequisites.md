@@ -3,9 +3,6 @@
 icon: material/bullseye-arrow
 ---
 
-
-
-
 ## Learning Objectives
 1. Ensure that you have access to the email with instructions and credentials to access your lab. It is an email with the subject line - WebexCC: Cisco Live Lab Access. If you do not, please ask your lab proctor now.
 2. Understand your configuration instructions
@@ -20,6 +17,9 @@ icon: material/bullseye-arrow
 5. Each of you has been provided with the phone number to dial (Entry point DN), 1 agents, 1 Supervisor and 1 admin.
 6. We are going to use built-in Cisco Text to Speech for playing all messages in the lab.
 7. Please ask for help when you need it
+
+TEST
+Click the icon ![](../graphics/overview/Desktop_Icon.png) on the
 
 ---
 
@@ -96,7 +96,3 @@ You can customize each profile to be easily identifiable with a name and/or icon
 We will use the **Admin** profile first in the next section.
 
 <script src='../template_assets/load.js'><script>
-
-
-
-Click the icon ![](../graphics/overview/Desktop_Icon.png) on the
