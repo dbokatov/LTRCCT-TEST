@@ -19,7 +19,8 @@ icon: material/bullseye-arrow
 7. Please ask for help when you need it
 
 TEST
-Click the icon ![](../graphics/overview/Desktop_Icon.png) on the
+Click the icon <img src="../graphics/overview/Desktop_Icon.png" alt="Desktop Icon" width="70" height="70">
+
 
 ---
 
