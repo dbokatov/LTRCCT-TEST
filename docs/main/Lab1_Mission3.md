@@ -79,7 +79,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 ### Testing
     
 1. Make sure you're logged into Webex CC Desktop application as Agent **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and set status to **Available**.
-2. Make a call to your test number and if success you should hear Welcome message and then accept the call by agent.
+2. Make a call to the Support Number and if success you should hear Welcome message and then accept the call by agent.
 3. In agent interaction panel change **Who Is Calling?** to any text you like then click **Save** and End the call.
 4. On **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 
 

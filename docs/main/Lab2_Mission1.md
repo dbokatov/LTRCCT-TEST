@@ -14,10 +14,6 @@ Consider a scenario where a supervisor needs ability to change routing decision 
   ![Profiles](../graphics/Lab2/ChangeGV.png) 
 
 
-Test 1
-
-
-
 ## Build
 
 
@@ -162,9 +158,9 @@ Test 1
     > Add Version Label(s): **Latest**
     >
     > Click **Publish Flow**
-    
-    !!! Note
-        Remember to select "Return to Flow" after you publish your flow
+    > 
+    > !!! Note
+         Remember to select "Return to Flow" after you publish your flow
     
 11. Map your flow to your inbound channel
     
@@ -183,7 +179,7 @@ Test 1
    
 1. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False**
     
-2. Make a call to your DN, when asked provide a pin code 1111# and listen the next message
+2. Make a call to your Support Number, when asked provide a pin code 1111# and listen the next message:
 
     > a. If ***"You have successfully modified your emergency configuration."***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span> you're good to proceed with step 3.
     >
@@ -258,4 +254,4 @@ Test 1
 
 
 ### Summary
-This lab shows how to quickly change the behavior of my our contact center logic in extreme situation without even login-in in to Control Hub.
+This lab shows how to quickly change the behavior of your contact center logic in extreme situation without even login-in in to Control Hub.

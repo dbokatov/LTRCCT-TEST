@@ -127,7 +127,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
 ### Testing
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
-2. Make a test call and accept the call by Agent.
+2. Make a test call to the Support Number and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 
 4. Now the caller should hear prompts configured in **PCS-2025**. Complete the survey.
 5. To check Survey responses got to ***Control Hub -> Contact Center -> Surveys***. For **PCS-2025** click on Download and select Survey response period get a CSV file with provided answers.
