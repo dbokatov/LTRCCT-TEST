@@ -20,10 +20,12 @@ icon: material/bullseye-arrow
 
 TEST
 
-<img src="../graphics/overview/Desktop_Icon.png" />  
-<br/>
 
-test text
+test text bla bla ![profiles](../graphics/overview/Desktop_Icon40x40.png) sdfasdfadsfusing the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. 
+
+test again bla ![profiles](../graphics/overview/Desktop_Icon50x50.png) asdfasdfusing the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. 
+
+and on more bla ![profiles](../graphics/overview/Desktop_Icon70x70.png) asdfsdfsdusing the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. 
 
 ---
 
