@@ -37,13 +37,13 @@ When a customer calls back into the contact center within ten minutes of their l
 
 ## Build
 
-1. Create a flow named <copy>**ReturningCaller_<w class = "attendee_out">attendeeID</w>**</copy> then create a flow variable 
+1. Create a flow named **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** then create a flow variable 
     
-    > Name: <copy>**previousID**</copy>
+    > Name: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
     >
     > Type: **String**
     >
-    > Default Value: empty
+    > Default Value: Leave empty
 
 
 2. Add a **Play Message** node for our welcome message
@@ -52,13 +52,13 @@ When a customer calls back into the contact center within ten minutes of their l
     >
     > Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
     > Click the Add Text-to-Speech Message button
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: <copy>**Welcome to the advanced routing and API integrations lab.**</copy>
+    > Text-to-Speech Message: **Welcome to the advanced routing and API integrations lab.**<span class="copy-static" data-copy-text="Welcome to the advanced routing and API integrations lab."><span class="copy" title="Click to copy!"></span></span>
     >
 
 
@@ -137,16 +137,16 @@ When a customer calls back into the contact center within ten minutes of their l
      
     > Parse Settings:
     > 
-    > Content Type: **JSON**
+    > Content Type: **`JSON`**
     >
-    > Path Expression: <copy>`$.data.task.tasks[0].id`</copy>
+    > Path Expression: `$.data.task.tasks[0].id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
    
 
 4.  Add a Condition node
 
     > Connect the output from the **HTTP Request** node to this node
     >
-    > Expression: <copy>**`{{previousID is empty}}`**</copy>
+    > Expression: **`{{previousID is empty}}`**<span class="copy-static" data-copy-text="{{previousID is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > We will connect the **True** node in a future step.
     >
@@ -165,7 +165,7 @@ When a customer calls back into the contact center within ten minutes of their l
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: <copy>**It looks like you were just working with an agent and had to call back in.  We are prioritizing this call for the next available agent.**</copy>
+    > Text-to-Speech Message: **It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent.**<span class="copy-static" data-copy-text="It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent."><span class="copy" title="Click to copy!"></span></span>
     >
 
 6.  Add a **Queue Contact** node
@@ -174,7 +174,7 @@ When a customer calls back into the contact center within ten minutes of their l
     > 
     > Select Static Queue
     >
-    > Queue: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
     > Select Static Priority
     >
@@ -210,7 +210,7 @@ When a customer calls back into the contact center within ten minutes of their l
     > 
     > Select Static Queue
     >
-    > Queue: <copy>**<w class = "attendee_out">attendeeID</w>_Queue**</copy>
+    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
     > Connect the **Output** node edge from this node to the **Subflow** node
 
@@ -229,17 +229,18 @@ When a customer calls back into the contact center within ten minutes of their l
     >
     > Click **Publish** Flow
 
-      !!! Note:
-        Remember to select "Return to Flow" after you publish your flow.
+
+        !!! Note:
+            Remember to select "Return to Flow" after you publish your flow.
 
 
 11. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
     >
-    > Locate your Inbound Channel (you can use the search): <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Select the Routing Flow: <copy>**ReturningCaller_<w class = "attendee_out">attendeeID</w>**</copy>
+    > Select the Routing Flow: **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
     > Select the Version Label: **Latest**
     >
@@ -250,9 +251,9 @@ When a customer calls back into the contact center within ten minutes of their l
 
 1. Launch the [Agent Desktop](https://desktop.wxcc-us1.cisco.com/){:target="_blank"} and log in selecting the Desktop option for your Voice connection.
 2. On your Agent Desktop, make sure your status is not set to available
-      1. Using Webex, place a call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+      1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       2. After you hear the queue treatment start, you can abandon the call 
-3. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 4. On your Agent Desktop, set your status to available
       1. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
       2. After a few moments end the call and select a wrapup code.
@@ -264,7 +265,7 @@ When a customer calls back into the contact center within ten minutes of their l
       1. Was the call queued with priority?
          1. Why or why not?
 7. Close the Debugger
-8. Using Webex, place another call to your Inbound Channel number <copy>**<w class = "attendee_out">attendeeID</w>_Channel**</copy>
+8. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 9. On your Agent Desktop, set your status to available
       1. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
       2. After a few moments end the call and select a wrapup code.
