@@ -140,7 +140,12 @@ In this task, you will enhance the functionality of the **<span class="attendee-
       > 
       > We will connect **True** exit path in next step
       >
-      > Expression: `{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`<span class="copy-static" data-copy-text="\{\{ callbackConnectTime == \"-1\" ? (callbackStatus == \"Not Processed\" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? \"true\" : \"false\") : \"false\") : \"false\" \}\}"><span class="copy" title="Click to copy!"></span></span>
+      > Expression: `{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}`<span class="copy-static" data-copy-text="{{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Expression: 
+      ``` JSON
+      {{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}
+      ```
 
 
       > !!! Note
