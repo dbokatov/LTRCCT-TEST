@@ -20,7 +20,7 @@ icon: material/bullseye-arrow
 
 TEST
 
-<img src="../graphics/overview/Desktop_Icon.png"/>  
+<img src="../graphics/overview/Desktop_Icon.png" />  
 <br/>
 
 test text
