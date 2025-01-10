@@ -18,15 +18,6 @@ icon: material/bullseye-arrow
 6. We are going to use built-in Cisco Text to Speech for playing all messages in the lab.
 7. Please ask for help when you need it
 
-TEST
-
-
-test text bla bla ![profiles](../graphics/overview/Desktop_Icon40x40.png) sdfasdfadsfusing the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. 
-
-test again bla ![profiles](../graphics/overview/Desktop_Icon50x50.png) asdfasdfusing the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. 
-
-and on more bla ![profiles](../graphics/overview/Desktop_Icon70x70.png) asdfsdfsdusing the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. 
-
 ---
 
 ### Predefined configuration
@@ -51,6 +42,12 @@ More pre-configured entities will be mentioned during the lab missions if they h
 
 ### Testing
 
+#### Agent Desktop
+
+Use Agent Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) pre-installed on your workstation to login your agent. In addition, Desktop profile was configured in a way where you don't need to select a Telephony line. By default only Desktop Audio (WebRTC) has been enabled.
+
+
+#### Calling to Contact Center
 All call to Webex Contact center should be done from Webex App which has been pre-installed for you as well as pre-logined to it.
 To make a test just open Webex App and dial the provided Support Number assigned to you.
 
@@ -61,44 +58,3 @@ To make a test just open Webex App and dial the provided Support Number assigned
 
 ---
 
-### Browser Setup [TO BE REMOVED as we are going to pre-configure workstations prior the lab]
-
-Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab. We will create the user profiles below - Admin, Agent 1, Agent 2 and Supervisor
-
-![profiles](../graphics/overview/17.png)
-![profiles](../graphics/overview/18.png)
-
----
-
-### Creating Chrome user profiles
-
-Open the Windows Terminal (Windows key and type **Powershell**). Paste and run the following code. You will see 4 new Chrome shortcut icons on the desktop
-
-```
-$DesktopPath = [Environment]::GetFolderPath("Desktop")
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut("$DesktopPath\WxCC Admin.lnk")
-$shortcut.TargetPath = "%PROGRAMFILES%\Google\Chrome\Application\chrome.exe"
-$Shortcut.Arguments = "--user-data-dir=%USERPROFILE%\chromeProfiles\admin"
-$Shortcut.Save()
-$shortcut = $shell.CreateShortcut("$DesktopPath\WxCC Agent1.lnk")
-$shortcut.TargetPath = "%PROGRAMFILES%\Google\Chrome\Application\chrome.exe"
-$Shortcut.Arguments = "--user-data-dir=%USERPROFILE%\chromeProfiles\Agent1"
-$Shortcut.Save()
-```
-
-![profiles](../graphics/overview/term_1.png)
-
-Check the desktop of your lab PC. You should find 3 Chrome shortcuts created - WxCC Admin, **WxCC Agent1 and WxCC Supervisor**
-
-When you click on the links 
-
-![profiles](../graphics/overview/term_2.png)
-
-You can customize each profile to be easily identifiable with a name and/or icon of your choice
-
-![profiles](../graphics/overview/term_3.png)
-
-We will use the **Admin** profile first in the next section.
-
-<script src='../template_assets/load.js'><script>
