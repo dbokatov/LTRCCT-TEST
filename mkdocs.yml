@@ -103,19 +103,18 @@ nav:
       ## - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
   - Fundamental Labs:
       - Lab Guide:
-            - "Main Mission: Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1.md
-            - "Mission 1: Using Business Hours to add flexibility": ./main/Lab1_Mission1.md
-            - "Mission 2: Adding Call-back functionality to your flow": ./main/Lab1_Mission2.md
-            - "Mission 3: Work with Event Flow": ./main/Lab1_Mission3.md
-            - "Mission 4: Post Call Survey": ./main/Lab1_Mission4.md
-            - "Mission 5: Using Flow Designer Tools": ./main/Lab1_Mission5.md
-            - "Mission 6: AI in Action (Scripted Agent)": ./main/Lab1_Mission6.md
-            - "Mission 7: AI in Action (Autonomous Agent)": ./main/Lab1_Mission7.md
-            - "Mission 8: Agent Greetings": ./main/Lab1_Mission8.md
+            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1_Mission1.md
+            - "Mission 2: Using Business Hours to add flexibility": ./main/Lab1_Mission2.md
+            - "Mission 3: Adding Call-back functionality to your flow": ./main/Lab1_Mission3.md
+            - "Mission 4: Work with Event Flow": ./main/Lab1_Mission4.md
+            - "Mission 5: Post Call Survey": ./main/Lab1_Mission5.md
+            - "Mission 6: Using Flow Designer Tools": ./main/Lab1_Mission6.md
+            - "Mission 7: AI in Action (Scripted Agent)": ./main/Lab1_Mission7.md
+            - "Mission 8: AI in Action (Autonomous Agent)": ./main/Lab1_Mission8.md
       - Conclusion: ./main/Lab1_Conclusion.md
   - Advanced Labs:
       - Lab Guide:
-            - "Advacned Call Routing and Flow Simplification by using API Integration Overview": ./main/Lab2.md
+            ##- "Advacned Call Routing and Flow Simplification by using API Integration Overview": ./main/Lab2.md
             - "Mission 1: HTTP API POST to Control Hub (Emergency config change)": ./main/Lab2_Mission1.md
             - "Mission 2: Routing facilitation": ./main/Lab2_Mission2.md
             - "Mission 3: Preventing Callback duplication": ./main/Lab2_Mission3.md

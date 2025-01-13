@@ -3,137 +3,86 @@
 icon: material/medal
 ---
 
-### Story 
+## Using Business Hours in Your Flow to add flexibility
 
-Callback functionality is an essential feature in a modern contact center, providing a solution that enhances both customer satisfaction and operational efficiency.
+Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
-Imagine a customer calls a company’s sales line, interested in upgrading their service. The wait time is 20 minutes, but they’re in a busy store and can’t stay on hold. Instead, they request a callback.
-Having a callback option is a must-have feature—it ensures businesses don’t lose potential leads while providing a seamless, customer-friendly experience.
+### **Step Objective**
+  - We continue to use same flow we created in previous Mission 1 of the Fundamental Lab
 
-### Build
-We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.
+  - Business Hours entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** has been configured for you and contains the following settings:
+    
+    ○ **Working Hours** - Define time during which contact center will be operational. Each working hours contains one or more shifts. We can configure different schedules for different time zones
+    
+    ○ **Holidays** - Define specific day or day range which is declared is holiday. Entire 24 hours of the day selected is marked non-operational​.
+    
+    ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and chanfe Edit mode to **On**
-2. Delete  connection from **Queue** node to **Music** 
-3. Drag **Menu** node:
+#### Build
 
-    > Rename Activity Label to **WantCallback**<span class="copy-static" title="Click to copy!" data-copy-text="WantCallback"><span class="copy"></span></span>
+1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
+
+    ![profiles](../graphics/Lab1/8-BH_Entity.gif)
+
+2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Read-only** to **Edit: ON** mode
+3. Drag and drop following nodes to the canvas:
+
+    > - **Business Hours**
     >
+    > - **Play Message**
+    >
+    > - **Disconnect Contact**
+
+    ![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
+
+4. Connect **Business Hours** node exits as follow:
+
+    > - **Working Hours** connect to **WelcomePrompt** node
+    >
+    > - **Holidays**, **Overrides** and **Default** connect to new added **PlayMessage** node.
+    >
+    > - New added **PlayMessage** connect to **Disconnect** contact
+
+    ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
+
+5. Click on **Business Hours** node and select preconfigured Business Hours Entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** .
+
+6. Configure **PlayMessage** node as follows:
+
     > Enable Text-To-Speech
     >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    > Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.laBlaBla"><span class="copy"></span></span>
-    >
-    > Delete the Selection for Audio File
-    >
-    > Under Custom Menu Links:
-    >>
-    >> Change first Digit Number **0** to **1**, add Link Description as **Callback** 
-    >>
-    >> Add New Digit Number as **2** with Link Description **Stay in queue**
-
-    ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
-
-
-
-4. Drag **Collect Digits** nodes
-    
-    > Rename Activity Label to **NewNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewNumber"><span class="copy"></span></span>
-    >
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the Add Text-to-Speech Message button and paste text: ***Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***<span class="copy-static" title="Click to copy!"data-copy-text="It's not working hours currently. Please call later. Goodbye."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
-    >   
-    > Advanced Settings:
-    >
-    >> No-Input Timeout  **5** 
-    >>
-    >> Make Prompt Interruptible: **True**
-    >>
-    >> Minimum Digits: **11**
-    >>
-    >> Maximum Digits: **11**
-    >       
-    > Connect **No-Input Timeout** to the front of the **NewNumber** node
-    >
-    > Connect Unmatched Entry to the front of the NewNumber node
-    >   
-    > Connect **Callback** from **WantCallback** node created in step 3 to **NewNumber** node
-    >
-    > Connect **Stay in queue** from **WantCallback** node created in step 3 to **Music** node
 
-    ![profiles](../graphics/Lab1/AM1-NewNumber.gif)
+7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+     
+    !!! Note
+        We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
+    ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
+   
+8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
 
-5. Drag one more Menu node
-    
-    > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
-    >
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the Add Text-to-Speech Message button and paste text: ***You entered*** *{{NewNumber.DigitsEntered}}****. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" data-copy-text="You entered {{NewNumber.DigitsEntered}}. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Delete the Selection for Audio File
-    >
-    >    
-    > Custom Menu Links:
-    >>
-    >> Change first Digit Number from **0** to **1**, add Link Description as **Number OK**
-    >>
-    >> Add New Digit Number as **2** with  Link Description **Number Not OK**
-    >
-    > Connect **No-Input Timeout** to the front of the **VerifyNumber** node
-    >
-    > Connect **Unmatched Entry** to the front of the **VerifyNumber** node
-    >    
-    > Connect **NewNumber** created in step 4 to **VerifyNumber** node
-    >
-    > Connect **Number Not OK** from **VerifyNumber** node created in Step 5 to **VerifyNumber** node
-    
-    ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
+    !!! Note
+        Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 
 
+    ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-6. Add **Callback** node
-    
-    > Callback Dial Number select  ***NewNumber.DigitsEntered*** from dropdown list
-    >    
-    > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
-
-
-
-7. Add **PlayMessage** node as follows:
-    
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Delete the Selection for Audio File
-    >
-    > Connect **CallBack** created in step 6 to **PlayMessage** node
-    > Connect **PlayMessage** created in step 6 to **DisconnectCall** node
-    
-    ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
-
-
-
-8. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
-
-    
 ### Testing
-    
-1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make a call to the Support Number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use DialPad to provide Cisco TAC number then confirm when asked.
-3. Once done another message about successful scheduling should play.
-4. Make your agent **Available**. Contact Center will reserve you right away and propose to answer a callback call.
+
+1. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration. Make sure you hear the message we set in ***Step 6***.
+
+
+### Post Testing steps
+
+1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration we made in ***Step 8*** as we are going to use same flow in upcoming tasks. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from **Override** dropdown list. Then click **Save**.
+
+     ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
+
+11. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of Main Mission of Fundamental Lab.
 
 **Congratulations on completing another mission.**
