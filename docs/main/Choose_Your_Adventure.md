@@ -6,25 +6,43 @@ icon: material/bullseye-arrow
 ## Welcome to Your Lab Adventure!
 
 ### Overview
-In this session, we’ve prepared 15 unique labs for you to explore. To make the experience more focused and exciting, we’ve grouped the labs into 4 tracks, each designed to help you master a specific set of skills.
+In this session, we’ve designed 15 unique labs for you to explore, grouped into 4 distinct tracks to create a focused and engaging learning experience. Each track is crafted to help you develop specific skills.
 
 Here’s what you need to know:
 
-Each track includes different amount labs, tailored to guide you through a connected learning journey.
-It is tottaly OK to complete any 1 track to meet the session's goals.
-Feeling ambitious? Complete 2 tracks to excel, or tackle 3 tracks to become an expert. Want to go above and beyond? Conquer all 4 tracks to earn the title of Mega Superstar!
-Take a moment to review the tracks, pick the one(s) that excite you most, and dive in. It’s your adventure—make it unforgettable!
+  > Each track offers a different number of labs, guiding you through a cohesive learning journey.
+  >
+  > Completing just one track is enough to achieve the session’s goals.
+  > 
+  > Want to push further? Finish 2 tracks to excel, 3 tracks to become an expert, or take on all 4 tracks to earn the ultimate title of Mega Superstar!
+  >
+  > Take a moment to review the tracks, choose the ones that excite you, and dive in. This is your adventure—make it unforgettable!
 
-Order is not important You can start from any track you feel interesting to you.
+There’s no set order—start with any track that interests you most!
 
-Here they are:
+## Track 1: Basic Track
 
-## Track 1: 
+This track introduces the fundamental features of Flow Designer. Participants will explore flow templates, business hours, and event flows while learning to utilize additional tools like the Debugger and Analyzer.
 
 ![profiles](../graphics/overview/Track_1.png)
 
+## Track 2: CallBack Track
+
+The Callback track includes a series of labs focused on various callback scenarios. It begins with basic callback configuration and progresses to advanced GraphQL techniques to eliminate duplicate callbacks.
+
 ![profiles](../graphics/overview/Track_2.png)
 
-We will use the **Admin** profile first in the next section.
+## Track 3: API Track
+
+In this track, participants will work on customizing flows using a variety of API requests to interact with different data sources.
+
+![profiles](../graphics/overview/Track_3.png)
+
+## Track 4: AI Agent Track
+
+Although the smallest, but challenging track. It involves configuring Cisco’s native AI agent (bot) and integrating it with Flow Designer to enable flow customization.
+
+![profiles](../graphics/overview/Track_4.png)
+
 
 <script src='../template_assets/load.js'><script>
