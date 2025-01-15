@@ -59,7 +59,7 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note
         As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
 
-9. <span style="color: orange;">[Optional]</span> Select **Play Message** node and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
+9. <span style="color: orange;">[Optional]</span> Select **Play Message** node (the one which goes after Queue and Play Music nodes) and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
 
 10. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
