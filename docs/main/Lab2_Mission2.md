@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 3: Preventing Callback duplication
+# Mission 2: Preventing Callback duplication
 
 ## Story 
 
