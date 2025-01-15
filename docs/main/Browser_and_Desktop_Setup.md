@@ -19,7 +19,7 @@ We will create the user profiles below - Admin, Agent
 
 ### Creating Chrome user profiles
 
-Open the Windows Terminal (Windows key and type **Powershell**). Paste and run the following code. You will see 4 new Chrome shortcut icons on the desktop
+Open the Windows Terminal (Windows key and type **Powershell**). Paste and run the following code. You will see 2 new Chrome shortcut icons on the desktop
 
 ```
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
@@ -36,7 +36,7 @@ $Shortcut.Save()
 
 ![profiles](../graphics/overview/term_1.png)
 
-Check the desktop of your lab PC. You should find 3 Chrome shortcuts created - WxCC Admin, **WxCC Agent1 and WxCC Supervisor**
+Check the desktop of your lab PC. You should find 2 Chrome shortcuts created - WxCC Admin, **WxCC Agent1 and WxCC Supervisor**
 
 When you click on the links 
 
