@@ -5,181 +5,253 @@ icon: material/medal
 
 
 
-# Mission 3: Preventing Callback duplication
+# Mission 1: HTTP API POST to Control Hub (Emergency config change)
 
-## Story 
+## Story
 
-In this task, you will enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
+Consider a scenario where a supervisor needs ability to change routing decision during an emergency without accessing admin portal. It can be done by changing the **Default Value** of GlobalVariable via API PUT call from False to True and use Condition in main IVR script to do routing decision. 
 
-> !!! Note
-      This task relies on completing Mission 2 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
+  ![Profiles](../graphics/Lab2/ChangeGV.png) 
 
 
 ## Build
 
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change Edit mode to **On**
 
-2. Add 3 new flow variables: 
+1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
 
-    - Callback Status variable:
+    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > Type: **Boolean**
+    > Default Value: **False**
+    > 
+    > Copy your new created **Global Variable** **ID** and **Name** to a notepad. We are going to use them in API request in further steps.
+    >
+
+    ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
+
+
+2. Create a new flow with a name **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     
-      >
-      > Name: **callbackStatus**<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
+3. Add a **Collect Digits** node:
     
-    - Callback Connect Time variable:
-      
-      >
-      > Name: **callbackConnectTime**<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
-      
-    - Search Result variable:
-      
-      >
-      > Name: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
-
-      ![profiles](../graphics/Lab2/L2M3-1.gif)
-
-3. Add an **HTTP Request** node for our query
+    > Rename node to **CollectPIN**
+    >
+    > Connect the **New Phone Contact** output node edge to this **Collect Digits** node
+    >
+    > Loop No-Input Timeout and Unmatched Entry to itself
+    >
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    >
+    > Click the Add Text-to-Speech Message button
+    >
+    > Delete the Selection for Audio File
+    >
+    > Text-to-Speech Message: ***Please enter 4 digits pin code to activate emergency flow.***<span class="copy-static" data-copy-text="Please enter 4 digits pin code to activate emergency flow."><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Set checkbox in **Make Prompt Interruptible**
     
+    ![Profiles](../graphics/Lab2/BM1-3-Collect_PIN.gif)
+
+    
+4. Add **Condition Node** and rename it to **PIN_Check**
+
+    > Connect the output node edge from the **Collect Digits** node to this node
     >
-    > Connect VeriNumber Option 1 to this HTTP node
-    >
-    > We will connct HTTP node in next step
-    >
-    > Activity Label: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Select Use Authenticated Endpoint
-    >
+    > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{ CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
+    
+    <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
+        
+    ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
+    
+5. Add **HTTP Request** node to the flow and rename it to **HTTP_PUT**
+
+    > Connect the **TRUE** output edge from the **PIN_Check** node to this node
+    > 
     > Connector: **WxCC_API**
-    > 
-    > Path: **/search**
-    > 
-    > Method: **POST**
-    > 
+    >
+    > Request Path: **/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/*{ID}***<span class="copy-static" data-copy-text="/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/{ID}"><span class="copy" title="Click to copy!"></span></span> - change ***{ID}*** with Global Variable ID you created in **Step 2** of this mission.
+    >
+    > Method: **PUT**
+    >
     > Content Type: **Application/JSON**
     >
-    > Copy this GraphQL query into the request body:
-    >
-    ```JSON
-    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"{{NewNumber.DigitsEntered}}\" } } }\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
-    ```
-    > <details><summary>Expanded Query For Understanding (optional)</summary>
-    ```GraphQL
-    query($from: Long!, $to: Long!)
+    > Request Body:
+    ``` JSON
     {
-      taskDetails(
-          from: $from
-          to: $to
-        filter: {
-          and: [
-           { callbackData: { equals: { callbackNumber: "{{NewNumber.DigitsEntered}}" } } }
-           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
-          ]
-        }
-      ) {
-        tasks {
-          callbackData {
-            callbackRequestTime
-            callbackConnectTime
-            callbackNumber
-            callbackStatus
-            callbackOrigin
-           callbackType
-          }
-           lastEntryPoint {
-            id
-            name
-          }
-        }
-      }
+        "active": true,
+        "agentEditable": false,
+        "agentViewable": false,
+        "variableType": "Boolean",
+        "defaultValue": "true",
+        "desktopLabel": "",
+        "id": "<yourGlobalVariableID created in step 1>",
+        "name": "<yourGlobalVariable name created in step 1>",
+        "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+        "reportable": false,
+        "version": 1
     }
     ```
-    </details>
 
-    > Parse Settings:
-    >
-    > - Content Type: JSON
-    > - Output Variable: `callbackStatus`<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
-    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackStatus`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackStatus"><span class="copy" title="Click to copy!"></span></span>
-    > - Add New Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
-    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
-    >
-      ![profiles](../graphics/Lab2/L2M3-2.gif)
----
+    !!! Note
+        In Request body we are going to change Default Value of Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**  from ***false*** to ***true***
 
-4. Add **Set Veriable** node
+    ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
     
-    >
-    > Connect **HTTPRequest_CallBackSearch** to this node
-    >
-    > We will connct **Set Variable** node in next step
-    >
-    > Variable: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Set To Variable: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
-    >
-    ![profiles](../graphics/Lab2/L2M3-3.gif)
-
-5. Add a **Condition** node
+6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
     
-      > 
-      > Connect **Set Variable** created in previous step to this node
-      >
-      > Connect **False** exit path to existing CallBack node
-      > 
-      > We will connect **True** exit path in next step
-      >
-      > Expression: 
-      ``` JSON
-      {{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}
-      ```
-
-
-      > !!! Note
-          Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on. In our case the expression returns True only when httpStatusCode equals **200**, callbackStatus is **Not Processed** and callbackConnectTime is **-1**
-
-    ![profiles](../graphics/Lab2/L2M3-4.gif)
-
-6. Add **PlayMessage** and **DisconnectContact** nodes: 
+    > Connect the output node edge from the **HTTP_PUT** node to this node
+    >
+    > In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 200}}"><span class="copy" title="Click to copy!"></span></span>
     
-      > Enable Text-To-Speech
-      >
-      > Select the Connector: **Cisco Cloud Text-to-Speech**
-      >
-      > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Delete the Selection for Audio File
-      >
-      > Connect **True** exit path of **Condition** node created in **Step 7** to **PlayMessage** node
-      > Connect this **PlayMessage** to **DisconnectCall** node
+    ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
 
-      ![profiles](../graphics/Lab2/L2M3-5.gif)
+    <details><summary>**Quick Quiz**</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
+    
+7. Add a **Play Message** node 
+    
+    > Connect the **HTTPStatusCode** TRUE output node edge to this **Play Message** node
+    >
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    >
+    > Click the Add Text-to-Speech Message button
+    >
+    > Delete the Selection for Audio File
+    >
+    > Text-to-Speech Message: ***You have successfully modified your emergency configuration.***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span>
+    
+    ![Profiles](../graphics/Lab2/BM1-9-PlayOK.gif)
+    
+8. Add another **Play Message** node
 
-7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+    > Connect the **HTTPStatusCode** FALSE output node edge to this **Play Message** node
+    >
+    > Connect the **PIN_Check** FALSE output node edge you created in **Step 5** to this **Play Message** node
+    >
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    >
+    > Click the Add Text-to-Speech Message button
+    >
+    > Delete the Selection for Audio File
+    >
+    > Text-to-Speech Message: ***Something went wrong. Please check your configuration and try again.***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span>
+    
+    ![Profiles](../graphics/Lab2/BM1-8-PlayNotOK.gif)
+    
+9. Add **Disconnect Contact**
+
+    > Connect both **Play Message** nodes created in **Steps 8** and **9** to this node
+    
+
+10. Publish your flow
+
+    > Turn on Validation at the bottom right corner of the flow builder
+    >
+    > If there are no Flow Errors, Click **Publish**
+    >
+    > Add a publish note
+    >
+    > Add Version Label(s): **Latest**
+    >
+    > Click **Publish Flow**
+    > 
+    > !!! Note
+         Remember to select "Return to Flow" after you publish your flow
+    
+11. Map your flow to your inbound channel
+    
+    > Navigate to Control Hub > Contact Center > Channels
+    > 
+    > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Select the Routing Flow: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Select the Version Label: **Latest**
+    > 
+    > Click **Save** in the lower right corner of the screen
+
 
 ## Testing
+   
+1. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False**
     
-1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make sure your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** is assigned to **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. If not, do that (refer to previous very first Mission where this step was explained in details).
-3. Make a call to your Support Number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>
-4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
-5. You should hear a message configured in **Step 6** of the current mission.
-6. Click on **Analyze** to visualy observe the call flow. Make sure you're viewing latest Published Version.
-7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
-8. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debuger. 
-9. Click on **SetVariable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the cusrrent mission configuration. 
+2. Make a call to your Support Number, when asked provide a pin code 1111# and listen the next message:
 
-![profiles](../graphics/Lab2/L2M3-6.gif)
+    > a. If ***"You have successfully modified your emergency configuration."***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span> you're good to proceed with step 3.
+    >
+    > b. If ***"Something went wrong. Please check your configuration and try again."***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span> then before proceeding you need to fix your flow. Call the instructor for assistance.
+     >
 
-**Congratulations on completing another mission.**
+3. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
+
+
+4. Now the fun part. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** we created in Mission 1 of Fundamental Labs, make it editable and add Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False** in General Settings of the flow
+
+    ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
+    
+5. Add **Condition**: 
+    
+    > Connect the output node edge of the **NewPhoneContact** node to this node
+    > 
+    > Connect the output False node edge from the **Condition** Node to **Set Variable**
+    > 
+    > **[Copy doesn't work. to fix]** In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
+            
+    <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
+        
+    ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
+
+
+6. Add a **Play Message** node and **Disconnect node**.
+    
+    > Connect the **TRUE** output node edge of the **Condition Node** node to this node
+    > 
+    > Connect the output node edge of **Play Message** node to **DiscinnectContact node**.
+    > 
+    > Enable Text-To-Speech
+    > 
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    > 
+    > Click the Add Text-to-Speech Message button
+    > 
+    > Delete the Selection for Audio File
+    > 
+    > Text-to-Speech Message: ***Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.***<span class="copy-static" data-copy-text="Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later."><span class="copy" title="Click to copy!"></span></span>
+    
+    ![Profiles](../graphics/Lab2/BM1-Test6-GV.gif)
+        
+7. Because we are using only one number to make calls we need to map your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** back to the **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    
+    > Navigate to Control Hub > Contact Center > Channels
+    >
+    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    >
+    > Select the Routing Flow: **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    >
+    > Select the Version Label: **Latest**
+    >
+    > Click **Save** in the lower right corner of the screen
+    
+
+8. Make a call and you should hear the message we configured on **Step 6**.
+    
+9. Revert the Global Variable value from **True** to **False** in Control Hub. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
+
+    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** 
+    
+    > Type: **Boolean**
+    >
+    > Default Value: **False**
+    
+    ![Profiles](../graphics/Lab2/BM1-Test11-GV.gif)
+    
+    
+10. Make a test call again and you should hear the message configured in Basic Lab at the very beginning.
+
+
+### Summary
+This lab shows how to quickly change the behavior of your contact center logic in extreme situation without even login-in in to Control Hub.

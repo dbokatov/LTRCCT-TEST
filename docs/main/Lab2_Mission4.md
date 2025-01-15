@@ -5,227 +5,162 @@ icon: material/medal
 
 
 
-# Mission 4: Seamless AI to Human Agent Handoffs
+# Mission 2: Routing facilitation
 
-> !!! Note
-      This task relies on completing Mission 6 of the Main Labs. Ensure that mission is completed to have a fully functional AI Scripted Agent feature in the Contact Center.
+## Objective
 
-## Objectives
+The primary objective of this new feature is to enhance nodes activities to include a dynamic variable-based selection option to make you flow smaller and simpler to adjust.
 
-This lab is designed to explore how to pass contextual intelligence from AI Agents to Webex Contact Center agents. It involves leveraging AI Summaries for Webex AI  agent conversational transcripts . By completing this lab, you will gain practical skills and knowledge on how to provide the right context to agents to better handle customer queries.
+You will learn how to use **Dynamic Variables** in multiple nodes including **GoTo**, **Business Hours**, **Queue** and other nodes. 
 
-By the end of this lab, you will:
 
-  - Understand how to effectively transfer and hand off to Human Agents.
-  - Learn how to provide the relevant call context to Human Agents.
+## Steps Objective
+    
+  - We are going to use new Flow Template Dynamic Variable Support
+  - Most of the settings in nodes settings are going to be variables.
+  - All Business Hours, Channels and additional Flows have been pre-configured for you.
+  - As a Queue you're are going to use your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
+  - We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}. For more information of how you can use MockAPI please watch these Vidcasts: 
+[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+  - Flow variables are coming with a template. And the same are being used in **MockAPI** database as key values.
+  - Parsing of fetched data is part of preconfigured flow template but requires additional adjusting. That will be shown in corresponing steps. In real world you are free to create/modify those names as business requires.
 
-## Build
+## Expected Result
 
-### Transfer to Human Agent
+1. When call arrives fetch the data from **MockAPI** based on your Dialed Number
+2. Write the data into respective preconfigured flow variables. These Variables are being used in all consequent nodes.
+3. Business Hours entity configured to cover EMEA timezone. Call should go through WorkingHours exit in normal behavior.
+4. Play Message nodes have been configured to play messages received from API call
 
-1. Before you start this lab, please make sure the webex contact center **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** is set your **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
+## Steps
 
-    ![Profiles](../graphics/Lab1/L1M6_TaskBot_FlowtoEP.gif)  
+1. Login into Control Hub [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile if your session has been expired.
+    Your login will be the Admin Name in the email you received. It will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
-2. In **Control Hub** select **Contact Center** from the left panel and then navigate to Flows from the left panel. Search and open your flow **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. 
+    ![Profiles](../graphics/Lab1/1-CH_Login.gif)
 
-3. Switch the Edit button to **On** to enable Edit mode in the flow builder then drag and drop following nodes:
+2. This is the Administration interface for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
 
-    - **Queue Contact** activity onto the Flow from the left side panel
+3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-      >
-      > Connect the **Escalated** path from the **Virtual Agent V2** activity to the **Queue Contact** activity.
-      >
-      > Connect the **Queue Contact** activity to the **Play Music** activity
-      >
-      > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
-      > 
-      > Queue name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-      > 
+4. New Tab will be opened. Navigate to **Flow Templates**
 
-    - **Play Music**
+5. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
-      >
-      > Create a loop by connecting the Play Music activity back to itself - to create a music loop, following the diagram provided.
-      >
-      > Connect the **Failure** path from the **Play Music** activity to the **Disconnect Contact** activity.
-      > 
-      > Music File: **defaultmusic_on_hold.wav**<span class="copy-static" data-copy-text="defaultmusic_on_hold.wav"><span class="copy" title="Click to copy!"></span></span>
-      >
-  
-4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish**  
+6. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow
 
-    ![profiles](../graphics/Lab2/L2M4_HandoffQueue.gif)
+    ![Profiles](../graphics/Lab2/BM2_2-7_DynFlowCreate.gif)
 
-### Test 1:
+7. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
+    
+    - **FetchFlowSettings** node is used to access external database over API and parse the result by writing response result into respective Flow Variables which have been preconfigured for you already.
+    - **SetVariable_mwn** node writes complete API response into debug variable so you could see the complete API call result in Debug tool. It's been taken from **FetchFlowSettings.httpResponseBody** output variable of **FetchFlowSettings** node
+    - All **PlayMessage** and **Play Music** nodes have been preconfigured to play TTS messages taken from respective API response
+    - **BusinessHours_os2** node set to bussinesshours variable which is your business hour entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours**
+    - **QueueContact_a62** node set to queue variable which is your queue entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
+    - Some **GoTo** nodes are configured to use variables and some have statice values. We will adjust them while going through further steps. 
 
+    ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
+
+8. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}"><span class="copy" title="Click to copy!"></span></span>
+    - Replace DNIS with the provided DNIS number stripping +1
+
+    <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    - Open Chrome browser and past your URL. You should get the follwoing result
+    
+    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+
+9. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
+    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
+
+10. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
+    
+    !!! Note
+        Templates contain basic configuration and requres adjusting per usecase scenario. 
+    
+    ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
+    
+    !!! Note
+        You can test the JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
+          - Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
+          - Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
+          -In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
+
+         ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+
+11. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
+
+12. Open **GoTo_x19** node and set:
+
+    > Destination Type: **Flow**
+    >
+    > Static Flow
+    >
+    > Flow: **CCBU_ErrorHandling_Flow**
+    >
+    > Choose Version Label: **Latest**
+    
+13. Open **GoTo_8ca** and set:
+
+    > Destination Type: **Entry Point**
+    >
+    > Static Entry Point
+    >
+    > Entry Point: **CCBU_ErrorHandling_Channel**
+
+ 
+14. Repeat node settings in **Step 14** for **GoTo_uyn**
+
+15. Repeat node settings in **Step 15** for **GoTo_dbr**
+
+    ![Profiles](../graphics/Lab2/BM2-11-15-FallbackQ.gif)
+
+16. **Validate** and **Publish** flow
+
+17. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
+
+18. Map your flow to your inbound channel
+    
+    > Navigate to Control Hub > Contact Center > Channels
+    > 
+    > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Select the Routing Flow: **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Select the Version Label: **Latest**
+    > 
+    > Click **Save** in the lower right corner of the screen
+
+    ![Profiles](../graphics/Lab2/BM2-18-ChannelChange.gif)
+
+
+## Testing
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-2. Select Team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+
+2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+
 3. Make your agent ***Available*** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel and during the conversation with the virtual Agent, say, **"Please transfer me to an Agent."** Answer the call on the agent desktop when you receive a ring notification and verify the trasciption is passed to Agent Desktop.
+4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
 
-5. Once the call is answered, disconnect the call by clicking on the **End** button.
+### <span style="color: orange;">[Optional]</span> Test other variables
 
-    ![profiles](../graphics/Lab2/L2M4_Test1_Handoff.gif)
-
-### Disable Virtual Agent Transcript
-
-1. Open your flow **<span class="attendee-id-container">TaskBot_Flow_<span class="attendee-id-placeholder" data-prefix="TaskBot_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change Edit mode to **On** if it's not.
-2. Select the **Virtual Agent v2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**.
-3. Disable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
-4. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** .
-
-    ![profiles](../graphics/Lab2/L2M4_HandoffDisableTranscript.gif)
-
-### Test 2:
-1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
-2. Dial into the same support and observe that the conversation transcript is **Not available** on the Agent Desktop when **Enable Conversation Transcript** is unchecked.
-
-    ![profiles](../graphics/Lab2/L2M4_Test2_Handoff.gif)
-
-### Routing Based on Last Intent
-
-1. <span style="color: red;">**[IMPORTANT]**</span> Please make sure to Enable the Virtual Agent transcript by checking **Enable Conversation Transcript** option for the **Virtual Agent V2** activity. Select the **Virtual Agent V2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**. 
-
-2. Enable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
-
-    ![profiles](../graphics/Lab2/L2M4_HandoffEnableTranscript.gif)
-
-3. Add 2 new flow variables: 
+5. You can do the same trick we did in Mission 2 Step 8 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
     
-    >
-    > Name: **`last_intent`**<span class="copy-static" data-copy-text="last_intent"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Type: **`String`**<span class="copy-static" data-copy-text="String"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Default Value: **`empty`**
-    >
-    > Name: **`vameta`**<span class="copy-static" data-copy-text="vameta"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Type: **`JSON`**<span class="copy-static" data-copy-text="JSON"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Default Value: **`{}`**<span class="copy-static" data-copy-text="{}"><span class="copy" title="Click to copy!"></span></span>
-    >
-
-    ![profiles](../graphics/Lab2/L2M4_HandoffFlowVar.gif)
-
-
-4. Drag **Set Variable** node to canvas:
-
-    > Activity Name: **`VA_Metadata`**<span class="copy-static" data-copy-text="VA_Metadata"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Variable: **`vameta`**<span class="copy-static" data-copy-text="vameta"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Set To Variable: **`VirtualAgentV2_`<span style="color: red;">**<span style="color: red;">**<>**</span>**</span>`.MetaData`**
-    > 
-    > Connect **`Escalated`** edge of **VirtualAgent** to the **VA_Metadata** node
-    >
-
     !!! Note
-        <span style="color: red;"><*></span> in VirtualAgentV2 name is autogenerated and is different in all cases. You shouldn't be confused as you have only one VirtualAgentV2 node in the current flow
+        Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 
+
+    ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
+
+6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
+
+7. Now we need to revert the configuration we made in Step 1. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select **None** from Override dropdown list. Then click **Save**.
+
+    ![Profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif)
 
 
-    ![profiles](../graphics/Lab2/L2M4_HandoffSetVar.gif)
-
-5. Drag and drop the **Parse** activity to the flow
-
-    >
-    > Connect the **VA_Metadata** activity to the **Parse** activity.
-    >
-    > Input variable: **`VirtualAgentV2_`<span style="color: red;">**<span style="color: red;">**<>**</span>**</span>`.MetaData`**
-    >
-    > Content Type: **`JSON`**<span class="copy-static" data-copy-text="JSON"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Output Variable: **`last_intent`**<span class="copy-static" data-copy-text="last_intent"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Path Expression: **`$.previous-intent.name`**<span class="copy-static" data-copy-text="$.previous-intent.name"><span class="copy" title="Click to copy!"></span></span>
-
-    ![profiles](../graphics/Lab2/L2M4_HandoffParse.gif)
-
-6. Drag and drop the **Condition** activity to the flow
-
-    >
-    > Connect the **Parse** activity to the **Condition** activity.
-    >
-    > Connect the **False** output from the **Condition** activity to the **Queue Contact** activity
-    > 
-    > Condition : **{{ last_intent == "Book appointment" }}**
-
-7. Add **PlayMessage**: 
-    
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the Add Text-to-Speech Message button and paste text: **Routing to an agent skilled at booking an appointment.**<span class="copy-static" data-copy-text="Routing to an agent skilled at booking an appointment."><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Delete the Selection for Audio File
-    >
-    > Connect **True** exit path of **Condition** node created in **Step 5** to this **PlayMessage** node
-    > 
-    > Connect **PlayMessage** node to **QueueContact**
-    >
-
-8. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** 
-
-    ![profiles](../graphics/Lab2/L2M4_HandoffCondition&Validation.gif)
-
-### Test 3
-    
-1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
-2. Make a call to your test number. During your interaction with the Virtual Agent start requesting for an appointement and then request a transfer to a live agent by saying, **"Please transfer me to an Agent."** If the last intent was "Book appointment", you will hear the Text-to-Speech message: **"Routing to an agent skilled at booking an appointment."**. 
-
-    <!-- md:option type:note -->
-    
-    !!! note "Sample Conversation"
-        "I would like to Book  an appointment"
-    
-        What date are you considering for your visit 
-    
-        "Feb 20th"
-    
-        Could tell us preferred time for your visit 
-    
-        "3PM"
-    
-        Which doctor you want appointment with
-      
-        "Dr John"
-    
-        What is name of the  patience 
-    
-        "Peter<any name>"
-    
-        Could you tell us patience Date of Birth
-    
-        "Please transfer me to an agent "
-
-5. Answer the call on the agent desktop when it rings.
-6. Go back to your flow and click on **Analyze** tab at the bottom of the canvas. Observe the last call behavior.
-7. Open Debug tool and open your last call. Click on **VA_Metadata** which is our renames Set Variable. See that metadata from **VirtualAgentV2_<*>.MetaData** was written into **vameta** flow variable we created on **Step 3**.
-  ![profiles](../graphics/Lab2/L2M4_Handoff_Analyze&Debug.gif)
-
-8. Copy JSON from debuger and paste it into [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} Inputs.
-9. Change Debug mode to Design in Flow Designer and copy the path from Parse node into JSONPath of the [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}. You should get last intent name as "Book Apppointement"
-
-  ![profiles](../graphics/Lab2/L2M4_Handoff_JSONPath.gif)
-
-### Test 4
-1. Click on the AI assistant icon located on the top left navigation panel.
-
-    ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
-
-2. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and initiate a conversation with below
-
-3. During the interaction with the virtual Agent, request a transfer by saying, **"Please transfer me to an Agent."** Answer the call on the agent desktop upon receiving the ring notification.
-
-4. Observe that, after answering the call, a summary of the Virtual Agent interaction is now displayed on the agent desktop
-
-  ![profiles](../graphics/Lab2/L2M4_ValidateAgentSummary.gif)
-
-<p style="text-align:center"><strong>Congratulations, you have officially completed the Intelligent Virtual Agent Handoffs mission! 🎉🎉 </strong></p>
-
+## Summary
+In this mission you successfully implemented Dynamic Variable usage on different types of nodes. By doing this you can significantly reduce the size of production flows and simplify it's configuration by just changing values in you database instead of adjusting many nodes in flows.

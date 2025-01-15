@@ -5,162 +5,181 @@ icon: material/medal
 
 
 
-# Mission 2: Routing facilitation
+# Mission 3: Preventing Callback duplication
 
-## Objective
+## Story 
 
-The primary objective of this new feature is to enhance nodes activities to include a dynamic variable-based selection option to make you flow smaller and simpler to adjust.
+In this task, you will enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
 
-You will learn how to use **Dynamic Variables** in multiple nodes including **GoTo**, **Business Hours**, **Queue** and other nodes. 
+> !!! Note
+      This task relies on completing Mission 2 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
 
 
-## Steps Objective
+## Build
+
+1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change Edit mode to **On**
+
+2. Add 3 new flow variables: 
+
+    - Callback Status variable:
     
-  - We are going to use new Flow Template Dynamic Variable Support
-  - Most of the settings in nodes settings are going to be variables.
-  - All Business Hours, Channels and additional Flows have been pre-configured for you.
-  - As a Queue you're are going to use your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
-  - We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}. For more information of how you can use MockAPI please watch these Vidcasts: 
-[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
-  - Flow variables are coming with a template. And the same are being used in **MockAPI** database as key values.
-  - Parsing of fetched data is part of preconfigured flow template but requires additional adjusting. That will be shown in corresponing steps. In real world you are free to create/modify those names as business requires.
-
-## Expected Result
-
-1. When call arrives fetch the data from **MockAPI** based on your Dialed Number
-2. Write the data into respective preconfigured flow variables. These Variables are being used in all consequent nodes.
-3. Business Hours entity configured to cover EMEA timezone. Call should go through WorkingHours exit in normal behavior.
-4. Play Message nodes have been configured to play messages received from API call
-
-## Steps
-
-1. Login into Control Hub [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile if your session has been expired.
-    Your login will be the Admin Name in the email you received. It will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
-
-    ![Profiles](../graphics/Lab1/1-CH_Login.gif)
-
-2. This is the Administration interface for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
-
-3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
-
-4. New Tab will be opened. Navigate to **Flow Templates**
-
-5. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
-
-6. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow
-
-    ![Profiles](../graphics/Lab2/BM2_2-7_DynFlowCreate.gif)
-
-7. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
+      >
+      > Name: **callbackStatus**<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: **empty**
     
-    - **FetchFlowSettings** node is used to access external database over API and parse the result by writing response result into respective Flow Variables which have been preconfigured for you already.
-    - **SetVariable_mwn** node writes complete API response into debug variable so you could see the complete API call result in Debug tool. It's been taken from **FetchFlowSettings.httpResponseBody** output variable of **FetchFlowSettings** node
-    - All **PlayMessage** and **Play Music** nodes have been preconfigured to play TTS messages taken from respective API response
-    - **BusinessHours_os2** node set to bussinesshours variable which is your business hour entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours**
-    - **QueueContact_a62** node set to queue variable which is your queue entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
-    - Some **GoTo** nodes are configured to use variables and some have statice values. We will adjust them while going through further steps. 
+    - Callback Connect Time variable:
+      
+      >
+      > Name: **callbackConnectTime**<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: **empty**
+      
+    - Search Result variable:
+      
+      >
+      > Name: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: **empty**
 
-    ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
+      ![profiles](../graphics/Lab2/L2M3-1.gif)
 
-8. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}"><span class="copy" title="Click to copy!"></span></span>
-    - Replace DNIS with the provided DNIS number stripping +1
-
-    <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
-    - Open Chrome browser and past your URL. You should get the follwoing result
+3. Add an **HTTP Request** node for our query
     
-    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
-
-9. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
-    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
-
-10. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
-    
-    !!! Note
-        Templates contain basic configuration and requres adjusting per usecase scenario. 
-    
-    ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
-    
-    !!! Note
-        You can test the JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
-          - Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
-          - Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
-          -In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
-
-         ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
-
-11. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
-
-12. Open **GoTo_x19** node and set:
-
-    > Destination Type: **Flow**
     >
-    > Static Flow
+    > Connect VeriNumber Option 1 to this HTTP node
     >
-    > Flow: **CCBU_ErrorHandling_Flow**
+    > We will connct HTTP node in next step
     >
-    > Choose Version Label: **Latest**
-    
-13. Open **GoTo_8ca** and set:
-
-    > Destination Type: **Entry Point**
+    > Activity Label: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Static Entry Point
+    > Select Use Authenticated Endpoint
     >
-    > Entry Point: **CCBU_ErrorHandling_Channel**
-
- 
-14. Repeat node settings in **Step 14** for **GoTo_uyn**
-
-15. Repeat node settings in **Step 15** for **GoTo_dbr**
-
-    ![Profiles](../graphics/Lab2/BM2-11-15-FallbackQ.gif)
-
-16. **Validate** and **Publish** flow
-
-17. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
-
-18. Map your flow to your inbound channel
-    
-    > Navigate to Control Hub > Contact Center > Channels
+    > Connector: **WxCC_API**
     > 
-    > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > Path: **/search**
     > 
-    > Select the Routing Flow: **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > Method: **POST**
     > 
-    > Select the Version Label: **Latest**
-    > 
-    > Click **Save** in the lower right corner of the screen
+    > Content Type: **Application/JSON**
+    >
+    > Copy this GraphQL query into the request body:
+    >
+    ```JSON
+    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"{{NewNumber.DigitsEntered}}\" } } }\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
+    ```
+    > <details><summary>Expanded Query For Understanding (optional)</summary>
+    ```GraphQL
+    query($from: Long!, $to: Long!)
+    {
+      taskDetails(
+          from: $from
+          to: $to
+        filter: {
+          and: [
+           { callbackData: { equals: { callbackNumber: "{{NewNumber.DigitsEntered}}" } } }
+           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
+          ]
+        }
+      ) {
+        tasks {
+          callbackData {
+            callbackRequestTime
+            callbackConnectTime
+            callbackNumber
+            callbackStatus
+            callbackOrigin
+           callbackType
+          }
+           lastEntryPoint {
+            id
+            name
+          }
+        }
+      }
+    }
+    ```
+    </details>
 
-    ![Profiles](../graphics/Lab2/BM2-18-ChannelChange.gif)
+    > Parse Settings:
+    >
+    > - Content Type: JSON
+    > - Output Variable: `callbackStatus`<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackStatus`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackStatus"><span class="copy" title="Click to copy!"></span></span>
+    > - Add New Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+    >
+      ![profiles](../graphics/Lab2/L2M3-2.gif)
+---
 
+4. Add **Set Veriable** node
+    
+    >
+    > Connect **HTTPRequest_CallBackSearch** to this node
+    >
+    > We will connct **Set Variable** node in next step
+    >
+    > Variable: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Set To Variable: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
+    >
+    ![profiles](../graphics/Lab2/L2M3-3.gif)
+
+5. Add a **Condition** node
+    
+      > 
+      > Connect **Set Variable** created in previous step to this node
+      >
+      > Connect **False** exit path to existing CallBack node
+      > 
+      > We will connect **True** exit path in next step
+      >
+      > Expression: 
+      ``` JSON
+      {{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}
+      ```
+
+
+      > !!! Note
+          Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on. In our case the expression returns True only when httpStatusCode equals **200**, callbackStatus is **Not Processed** and callbackConnectTime is **-1**
+
+    ![profiles](../graphics/Lab2/L2M3-4.gif)
+
+6. Add **PlayMessage** and **DisconnectContact** nodes: 
+    
+      > Enable Text-To-Speech
+      >
+      > Select the Connector: **Cisco Cloud Text-to-Speech**
+      >
+      > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Delete the Selection for Audio File
+      >
+      > Connect **True** exit path of **Condition** node created in **Step 7** to **PlayMessage** node
+      > Connect this **PlayMessage** to **DisconnectCall** node
+
+      ![profiles](../graphics/Lab2/L2M3-5.gif)
+
+7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
 ## Testing
-
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
-
-2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
-
-3. Make your agent ***Available*** and you're ready to make a call.
-
-    ![profiles](../graphics/Lab1/5-Agent_Login.gif)
-
-4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
-
-### <span style="color: orange;">[Optional]</span> Test other variables
-
-5. You can do the same trick we did in Mission 2 Step 8 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
     
-    !!! Note
-        Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 
+1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+2. Make sure your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** is assigned to **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. If not, do that (refer to previous very first Mission where this step was explained in details).
+3. Make a call to your Support Number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>
+4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
+5. You should hear a message configured in **Step 6** of the current mission.
+6. Click on **Analyze** to visualy observe the call flow. Make sure you're viewing latest Published Version.
+7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
+8. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debuger. 
+9. Click on **SetVariable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the cusrrent mission configuration. 
 
-    ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
+![profiles](../graphics/Lab2/L2M3-6.gif)
 
-6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
-
-7. Now we need to revert the configuration we made in Step 1. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select **None** from Override dropdown list. Then click **Save**.
-
-    ![Profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif)
-
-
-## Summary
-In this mission you successfully implemented Dynamic Variable usage on different types of nodes. By doing this you can significantly reduce the size of production flows and simplify it's configuration by just changing values in you database instead of adjusting many nodes in flows.
+**Congratulations on completing another mission.**
