@@ -100,7 +100,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
     <details><summary>**Quick Quiz**</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
     
-6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
+6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. In this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
     
     > Connect the output node edge from the **HTTP_PUT** node to this node
     >
