@@ -100,8 +100,6 @@ We are going to extend the same flow by adding additional functionality so the c
     
     ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
 
-    <details><summary>**Quick Quiz**</summary>There is a little node connection mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
-
 
 6. Add **Callback** node
     
