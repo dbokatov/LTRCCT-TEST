@@ -13,7 +13,7 @@ Having a callback option is a must-have feature—it ensures businesses don’t 
 ### Build
 We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and chanfe Edit mode to **On**
+1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**
 2. Delete  connection from **Queue** node to **Music** 
 3. Drag **Menu** node:
 
@@ -96,9 +96,11 @@ We are going to extend the same flow by adding additional functionality so the c
     >    
     > Connect **NewNumber** created in step 4 to **VerifyNumber** node
     >
-    > Connect **Number Not OK** from **VerifyNumber** node created in Step 5 to **VerifyNumber** node
+    > Connect **Number Not OK** from **VerifyNumber** node to **Collect Digits** node created in Step 4.
     
     ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
+
+    <details><summary>**Quick Quiz**</summary>There is a little node connection mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
 
 
 6. Add **Callback** node

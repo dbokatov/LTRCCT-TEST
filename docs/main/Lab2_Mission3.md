@@ -97,6 +97,8 @@ Consider a scenario where a supervisor needs ability to change routing decision 
         In Request body we are going to change Default Value of Global Variable **EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**  from ***false*** to ***true***
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
+
+    <details><summary>**Quick Quiz**</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
     
 6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. I this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
     
@@ -106,7 +108,6 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
 
-    <details><summary>**Quick Quiz**</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
     
 7. Add a **Play Message** node 
     
