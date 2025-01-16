@@ -85,8 +85,8 @@ Consider a scenario where a supervisor needs ability to change routing decision 
         "variableType": "Boolean",
         "defaultValue": "true",
         "desktopLabel": "",
-        "id": "<span style="color: red;">yourGlobalVariableID created in step 1</span>",
-        "name": "<span style="color: red;">yourGlobalVariable name created in step 1</span>",
+        "id": "yourGlobalVariableID created in step 1",
+        "name": "yourGlobalVariable name created in step 1",
         "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
         "reportable": false,
         "version": 1
