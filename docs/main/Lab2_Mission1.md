@@ -90,7 +90,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > 
     > Content Type: **Application/JSON**
     >
-    > Parsing Settings:
+    > **Parsing Settings:**
     >
     > Content Type: **JSON** 
     >
@@ -111,8 +111,8 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     >
     > Open Chrome browser and past your URL. You should get the follwoing result
-    
-    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    > 
+    > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
     > </details>
 
 
@@ -155,7 +155,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Connector: **WxCC_API**
     >
-    > Request Path: **/v1/tasks***<span class="copy-static" data-copy-text="/v1/tasks"><span class="copy" title="Click to copy!"></span></span>
+    > Request Path: **/v1/tasks**<span class="copy-static" data-copy-text="/v1/tasks"><span class="copy" title="Click to copy!"></span></span>
     >
     > Method: **POST**
     >
@@ -164,25 +164,26 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > Request Body:
     ``` JSON
     {
-        "entryPointId": "{outdialcbid}",
-        "destination": "{customANI}",
+        "entryPointId": "{{outdialcbid}}",
+        "destination": "{{customANI}}",
         "attributes": {"Message":"tester","To Queue":"sales"},
         "outboundType": "CALLBACK",
         "mediaType": "telephony",
         "callback": {
         "callbackOrigin": "web",
         "callbackType": "immediate"
+        }
     }
     ```
 
-8. Add **Condition Node**. In this node we are going to check the status of our API Post request. If it is **201 Created** the output will be **True** and if other than **201** then **False**.
+8. Add **Condition Node**. In this node we are going to check the status of our API POST request. If it is **201 Created** the output will be **True** and if other than **201** then **False**.
     
     > 
     > Activity Label: **HTTPStatusCode**
     >
     > Connect the output node edge from the **CallBackAPI_Request** node to this node
     >
-    > Connect both to EndFlow node. We will be able to see in Debug tool whether request was succsesful or not. 
+    > Connect both to **EndFlow** node. We will be able to see in Debug tool whether request was succsesful or not. 
     >
     > In the Expression section write an expresion ***{{CallBackAPI_Request.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
