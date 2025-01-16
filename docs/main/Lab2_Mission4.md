@@ -76,24 +76,21 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
     > 3. Open Chrome browser and past your URL. You should get the follwoing result
     > 
     > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    > 
+    > 4. Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
+    > 
+    > 5. Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
+    >
+    > 6. Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
+    >
+    > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
+    >
+    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
     > </details>
 
 9. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
-    
-    !!! Note
-        Templates contain basic configuration and requres adjusting per usecase scenario. 
-    
-    ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
-    
-    !!! Note
-        You can test the JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
-          - Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
-          - Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
-          -In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
-
-         ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
-
-10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
+ 
+ 10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
 12. Open **GoTo_x19** node and set:
 

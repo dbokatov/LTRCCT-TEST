@@ -113,6 +113,16 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > 3. Open Chrome browser and past your URL. You should get the follwoing result
     > 
     > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    > 
+    > 4. Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
+    > 
+    > 5. Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
+    >
+    > 6. Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
+    >
+    > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
+    >
+    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
     > </details>
 
 
