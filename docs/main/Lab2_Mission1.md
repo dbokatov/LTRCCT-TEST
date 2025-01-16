@@ -110,7 +110,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     >
-    > Open Chrome browser and past your URL. You should get the follwoing result
+    > 3. Open Chrome browser and past your URL. You should get the follwoing result
     > 
     > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
     > </details>

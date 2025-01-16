@@ -62,18 +62,23 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
 
-8. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}"><span class="copy" title="Click to copy!"></span></span>
-    - Replace DNIS with the provided DNIS number stripping +1
-
-    <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
-    - Open Chrome browser and past your URL. You should get the follwoing result
-    
-    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
-
-9. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
+8. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
     ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
-10. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
+  > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
+    > 
+    > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}"><span class="copy" title="Click to copy!"></span></span>
+    > 
+    > 2. Replace DNIS with the provided DNIS number stripping +1
+    >
+    > <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    >
+    > 3. Open Chrome browser and past your URL. You should get the follwoing result
+    > 
+    > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    > </details>
+
+9. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
     
     !!! Note
         Templates contain basic configuration and requres adjusting per usecase scenario. 
@@ -88,7 +93,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
          ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
 
-11. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
+10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
 12. Open **GoTo_x19** node and set:
 
