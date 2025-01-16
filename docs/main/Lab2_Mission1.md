@@ -28,7 +28,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 **We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.**
 
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**.
-2. Add following 4 FLow Variables to your flow: 
+2. Add following 4 flow variables to your flow: 
 
     - Outtial Entry Point Variable :
     
@@ -69,7 +69,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 
 3. Click on **WantCallback** node  
   
-    > Add Option 3. Name it ***Simulate an error***
+    > Add Option 3. Name it as **Simulate an error**
     >
     > Text-to-Speech Message: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error.***<span class="copy-static" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error."><span class="copy" title="Click to copy!"></span></span>. We are extending the existing message by adding Option 3.
 
@@ -91,16 +91,16 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > Content Type: **Application/JSON**
     >
     > Parsing Settings:
-        >
-        > Content Type: **JSON** 
-        >
-        > Output Variable: **outdialcbid**<span class="copy-static" data-copy-text="outdialcbid"><span class="copy" title="Click to copy!"></span></span>
-        >
-        > Path Expression: **$[0].outboundcallbackep**<span class="copy-static" data-copy-text="$[0].outboundcallbackep"><span class="copy" title="Click to copy!"></span></span>
-        >
-        > Output Variable: **customANI**<span class="copy-static" data-copy-text="customANI"><span class="copy" title="Click to copy!"></span></span>
-        >
-        > Path Expression: **$[0].tacnumber**<span class="copy-static" data-copy-text="$[0].tacnumber"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Content Type: **JSON** 
+    >
+    > Output Variable: **outdialcbid**<span class="copy-static" data-copy-text="outdialcbid"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Path Expression: **$[0].outboundcallbackep**<span class="copy-static" data-copy-text="$[0].outboundcallbackep"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Output Variable: **customANI**<span class="copy-static" data-copy-text="customANI"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Path Expression: **$[0].tacnumber**<span class="copy-static" data-copy-text="$[0].tacnumber"><span class="copy" title="Click to copy!"></span></span>
 
     > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
     > 
