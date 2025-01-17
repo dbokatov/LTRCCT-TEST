@@ -28,10 +28,10 @@ In current mission you would need to create a knowledge bases (KB). You are goin
 1. <span style="color: red;">[IMPORTANT]</span> [Download](https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing){:target="_blank"} source files from shared folder. Choose either any or all files from the following list:
     
     > 
-    > **Amsterdam_Tourist_Guide.txt**
+    > **Amsterdam_Tourist_Guide.txt** - file contains information for tourists like places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center
     >
 
-2. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+2. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 3. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
@@ -43,7 +43,7 @@ In current mission you would need to create a knowledge bases (KB). You are goin
 
     ![Profiles](../graphics/Lab1/L1M7_AIKBCreate.gif)
 
-6. Click **Add File** or drag and drop the files **Amsterdam Tourist Guide** you downloaded from external drive on **Step 1** - TXT file information for tourists: places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center 
+6. Click **Add File** or drag and drop file **Amsterdam_Tourist_Guide.txt** you downloaded from external drive on **Step 1**. Then click **Process Files**.
 
     ![Profiles](../graphics/Lab1/L1M7_AIKBFileUpload.gif)
 
@@ -66,7 +66,7 @@ In current mission you would need to create a knowledge bases (KB). You are goin
     >
     > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span></span>**
     > 
-    > Agent's goal: ***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
+    > Agent's goal: ***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***<span class="copy-static" title="Click to copy!" data-copy-text="You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information."><span class="copy"></span></span>
     > 
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentCreate.gif)
@@ -75,7 +75,7 @@ In current mission you would need to create a knowledge bases (KB). You are goin
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentAllowHandoff.png)
 
-12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
+12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**<span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to RAI."><span class="copy"></span></span>
 
     ![Profiles](../graphics/Lab1/L1M7_AIAgentPreview.png)
 
@@ -118,6 +118,8 @@ In current mission you would need to create a knowledge bases (KB). You are goin
       > Connect the **Queue Contact** activity to the **Play Music** activity
       >
       > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
+      > 
+      > Select **Static Queue**
       > 
       > Queue name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
       > 

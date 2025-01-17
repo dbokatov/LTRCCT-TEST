@@ -217,7 +217,7 @@ In this step, we will learn how to enhance the bot's capabilities by adding trai
 
 3. Enter a description such as ***"generate intents for requesting a referral to different doctor specialties from primary care."***<span class="copy-static" title="Click to copy!" data-copy-text="generate intents for requesting a referral to different doctor specialties from primary care."><span class="copy"></span></span> Set the Number of Variants to **10**, which will determine the number of new phrases to be generated.
 
-     ![Profiles](../graphics/Lab1/L1M6_NewIntentPreview.gif)  
+     ![Profiles](../graphics/Lab1/L1M6_CreateGenAIIntent.gif)  
 
 
 4. Once the new phrases are generated, click on the **Save** button located in the top right corner to add them to your intent.
