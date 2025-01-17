@@ -55,7 +55,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     - Custom ANI variable:
       
       >
-      > Name: **customANI**<span class="copy-static" data-copy-text="customANI"><span class="copy" title="Click to copy!"></span></span>
+      > Name: **customani**<span class="copy-static" data-copy-text="customani"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
@@ -111,7 +111,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Path Expression: **$[0].outboundcallbackep**<span class="copy-static" data-copy-text="$[0].outboundcallbackep"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Output Variable: **customANI**<span class="copy-static" data-copy-text="customANI"><span class="copy" title="Click to copy!"></span></span>
+    > Output Variable: **customani**<span class="copy-static" data-copy-text="customani"><span class="copy" title="Click to copy!"></span></span>
     >
     > Path Expression: **$[0].tacnumber**<span class="copy-static" data-copy-text="$[0].tacnumber"><span class="copy" title="Click to copy!"></span></span>
 
@@ -142,7 +142,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 5. Add **Set Veriable** node
     
     >
-    > Activity Label: **SetGetResult**
+    > Activity Label: **SetGetResult****<span class="copy-static" data-copy-text="SetGetResult"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect **GET_CBID** to this node
     >
@@ -156,7 +156,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 6. Add one more **Set Veriable** and **Disconnect Contact** nodes
     
     >
-    > Activity Label: **SimulateGlobalError**
+    > Activity Label: **SimulateGlobalError****<span class="copy-static" data-copy-text="SimulateGlobalError"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect **SetGetResult** to this node
     >
@@ -166,11 +166,12 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Set Value: ***{{ ANI | 123}}***<span class="copy-static" data-copy-text="{{ ANI | 123}}"><span class="copy" title="Click to copy!"></span></span>
     >
+    
 
 7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
 8. Add **HTTP Request** node to the flow
 
-    > Activity Label: **CallBackAPI_Request**
+    > Activity Label: **CallBackAPI_Request****<span class="copy-static" data-copy-text="CallBackAPI_Request"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the **OnGlobalError** output edge node to this node
     > 
@@ -188,7 +189,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     ``` JSON
     {
         "entryPointId": "{{outdialcbid}}",
-        "destination": "{{customANI}}",
+        "destination": "{{customani}}",
         "attributes": {"Message":"tester","To Queue":"sales"},
         "outboundType": "CALLBACK",
         "mediaType": "telephony",
@@ -199,10 +200,10 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     }
     ```
 
-8. Add **Condition Node**. In this node we are going to check the status of our API POST request. If it is **201 Created** the output will be **True** and if other than **201** then **False**.
+8. Add **Condition Node**. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
     
     > 
-    > Activity Label: **HTTPStatusCode**
+    > Activity Label: **HTTPStatusCode****<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the output node edge from the **CallBackAPI_Request** node to this node
     >
