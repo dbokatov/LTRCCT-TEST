@@ -86,7 +86,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Text-to-Speech Message: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error.***<span class="copy-static" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error."><span class="copy" title="Click to copy!"></span></span>. We are extending the existing message by adding Option 3.
 
-4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Entry Point ID and custom ANI. Remember we used the same custome TAC number in Mission 3 of Fundamental labs.
+4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Support contact number in Mission 3 of Fundamental labs.
     
     >
     > Connect WantCallbeck Option 3 to this HTTP node
@@ -216,6 +216,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 10. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
 11. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 12. In **Entry Point** settings section change the following, then click **Save** button:
+    
     >
     > Routing Flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     >
@@ -227,15 +228,15 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
 2. Make a call to the Support Number and if success you should hear configured messages.
 
-3. When callback is proposed, press 1 on Webex App DialPad to request a callback. 
+3. Next message will propose you options to request callback, stay in queue or simulate an error. Press 3 on Webex App DialPad to simulate an error. 
 
 4. If everything configured correctly your call should be disconnected.
-5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. You should see your call left WantCallback queue out of Option 3 and continue through GET_CBID.
+5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. Look for **WantCallback** in Activity Name column and make sure the call left **WantCallback** out of Option 3 and continue through **GET_CBID**.
 
-6. Click on either GET_CBID or on Activity Name GET_CBID in the Debug tool and scroll down right hand side section of Debug tool. Under **Modified Variablesou** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span>. The same number we used in Lab 3 of Fundamental Labs. This time we used an external database and API call to extract that number.
+6. Click on either **GET_CBID** node of th flow or on Activity Name **GET_CBID** in the Debug tool and scroll to the bottom the right hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a wellknown Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in Lab 3 of Fundamental Labs. This time we used an external database as well as GET API call to extract that number.
 
-7. While still on Debug mode click on **SetGetResult** to see full response from HTTP request that we wrote into **getruselt** flow variable.
-8. Make sure **SimulateGlobalError** activity name has an ***Error** outcome. That mean you succesfully simulated **Global Error** event.
+7. While still on Debug tool, click on **SetGetResult** to see full response from HTTP request that we wrote into **getruselt** flow variable.
+8. Make sure **SimulateGlobalError** activity name has an ***Error** next to it in **Outcome** column. That mean you succesfully simulated **Global Error** event.
 
 9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automaticaly will open **Event Flows** tab.
 
