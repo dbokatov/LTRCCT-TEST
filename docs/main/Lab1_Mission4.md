@@ -38,7 +38,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
+4. Go back to your flow and navigate to Even Flow tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
       
     > Use Authenticated Endpoint: **Off**
     >

@@ -24,10 +24,11 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
 1. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** in Flow Designer and navigate to the Debug Tool.
 
 2. So far we have already made couple of calls so you can select latest by clicking on any interaction.
-
-    !!! Note
-       1. You can search your call by **Intercation ID**
-       2. Filter by **Date Range** and by **Label**
+    
+    > 
+    > 1. You can search your call by **Intercation ID**
+    > 
+    > 2. Filter by **Date Range** and by **Label**
 
 3. Observe the execution path, with visual indicators highlighting the flow nodes being executed.
 4. By clicking on each activity name you will see it's details. ***Examples: Entry point ID, Flow Label, DNIS, selected Business Hours, also TTS value and what events were triggered.***

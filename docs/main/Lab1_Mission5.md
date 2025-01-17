@@ -70,7 +70,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 </details>
 
 ### Build
-1. Explore preconfigured Survey. In Control Center go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
+1. Explore preconfigured survey **PCS-2025**. In Control Center go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
 2. Open you **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
@@ -105,7 +105,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     >
     > Connect **FeedbackV2** node to **Disconnect** node
     >
-    > Connect **FeedbackV2** Undefined Error to **DisconnectCall** node
+    > Connect **FeedbackV2** Undefined Error to **Play Message** node
             
     **PlayMessage**
     
