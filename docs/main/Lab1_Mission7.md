@@ -81,7 +81,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     >
     > Connect the Errored outputs to **DisconnectContact** 
     >
-    > Set **Static Contact Center AI Config**
+    > Select **Static Contact Center AI Config**
     >
     > Contact Center AI Config: **Webex AI Agent (Scripted)**
     >
@@ -113,14 +113,14 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 #### Step Objective
 In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
 
-1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 2. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
     ![Profiles](../graphics/Lab1/L1M6_OpenWebexAI.gif)  
 
 
-3. Click on the bot **<span class="attendee-id-placeholder" data-suffix="_TaskBot_CL2025">Your_Attendee_ID</span>_TaskBot_CL2025** that you created earlier. Then go to the **Responses** tab on the left-hand panel.
+3. Search and open your bot **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_TaskBot_CL2025">Your_Attendee_ID</span>_TaskBot_CL2025<span class="copy" title="Click to copy!"></span></span>** that you created earlier. Then go to the **Responses** tab on the left-hand panel.
     
     >
     > Select the **Welcome message** in **Default message**
@@ -152,7 +152,7 @@ In this step, we will learn how to add new intents and entities to enhance the b
 
 
 2. Navigate to the Training Tab from the left-hand panel and click on the **Create Intent** button located in the top right corner.
-3. Add a new intent by providing the intent name as ***ReferralRequest*** and include the following two utterances:
+3. Add a new intent by providing the intent name as ***ReferralRequest***<span class="copy-static" title="Click to copy!" data-copy-text="ReferralRequest"><span class="copy"></span></span> and include the following two utterances:
 
     - ***I would like a referral for a cardiologist.***<span class="copy-static" title="Click to copy!" data-copy-text="I would like a referral for a cardiologist."><span class="copy"></span></span>
     - ***I need a referral to visit a neurologist.***<span class="copy-static" title="Click to copy!" data-copy-text="I need a referral to visit a neurologist."><span class="copy"></span></span>
@@ -178,7 +178,7 @@ In this step, we will learn how to add new intents and entities to enhance the b
       ![Profiles](../graphics/Lab1/L1M6_AddLinkEntity.gif) 
 
 
-6. On the same page at the bottom, clivk on Response drop-down list with **Final Template Key** and scroll down to **Create new**.
+6. On the same page at the bottom, click on Response drop-down list with **Final Template Key** and scroll down to **Create new**.
 
     > 
     > Template key: **ReferralResp**<span class="copy-static" title="Click to copy!" data-copy-text="ReferralResp"><span class="copy"></span></span>
@@ -193,7 +193,7 @@ In this step, we will learn how to add new intents and entities to enhance the b
 
 
 8. Return to the Training tab and click on the **Train** button to update the bot's understanding with the new intent and entities.
-9. Add a comment such as ***Added referral request intent*** to track the changes.
+9. Add a comment such as ***Added referral request intent***<span class="copy-static" title="Click to copy!" data-copy-text="Added referral request intent"><span class="copy"></span></span> to track the changes.
 10. Click on **Make Live** to update the live version of the bot with these changes.
 11. Provide a description for the update and choose **Make Live** or **Make Live both** if there are other unsaved changes pending.
 
