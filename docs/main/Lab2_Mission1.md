@@ -89,9 +89,9 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Support contact number in Mission 3 of Fundamental labs.
     
     >
-    > Connect WantCallbeck Option 3 to this HTTP node
+    > Connect **WantCallback** Option 3 to this HTTP node
     >
-    > We will connct HTTP node in next step
+    > We will connct **HTTP Request** node in next step
     >
     > Activity Name: **GET_CBID**<span class="copy-static" data-copy-text="GET_CBID"><span class="copy" title="Click to copy!"></span></span>
     >
