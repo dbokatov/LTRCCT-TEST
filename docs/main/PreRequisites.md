@@ -12,7 +12,7 @@ icon: material/bullseye-arrow
 
 1. We will be using a shared lab tenant for simulations, meaning all attendees will work within the same Webex Contact Center environment. To avoid conflicts, ensure that any entities you configure are tagged with the Attendee ID assigned to you.
     
-    <details><summary>WxCC Schema</summary>![Profiles](../graphics/Overview/WxCC_Schema.png)</details>
+    <details><summary>WxCC Schema</summary>![Profiles](../graphics/overview/WxCC_Schema.png)</details>
 
 2. The majority of the configuration in Control Hub is already set up, allowing you to focus primarily on Flow Design. Of course, there may still be some elements to adjust, but these should be minimal, letting you concentrate on building and refining the flow logic rather than spending time on initial setup.
 3. The Agents have been configured for you. You will be performing the rest of the configurations to route voice calls
