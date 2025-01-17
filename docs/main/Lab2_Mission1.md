@@ -43,7 +43,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**.
 2. Add following 4 flow variables to your flow: 
 
-    - Outtial Entry Point Variable :
+    - Outdial Entry Point Variable :
     
       >
       > Name: **outdialcbid**<span class="copy-static" data-copy-text="outdialcbid"><span class="copy" title="Click to copy!"></span></span>
@@ -139,10 +139,10 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > </details>
 
 
-5. Add **Set Veriable** node
+5. Add **Set Variable** node
     
     >
-    > Activity Label: **SetGetResult****<span class="copy-static" data-copy-text="SetGetResult"><span class="copy" title="Click to copy!"></span></span>
+    > Activity Label: **SetGetResult**<span class="copy-static" data-copy-text="SetGetResult"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect **GET_CBID** to this node
     >
@@ -153,10 +153,10 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > Set To Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
 
-6. Add one more **Set Veriable** and **Disconnect Contact** nodes
+6. Add one more **Set Variable** and **Disconnect Contact** nodes. We are going to intentionally configure an incorrect value in the **Set Variable** node to forcibly trigger a Global Error.
     
     >
-    > Activity Label: **SimulateGlobalError****<span class="copy-static" data-copy-text="SimulateGlobalError"><span class="copy" title="Click to copy!"></span></span>
+    > Activity Label: **SimulateGlobalError**<span class="copy-static" data-copy-text="SimulateGlobalError"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect **SetGetResult** to this node
     >
@@ -171,7 +171,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
 8. Add **HTTP Request** node to the flow
 
-    > Activity Label: **CallBackAPI_Request****<span class="copy-static" data-copy-text="CallBackAPI_Request"><span class="copy" title="Click to copy!"></span></span>
+    > Activity Label: **CallBackAPI_HTTPRequest**<span class="copy-static" data-copy-text="CallBackAPI_HTTPRequest"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the **OnGlobalError** output edge node to this node
     > 
@@ -203,7 +203,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 8. Add **Condition Node**. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
     
     > 
-    > Activity Label: **HTTPStatusCode****<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
+    > Activity Label: **HTTPStatusCode**<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the output node edge from the **CallBackAPI_Request** node to this node
     >
@@ -211,8 +211,36 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > In the Expression section write an expresion ***{{CallBackAPI_Request.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
+9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+
+10. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
+11. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+12. In **Entry Point** settings section change the following, then click **Save** button:
+    >
+    > Routing Flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    >
+    > Version Label: **Latest**
 
 ## Testing
-   
+
+
+1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+2. Make a call to the Support Number and if success you should hear configured messages.
+
+3. When callback is proposed, press 1 on Webex App DialPad to request a callback. 
+
+4. If everything configured correctly your call should be disconnected.
+5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. You should see your call left WantCallback queue out of Option 3 and continue through GET_CBID.
+
+6. Click on either GET_CBID or on Activity Name GET_CBID in the Debug tool and scroll down right hand side section of Debug tool. Under **Modified Variablesou** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span>. The same number we used in Lab 3 of Fundamental Labs. This time we used an external database and API call to extract that number.
+
+7. While still on Debug mode click on **SetGetResult** to see full response from HTTP request that we wrote into **getruselt** flow variable.
+8. Make sure **SimulateGlobalError** activity name has an ***Error** outcome. That mean you succesfully simulated **Global Error** event.
+
+9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automaticaly will open **Event Flows** tab.
+
+10. Observe **Condition** node to make sure exit went out via **True** exit. This tells you that HTTP response is **201 Created** and callback has been scheduled succesfully. 
+
+11. On Webex Desktop, make your agent **Available**. Contact Center will reserve your agent right away and propose to answer a callback call.
 
 **Congratulations on completing another mission.**
