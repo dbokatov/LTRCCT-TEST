@@ -25,7 +25,7 @@ In current mission you would need to create a knowledge bases (KB). You are goin
 
 ### Creating a Knowldge Base
 
-1. <span style="color: red;">[IMPORTANT]</span> [Download](https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing){:target="_blank"} source files from shared folder. Choose either any or all files from the following list:
+1. <span style="color: red;">[IMPORTANT]</span> [Download](https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing){:target="_blank"} source file from shared folder.
     
     > 
     > **Amsterdam_Tourist_Guide.txt** - file contains information for tourists like places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center
