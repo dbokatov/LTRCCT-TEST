@@ -38,6 +38,24 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 7. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing ***"I would like to cancel an appointment"***<span class="copy-static" title="Click to copy!" data-copy-text="I would like to cancel an appointment"><span class="copy"></span></span>
 
+    <!-- md:option type:note -->
+    
+    !!! note "Sample Conversation"
+        Answer: "I would like to cancel an appointment"
+    
+        Question: Please provide the patient's 6-digit insurance number 
+    
+        Answer:"123456"
+    
+        Question: Could tell us preferred time for your visit 
+    
+        Answer:"0123456789"
+    
+        Question: You have an appointment on 18/01/2025 at 15:00. Would you like to cancel it?
+      
+        Answer:"yes"
+
+
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Preview.gif)  
 
 ---
