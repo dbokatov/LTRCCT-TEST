@@ -20,10 +20,17 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
   - Most of the settings in nodes settings are going to be variables.
   - All Business Hours, Channels and additional Flows have been pre-configured for you.
   - As a Queue you're are going to use your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
-  - We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}. For more information of how you can use MockAPI please watch these Vidcasts: 
-[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+  - We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}.
   - Flow variables are coming with a template. And the same are being used in **MockAPI** database as key values.
   - Parsing of fetched data is part of preconfigured flow template but requires additional adjusting. That will be shown in corresponing steps. In real world you are free to create/modify those names as business requires.
+
+> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+> 
+> For more information of how you can use MockAPI please watch these Vidcasts: 
+[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+> 
+> </details>
+
 
 ## Expected Result
 
