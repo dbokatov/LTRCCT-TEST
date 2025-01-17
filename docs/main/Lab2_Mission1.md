@@ -38,7 +38,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 
 ## Build
 
-**We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.**
+**We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.**
 
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**.
 2. Add following 4 flow variables to your flow: 
