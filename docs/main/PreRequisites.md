@@ -4,19 +4,22 @@ icon: material/bullseye-arrow
 ---
 
 ## Learning Objectives
-1. Ensure that you have access to the email with instructions and credentials to access your lab. It is an email with the subject line - WebexCC: Cisco Live Lab Access. If you do not, please ask your lab proctor now.
+1. Ensure that you have **LTRCCT-2296 Credentials.txt** file on your desktop with instructions and credentials to access your lab. If you do not, please ask your lab proctor now.
 2. Understand your configuration instructions
 3. Familiarize yourself how we will use Google Chrome profiles to simulate various scenarios covered in the next labs.
 
 ### Know before you start
 
-1. We will be simulating situations in a **shared lab tenant**
+1. We will be using a shared lab tenant for simulations, meaning all attendees will work within the same Webex Contact Center environment. To avoid conflicts, ensure that any entities you configure are tagged with the Attendee ID assigned to you.
+    
+    <details><summary>WxCC Schema</summary>![Profiles](../graphics/Overview/WxCC_Schema.png)</details>
+
 2. The majority of the configuration in Control Hub is already set up, allowing you to focus primarily on Flow Design. Of course, there may still be some elements to adjust, but these should be minimal, letting you concentrate on building and refining the flow logic rather than spending time on initial setup.
 3. The Agents have been configured for you. You will be performing the rest of the configurations to route voice calls
 4. All your configurations should contain your attendee ID so the lab users don't step over each other's configurations
 5. Each of you has been provided with the phone number to dial (Entry point DN), 1 agents, 1 Supervisor and 1 admin.
 6. We are going to use built-in Cisco Text to Speech for playing all messages in the lab.
-7. Please ask for help when you need it
+7. Please ask for help when you need it. You can do it by clicking on **"Ask a Question"** or by raising your hand and calling the proctor.
 
 ---
 
