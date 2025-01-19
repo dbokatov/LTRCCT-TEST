@@ -18,13 +18,13 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 1. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select **Global Variables** on top. 
 2. Create a **Global Variable**:
     
-    > Name: **<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy"></span></span>**
+    > Name: **<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
     > Variable Type: **String**
     >
     > Make agent viewable: **Yes**
     >
-    > Desktop label: **Who Is Calling**<span class="copy copy-icon" data-copy-text="Who Is Calling"></span>
+    > Desktop label: **Who Is Calling**<span class="copy-static" title="Click to copy!" data-copy-text="Who Is Calling"><span class="copy"></span></span>
     >
     > Edit on Desktop: **Yes**
         
@@ -52,11 +52,11 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     > Request Body:  
     ```JSON
     {
-    "DNIS":"{{NewPhoneContact.DNIS}}",
-    "ANI":"{{NewPhoneContact.ANI}}",
-    "InteractionId":"{{NewPhoneContact.InteractionId}}",
-    "Language":"{{Global_Language}}",
-    "WhoCalls":"<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy"></span></span>"
+    "DNIS": "{{NewPhoneContact.DNIS}}",
+    "ANI": "{{NewPhoneContact.ANI}}",
+    "InteractionId": "{{NewPhoneContact.InteractionId}}",
+    "Language": "{{Global_Language}}",
+    "WhoCalls": "<span class=\"attendee-id-container\">WhoIsCalling_<span class=\"attendee-id-placeholder\" data-prefix=\"WhoIsCalling_\">Your_Attendee_ID</span><span class=\"copy\"></span></span>"
     }
     ```
 
