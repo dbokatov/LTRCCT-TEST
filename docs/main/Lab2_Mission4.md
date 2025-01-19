@@ -93,12 +93,12 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
     >
     > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
     >
-    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+    > ![Profiles](../graphics/Lab2/BM2-9-10-JSONPath.gif)
     > </details>
 
 9. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
  
-    ![Profiles](../graphics/Lab2/BM2-10-GETAPI_Config.gif)
+    ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
 
 10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
