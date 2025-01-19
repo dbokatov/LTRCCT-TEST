@@ -15,8 +15,8 @@ In this mission, we’ll utilize **[Webhook.site](https://webhook.site/){:target
 
 ### Configuration
 
-    !!! Note
-        The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. You <span style="color: red;">**DO NOT**</span> need to modify it here.
+!!! Note
+    The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. You <span style="color: red;">**DO NOT**</span> need to modify it here.
              
 1. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling**<span class="copy-static" title="Click to copy!" data-copy-text="WhoIsCalling"><span class="copy"></span></span> Global Variable to the flow.
     
