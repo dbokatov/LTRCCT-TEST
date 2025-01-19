@@ -66,7 +66,7 @@ We are going to extend the same flow by adding additional functionality so the c
     >       
     > Connect **No-Input Timeout** to the front of the **NewNumber** node
     >
-    > Connect Unmatched Entry to the front of the NewNumber node
+    > Connect **Unmatched Entry** to the front of the NewNumber node
     >   
     > Connect **Callback** from **WantCallback** node created in step 3 to **NewNumber** node
     >

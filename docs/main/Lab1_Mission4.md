@@ -15,7 +15,8 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
 
 ### Configuration
 
-1. Create a **Global Variable** by accessing Flows then Global Variable tab
+1. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select **Global Variables** on top. 
+2. Create a **Global Variable**:
     
     > Name: **<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy"></span></span>**
     >
@@ -23,22 +24,22 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     >
     > Make agent viewable: **Yes**
     >
-    > Desktop label: **Who Is Calling?**<span class="copy copy-icon" data-copy-text="Who Is Calling?"></span>
+    > Desktop label: **Who Is Calling**<span class="copy copy-icon" data-copy-text="Who Is Calling"></span>
     >
     > Edit on Desktop: **Yes**
         
         
-2. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** Global Variable to the flow.
+3. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** Global Variable to the flow.
     
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
 
-3. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
+4. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
 **<span style="color: red;">DO NOT Close this Tab</span>**
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow and navigate to Even Flow tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
+5. Go back to your flow and navigate to Even Flow tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
       
     > Use Authenticated Endpoint: **Off**
     >
@@ -55,7 +56,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     "ANI":"{{NewPhoneContact.ANI}}",
     "InteractionId":"{{NewPhoneContact.InteractionId}}",
     "Language":"{{Global_Language}}",
-    "WhoCalls":"{{WhoIsCalling}}"
+    "WhoCalls":"<span class="attendee-id-container">WhoIsCalling_<span class="attendee-id-placeholder" data-prefix="WhoIsCalling_">Your_Attendee_ID</span><span class="copy"></span></span>"
     }
     ```
 
@@ -64,7 +65,7 @@ In this mission, we’ll use **[Webhook.site](https://webhook.site/){:target="_b
     
     ![profiles](../graphics/Lab1/AM2_httpevent.gif)
     
-5. <span style="color: orange;">[Optional]</span>: You can also modify **Screenpop** configuration in the same flow
+6. <span style="color: orange;">[Optional]</span>: You can also modify **Screenpop** configuration in the same flow
 
     > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**<span class="copy copy-icon" data-copy-text="https://www.ciscolive.com/emea/faqs.html"></span>
     >
