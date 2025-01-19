@@ -32,7 +32,7 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
 
     !!! Note
         You might see an allert as on the following screenshot. Click refresh button to reload the diagram. 
-        ![profiles](../graphics/Lab1/FlowDebug1.gif)       
+        ![profiles](../graphics/Lab1/DebugRefresh.png)       
 
 3. Observe the execution path, with visual indicators highlighting the flow nodes being executed.
 4. By clicking on each activity name you will see it's details. ***Examples: Entry point ID, Flow Label, DNIS, selected Business Hours, also TTS value and what events were triggered.***
