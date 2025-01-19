@@ -7,9 +7,8 @@ icon: material/medal
 
 # Mission 1: Callback on Global Error
 
-
-> !!! Note
-      This task relies on completing Mission 3 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
+!!! Note
+    This task relies on completing Mission 3 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
 
 ## Story 
 Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to an unexpected error in the flow. This unplanned interruption leaves the customer disconnected without completing their request. In this scenario we are going to configure our flow to schedule a callback to the caller when such failure scenario occurs.
@@ -38,8 +37,8 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 
 ## Build
 
-    !!! Note
-        **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
+!!! Note
+    **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
 
 
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**.
@@ -215,11 +214,11 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > 
     > Activity Label: **HTTPStatusCode**<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Connect the output node edge from the **CallBackAPI_Request** node to this node
+    > Connect the output node edge from the **CallBackAPI_HTTPRequest** node to this node
     >
     > Connect both to **EndFlow** node. We will be able to see in Debug tool whether request was succsesful or not. 
     >
-    > In the Expression section write an expresion ***{{CallBackAPI_Request.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_Request.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
+    > In the Expression section write an expresion ***{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
 9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
