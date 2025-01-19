@@ -112,7 +112,7 @@ This lab may feel straight forward for some, which is understandable; however, i
 **Step Objective:**
   - We are going to use same flow we created in previous section
 
-  - Change TTS section to use en-AU
+  - Change TTS section to use **en-AU** which is English (Australia) and connect the Set Variable node as shown below
 
     ○ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
 
@@ -126,7 +126,18 @@ This lab may feel straight forward for some, which is understandable; however, i
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
-3. Add a **SetVariable** node with variable **Global_Language** that was added to the flow from the previous step. Add **Set Value** as ***en-AU*** which is English (Australia)
+3. Add a **SetVariable** with folowing configuration. 
+
+  > Delete connection between **NewPhoneContact** and **WelcomePrompt**
+  >  
+  > Connect **NewPhoneContact** to **SetVariable**
+  > 
+  > Connect **SetVariable** to **WelcomePrompt**
+  > 
+  > Variable: **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span>
+  > 
+  > Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
+  
 4. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)

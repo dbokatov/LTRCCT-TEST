@@ -20,7 +20,7 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 #### Build
 
-1. Go and check your preconfigured Business Hours Entity. For that in **Control Hub** navigate to **Business Hours** under Customer Experience section
+1. Switch to **Control Hub** and navigate to **Business Hours** under Customer Experience section. Locate your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>**. You will see that currently only **Working Hours** are configured for every working day between 12:00 AM to 11:59 PM".
 
     ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
