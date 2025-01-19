@@ -38,7 +38,9 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 
 ## Build
 
-**We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.**
+    !!! Note
+        **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
+
 
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**.
 2. Add following 4 flow variables to your flow: 
@@ -79,12 +81,15 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
       >
       > Default Value: **empty**
 
+    ![profiles](../graphics/Lab2/AM1_AddFlowVars.gif)
 
 3. Click on **WantCallback** node  
   
     > Add Option 3. Name it as **Simulate an error**
     >
     > Text-to-Speech Message: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error.***<span class="copy-static" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error."><span class="copy" title="Click to copy!"></span></span>. We are extending the existing message by adding Option 3.
+    
+    ![profiles](../graphics/Lab2/AM1_AddOption3.gif)
 
 4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Support contact number in Mission 3 of Fundamental labs.
     
@@ -114,6 +119,8 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > Output Variable: **customani**<span class="copy-static" data-copy-text="customani"><span class="copy" title="Click to copy!"></span></span>
     >
     > Path Expression: **$[0].tacnumber**<span class="copy-static" data-copy-text="$[0].tacnumber"><span class="copy" title="Click to copy!"></span></span>
+
+    ![profiles](../graphics/Lab2/AM2_HTTPRequest1.gif)
 
     > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
     > 
@@ -153,6 +160,8 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     > Set To Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
 
+    ![profiles](../graphics/Lab2/AM2_SetGetResult.gif)
+
 6. Add one more **Set Variable** and **Disconnect Contact** nodes. We are going to intentionally configure an incorrect value in the **Set Variable** node to forcibly trigger a Global Error.
     
     >
@@ -166,7 +175,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Set Value: ***{{ ANI | 123}}***<span class="copy-static" data-copy-text="{{ ANI | 123}}"><span class="copy" title="Click to copy!"></span></span>
     >
-    
+    ![profiles](../graphics/Lab2/AM2_SimulateGlobalError.gif)    
 
 7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
 8. Add **HTTP Request** node to the flow
@@ -199,8 +208,9 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
         }
     }
     ```
+    ![profiles](../graphics/Lab2/AM2_EventHTTP.gif) 
 
-8. Add **Condition Node**. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
+8. Add **Condition** node. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
     
     > 
     > Activity Label: **HTTPStatusCode**<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
@@ -209,9 +219,11 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Connect both to **EndFlow** node. We will be able to see in Debug tool whether request was succsesful or not. 
     >
-    > In the Expression section write an expresion ***{{CallBackAPI_Request.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
+    > In the Expression section write an expresion ***{{CallBackAPI_Request.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_Request.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
 9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+
+    ![profiles](../graphics/Lab2/AM2_EventCondition.gif) 
 
 10. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
 11. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**

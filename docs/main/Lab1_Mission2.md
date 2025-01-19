@@ -35,7 +35,7 @@ Business Hours allows you to configure the operational hours of the contact cent
 
     ![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
 
-4. Connect **Business Hours** node exits as follow:
+4. Connect **SetVariable** node to **Business Hours** and **Business Hours** node exits as follow:
 
     > - **Working Hours** connect to **WelcomePrompt** node
     >
@@ -83,6 +83,6 @@ Business Hours allows you to configure the operational hours of the contact cent
 
      ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
-11. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of Main Mission of Fundamental Lab.
+2. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of Main Mission of Fundamental Lab.
 
 **Congratulations on completing another mission.**
