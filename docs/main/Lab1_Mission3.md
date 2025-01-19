@@ -7,8 +7,7 @@ icon: material/medal
 
 Callback functionality is an essential feature in a modern contact center, providing a solution that enhances both customer satisfaction and operational efficiency.
 
-Imagine a customer calls a company’s sales line, interested in upgrading their service. The wait time is 20 minutes, but they’re in a busy store and can’t stay on hold. Instead, they request a callback.
-Having a callback option is a must-have feature—it ensures businesses don’t lose potential leads while providing a seamless, customer-friendly experience.
+Imagine a customer calls to upgrade their service but faces a 20-minute wait, they can request a callback instead of staying on hold. If no agents are available, they’ll be offered the choice to remain in the queue or opt for a callback. Upon choosing the callback, they provide their number, which is validated, and the system schedules the call. Once an agent is free, the system connects with the customer. This ensures businesses retain leads while providing a seamless customer experience.
 
 ### Build
 We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.
@@ -32,6 +31,12 @@ We are going to extend the same flow by adding additional functionality so the c
     >> Change first Digit Number **0** to **1**, add Link Description as **Callback** 
     >>
     >> Add New Digit Number as **2** with Link Description **Stay in queue**
+    >
+    > Connect existing **Queue** node to **WantCallBack** node
+    >
+    > Connect **No-Input Timeout** to the front of the **WantCallBack** node
+    >
+    > Connect **Unmatched Entry** to the front of the **WantCallBack** node
 
     ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
 
@@ -71,7 +76,7 @@ We are going to extend the same flow by adding additional functionality so the c
 
 
 
-5. Drag one more Menu node
+5. Drag one more **Menu** node
     
     > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
     >
@@ -103,9 +108,15 @@ We are going to extend the same flow by adding additional functionality so the c
 
 6. Add **Callback** node
     
-    > Callback Dial Number select  ***NewNumber.DigitsEntered*** from dropdown list
+    > Callback Dial Number select  ***NewNumber.DigitsEntered***<span class="copy-static" data-copy-text="NewNumber.DigitsEntered"><span class="copy" title="Click to copy!"></span></span> from dropdown list
     >    
+    > Callback Queue:
+    >> Static Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Callback ANI: Choose any number from dropdownlist.
+    > 
     > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
+
 
 
 
