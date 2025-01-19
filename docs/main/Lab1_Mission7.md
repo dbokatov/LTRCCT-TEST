@@ -41,20 +41,15 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
     <!-- md:option type:note -->
     
     !!! note "Sample Conversation"
-        Answer: "I would like to cancel an appointment"
-    
-        Question: Please provide the patient's 6-digit insurance number 
-    
-        Answer:"123456"
-    
-        Question: Could tell us preferred time for your visit 
-    
-        Answer:"0123456789"
-    
-        Question: You have an appointment on 18/01/2025 at 15:00. Would you like to cancel it?
-      
-        Answer:"yes"
-
+        **AI Agent**: Welcome to Cumulus Healthcare. How may I assist you today?
+        **You**: "I would like to cancel an appointment"
+        **AI Agent**: Please provide the patient's 6-digit insurance number.
+        **You**:"123456"   
+        **AI Agent**: Please provide your 10-digit phone number.
+        **You**:"0123456789"
+        **AI Agent**: You have an appointment on 20/01/2025 at 15:00. Would you like to cancel it?
+        **You**:"yes"
+        **AI Agent**: Your appointment for 20/01/2025 at 15:00 is cancelled.
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Preview.gif)  
 
