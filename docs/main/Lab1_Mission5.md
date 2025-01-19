@@ -70,10 +70,10 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 </details>
 
 ### Build
-1. Explore preconfigured survey **PCS-2025**. In Control Center go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
+1. Explore preconfigured survey **PCS-2025**. In Control Hub go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
-2. Open you **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+2. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, change Edit mode to **ON** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
   ![profiles](../graphics/Lab1/PCS_addGV.gif)
 
 
@@ -87,15 +87,15 @@ The survey is prebuilt and includes key questions designed to gather actionable 
     > 
     > Delete connection between **NewPhoneContact** and **SetVariable** on which we configured Language while doing the Main Lab.
     >
-    > Connect **NewPhoneContact** to the front of the **NewNumber** node
+    > Connect **NewPhoneContact** to the front of the **FeedbackSet** node
     >
     > Connect **FeedbackSet** to the front of the **SetVariable** node
 
     ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
-3. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
+4. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
 
-4. Drag **FeedbackV2**, **PlayMessage** and **DisconnectCall**
+5. Drag **FeedbackV2**, **PlayMessage** and **DisconnectContact**
     
     **FeedbacV2**
     
@@ -122,7 +122,7 @@ The survey is prebuilt and includes key questions designed to gather actionable 
 
     ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
 
-5. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
+6. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
 
 ### Testing
