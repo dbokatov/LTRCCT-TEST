@@ -98,7 +98,9 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
 9. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
  
- 10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
+    ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+
+10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
 12. Open **GoTo_x19** node and set:
 
