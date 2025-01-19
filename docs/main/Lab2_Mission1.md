@@ -88,7 +88,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
     >
     > Text-to-Speech Message: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error.***<span class="copy-static" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error."><span class="copy" title="Click to copy!"></span></span>. We are extending the existing message by adding Option 3.
     
-    ![profiles](../graphics/Lab2/AM1_AddOption3.gif)
+    ![profiles](../graphics/Lab2/AM2_AddOption3.gif)
 
 4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Support contact number in Mission 3 of Fundamental labs.
     

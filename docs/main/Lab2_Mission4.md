@@ -9,7 +9,7 @@ icon: material/medal
 
 ## Objective
 
-The primary objective of this new feature is to enhance nodes activities to include a dynamic variable-based selection option to make you flow smaller and simpler to adjust.
+The primary objective of this new feature is to enhance nodes activities to include a dynamic variable-based selection option to make your flow smaller and simpler to adjust.
 
 You will learn how to use **Dynamic Variables** in multiple nodes including **GoTo**, **Business Hours**, **Queue** and other nodes. 
 
@@ -72,7 +72,8 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 8. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
     ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
-  > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
+ 
+    > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
     > 
     > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=*{DNIS}"><span class="copy" title="Click to copy!"></span></span>
     > 

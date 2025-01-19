@@ -10,6 +10,8 @@ icon: material/medal
 ## Story
 
 Consider a scenario where a supervisor needs ability to change routing decision during an emergency without accessing admin portal. It can be done by changing the **Default Value** of GlobalVariable via API PUT call from False to True and use Condition in main IVR script to do routing decision. 
+In this mission we are going to create a control script for Supervisors that changes default value of Global Variable from **True** to **False** 
+
 
   ![Profiles](../graphics/Lab2/ChangeGV.png) 
 
@@ -98,7 +100,6 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
 
-    <details><summary>**Quick Quiz**</summary>There was a tiny little mistake in the GIF on this step. Who can spot it? Raise your hand if you found. </details> 
     
 6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. In this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
     
@@ -159,9 +160,6 @@ Consider a scenario where a supervisor needs ability to change routing decision 
     > Add Version Label(s): **Latest**
     >
     > Click **Publish Flow**
-    > 
-    > !!! Note
-         Remember to select "Return to Flow" after you publish your flow
     
 11. Map your flow to your inbound channel
     
@@ -178,7 +176,7 @@ Consider a scenario where a supervisor needs ability to change routing decision 
 
 ## Testing
    
-1. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False**
+1. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and make sure Default Value is set to **False**
     
 2. Make a call to your Support Number, when asked provide a pin code 1111# and listen the next message:
 
