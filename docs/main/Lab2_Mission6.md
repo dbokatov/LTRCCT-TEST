@@ -230,10 +230,6 @@ When a customer calls back into the contact center within ten minutes of their l
     > Click **Publish** Flow
 
 
-        !!! Note:
-            Remember to select "Return to Flow" after you publish your flow.
-
-
 11. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
