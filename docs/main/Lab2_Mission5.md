@@ -49,7 +49,7 @@ A common request for returning customers calling into a contact center is to wor
     - Callback Connect Time variable:
       
       >
-      > Name: <**queriedCSAT**<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
+      > Name: **queriedCSAT**<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **Decimal**
       >
@@ -254,9 +254,6 @@ A common request for returning customers calling into a contact center is to wor
     > Add Version Label(s): **Latest** 
     >
     > Click **Publish** Flow
-
-      !!! Note:
-        Remember to select "Return to Flow" after you publish your flow.
 
 11. Map your flow to your inbound channel
     

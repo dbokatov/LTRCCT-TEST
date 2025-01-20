@@ -8,7 +8,7 @@ icon: material/medal
 # Mission 7: Seamless AI to Human Agent Handoffs
 
 > !!! Note
-      This task relies on completing Mission 6 of the Main Labs. Ensure that mission is completed to have a fully functional AI Scripted Agent feature in the Contact Center.
+      This task relies on completing Mission 7 of the Fundamental Labs. Ensure that mission is completed to have a fully functional AI Scripted Agent feature in the Contact Center.
 
 ## Objectives
 
@@ -57,8 +57,8 @@ By the end of this lab, you will:
 
     ![profiles](../graphics/Lab2/L2M4_HandoffQueue.gif)
 
-### Test 1:
 
+### Checkpoint: Transfer to Human Agent
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
 2. Select Team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
@@ -81,7 +81,7 @@ By the end of this lab, you will:
 
     ![profiles](../graphics/Lab2/L2M4_HandoffDisableTranscript.gif)
 
-### Test 2:
+### Checkpoint: Disable Virtual Agent Transcript
 1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
 2. Dial into the same support and observe that the conversation transcript is **Not available** on the Agent Desktop when **Enable Conversation Transcript** is unchecked.
 
@@ -91,7 +91,7 @@ By the end of this lab, you will:
 
 1. <span style="color: red;">**[IMPORTANT]**</span> Please make sure to Enable the Virtual Agent transcript by checking **Enable Conversation Transcript** option for the **Virtual Agent V2** activity. Select the **Virtual Agent V2** activity and, in the right side panel, scroll down and notice the option for **Enable Conversation Transcript**. 
 
-2. Enable the **Virtual Agent v2** transcript by unchecking **Enable Conversation Transcript** option.
+2. Enable the **Virtual Agent v2** transcript by checking **Enable Conversation Transcript** option.
 
     ![profiles](../graphics/Lab2/L2M4_HandoffEnableTranscript.gif)
 
@@ -174,7 +174,7 @@ By the end of this lab, you will:
 
     ![profiles](../graphics/Lab2/L2M4_HandoffCondition&Validation.gif)
 
-### Test 3
+### Checkpoint: Last Intent Based Routing
     
 1. Make sure your agent is **Available** and if not, login to you Desktop as explained in previous Quick Test (see above)
 2. Make a call to your test number. During your interaction with the Virtual Agent start requesting for an appointement and then request a transfer to a live agent by saying, **"Please transfer me to an Agent."** If the last intent was "Book appointment", you will hear the Text-to-Speech message: **"Routing to an agent skilled at booking an appointment."**. 
@@ -214,7 +214,7 @@ By the end of this lab, you will:
 
   ![profiles](../graphics/Lab2/L2M4_Handoff_JSONPath.gif)
 
-### Test 4
+### Checkpoint: AI assistant
 1. Click on the AI assistant icon located on the top left navigation panel.
 
     ![profiles](../graphics/Lab2/L2M4_checkAIIcon.gif)
