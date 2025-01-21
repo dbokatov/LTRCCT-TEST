@@ -11,14 +11,15 @@ icon: material/medal
 A common request for returning customers calling into a contact center is to work with the last person with which they had a good experience.  This may be because they are already familiar with what the customer needs or it may just be that the customer is familiar with the agent and enjoyed their last interaction. With the new Auto CSAT feature in the Webex Contact Center we can automatically account for this request and route to the last agent which had a high Auto CSAT with the customer.  
 
 !!! Note
-    Because this is a lab environment and you will be playing both the role of the customer and agent, we are going to use a simulated CSAT as it would be difficult to properly score a call in these conditions.  
+    Since this is a lab environment where you will act as both the customer and the agent, it would be challenging to accurately score a call under these conditions. Therefore, AutoCSAT is set to a default value of 4. In a production environment, AutoCSAT scores calls as designed based on the feature's functionality.
 
 
 ### High Level Explanation
 1. New call comes into the flow
 2. Call the Search API to find the last agent with which they had a good CSAT
-3. If the agent is available, we will route the call to that agent
-4. If the agent is not available or if no recent good CSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
+3. AutoCSAT value is stored as a String type on Analyzer DB. We will convert it to Decimal.
+4. If the agent is available, we will route the call to that agent
+5. If the agent is not available or if no recent good CSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
 
 !!! Note
     We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
@@ -29,7 +30,6 @@ A common request for returning customers calling into a contact center is to wor
 ## Preconfigured elements
 1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
 2. Connector for calling Webex Contact Center APIs
-3. Agent Editable and Reportable Global Variable for our simulated CSAT
 
 ---
 
@@ -37,7 +37,7 @@ A common request for returning customers calling into a contact center is to wor
 
 1. Create a flow named **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and add these flow variables:
   
-    - Callback Status variable:
+    - Agent ID variable:
     
       >
       > Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
@@ -45,24 +45,40 @@ A common request for returning customers calling into a contact center is to wor
       > Type: **String**
       >
       > Default Value: **empty**
+
+    - Variable to write HTTP Response into it:
     
-    - Callback Connect Time variable:
+      >
+      > Name: **ResponseJSON**<span class="copy-static" data-copy-text="ResponseJSON"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: **empty**
+
+    - String type AutoCSAT variable:
+    
+      >
+      > Name: **AutoCSATStringVar**<span class="copy-static" data-copy-text="AutoCSATStringVar"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: **empty**
+
+    - Decimal type AutoCSAT variable:
       
       >
-      > Name: **queriedCSAT**<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
+      > Name: **AutoCSATDecimalVar**<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **Decimal**
       >
       > Default Value: **0.0**<span class="copy-static" data-copy-text="0.0"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Switch on **Make Agent Viewable**
+      >
+      > Desktop Label: **Auto CSAT**
 
-2. Add the Global Variable **simulatedCSAT**<span class="copy-static" data-copy-text="simulatedCSAT"><span class="copy" title="Click to copy!"></span></span> to the flow
 
-    >
-    > There are no values to set because it has already been configured globally
-
-      ![profiles](../graphics/Lab2/L2M5_CreateFlow.gif)
-
-3. Add a **Play Message** node 
+2. Add a **Play Message** node 
     
     >
     > Connect the **New Phone Contact** node edge to this **Play Message** node
@@ -79,8 +95,10 @@ A common request for returning customers calling into a contact center is to wor
 
       ![profiles](../graphics/Lab2/L2M5_PlayMessage.gif)
 
-3.  Add an **HTTP Request** node for our query
+3.  Add an **HTTPRequest** node for our query
     
+    >
+    > Activity Label: **GraphQL_Query**<span class="copy-static" data-copy-text="GraphQL_Query"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the output node edge from the **Play Message** node to this node
     >
@@ -88,7 +106,7 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Connector: **WxCC_API**
     > 
-    > Path: **/search**
+    > Path: **/search**<span class="copy-static" data-copy-text="/search"><span class="copy" title="Click to copy!"></span></span>
     > 
     > Method: **POST**
     > 
@@ -96,63 +114,48 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Copy this GraphQL query into the request body:
     ```JSON
-    {"query":"query simulatedCSAT($from:Long! $to:Long! $timeComparator:QueryTimeType $filter:TaskFilters $name:String!){task(from:$from,to:$to,timeComparator:$timeComparator,filter:$filter){tasks{owner{name id}simulatedCSAT:doubleGlobalVariables(name:$name){name value}}}}","variables":{"from":"{{now() | epoch(inMillis=true) - 604800000}}","to":"{{now() | epoch(inMillis=true)}}","timeComparator":"endedTime","filter":{"and":[{"status":{"equals":"ended"}},{"origin":{"equals":"{{NewPhoneContact.ANI}}"}},{"doubleGlobalVariables":{"name":{"equals":"simulatedCSAT"},"value":{"gte":3}}}]},"name":"simulatedCSAT"}}
+    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n        ]\n    }\n  ) {\n    tasks {\n      autoCsat\n      owner {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 1800000}}","to":"{{now() | epoch(inMillis=true) - 20000}}"}}
     ```
     > <details><summary>Expanded Query For Understanding (optional)</summary>
     ```GraphQL
-    query simulatedCSAT(
-      $from: Long!
-      $to: Long!
-      $timeComparator: QueryTimeType
-      $filter: TaskFilters
-      $name: String!
-    ) {
-      task(from: $from, to: $to, timeComparator: $timeComparator, filter: $filter) {
+    query($from: Long!, $to: Long!)
+    {
+      taskDetails(
+          from: $from
+          to: $to
+        filter: {
+          and: [
+           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
+            ]
+        }
+      ) {
         tasks {
+          autoCsat
           owner {
-            name #Agent Name
-            id #Agent ID
-          }
-          simulatedCSAT: doubleGlobalVariables(name: $name) {
+            id
             name
-            value #Value of the simulatedCSAT
           }
         }
       }
     }
     ```
     ```JSON
-    Variables:
+    Expected Response:
     
     {
-      "from": "{{now() | epoch(inMillis=true) - 604800000}}", # time now - 1 week represented in EPOCH time(ms)
-      "to": "{{now() | epoch(inMillis=true)}}", # time now represented in EPOCH time(ms)
-      "timeComparator": "endedTime",
-      "filter": {
-        "and": [
-          {
-            "status": {
-              "equals": "ended"
+    "data": {
+        "taskDetails": {
+            "tasks": [
+                {
+                    "autoCsat": "4",
+                    "owner": {
+                        "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
+                        "name": "Agent140 Lab"
+                    }
             }
-          },
-          {
-            "origin": {
-              "equals": "{{NewPhoneContact.ANI}}"
-            }
-          },
-          {
-            "doubleGlobalVariables": { #Filtering on the Global Variable simulatedCSAT to be greater or equal to 3 
-              "name": {
-                "equals": "simulatedCSAT" 
-              },
-              "value": {
-                "gte": 3
-              }
-            }
-          }
-        ]
-      },
-      "name": "simulatedCSAT" #The Alias name used for the global variable in the returned fields
+          ]
+        }
+      }
     }
     ```
     </details>
@@ -162,26 +165,69 @@ A common request for returning customers calling into a contact center is to wor
     > - Content Type: **JSON**
     >
     > - Output Variable: `agentID`<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
-    > - Path Expression: `$.data.task.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Output Variable: `queriedCSAT`<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
-    > - Path Expression: `$.data.task.tasks[0].simulatedCSAT.value`<span class="copy-static" data-copy-text="$.data.task.tasks[0].simulatedCSAT.value"><span class="copy" title="Click to copy!"></span></span>
+    > - Output Variable: `AutoCSATStringVar`<span class="copy-static" data-copy-text="AutoCSATStringVar"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].autoCsat`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].autoCsat"><span class="copy" title="Click to copy!"></span></span>
     >
 
       ![profiles](../graphics/Lab2/L2M5_HTTPRequest.gif)
 
-4. Add a **Condition** node
+4. Add **Set Variable** node
+    
+    >
+    > Activity Label: **GraphQL_Response**<span class="copy-static" data-copy-text="GraphQL_Response"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Connect **GraphQL_Query** to this node
+    >
+    > We will connct **Set Variable** node in next step
+    >
+    > Variable: **ResponseJSON**<span class="copy-static" data-copy-text="ResponseJSON"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Set To Variable: **GraphQL_Query.httpResponseBody**<span class="copy-static" data-copy-text="GraphQL_Query.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    >
+
+5. Add a **Case** node
 
     >
-    > Connect the output node edge from teh **HTTP Request** node to this node
-    > 
-    > We will connect the **True** node in a future step.
+    > Connect the output node edge from teh **GraphQL_Response** node to this node
     >
-    > Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > Expression: `{{ AutoCSATStringVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATStringVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Change **Case 0** to **true**
+    >
+    > CHange **Case 1** to **false**
+    >
+    > We will connect the **true** and **false** in future steps.  
+    
+    ![profiles](../graphics/Lab2/L2M5_Condition.gif)
+
+6. Add **Set Variable** node
+    
+    >
+    > Activity Label: **MakeCSATDecimal**<span class="copy-static" data-copy-text="MakeCSATDecimal"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Connect **false** exit of **Case** node to this node
+    >
+    > We will connct **Set Variable** node in next step
+    >
+    > Variable: **AutoCSATDecimalVar**<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Set Value: **{{AutoCSATStringVar}}**<span class="copy-static" data-copy-text="{{AutoCSATStringVar}}"><span class="copy" title="Click to copy!"></span></span>
+    >
+
+7. Add a **Condition** node
+
+    >
+    > Connect the output of **MakeCSATDecimal** node edge to this node
+    > 
+    > We will connect the **True** and **False** output edges in future steps.
+    >
+    > Expression: `{{AutoCSATDecimalVar>=3.9}}`<span class="copy-static" data-copy-text="{{AutoCSATDecimalVar>=3.9}}"><span class="copy" title="Click to copy!"></span></span>
     >
       ![profiles](../graphics/Lab2/L2M5_Condition.gif)
 
-5.  Add a **Queue To Agent** node
+8.  Add a **Queue To Agent** node
 
     >
     > Connect the **False** node edge of the **Condition** node created in previous step to this **Queue To Agent**.
@@ -206,21 +252,23 @@ A common request for returning customers calling into a contact center is to wor
 
       ![profiles](../graphics/Lab2/L2M5_QtoAgent.gif)
 
-6. Add a **Queue Contact** node
+9. Add a **Queue Contact** node
 
     >
+    > Connect the **False** node edge from the **Condition** node created in **Step 5** to this node
+    >
+    > Connect **true** node edge of **Case** node created in **Step 7**to this node
+    > 
     > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
     >
-    > Connect the **True** node edge from the **Condition** node created in **Step 4** to this node
-    > 
-    > Select Static Queue
+    > Select **Static Queue**
     >
     > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
       ![profiles](../graphics/Lab2/L2M5_QueueContact.gif)
 
 
-7. Add a **Subflow** node and **DisconnectContact** node
+10. Add a **Subflow** node and **DisconnectContact** node
 
     >
     > In the Activity Library pane on the left side of the screen, click **Subflows**
@@ -243,7 +291,7 @@ A common request for returning customers calling into a contact center is to wor
 
     <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
-10.  Publish your flow
+11.  Publish your flow
 
     > Turn on Validation at the bottom right corner of the flow builder
     >
@@ -255,7 +303,7 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Click **Publish** Flow
 
-11. Map your flow to your inbound channel
+12. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
     >
@@ -275,49 +323,18 @@ A common request for returning customers calling into a contact center is to wor
 2. On your Agent Desktop, set your status to available
       1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      3. In the Agent Desktop you will see a new field in Call Information section where you can edit the Simulated CSAT.  Enter a value of **2.9**<span class="copy-static" data-copy-text="2.9"><span class="copy" title="Click to copy!"></span></span> and click save.
-      4. After a few moments end the call and select a wrapup code.
+      3. In the Agent Desktop you will see a new field **Auto CSAT** in Call Information section where you can edit the Simulated CSAT.
+      4. If it is empty, drop the call and wait about 20 secs so the backend can process and score the call.
 3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       1. You should be offered the call, click on the accept button.
-      2. Enter a value of **3.7**<span class="copy-static" data-copy-text="3.7"><span class="copy" title="Click to copy!"></span></span> in for Simulated CSAT and click save.
-      3. After a few moments end the call and select a wrapup code.
+      2. If everything set correctly you should see Auto CSAT set to **4.0**
+      3. End the call and select a wrapup code if asked.
 4. In your Flow:
       1. Open the debugger
       2. Select the first interaction (at the bottom of the list)
       3. Trace the steps taken in the flow
       4. Open the last interaction 
       5. Trace the steps taken in the flow
-5. Answer these questions:
-      1. Did the second call get routed to your agent via the Queue To Agent node?
-         1. Why or why not
-6. On your Agent Desktop, set your status to not be available
-7. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-8. After you hear the queue treatment start, change your status to available on the agent desktop.
-      1. You should be offered the call, click on the accept button.
-      2. Enter a value of **2.8**<span class="copy-static" data-copy-text="2.8"><span class="copy" title="Click to copy!"></span></span> in for Simulated CSAT and click save.
-      3. After a few moments end the call and select a wrapup code.
-9. In your Flow:
-      1. Open the debugger
-      2. Select the last interaction
-      3. Trace the steps taken in the flow
-10. Answer these questions:
-      1. Was the call routed to the Queue to Agent node?
-      2. What happened next?
-         1. Why?
-         2. What will happen if you call in again starting in the Available status?
-11. Make sure that you are in Available status on the agent desktop.
-12. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      1. You should be offered the call, click on the accept button.
-      2. After a few moments end the call and select a wrapup code.
-13. In your Flow:
-      1. Open the debugger
-      2. Select the last interaction
-      3. Trace the steps taken in the flow
-14. Answer the following questions:
-      1. Was the call offered to you from the Queue to Agent node?
-      2. What was the value of the variable queriedCSAT (look in the HTTP node step)
-         1. Why?
-      3. How do you think that you could change the logic/criteria to meet other business needs? 
 
 ---
 
