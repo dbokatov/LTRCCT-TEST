@@ -7,14 +7,20 @@ icon: material/medal
     The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only
 
 
-## Enhancing the caller experience: The foundation of call routing techniques
+## Story
 Imagine calling a contact center, seeking quick, personalized help. Behind the scenes, a flow smoothly routes your call based on your needs.
 
-In this lab, you’ll configure key flow elements for efficient caller journeys. Explore Flow Templates, set up routing with conditions like language preference, and use subflows to simplify processes. By the end, you'll be ready to design flows for real-world scenarios.
 
+### Mission Details
 
-## Why Flow Templates?
-Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
+Your mission is to:
+  1. Configure key flow elements for efficient caller journeys.
+  2. Explore Flow Templates to streamline flow creation.
+  3. Set up routing with conditions, such as language preference.
+  4. Gain the skills to design flows for real-world scenarios.
+
+ **<details><summary>Why Flow Templates?<span style="color: orange;">[Optional]</span></summary>**
+ Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
 
   - **Consistency and Standards**: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
 
@@ -30,7 +36,7 @@ Flow Templates in Webex Contact Center are an essential feature for flow develop
 
 Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
 
-
+</details>
 ---
 
 ### Build
@@ -85,7 +91,7 @@ Flow Templates are designed to empower developers, speed up the development life
 
 --- 
 
-### Testing
+### Checkpoint: 
 
 1. Launch Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
 2. Select your Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
@@ -109,14 +115,17 @@ This lab may feel straight forward for some, which is understandable; however, i
 
 ## Enhance Your Flow by adding Language
 
-**Step Objective:**
-  - We are going to use same flow we created in previous section
+### Mission Details
 
-  - Change TTS section to use **en-AU** which is English (Australia) and connect the Set Variable node as shown below
+Your mission is to:
 
-    ○ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
+  - Use the same flow created in the previous section.
+  - Modify the TTS section to use **en-AU** (English - Australia) and connect the Set Variable node as illustrated below.
+  - Place a call to verify and validate the speech functionality.
 
-    ○ Place a call to verify/validate the speech
+ **<details><summary>Text-to-Speech (TTS) in Webex Contact Center<span style="color: orange;">[Optional]</span></summary>**
+All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
+</details>
 
 
 ### Build

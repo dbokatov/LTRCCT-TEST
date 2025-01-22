@@ -192,11 +192,11 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Connect the output node edge from teh **GraphQL_Response** node to this node
     >
-    > Expression: `{{ AutoCSATStringVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATStringVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > Expression: `{{AutoCSATStringVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATStringVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Change **Case 0** to **true**
     >
-    > CHange **Case 1** to **false**
+    > Change **Case 1** to **false**
     >
     > We will connect the **true** and **false** in future steps.  
     
@@ -257,7 +257,7 @@ A common request for returning customers calling into a contact center is to wor
     >
     > Connect the **False** node edge from the **Condition** node created in **Step 5** to this node
     >
-    > Connect **true** node edge of **Case** node created in **Step 7**to this node
+    > Connect **true** node edge of **Case** node created in **Step 7** to this node
     > 
     > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
     >
