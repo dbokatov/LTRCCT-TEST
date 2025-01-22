@@ -10,14 +10,19 @@ icon: material/medal
 ## Story
 Imagine calling a contact center, seeking quick, personalized help. Behind the scenes, a flow smoothly routes your call based on your needs.
 
+### Call Flow Overview
+1. A new call enters the flow. *(This initiates the interaction and triggers the defined call-handling process.)*
+2. The flow determines the caller's language preference and plays a pre-configured Text-to-Speech (TTS) prompt. *(This ensures the caller receives information in their preferred language.)*
+3. The call is routed to the appropriate queue. *(This directs the caller to the right team on the flow logic.)*
 
 ### Mission Details
 
 Your mission is to:
-  1. Configure key flow elements for efficient caller journeys. </br>
-  2. Explore Flow Templates to streamline flow creation. </br>
-  3. Set up routing with conditions, such as language preference. </br>
-  4. Gain the skills to design flows for real-world scenarios. </br>
+
+1. Configure key flow elements for efficient caller journeys. </br>
+2. Explore Flow Templates to streamline flow creation. </br>
+3. Set up routing with conditions, such as language preference. </br>
+4. Gain the skills to design flows for real-world scenarios. </br>
 
  **<details><summary>Why Flow Templates? <span style="color: orange;">[Optional]</span></summary>**
  Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
