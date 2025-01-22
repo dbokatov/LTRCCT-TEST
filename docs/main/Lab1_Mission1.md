@@ -14,10 +14,10 @@ Imagine calling a contact center, seeking quick, personalized help. Behind the s
 ### Mission Details
 
 Your mission is to:
-  1. Configure key flow elements for efficient caller journeys.
-  2. Explore Flow Templates to streamline flow creation.
-  3. Set up routing with conditions, such as language preference.
-  4. Gain the skills to design flows for real-world scenarios.
+  1. Configure key flow elements for efficient caller journeys. </br>
+  2. Explore Flow Templates to streamline flow creation. </br>
+  3. Set up routing with conditions, such as language preference. </br>
+  4. Gain the skills to design flows for real-world scenarios. </br>
 
  **<details><summary>Why Flow Templates? <span style="color: orange;">[Optional]</span></summary>**
  Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
@@ -106,11 +106,6 @@ Flow Templates are designed to empower developers, speed up the development life
 
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
-### Summary
-This lab may feel straight forward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
-
----
-
 ---
 
 ## Enhance Your Flow by adding Language
@@ -161,5 +156,8 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
 5. Verify if the TTS language changed
+
+### Summary
+This lab may feel straight forward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
 **Congratulations on completing another mission.**
