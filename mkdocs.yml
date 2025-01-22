@@ -120,7 +120,7 @@ nav:
             - "Mission 2: Preventing Callback duplication": ./main/Lab2_Mission2.md
             - "Mission 3: Emergency config change": ./main/Lab2_Mission3.md
             - "Mission 4: Routing facilitation": ./main/Lab2_Mission4.md 
-            - "Mission 5: Last Agent Routing": ./main/Lab2_Mission5.md
+            - "Mission 5: Last Agent Routing": ./main/Lab2_Mission5_AutoCSAT.md
             - "Mission 6: Routing Returning Callers": ./main/Lab2_Mission6.md
             - "Mission 7: Seamless AI to Human Agent Handoffs": ./main/Lab2_Mission7.md
       - Conclusion: ./main/Lab2_Conclusion.md
