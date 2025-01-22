@@ -19,7 +19,7 @@ Your mission is to:
   3. Set up routing with conditions, such as language preference.
   4. Gain the skills to design flows for real-world scenarios.
 
- **<details><summary>Why Flow Templates?<span style="color: orange;">[Optional]</span></summary>**
+ **<details><summary>Why Flow Templates? <span style="color: orange;">[Optional]</span></summary>**
  Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
 
   - **Consistency and Standards**: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
@@ -76,7 +76,7 @@ Flow Templates are designed to empower developers, speed up the development life
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-12. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**.
+12. In popped-up window, click on dropdown menu to select **Latest** label, then click **Publish**.
 
 13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
 14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
@@ -91,7 +91,7 @@ Flow Templates are designed to empower developers, speed up the development life
 
 --- 
 
-### Checkpoint: 
+### Checkpoint Test
 
 1. Launch Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
 2. Select your Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
@@ -135,7 +135,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
-3. Add a **SetVariable** with folowing configuration. 
+3. Add a **SetVariable** with following configuration. 
 
   > Delete connection between **NewPhoneContact** and **WelcomePrompt**
   >  
@@ -151,7 +151,15 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
-5. Make a test call from Webex App by calling the Support Number, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
-Verify if the TTS language changed
+
+### Testing
+
+1. Open your Webex Desktop and make your agent **Available** and you're ready to make a call.
+
+4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
+
+   ![profiles](../graphics/Lab1/WxApp_Test.gif)
+
+5. Verify if the TTS language changed
 
 **Congratulations on completing another mission.**
