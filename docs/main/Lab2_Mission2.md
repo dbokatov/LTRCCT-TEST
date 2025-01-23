@@ -14,14 +14,15 @@ icon: material/medal
 ## Story 
 If a caller who already has a scheduled callback contacts the contact center again to request another callback, our system can recognize this. It will then notify the caller that a callback is already scheduled and will be completed as soon as the next agent becomes available.
 
-### Call Flow Overview
-A new call from a caller, who already has a scheduled callback, enters the flow.
-The flow executes the logic configured in previous missions.
-The call is routed to the appropriate queue, but no agents are available.
-Since no agents are available, a callback option is offered to the caller.
-Once the caller requests for a callback, IVR replies that calback has been scheduled already.
+## Call Flow Overview
 
-### Mission Details
+1. A new call from a caller, who already has a scheduled callback, enters the flow.</br>
+2. The flow executes the logic configured in previous missions.</br>
+3. The call is routed to the appropriate queue, but no agents are available.</br>
+4. Since no agents are available, a callback option is offered to the caller.</br>
+5. Once the caller requests for a callback, IVR replies that calback has been scheduled already.</br>
+
+## Mission Details
 
 Your mission is to:
 

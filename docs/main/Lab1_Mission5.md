@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-### Story
+## Story
 
 In this lab, you will complete a mission to enhance customer feedback collection by integrating a survey into the Webex Contact Center call flow. The lab is designed to be simple yet practical, focusing on minimal configuration within the Flow Designer, while leveraging a preconfigured survey template.
 
@@ -27,7 +27,7 @@ In this lab, you will complete a mission to enhance customer feedback collection
 >   - Use Case: Gauge long-term customer loyalty and brand advocacy.
 > </details>
 
-### Call Flow Overview
+## Call Flow Overview
 
 1. A new call enters the flow. </br>
 2. The flow executes the logic to enable survey functionality.</br>
@@ -35,7 +35,7 @@ In this lab, you will complete a mission to enhance customer feedback collection
 4. The flow triggers an event when the agent disconnects from the call.</br>
 5. The caller remains on the line and hears the survey menu.</br>
 
-### Mission Details
+## Mission Details
 
 Your mission is to:
 
@@ -46,7 +46,7 @@ Your mission is to:
 !!! Note
     The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
 
-#### Pre-configured entities:       
+### Pre-configured entities      
      
 > Survey: **PCS-2025**
 >
@@ -78,7 +78,7 @@ Your mission is to:
 > 
 </details>
 
-### Build
+## Build
 1. Explore preconfigured survey **PCS-2025**. In Control Hub go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
@@ -134,7 +134,7 @@ Your mission is to:
 6. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
 
-### Testing
+## Testing
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
 2. Make a test call to the Support Number and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 

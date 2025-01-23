@@ -14,12 +14,23 @@ A common request for returning customers calling into a contact center is to wor
     Since this is a lab environment where you will act as both the customer and the agent, it would be challenging to accurately score a call under these conditions. Therefore, AutoCSAT is set to a default value of 4. In a production environment, AutoCSAT scores calls as designed based on the feature's functionality.
 
 
-### High Level Explanation
+## Call Flow Overview
 1. New call comes into the flow
-2. Call the Search API to find the last agent with which they had a good CSAT
+2. Call the Search API to find the last agent with which they had a good AutoCSAT
 3. AutoCSAT value is stored as a String type on Analyzer DB. We will convert it to Decimal.
 4. If the agent is available, we will route the call to that agent
-5. If the agent is not available or if no recent good CSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
+5. If the agent is not available or if no recent good AutoCSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
+
+## Mission Details
+
+Your mission is to:
+1. Create a new flow by using pre-defined flow template. </br>
+2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
+3. Change the the string-type AutoCSAT variable to decimal-type in order to perform condition operations.</br>
+4. Prioritize the call if conditions match and route the call to agent.</br>
+
+
+<span style="color: red;">**[IMPORTANT]**</span> Please note that the AutoCSAT feature is still in its Beta phase and currently lacks full reporting capabilities. For instance, the data is currently stored as a string-type value, which prevents filtering in Search API requests as well as use condition function in the flow. As an added benefit, we are including the production Search API, which will be functional once the feature is fully enabled in the near future.
 
 !!! Note
     We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
@@ -27,7 +38,7 @@ A common request for returning customers calling into a contact center is to wor
     Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
 
 
-## Preconfigured elements
+### Preconfigured elements
 1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
 2. Connector for calling Webex Contact Center APIs
 

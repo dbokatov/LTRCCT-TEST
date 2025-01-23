@@ -14,7 +14,7 @@ icon: material/medal
 Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to an unexpected error in the flow. This unplanned interruption leaves the customer disconnected without completing their request. In this scenario we are going to configure our flow to schedule a callback to the caller when such failure scenario occurs.
 
 
-### Call Flow Overview
+## Call Flow Overview
 
 1. A new call enters the flow. </br>
 2. The flow executes the logic by querying external database for Outbound Channel and ANI.</br>
@@ -22,7 +22,7 @@ Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to
 4. On a callback offering a new option should be selected to simulate an error and drop the call. </br>
 5. Once an agent becomes available, the callback is initiated to the  number.</br>
 
-### Mission Details
+## Mission Details
 
 Your mission is to:
 
