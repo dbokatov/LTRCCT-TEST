@@ -25,7 +25,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 2. Configure a screen pop in your flow.</br>
 3. Configure an API call to trigger on the AgentDisconnect event.</br>
 
-!!! Note:
+!!! Note
     In this mission, we’ll utilize **[Webhook.site](https://webhook.site/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
 
 ### Configuration

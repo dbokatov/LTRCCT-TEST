@@ -43,10 +43,10 @@ Your mission is to:
 2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
 3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
 
-!!! Note:
+!!! Note
     The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
 
-### Pre-configured entities:        
+#### Pre-configured entities:       
      
 > Survey: **PCS-2025**
 >

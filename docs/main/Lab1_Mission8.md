@@ -33,7 +33,8 @@ As a visitor to Amsterdam, you want to quickly find restaurants offering various
 ## Mission overview
 Your mission is to:
 
-1. In current mission you would need to create a knowledge bases (KB). You are going to build a KB for your AI agent to provide answers about Amsterdam (aka **Amsterdam Tourist Guide**): places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center.
+1. Create a knowledge base (KB) and AI agent to provide answers about Amsterdam, including places to visit, restaurants, nightclubs, and directions from the current RAI Amsterdam Convention Center.</br>
+2. Configure the AI agent with handoff functionality to transfer the conversation to a live agent when necessary.</br>
 
 ---
 
