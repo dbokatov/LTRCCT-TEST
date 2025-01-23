@@ -16,14 +16,15 @@ icon: material/medal
 When a customer calls back into the contact center within ten minutes of their last call ending, we can assume there was a dropped call, missed callback, or they need additional assistance from their last interaction.  We are going to prioritize their call in the queue so that they can finish their business.
 
 ## Call Flow Overview
-1. New call comes into the flow
-2. Call the Search API to check if the ANI (caller's number) had a call which ended in the last 10 minutes
-3. If the caller had a connected call which ended within the last 10 minutes, we will play a message and will queue the call with a higher priority so they will get assigned to the next available agent.
-4. If the caller did not end a call with the contact center in the previous 10 minutes, we will queue the call normally
+
+1. New call comes into the flow</br>
+2. Call the Search API to check if the ANI (caller's number) had a call which ended in the last 10 minutes.</br>
+3. If the caller had a connected call which ended within the last 10 minutes, we will play a message and will queue the call with a higher priority so they will get assigned to the next available agent.</br>
+4. If the caller did not end a call with the contact center in the previous 10 minutes, we will queue the call normally.</br>
 
 ## Mission Details
 
-Your mission is to:
+Your mission is to:</br>
 1. Create a new flow by using pre-defined flow template. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Build a condition that matches use case scenario and route the call to agent.</br>
