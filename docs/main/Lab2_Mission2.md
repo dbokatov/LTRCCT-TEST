@@ -7,12 +7,19 @@ icon: material/medal
 
 # Mission 2: Preventing Callback duplication
 
-## Story 
-
-In this task, you will enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
-
 > !!! Note
       This task relies on completing Mission 2 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
+
+
+## Story 
+
+### Call Flow Overview
+### Mission Details
+
+Your mission is to:
+
+1. Enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
+
 
 
 ## Build

@@ -38,7 +38,7 @@ Your mission is to: </br>
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.laBlaBla"><span class="copy"></span></span>
+    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
     >
