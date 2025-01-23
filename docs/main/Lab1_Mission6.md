@@ -11,13 +11,17 @@ icon: material/medal
 
 The Debug Tool is an essential feature in the Webex Contact Center Flow Designer, designed to simplify troubleshooting and enhance visibility into the call flow behavior. Its importance lies in its ability to provide real-time insights, enabling administrators and developers to quickly identify and resolve issues that could impact customer experience.
 
-### Why Debug is Important
+**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+#### Why Debug is Important?
 
 1. **Real-Time Analysis**: Tracks the call flow execution step by step, showing which nodes are executed and the data passed between them.
 
 2. **Error Identification**: Quickly pinpoint errors, such as misconfigured nodes, incorrect variable usage, or unexpected call routing.
 
 3. **Optimization**: Provides insights into flow performance, allowing you to optimize for efficiency and accuracy.
+</details>
+
 
 ### How to Use the Debug Tool
 
@@ -56,11 +60,16 @@ Flow Analytics feature is designed to provide flow developer, administrators and
   - Switch between multiple versions of analytics views.
   - Color-coded links between activities based on the number of activity executions, and status.
 
-### Why Flow Analytics Important
+**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+#### Why Flow Analytics Important?
 
 1. **Performance Monitoring**: Tracks key metrics, such as flow usage, execution frequency, and processing times, helping you assess flow efficiency.
+
 2. **Behavior Analysis**: Identifies patterns in customer interactions and highlights potential issues, such as abandoned calls or potential loops.
+
 3. **Proactive Optimization**: Offers data-driven insights to fine-tune flow configurations, ensuring optimal performance and alignment with business objectives.
+</details>
 
 ### How to Use the Flow Analytics Tool
 

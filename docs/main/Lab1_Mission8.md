@@ -7,17 +7,33 @@ icon: material/medal
 
 # Mission 7: AI in Action (Autonomous Agent)
 
-## AI Autonomous Agent Overview
+
+**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+### AI Autonomous Agent Overview
 
 The Autonomous AI Agent for performing actions can handle various tasks, including:
 
   - Natural Language Processing (NLP)—Understand and respond to human language in a natural and conversational manner.
   - Decision making—Make informed choices based on available information and predefined rules.
   - Automation—Automate repetitive or time-consuming tasks.
+</details>
+
+
+## Story
+
+As a visitor to Amsterdam, you want to quickly find restaurants offering various international cuisines in the city and easily figure out how to get to them from your current location at the RAI.
+
+### Call Flow Overview
+
+1. A new call enters the flow. </br>
+2. The caller asks about restaurants in Amsterdam.</br>
+3. The AI agent responds with information generated from the knowledge base configuration.</br>
 
 ## Mission overview
+Your mission is to:
 
-In current mission you would need to create a knowledge bases (KB). You are going to build a KB for your AI agent to provide answers about Amsterdam (aka **Amsterdam Tourist Guide**): places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center.
+1. In current mission you would need to create a knowledge bases (KB). You are going to build a KB for your AI agent to provide answers about Amsterdam (aka **Amsterdam Tourist Guide**): places to visit, restaurants, night clubs and how to get there from current RAI Amsterdam Convention Center.
 
 ---
 

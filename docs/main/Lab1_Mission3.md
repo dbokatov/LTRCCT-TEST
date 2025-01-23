@@ -3,14 +3,30 @@
 icon: material/medal
 ---
 
-### Story 
+## Story 
 
 Callback functionality is an essential feature in a modern contact center, providing a solution that enhances both customer satisfaction and operational efficiency.
 
 Imagine a customer calls to upgrade their service but faces a 20-minute wait, they can request a callback instead of staying on hold. If no agents are available, they’ll be offered the choice to remain in the queue or opt for a callback. Upon choosing the callback, they provide their number, which is validated, and the system schedules the call. Once an agent is free, the system connects with the customer. This ensures businesses retain leads while providing a seamless customer experience.
 
+
+### Call Flow Overview
+
+1. A new call enters the flow. </br>
+2. The flow executes the logic configured in previous steps.</br>
+3. The call is routed to the appropriate queue, but no agents are available.</br>
+4. Since no agents are available, a callback option is offered to the caller.</br>
+5. Once an agent becomes available, the callback is initiated to the provided number.</br>
+
+### Mission Details
+
+Your mission is to: </br>
+
+1. Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** </br>
+2. Add aditional callback functionality to your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
+
+
 ### Build
-We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.
 
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Edit: Off** mode to **Edit: On**
 2. Delete  connection from **Queue** node to **Music** 

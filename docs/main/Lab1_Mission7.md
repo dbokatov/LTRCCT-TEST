@@ -5,9 +5,21 @@ icon: material/medal
 
 
 
-## Objectives
+## Story
 
-This lab is designed to provide an in-depth understanding of the Webex AI  Agents available in Webex Contact Center. By completing this section of the lab, you will:
+The mission is designed to provide a hands-on understanding of creating Cisco Virtual Agents, covering key tasks such as creating a virtual agent using a template, integrating the bot with flow for voice calls, updating bot responses, adding new intents and entities, enhancing training data using generative AI, and leveraging bot transcripts and analytics for insights.
+
+
+### Call Flow Overview
+
+1. A new call enters the flow.
+2. The AI Agent interacts with the caller by asking configured questions.
+3. The AI Agent ends the conversation after collecting all the necessary details.
+
+
+### Mission Details
+
+This lab is designed to provide an in-depth understanding of the Webex AI Agents available in Webex Contact Center. By completing this section of the lab, you will:
 
 - Gain practical skills and knowledge on how to effectively utilize Webex Contact Center's AI capabilities to create self-service automation.
 - Improve the containment rate of your contact center, increasing efficiency and reducing costs.
@@ -15,13 +27,9 @@ This lab is designed to provide an in-depth understanding of the Webex AI  Agent
 - Understand the use of Generative AI to fast-track bot development and save time.
 - Troubleshoot AI Agent functionality to enhance performance.
 
-## Overview
+### Build
 
-The mission s designed to provide a hands-on understanding of creating Cisco Virtual Agents, covering key tasks such as creating a virtual agent using a template, integrating the bot with flow for voice calls, updating bot responses, adding new intents and entities, enhancing training data using generative AI, and leveraging bot transcripts and analytics for insights.
-
-## Build
-
-### Creating a AI Agent using a Template
+#### Creating a AI Agent using a Template
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **wxcclabs+admin_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
@@ -55,7 +63,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ---
 
-### Integrating the Bot with Flow for Voice Calls
+#### Integrating the Bot with Flow for Voice Calls
 
 1. In Control Hub navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
@@ -103,9 +111,8 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
 ---
 
-### Updating Bot Responses
+#### Updating Bot Responses
 
-#### Step Objective
 In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
@@ -135,9 +142,8 @@ In this Step We will learn how to update bot responses and test these changes bo
 
 ---
 
-### Adding New Intents & Entities
+#### Adding New Intents & Entities
 
-#### Step Objective
 In this step, we will learn how to add new intents and entities to enhance the bot's ability to understand and respond to a broader range of user inputs. These updates will be tested in both preview mode and during a live call to confirm that the bot correctly identifies the new intents and entities and provides appropriate responses.
 
 
@@ -201,9 +207,8 @@ In this step, we will learn how to add new intents and entities to enhance the b
 
 ---
 
-### Adding Training Data using Generative AI
+#### Adding Training Data using Generative AI
 
-#### Step Objective
 In this step, we will learn how to enhance the bot's capabilities by adding training data using generative AI and validate the changes by making a call.
 
 1. Return to the **Referral Request** intent that you created in the previous exercise.
@@ -229,11 +234,9 @@ In this step, we will learn how to enhance the bot's capabilities by adding trai
 
 ---
 
-### Bot Transcripts & Analytics
+#### Bot Transcripts & Analytics
 
-#### Step Objective
 In this Step We will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
-    
 
 1. Click on **Sessions** in the left-hand panel of your bot builder interface to view all the call history. Click on any Session ID to delve into a more detailed analysis of that particular interaction.
 

@@ -3,22 +3,33 @@
 icon: material/medal
 ---
 
-## Using Business Hours in your Flow to add flexibility
+## Story
 
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
-### **Step Objective**
-  - We continue to use same flow we created in previous Mission 1 of the Fundamental Lab
 
-  - Business Hours entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** has been configured for you and contains the following settings:
-    
-    ○ **Working Hours** - Define time during which contact center will be operational. Each working hours contains one or more shifts. We can configure different schedules for different time zones
-    
-    ○ **Holidays** - Define specific day or day range which is declared is holiday. Entire 24 hours of the day selected is marked non-operational​.
-    
-    ○ **Overrides** - Configure working hours for special cases like Emergency or Christmas when contact center is working for additional hours​.
+### Call Flow Overview
+ 
+1. A new call enters the flow. </br>
+2. The flow determines the caller's language preference and plays a pre-configured Text-to-Speech (TTS) prompt. </br>
+3. The flow determines whether it is currently within working hours and routes the call appropriately.</br>
+4. The call is routed to the appropriate queue. </br>
 
-#### Build
+### Mission Details
+
+Your mission is to:
+
+  - Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** we created in previous Mission 1 of the Fundamental Lab.
+
+  - Add Business Hours functionality **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** to your flow. Business Hours entity has been configured for you and contains the following settings:
+    
+     -  **Working Hours** - Define the time during which the contact center will be operational. Each working hour configuration can include one or more shifts. Different schedules can be set for various time zones.
+    
+     - **Holidays** - Specify a day or range of days declared as holidays. The entire 24 hours of the selected day(s) are marked as non-operational.
+    
+     -  **Overrides** - Configure working hours for special cases, such as emergencies or occasions like Christmas, when the contact center operates for additional hours.
+
+### Build
 
 1. Switch to **Control Hub** and navigate to **Business Hours** under Customer Experience section. Locate your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>**. You will see that currently only **Working Hours** are configured for every working day between 12:00 AM to 11:59 PM".
 

@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-### Overview
+### Story
 
 In this lab, you will complete a mission to enhance customer feedback collection by integrating a survey into the Webex Contact Center call flow. The lab is designed to be simple yet practical, focusing on minimal configuration within the Flow Designer, while leveraging a preconfigured survey template.
 
@@ -27,6 +27,14 @@ In this lab, you will complete a mission to enhance customer feedback collection
 >   - Use Case: Gauge long-term customer loyalty and brand advocacy.
 > </details>
 
+### Call Flow Overview
+
+1. A new call enters the flow. </br>
+2. The flow executes the logic to enable survey functionality.</br>
+3. Agent answers the call.</br>
+4. The flow triggers an event when the agent disconnects from the call.</br>
+5. The caller remains on the line and hears the survey menu.</br>
+
 ### Mission Details
 
 Your mission is to:
@@ -35,7 +43,8 @@ Your mission is to:
 2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
 3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
 
-The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
+!!! Note:
+    The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
 
 ### Pre-configured entities:        
      
