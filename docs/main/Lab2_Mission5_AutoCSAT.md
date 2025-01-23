@@ -30,7 +30,7 @@ Your mission is to:
 4. Prioritize the call if conditions match and route the call to agent.</br>
 
 
-<span style="color: red;">**[IMPORTANT]**</span> Please note that the AutoCSAT feature is still in its Beta phase and currently lacks full reporting capabilities. For instance, the data is currently stored as a string-type value, which prevents filtering in Search API requests as well as use condition function in the flow. As an added benefit, we are including the production Search API, which will be functional once the feature is fully enabled in the near future.
+<span style="color: red;">**[IMPORTANT]** Please note that the AutoCSAT feature is still in its Beta phase and currently lacks full reporting capabilities. For instance, the data is currently stored as a string-type value, which prevents filtering in Search API requests as well as use condition function in the flow. As an added benefit, we are including the production Search API, which will be functional once the feature is fully enabled in the near future.</span>
 
 !!! Note
     We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
