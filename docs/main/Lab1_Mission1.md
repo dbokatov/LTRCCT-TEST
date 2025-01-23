@@ -63,7 +63,7 @@ Flow Templates are designed to empower developers, speed up the development life
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
-7. **Edit** should be set to **ON** when you create new flow, but if not switch it from **OFF** to **ON**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+7. **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
 8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list
     
@@ -130,7 +130,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
 ### Build
 
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change the mode from **Read-only** to **Edit-on** mode
+1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change **Edit: Off** mode to **Edit: On**.
 2. Add a **Global Variable** named **Global_Language**
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
@@ -162,7 +162,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
 5. Verify if the TTS language changed
 
-### Summary
+## Summary
 This lab may feel straight forward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
 **Congratulations on completing another mission.**

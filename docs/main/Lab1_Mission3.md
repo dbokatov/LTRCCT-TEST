@@ -12,7 +12,7 @@ Imagine a customer calls to upgrade their service but faces a 20-minute wait, th
 ### Build
 We are going to extend the same flow by adding additional functionality so the caller would be offered with a callback later.
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**
+1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Edit: Off** mode to **Edit: On**
 2. Delete  connection from **Queue** node to **Music** 
 3. Drag **Menu** node:
 

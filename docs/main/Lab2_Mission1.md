@@ -34,7 +34,7 @@ Each attendee has a preconfigured Outdial Channel **<span class="attendee-id-con
     **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
 
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and change Edit mode to **On**.
+1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Edit: Off** mode to **Edit: On**.
 2. Add following 4 flow variables to your flow: 
 
     - Outdial Entry Point Variable :

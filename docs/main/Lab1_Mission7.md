@@ -63,7 +63,7 @@ The mission s designed to provide a hands-on understanding of creating Cisco Vir
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_CreateFlow.gif)  
 
-3. Make sure the Edit button at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
+3. Make sure the **Edit** mode at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activity from the left panel onto the canvas.
 
     !!! Note
         Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatability.
