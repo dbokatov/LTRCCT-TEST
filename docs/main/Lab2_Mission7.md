@@ -155,7 +155,7 @@ By the end of this lab, you will:
     > 
     > Condition : **{{ last_intent == "Book appointment" }}**
 
-7. Add **PlayMessage**: 
+7. Add **Play Message**: 
     
     > Enable Text-To-Speech
     >
@@ -165,9 +165,9 @@ By the end of this lab, you will:
     >
     > Delete the Selection for Audio File
     >
-    > Connect **True** exit path of **Condition** node created in **Step 5** to this **PlayMessage** node
+    > Connect **True** exit path of **Condition** node created in **Step 5** to this **Play Message** node
     > 
-    > Connect **PlayMessage** node to **QueueContact**
+    > Connect **Play Message** node to **Queue Contact**
     >
 
 8. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish** 

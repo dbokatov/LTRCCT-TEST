@@ -46,19 +46,19 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
 
-4. Connect **SetVariable** node to **Business Hours** and **Business Hours** node exits as follow:
+4. Connect **Set Variable** node to **Business Hours** and **Business Hours** node exits as follow:
 
     > - **Working Hours** connect to **WelcomePrompt** node
     >
-    > - **Holidays**, **Overrides** and **Default** connect to new added **PlayMessage** node.
+    > - **Holidays**, **Overrides** and **Default** connect to new added **Play Message** node.
     >
-    > - New added **PlayMessage** connect to **Disconnect** contact
+    > - New added **Play Message** connect to **Disconnect** contact
 
     ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
 
 5. Click on **Business Hours** node and select preconfigured Business Hours Entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** .
 
-6. Configure **PlayMessage** node as follows:
+6. Configure **Play Message** node as follows:
 
     > Enable Text-To-Speech
     >

@@ -39,11 +39,11 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 
 2. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
-**<span style="color: red;">DO NOT Close this Tab</span>**
+**<span style="color: red;">DO NOT close this Tab</span>**
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-3. Go back to your flow and navigate to Even Flow tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
+3. Go back to your flow and navigate to Even Flows tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
       
     > Use Authenticated Endpoint: **Off**
     >

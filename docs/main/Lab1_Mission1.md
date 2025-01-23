@@ -135,13 +135,13 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
-3. Add a **SetVariable** with following configuration. 
+3. Add a **Set Variable** with following configuration. 
 
   > Delete connection between **NewPhoneContact** and **WelcomePrompt**
   >  
-  > Connect **NewPhoneContact** to **SetVariable**
+  > Connect **NewPhoneContact** to **Set Variable**
   > 
-  > Connect **SetVariable** to **WelcomePrompt**
+  > Connect **Set Variable** to **WelcomePrompt**
   > 
   > Variable: **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span>
   > 

@@ -62,7 +62,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
     
     - **FetchFlowSettings** node is used to access external database over API and parse the result by writing response result into respective Flow Variables which have been preconfigured for you already.
     - **SetVariable_mwn** node writes complete API response into debug variable so you could see the complete API call result in Debug tool. It's been taken from **FetchFlowSettings.httpResponseBody** output variable of **FetchFlowSettings** node
-    - All **PlayMessage** and **Play Music** nodes have been preconfigured to play TTS messages taken from respective API response
+    - All **Play Message** and **Play Music** nodes have been preconfigured to play TTS messages taken from respective API response
     - **BusinessHours_os2** node set to bussinesshours variable which is your business hour entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours**
     - **QueueContact_a62** node set to queue variable which is your queue entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
     - Some **GoTo** nodes are configured to use variables and some have statice values. We will adjust them while going through further steps. 

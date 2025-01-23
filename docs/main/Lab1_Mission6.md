@@ -5,9 +5,9 @@ icon: material/medal
 
 
 !!! Note
-    Current mission does not contain any configuration steps but focused on additional Flow Designer tools that facilitate flow troubleshooting and might give you ideas of how to optimize your flow logic.
+    The current mission does not include any configuration steps, but it focuses on additional Flow Designer tools that facilitate flow troubleshooting and might provide you with ideas on how to optimize your flow logic.
 ---
-## Debug Ovewrview
+## Debug Overview
 
 The Debug Tool is an essential feature in the Webex Contact Center Flow Designer, designed to simplify troubleshooting and enhance visibility into the call flow behavior. Its importance lies in its ability to provide real-time insights, enabling administrators and developers to quickly identify and resolve issues that could impact customer experience.
 
@@ -50,7 +50,7 @@ By leveraging the **Debug Tool** effectively, you can ensure your call flows fun
 
 ---
 
-## Flow Analytics Ovewrview
+## Flow Analytics Overview
 
 Flow Analytics feature is designed to provide flow developer, administrators and supervisors with a comprehensive, graphical view of how Flow paths are being utilized across all customer interactions. This feature enables better analysis of IVR flow operations, helping to identify areas for improvement and increase self-service containment. The feature provides an aggregated view that allows users to:
 
@@ -62,7 +62,7 @@ Flow Analytics feature is designed to provide flow developer, administrators and
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 
-#### Why Flow Analytics Important?
+#### Why Flow Analytics is Important?
 
 1. **Performance Monitoring**: Tracks key metrics, such as flow usage, execution frequency, and processing times, helping you assess flow efficiency.
 
@@ -93,11 +93,11 @@ Flow Analytics feature is designed to provide flow developer, administrators and
 
 4. Drill down into specific interactions by clicking on desired node.
 
-5. If you spot any error, click on that node. In poped up **Activity Usage Details** window you can find call details: ***Interaction ID, Start and End time, Duration and cross-launch link to Debugger.***
+5. If you spot any errors, click on that node. In the popped-up Activity Usage Details window, you can find call details, including Interaction ID, Start and End time, Duration, and a cross-launch link to the Debugger.
 
     ![profiles](../graphics/Lab1/FlowAnalytics2.gif)
 
-6. Observe older flow version by selecting **Version History**. Then expand **Other Versions**. Chose anyone you like and click **View**. You might need to specify DateTime range again in case selected flow version was never executed withing selected range in **Step 2**.
+6. Observe older flow versions by selecting **Version History**. Then expand **Other Versions**. Choose anyone you like and click **View**. You might need to specify DateTime range again if the selected flow version was never executed withing the chosen range in **Step 2**.
 
     ![profiles](../graphics/Lab1/FlowAnalytics3.gif)
 

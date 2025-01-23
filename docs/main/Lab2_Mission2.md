@@ -151,7 +151,7 @@ In this task, you will enhance the functionality of the **<span class="attendee-
 
     ![profiles](../graphics/Lab2/L2M3-4.gif)
 
-6. Add **PlayMessage** and **DisconnectContact** nodes: 
+6. Add **Play Message** and **Disconnect Contact** nodes: 
     
       > Enable Text-To-Speech
       >
@@ -161,8 +161,8 @@ In this task, you will enhance the functionality of the **<span class="attendee-
       >
       > Delete the Selection for Audio File
       >
-      > Connect **True** exit path of **Condition** node created in **Step 7** to **PlayMessage** node
-      > Connect this **PlayMessage** to **DisconnectCall** node
+      > Connect **True** exit path of **Condition** node created in **Step 7** to **Play Message** node
+      > Connect this **Play Message** to **Disconnect Contact** node
 
       ![profiles](../graphics/Lab2/L2M3-5.gif)
 
@@ -178,7 +178,7 @@ In this task, you will enhance the functionality of the **<span class="attendee-
 6. Click on **Analyze** to visualy observe the call flow. Make sure you're viewing latest Published Version.
 7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
 8. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debuger. 
-9. Click on **SetVariable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the cusrrent mission configuration. 
+9. Click on **Set Variable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the cusrrent mission configuration. 
 
 ![profiles](../graphics/Lab2/L2M3-6.gif)
 

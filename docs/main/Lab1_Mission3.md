@@ -82,7 +82,7 @@ Your mission is to: </br>
     >       
     > Connect **No-Input Timeout** to the front of the **NewNumber** node
     >
-    > Connect **Unmatched Entry** to the front of the NewNumber node
+    > Connect **Unmatched Entry** to the front of the **NewNumber** node
     >   
     > Connect **Callback** from **WantCallback** node created in step 3 to **NewNumber** node
     >
@@ -94,7 +94,7 @@ Your mission is to: </br>
 
 5. Drag one more **Menu** node
     
-    > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="BlaBlaBla"><span class="copy"></span></span>
+    > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="VerifyNumber"><span class="copy"></span></span>
     >
     > Enable Text-To-Speech
     >
@@ -102,8 +102,7 @@ Your mission is to: </br>
     >
     > Click the Add Text-to-Speech Message button and paste text: ***You entered*** *{{NewNumber.DigitsEntered}}****. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" data-copy-text="You entered {{NewNumber.DigitsEntered}}. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy" title="Click to copy!"></span></span>
     >
-    > Delete the Selection for Audio File
-    >
+    > Delete the selection for Audio File
     >    
     > Custom Menu Links:
     >>
@@ -129,25 +128,25 @@ Your mission is to: </br>
     > Callback Queue:
     >> Static Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     > 
-    > Callback ANI: Choose any number from dropdownlist.
+    > Callback ANI: Choose any number from dropdown list.
     > 
     > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
 
 
 
 
-7. Add **PlayMessage** node as follows:
+7. Add **Play Message** node as follows:
     
     > Enable Text-To-Speech
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **You call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
+    > Click the Add Text-to-Speech Message button and paste text: **Your call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
     >
     > Delete the Selection for Audio File
     >
-    > Connect **CallBack** created in step 6 to **PlayMessage** node
-    > Connect **PlayMessage** created in step 6 to **DisconnectCall** node
+    > Connect **CallBack** created in step 6 to **Play Message** node
+    > Connect **Play Message** created in step 6 to **Disconnect Contact** node
     
     ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
 
@@ -158,13 +157,13 @@ Your mission is to: </br>
     
 ### Testing
     
-1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+1. Make sure you're logged into the Webex CC Desktop application as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
 2. Make a call to the Support Number and if success you should hear configured messages.
 
 3. When callback is proposed, press 1 on Webex App DialPad to request a callback. 
 
-4. When asked, provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use DialPad to provide Cisco TAC number then confirm when asked.
-3. Once done another message about successful scheduling should play.
+4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the DialPad to provide the Cisco TAC number, then confirm when asked.
+3. Once done, another message about successful scheduling should play.
 4. Make your agent **Available**. Contact Center will reserve you right away and propose to answer a callback call.
 
 **Congratulations on completing another mission.**

@@ -94,17 +94,17 @@ Your mission is to:
     >
     > Set Value: **true**
     > 
-    > Delete connection between **NewPhoneContact** and **SetVariable** on which we configured Language while doing the Main Lab.
+    > Delete connection between **NewPhoneContact** and **Set Variable** on which we configured Language while doing the Main Lab.
     >
     > Connect **NewPhoneContact** to the front of the **FeedbackSet** node
     >
-    > Connect **FeedbackSet** to the front of the **SetVariable** node
+    > Connect **FeedbackSet** to the front of the **Set Variable** node
 
     ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
 4. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
 
-5. Drag **FeedbackV2**, **PlayMessage** and **DisconnectContact**
+5. Drag **FeedbackV2**, **Play Message** and **DisconnectContact**
     
     **FeedbacV2**
     
@@ -116,7 +116,7 @@ Your mission is to:
     >
     > Connect **FeedbackV2** Undefined Error to **Play Message** node
             
-    **PlayMessage**
+    **Play Message**
     
     > Enable Text-To-Speech
     >
@@ -124,9 +124,9 @@ Your mission is to:
     >
     > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy-static" title="Click to copy!" data-copy-text="Something went wrong on Feedback node. Please call later."><span class="copy"></span></span>
     >
-    > Delete the Selection for Audio File
+    > Delete the selection for Audio File
     >
-    > Connect **PlayMessage** created to **DisconnectCall** node
+    > Connect **Play Message** created to **Disconnect Contact** node
     >       
 
     ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
@@ -139,9 +139,9 @@ Your mission is to:
 2. Make a test call to the Support Number and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 
 4. Now the caller should hear prompts configured in **PCS-2025**. Complete the survey.
-5. To check Survey responses got to ***Control Hub -> Contact Center -> Surveys***. For **PCS-2025** click on Download and select Survey response period get a CSV file with provided answers.
+5. To check survey responses, go to ***Control Hub -> Contact Center -> Surveys***. For **PCS-2025** click on **Download**, and get a CSV file with the provided answers.
     
     !!! Note
-        If you create your own Survey as described in Optional section of this mission you might not see Survey response immediately as it has delay in edited surveys
+        If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
         
 **Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**

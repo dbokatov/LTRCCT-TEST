@@ -49,15 +49,15 @@ This lab is designed to provide an in-depth understanding of the Webex AI Agents
     <!-- md:option type:note -->
     
     !!! note "Sample Conversation"
-        **AI Agent**: Welcome to Cumulus Healthcare. How may I assist you today?
-        **You**: "I would like to cancel an appointment"
-        **AI Agent**: Please provide the patient's 6-digit insurance number.
-        **You**:"123456"   
-        **AI Agent**: Please provide your 10-digit phone number.
-        **You**:"0123456789"
-        **AI Agent**: You have an appointment on 20/01/2025 at 15:00. Would you like to cancel it?
-        **You**:"yes"
-        **AI Agent**: Your appointment for 20/01/2025 at 15:00 is cancelled.
+        **AI Agent**: Welcome to Cumulus Healthcare. How may I assist you today?</br>
+        **You**: "I would like to cancel an appointment"</br>
+        **AI Agent**: Please provide the patient's 6-digit insurance number.</br>
+        **You**:"123456"</br>
+        **AI Agent**: Please provide your 10-digit phone number.</br>
+        **You**:"0123456789"</br>
+        **AI Agent**: You have an appointment on 20/01/2025 at 15:00. Would you like to cancel it?</br>
+        **You**:"yes"</br>
+        **AI Agent**: Your appointment for 20/01/2025 at 15:00 is cancelled.</br>
 
     ![Profiles](../graphics/Lab1/L1M6_TaskBot_Preview.gif)  
 
@@ -113,7 +113,7 @@ This lab is designed to provide an in-depth understanding of the Webex AI Agents
 
 #### Updating Bot Responses
 
-In this Step We will learn how to update bot responses and test these changes both in preview mode and by making a live call, Testing in preview mode allowed you to ensure the changes worked as expected, while making a live call confirmed the bot's performance in a real-world scenario.
+In this step, we will learn how to update bot responses and test these changes, both in preview mode and by making a live call. Testing in preview mode allows you to ensure the changes worked as expected, while making a live call confirms the bot's performance in a real-world scenario.
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
@@ -236,7 +236,7 @@ In this step, we will learn how to enhance the bot's capabilities by adding trai
 
 #### Bot Transcripts & Analytics
 
-In this Step We will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
+In this step, we will explore how to access and analyze bot transcripts and analytics to gain insights into user interactions.
 
 1. Click on **Sessions** in the left-hand panel of your bot builder interface to view all the call history. Click on any Session ID to delve into a more detailed analysis of that particular interaction.
 
