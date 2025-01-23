@@ -36,6 +36,8 @@ Your mission is to:
 4. Simulate a real API server. You will use [**MockAPI**](https://mockapi.io/){:target="_blank"} to retrieve the Outdial channel ID and the target callback number. The retrieved Outdial channel ID will then be used in the Callback API POST request.
 
 > **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+>
+> We are starting to use Webex Contact Center APIs in this mission. More information can be found in the [**Webex Contact Center for Developers**](https://developer.webex-cx.com/){:target="_blank"} portal.
 > 
 > For more information of how you can use MockAPI please watch these Vidcasts: 
 [**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
@@ -123,6 +125,8 @@ Your mission is to:
     >
     > Path Expression: **$[0].outboundcallbackep**<span class="copy-static" data-copy-text="$[0].outboundcallbackep"><span class="copy" title="Click to copy!"></span></span>
     >
+    > Click **Add New**
+    >
     > Output Variable: **customani**<span class="copy-static" data-copy-text="customani"><span class="copy" title="Click to copy!"></span></span>
     >
     > Path Expression: **$[0].tacnumber**<span class="copy-static" data-copy-text="$[0].tacnumber"><span class="copy" title="Click to copy!"></span></span>
@@ -185,7 +189,7 @@ Your mission is to:
     ![profiles](../graphics/Lab2/AM2_SimulateGlobalError.gif)    
 
 7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
-8. Add **HTTP Request** node to the flow
+8. Add **HTTP Request** node to the flow. In this step we are going to build a **Create Task** API POST request. See [**Create Task API**](https://developer.webex-cx.com/documentation/tasks/v1/create-task){:target="_blank"} for details.
 
     > Activity Label: **CallBackAPI_HTTPRequest**<span class="copy-static" data-copy-text="CallBackAPI_HTTPRequest"><span class="copy" title="Click to copy!"></span></span>
     >

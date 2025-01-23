@@ -31,48 +31,65 @@ In this mission we are going to create a control script for Supervisors that cha
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
 
 
-2. Create a new flow with a name **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+2. Create a new flow by navigating to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+3. Select **Start Fresh** and give it a name **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click **Create Flow**.
     
-3. Add a **Collect Digits** node:
+4. Add a **Collect Digits** node:
     
     > Rename node to **CollectPIN**
     >
     > Connect the **New Phone Contact** output node edge to this **Collect Digits** node
     >
-    > Loop No-Input Timeout and Unmatched Entry to itself
+    > Loop **No-Input Timeout** and **Unmatched Entry** to itself
     >
     > Enable Text-To-Speech
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button
+    > Click the **Add Text-to-Speech Message** button
     >
     > Delete the Selection for Audio File
     >
     > Text-to-Speech Message: ***Please enter 4 digits pin code to activate emergency flow.***<span class="copy-static" data-copy-text="Please enter 4 digits pin code to activate emergency flow."><span class="copy" title="Click to copy!"></span></span>
     >
     > Set checkbox in **Make Prompt Interruptible**
-    
+    >
+    > Advanced Settings:
+    >>
+    >> No-Input Timeout: 3 
+    >>
+    >> Inter-Digit Timeout: 3
+    >>
+    >> Minimum Digits: 1
+    >>
+    >> Maximum Digits: 10
+    >>
+
     ![Profiles](../graphics/Lab2/BM1-3-Collect_PIN.gif)
 
     
-4. Add **Condition Node** and rename it to **PIN_Check**
-
+5. Add **Condition** node
+  
+    > Activity Label: **PIN_Check**<span class="copy-static" data-copy-text="PIN_Check"><span class="copy" title="Click to copy!"></span></span>
+    >
     > Connect the output node edge from the **Collect Digits** node to this node
     >
-    > In the Expression section write an expresion ***{{ CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{ CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
+    > In the Expression section write an expresion ***{{CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
     
     <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
         
     ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
     
-5. Add **HTTP Request** node to the flow and rename it to **HTTP_PUT**
+6. Add **HTTP Request** node. We are going to use {**Update Global Variable API PUT**](https://developer.webex-cx.com/documentation/global-variables/v1/update-global-variables){:target="_blank"} request in the node configuration. 
 
+    > 
+    > Activity Label: **HTTP_PUT**<span class="copy-static" data-copy-text="HTTP_PUT"><span class="copy" title="Click to copy!"></span></span>
+    > 
     > Connect the **TRUE** output edge from the **PIN_Check** node to this node
     > 
     > Connector: **WxCC_API**
     >
-    > Request Path: **/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/*{ID}***<span class="copy-static" data-copy-text="/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/{ID}"><span class="copy" title="Click to copy!"></span></span> - change ***{ID}*** with Global Variable ID you created in **Step 2** of this mission.
+    > Request Path: **/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/*{ID}***<span class="copy-static" data-copy-text="/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/cad-variable/{ID}"><span class="copy" title="Click to copy!"></span></span> - change ***{ID}*** with Global Variable ID you created in **Step 1** of this mission.
     >
     > Method: **PUT**
     >
@@ -101,8 +118,11 @@ In this mission we are going to create a control script for Supervisors that cha
     ![Profiles](../graphics/Lab2/BM1-6-HTTPReq.gif)
 
     
-6. Add one more **Condition Node** and rename it to **HTTPStatusCode**. In this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
+7. Add one more **Condition Node**. In this node we are going to check the status of our API PUT request. If it is **200 OK** the output will be **True** and if other than **200** then **False**.
     
+    >
+    > Activity Label: **HTTPStatusCode**<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
+    > 
     > Connect the output node edge from the **HTTP_PUT** node to this node
     >
     > In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 200}}"><span class="copy" title="Click to copy!"></span></span>
@@ -110,7 +130,7 @@ In this mission we are going to create a control script for Supervisors that cha
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
 
     
-7. Add a **Play Message** node 
+8. Add a **Play Message** node 
     
     > Connect the **HTTPStatusCode** TRUE output node edge to this **Play Message** node
     >
@@ -118,7 +138,7 @@ In this mission we are going to create a control script for Supervisors that cha
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button
+    > Click the **Add Text-to-Speech Message** button
     >
     > Delete the Selection for Audio File
     >
@@ -126,7 +146,7 @@ In this mission we are going to create a control script for Supervisors that cha
     
     ![Profiles](../graphics/Lab2/BM1-9-PlayOK.gif)
     
-8. Add another **Play Message** node
+9. Add another **Play Message** node
 
     > Connect the **HTTPStatusCode** FALSE output node edge to this **Play Message** node
     >
@@ -136,7 +156,7 @@ In this mission we are going to create a control script for Supervisors that cha
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button
+    > Click the **Add Text-to-Speech Message** button
     >
     > Delete the Selection for Audio File
     >
@@ -144,12 +164,12 @@ In this mission we are going to create a control script for Supervisors that cha
     
     ![Profiles](../graphics/Lab2/BM1-8-PlayNotOK.gif)
     
-9. Add **Disconnect Contact**
+10. Add **Disconnect Contact**
 
     > Connect both **Play Message** nodes created in **Steps 8** and **9** to this node
     
 
-10. Publish your flow
+11. Publish your flow
 
     > Turn on Validation at the bottom right corner of the flow builder
     >
@@ -161,7 +181,7 @@ In this mission we are going to create a control script for Supervisors that cha
     >
     > Click **Publish Flow**
     
-11. Map your flow to your inbound channel
+12. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
     > 
@@ -198,7 +218,7 @@ In this mission we are going to create a control script for Supervisors that cha
     > 
     > Connect the output False node edge from the **Condition** Node to **Set Variable**
     > 
-    > **[Copy doesn't work. to fix]** In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
+    > In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
             
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
         
@@ -209,7 +229,7 @@ In this mission we are going to create a control script for Supervisors that cha
     
     > Connect the **TRUE** output node edge of the **Condition Node** node to this node
     > 
-    > Connect the output node edge of **Play Message** node to **DiscinnectContact node**.
+    > Connect the output node edge of **Play Message** node to **Disconnect Contact** node.
     > 
     > Enable Text-To-Speech
     > 

@@ -8,18 +8,25 @@ icon: material/medal
 # Mission 2: Preventing Callback duplication
 
 > !!! Note
-      This task relies on completing Mission 2 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
+      This task relies on completing Mission 3 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
 
 
 ## Story 
+If a caller who already has a scheduled callback contacts the contact center again to request another callback, our system can recognize this. It will then notify the caller that a callback is already scheduled and will be completed as soon as the next agent becomes available.
 
 ### Call Flow Overview
+A new call from a caller, who already has a scheduled callback, enters the flow.
+The flow executes the logic configured in previous missions.
+The call is routed to the appropriate queue, but no agents are available.
+Since no agents are available, a callback option is offered to the caller.
+Once the caller requests for a callback, IVR replies that calback has been scheduled already.
+
 ### Mission Details
 
 Your mission is to:
 
 1. Enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
-
+2. Use **Search API** request to fetch the data from Analyzer database. For more details see [**Search API**](https://developer.webex-cx.com/documentation/search/v1/search-tasks){:target="_blank"} for details.
 
 
 ## Build
@@ -57,12 +64,12 @@ Your mission is to:
 
       ![profiles](../graphics/Lab2/L2M3-1.gif)
 
-3. Add an **HTTP Request** node for our query
+3. Add an **HTTP Request** node for our query as shown in the following video.
     
     >
-    > Connect VeriNumber Option 1 to this HTTP node
+    > Connect **VerifyNumber** Option 1 to this HTTP node
     >
-    > We will connct HTTP node in next step
+    > We will connect this **HTTP Request** node in next step
     >
     > Activity Label: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -119,11 +126,14 @@ Your mission is to:
     > - Content Type: JSON
     > - Output Variable: `callbackStatus`<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackStatus`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackStatus"><span class="copy" title="Click to copy!"></span></span>
-    > - Add New Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Click **Add New**
+    > 
+    > Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
     >
       ![profiles](../graphics/Lab2/L2M3-2.gif)
----
+---     
 
 4. Add **Set Veriable** node
     
@@ -134,7 +144,7 @@ Your mission is to:
     >
     > Variable: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
+    > Set To Variable: **HTTPRequest_CallBackSearch.httpResponseBody**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
     ![profiles](../graphics/Lab2/L2M3-3.gif)
 
@@ -164,7 +174,7 @@ Your mission is to:
       >
       > Select the Connector: **Cisco Cloud Text-to-Speech**
       >
-      > Click the Add Text-to-Speech Message button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
+      > Click the **Add Text-to-Speech Message** button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
       >
       > Delete the Selection for Audio File
       >

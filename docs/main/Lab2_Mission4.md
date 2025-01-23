@@ -46,19 +46,17 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![Profiles](../graphics/Lab1/1-CH_Login.gif)
 
-2. This is the Administration interface for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
+2. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+3. New Tab will be opened. Navigate to **Flow Templates**
 
-4. New Tab will be opened. Navigate to **Flow Templates**
+4. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
-5. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
-
-6. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow
+5. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow
 
     ![Profiles](../graphics/Lab2/BM2_2-7_DynFlowCreate.gif)
 
-7. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
+6. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
     
     - **FetchFlowSettings** node is used to access external database over API and parse the result by writing response result into respective Flow Variables which have been preconfigured for you already.
     - **SetVariable_mwn** node writes complete API response into debug variable so you could see the complete API call result in Debug tool. It's been taken from **FetchFlowSettings.httpResponseBody** output variable of **FetchFlowSettings** node
@@ -69,7 +67,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
 
-8. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
+7. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
     ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
  
@@ -96,42 +94,42 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
     > ![Profiles](../graphics/Lab2/BM2-9-10-JSONPath.gif)
     > </details>
 
-9. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
+8. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
  
     ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
 
-10. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
+9. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
-12. Open **GoTo_x19** node and set:
+10. Open **GoTo_x19** node and set:
 
     > Destination Type: **Flow**
     >
     > Static Flow
     >
-    > Flow: **CCBU_ErrorHandling_Flow**
+    > Flow: **CLTS_ErrorHandling_Flow**
     >
     > Choose Version Label: **Latest**
     
-13. Open **GoTo_8ca** and set:
+11. Open **GoTo_8ca** and set:
 
     > Destination Type: **Entry Point**
     >
     > Static Entry Point
     >
-    > Entry Point: **CCBU_ErrorHandling_Channel**
+    > Entry Point: **CLTS_ErrorHandling_Channel**
 
  
-14. Repeat node settings in **Step 14** for **GoTo_uyn**
+12. Repeat node settings in **Step 14** for **GoTo_uyn**
 
-15. Repeat node settings in **Step 15** for **GoTo_dbr**
+13. Repeat node settings in **Step 15** for **GoTo_dbr**
 
     ![Profiles](../graphics/Lab2/BM2-11-15-FallbackQ.gif)
 
-16. **Validate** and **Publish** flow
+14. **Validate** and **Publish** flow
 
-17. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
+15. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
 
-18. Map your flow to your inbound channel
+16. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
     > 
@@ -156,7 +154,7 @@ You will learn how to use **Dynamic Variables** in multiple nodes including **Go
 
     ![profiles](../graphics/Lab1/5-Agent_Login.gif)
 
-4. Make your agent Available and you're ready to make a call. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
+4. Change the status of your agent to **Available** and make a call to test you flow. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
