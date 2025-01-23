@@ -3,7 +3,7 @@
 icon: material/medal
 ---
 
-## Using Business Hours in Your Flow to add flexibility
+## Using Business Hours in your Flow to add flexibility
 
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
