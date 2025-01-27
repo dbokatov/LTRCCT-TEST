@@ -104,12 +104,12 @@ nav:
       ## - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
   - Basic Track:
       - Lab Guide:
-            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1_Mission1.md
-            - "Mission 2: Using Business Hours to add flexibility": ./main/Lab1_Mission2.md
-            - "Mission 3: Adding Call-back functionality to your flow": ./main/Lab1_Mission3.md
-            - "Mission 4: Work with Event Flow": ./main/Lab1_Mission4.md
-            - "Mission 5: Post Call Survey": ./main/Lab1_Mission5.md
-            - "Mission 6: Using Flow Designer Tools": ./main/Lab1_Mission6.md
+            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CoreTrack_Mission1.md
+            - "Mission 2: Using Business Hours to add flexibility": ./main/CoreTrack_Mission2.md
+            - "Mission 3: Adding Call-back functionality to your flow": ./CoreTrack_Mission3.md
+            - "Mission 4: Work with Event Flow": ./main/CoreTrack_Mission4.md
+            - "Mission 5: Post Call Survey": ./main/CoreTrack_Mission5.md
+            - "Mission 6: Using Flow Designer Tools": ./main/CoreTrack_Mission6.md
       - Conclusion: ./main/Lab1_Conclusion.md
   - Callback Track:
       - Lab Guide:
