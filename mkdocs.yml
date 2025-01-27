@@ -102,7 +102,7 @@ nav:
       - Chrome and Webex App Setup: ./main/Browser_and_Desktop_Setup.md 
       - Choose Your Adventure: ./main/Choose_Your_Adventure.md
       ## - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
-  - Core Track:
+  - CORE TRACK:
       - Lab Guide:
             - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CoreTrack_Mission1.md
             - "Mission 2: Using Business Hours to add flexibility": ./main/CoreTrack_Mission2.md
@@ -111,14 +111,14 @@ nav:
             - "Mission 5: Post Call Survey": ./main/CoreTrack_Mission5.md
             - "Mission 6: Using Flow Designer Tools": ./main/CoreTrack_Mission6.md
       - Conclusion: ./main/CoreTrack_Conclusion.md
-  - Callback Track:
+  - CALLBACK TRACK:
       - Lab Guide:
             - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission1
             - "Mission 2: Adding Call-back functionality to your flow": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
       - Conclusion: ./main/CallbackTrack_Conclusion.md
-  - API Track:
+  - API TRACK:
       - Lab Guide:
             ##- "Advacned Call Routing and Flow Simplification by using API Integration Overview": ./main/Lab2.md
             - "Mission 1: Emergency config change": ./main/APITrack_Mission1.md
@@ -126,7 +126,7 @@ nav:
             - "Mission 3: Last Agent Routing": ./main/APITrack_Mission3.md
             - "Mission 4: Routing Returning Callers": ./main/APITrack_Mission4.md
       - Conclusion: ./main/APITrack_Conclusion.md
-  - AI Agent track:
+  - AI AGENT TRACK:
       - Lab Guide:
             - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
             - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
