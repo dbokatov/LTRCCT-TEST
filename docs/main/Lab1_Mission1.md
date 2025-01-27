@@ -1,6 +1,11 @@
 ---
 #icon: material/folder-open-outline
-icon: material/medal
+icon: material/checkbox
+---
+
+<!-- Replace the medal icon with a checkbox -->
+<input type="checkbox" id="user-checkbox" name="user-checkbox">
+<label for="user-checkbox">Select this option</label>
 ---
 
 !!! Note
