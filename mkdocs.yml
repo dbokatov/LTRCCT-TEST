@@ -102,7 +102,7 @@ nav:
       - Chrome and Webex App Setup: ./main/Browser_and_Desktop_Setup.md 
       - Choose Your Adventure: ./main/Choose_Your_Adventure.md
       ## - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
-  - Fundamental Labs:
+  - Basic Track:
       - Lab Guide:
             - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1_Mission1.md
             - "Mission 2: Using Business Hours to add flexibility": ./main/Lab1_Mission2.md
@@ -110,20 +110,29 @@ nav:
             - "Mission 4: Work with Event Flow": ./main/Lab1_Mission4.md
             - "Mission 5: Post Call Survey": ./main/Lab1_Mission5.md
             - "Mission 6: Using Flow Designer Tools": ./main/Lab1_Mission6.md
-            - "Mission 7: AI in Action (Scripted Agent)": ./main/Lab1_Mission7.md
-            - "Mission 8: AI in Action (Autonomous Agent)": ./main/Lab1_Mission8.md
       - Conclusion: ./main/Lab1_Conclusion.md
-  - Advanced Labs:
+  - Callback Track:
+      - Lab Guide:
+            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/Lab1_Mission1.md
+            - "Mission 2: Using Business Hours to add flexibility": ./main/Lab1_Mission2.md
+            - "Mission 3: Adding Call-back functionality to your flow": ./main/Lab1_Mission3.md
+            - "Mission 4: CallBack on Global Error": ./main/Lab2_Mission1.md
+            - "Mission 5: Preventing Callback duplication": ./main/Lab2_Mission2.md
+      - Conclusion: ./main/Lab1_Conclusion.md
+  - API Track:
       - Lab Guide:
             ##- "Advacned Call Routing and Flow Simplification by using API Integration Overview": ./main/Lab2.md
-            - "Mission 1: CallBack on Global Error": ./main/Lab2_Mission1.md
-            - "Mission 2: Preventing Callback duplication": ./main/Lab2_Mission2.md
-            - "Mission 3: Emergency config change": ./main/Lab2_Mission3.md
-            - "Mission 4: Routing facilitation": ./main/Lab2_Mission4.md 
-            - "Mission 5: Last Agent Routing": ./main/Lab2_Mission5_AutoCSAT.md
-            - "Mission 6: Routing Returning Callers": ./main/Lab2_Mission6.md
-            - "Mission 7: Seamless AI to Human Agent Handoffs": ./main/Lab2_Mission7.md
+            - "Mission 1: Emergency config change": ./main/Lab2_Mission3.md
+            - "Mission 2: Routing facilitation": ./main/Lab2_Mission4.md 
+            - "Mission 3: Last Agent Routing": ./main/Lab2_Mission5.md
+            - "Mission 4: Routing Returning Callers": ./main/Lab2_Mission6.md
       - Conclusion: ./main/Lab2_Conclusion.md
+  - AI Agent track:
+      - Lab Guide:
+            - "Mission 1: AI in Action (Scripted Agent)": ./main/Lab1_Mission7.md
+            - "Mission 2: Seamless AI to Human Agent Handoffs": ./main/Lab2_Mission7.md
+            - "Mission 3: AI in Action (Autonomous Agent)": ./main/Lab1_Mission8.md
+      - Conclusion: ./main/Lab1_Conclusion.md
   - Quick Links: quicklinks.md
   - Ask a Question<i class="fa-solid fa-hand" style="color:#63E6BE;"></i>: slido-QA-iFrame.md
 
