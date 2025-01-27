@@ -113,7 +113,7 @@ nav:
       - Conclusion: ./main/CoreTrack_Conclusion.md
   - Callback Track:
       - Lab Guide:
-            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CCallbackTrack_Mission1.md ## Same as CoreTrack Mission1
+            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission1
             - "Mission 2: Adding Call-back functionality to your flow": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
