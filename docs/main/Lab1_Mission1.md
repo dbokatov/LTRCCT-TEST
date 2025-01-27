@@ -1,6 +1,6 @@
 ---
 #icon: material/folder-open-outline
-icon: material/checkbox
+icon: material/medal
 ---
 
 !!! Note
