@@ -20,7 +20,7 @@ In this mission we are going to create a control script for Supervisors that cha
 2. If the PIN correct, a PUT API request will be triggered to change a Global Variable default setting from **False** to **True**.
 3. A caller makes a call to contact center where **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** checks the global variable and transfer the call further based on settings.
 
-### Mission Details
+## Mission Details
 
 Your mission is to:
 

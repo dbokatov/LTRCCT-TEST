@@ -12,14 +12,14 @@ An Event Flow in Webex Contact Center is a workflow triggered by specific events
 Event flows enable a wide range of scenarios, with one common use case being the ability to update an external database with data collected during a call—either from the IVR or through interaction with a live agent.
 
 
-### Call Flow Overview
+## Call Flow Overview
 
 1. A new call enters the flow. </br>
 2. The flow executes the logic configured in previous steps.</br>
 3. When the agent answers the call, they receive a screen pop and can adjust call details on the interaction panel.</br>
 4. The flow triggers an event when the agent disconnects from the call.</br>
 
-### Mission Details
+## Mission Details
 
 1. Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** </br>
 2. Configure a screen pop in your flow.</br>
@@ -28,7 +28,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 !!! Note
     In this mission, we’ll utilize **[Webhook.site](https://webhook.site/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
 
-### Configuration
+## Configuration
 
 !!! Note
     The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. You <span style="color: red;">**DO NOT**</span> need to modify it here.
@@ -81,7 +81,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
     
-### Testing
+## Testing
     
 1. Make sure you're logged into Webex CC Desktop application as Agent **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and set status to **Available**.
 2. Make a call to the Support Number and if success you should hear Welcome message and then accept the call by agent.

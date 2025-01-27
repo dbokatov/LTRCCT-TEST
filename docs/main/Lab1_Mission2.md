@@ -8,14 +8,14 @@ icon: material/medal
 Business Hours allows you to configure the operational hours of the contact center, offering an enhanced experience in routing strategy configuration and simplifying the routing flow for improved efficiency and customer satisfaction. 
 
 
-### Call Flow Overview
+## Call Flow Overview
  
 1. A new call enters the flow. </br>
 2. The flow determines the caller's language preference and plays a pre-configured Text-to-Speech (TTS) prompt. </br>
 3. The flow determines whether it is currently within working hours and routes the call appropriately.</br>
 4. The call is routed to the appropriate queue. </br>
 
-### Mission Details
+## Mission Details
 
 Your mission is to:
 
@@ -29,7 +29,7 @@ Your mission is to:
     
      -  **Overrides** - Configure working hours for special cases, such as emergencies or occasions like Christmas, when the contact center operates for additional hours.
 
-### Build
+## Build
 
 1. Switch to **Control Hub** and navigate to **Business Hours** under Customer Experience section. Locate your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>**. You will see that currently only **Working Hours** are configured for every working day between 12:00 AM to 11:59 PM".
 
@@ -83,7 +83,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-### Testing
+## Testing
 
 1. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration. Make sure you hear the message we set in ***Step 6***.
 

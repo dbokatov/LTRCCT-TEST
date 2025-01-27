@@ -10,7 +10,7 @@ Callback functionality is an essential feature in a modern contact center, provi
 Imagine a customer calls to upgrade their service but faces a 20-minute wait, they can request a callback instead of staying on hold. If no agents are available, they’ll be offered the choice to remain in the queue or opt for a callback. Upon choosing the callback, they provide their number, which is validated, and the system schedules the call. Once an agent is free, the system connects with the customer. This ensures businesses retain leads while providing a seamless customer experience.
 
 
-### Call Flow Overview
+## Call Flow Overview
 
 1. A new call enters the flow. </br>
 2. The flow executes the logic configured in previous steps.</br>
@@ -26,7 +26,7 @@ Your mission is to: </br>
 2. Add aditional callback functionality to your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
 
 
-### Build
+## Build
 
 1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Edit: Off** mode to **Edit: On**
 2. Delete  connection from **Queue** node to **Music** 
@@ -155,7 +155,7 @@ Your mission is to: </br>
 8. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
 
     
-### Testing
+## Testing
     
 1. Make sure you're logged into the Webex CC Desktop application as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
 2. Make a call to the Support Number and if success you should hear configured messages.
