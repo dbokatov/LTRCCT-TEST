@@ -18,7 +18,7 @@ Imagine a customer calls to upgrade their service but faces a 20-minute wait, th
 4. Since no agents are available, a callback option is offered to the caller.</br>
 5. Once an agent becomes available, the callback is initiated to the provided number.</br>
 
-### Mission Details
+## Mission Details
 
 Your mission is to: </br>
 

@@ -28,7 +28,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 !!! Note
     In this mission, we’ll utilize **[Webhook.site](https://webhook.site/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
 
-## Configuration
+## Build
 
 !!! Note
     The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. You <span style="color: red;">**DO NOT**</span> need to modify it here.
