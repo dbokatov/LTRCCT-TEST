@@ -18,31 +18,31 @@ Here’s what you need to know:
   >
   > Take a moment to review the tracks, choose the ones that excite you, and dive in. This is your adventure—make it unforgettable!
 
-There’s no set order—start with any track that interests you most!
+There’s no set order—start with any track that interests you most but we recommend to start from **Core Track**! 
 
 ## Track 1: Basic Track
 
 This track introduces the fundamental features of Flow Designer. Participants will explore flow templates, business hours, and event flows while learning to utilize additional tools like the Debugger and Analyzer.
 
-![profiles](../graphics/overview/Track_1.png)
+![profiles](../graphics/overview/CoreTrack.png)
 
 ## Track 2: CallBack Track
 
 The Callback track includes a series of labs focused on various callback scenarios. It begins with basic callback configuration and progresses to advanced GraphQL techniques to eliminate duplicate callbacks.
 
-![profiles](../graphics/overview/Track_2.png)
+![profiles](../graphics/overview/CallBackTrack.png)
 
 ## Track 3: API Track
 
 In this track, participants will work on customizing flows using a variety of API requests to interact with different data sources.
 
-![profiles](../graphics/overview/Track_3.png)
+![profiles](../graphics/overview/APITrack.png)
 
 ## Track 4: AI Agent Track
 
 Although the smallest, but challenging track. It involves configuring Cisco’s native AI agent (bot) and integrating it with Flow Designer to enable flow customization.
 
-![profiles](../graphics/overview/Track_4.png)
+![profiles](../graphics/overview/AITrack.png)
 
 
 <script src='../template_assets/load.js'><script>
