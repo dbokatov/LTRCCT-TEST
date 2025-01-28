@@ -20,7 +20,7 @@ Here’s what you need to know:
 
 There’s no set order—start with any track that interests you most but we recommend to start from **Core Track**! 
 
-## Track 1: Basic Track
+## Track 1: Core Track
 
 This track introduces the fundamental features of Flow Designer. Participants will explore flow templates, business hours, and event flows while learning to utilize additional tools like the Debugger and Analyzer.
 

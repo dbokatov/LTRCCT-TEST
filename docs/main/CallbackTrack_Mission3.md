@@ -28,11 +28,9 @@ Your mission is to:
 
 1. Simulate a global error scenario to trigger a Global Error Event and initiate a workflow to reconnect with a caller whose call was disconnected due to an undefined error. </br>
 2. Configure an API POST request to schedule a callback when global error happens. You cannot rely on the Callback node in Main Flow because the call leg is no longer active after termination. Instead, you must design a custom solution to address this limitation.</br>
-3. You do not need to configure Outdial Channel and Ourdial Queue as they have been preconfigured for you:
-  - 
-  - **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** 
-  - 
-  - Outdial queue **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** to which your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** has been assigned. </br>
+3. You do not need to configure Outdial Channel and Ourdial Queue as they have been preconfigured for you: </br>
+    - **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** </br>
+    - Outdial queue **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** to which your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** has been assigned. </br>
 4. Simulate a real API server. You will use [**MockAPI**](https://mockapi.io/){:target="_blank"} to retrieve the Outdial channel ID and the target callback number. The retrieved Outdial channel ID will then be used in the Callback API POST request.
 
 > **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
