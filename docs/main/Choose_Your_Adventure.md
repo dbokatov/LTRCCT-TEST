@@ -18,7 +18,7 @@ Here’s what you need to know:
   >
   > Take a moment to review the tracks, choose the ones that excite you, and dive in. This is your adventure—make it unforgettable!
 
-There’s no set order—start with any track that interests you most but we recommend to start from **Core Track**! 
+There’s no set order—start with any track that interests you most, but we recommend starting with the **Core Track**. One of the missions contains information you are going to use on the final troubleshooting task, which we will complete as the last mission.
 
 ## Track 1: Core Track
 
