@@ -217,7 +217,7 @@ Your mission is to:
     >
     > Select **Build Expression**
     >
-    Expression: `{{agentid is empty}}`<span class="copy-static" data-copy-text="{{ agentid is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{ agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Change **Case 0** to **true**
     >
