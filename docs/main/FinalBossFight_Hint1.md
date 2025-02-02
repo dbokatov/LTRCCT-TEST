@@ -18,7 +18,7 @@ icon: material/bullseye-arrow
 
   - Open Chrome browser and past your URL. You should get the follwoing result
   
-  ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+  ![Profiles](../graphics/Lab2/TshootHint-Chrometest.gif)
   
   - Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
   
@@ -28,6 +28,6 @@ icon: material/bullseye-arrow
   
   - In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
  
-![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+![Profiles](../graphics/Lab2/TshootHint-JSONPath.gif)
 
 <script src='../template_assets/load.js'><script>
