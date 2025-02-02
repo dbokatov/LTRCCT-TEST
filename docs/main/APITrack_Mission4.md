@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 6: Routing Returning Callers
+# Mission 4: Routing Returning Callers
 
 !!! Note
     We are intentionally adding a bit of complexity to this lab by removing GIFs and screenshots. This approach will help you gain a deeper understanding of how to build and configure Webex Contact Center logic.

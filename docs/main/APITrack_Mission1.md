@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 3: HTTP API POST to Control Hub (Emergency config change)
+# Mission 1: HTTP API POST to Control Hub (Emergency config change)
 
 ## Story
 
