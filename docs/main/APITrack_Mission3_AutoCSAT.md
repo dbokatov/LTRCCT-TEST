@@ -10,16 +10,19 @@ icon: material/medal
 ## Story
 A common request for returning customers calling into a contact center is to work with the last person with which they had a good experience.  This may be because they are already familiar with what the customer needs or it may just be that the customer is familiar with the agent and enjoyed their last interaction. With the new Auto CSAT feature in the Webex Contact Center we can automatically account for this request and route to the last agent which had a high Auto CSAT with the customer.  
 
-!!! Note
-    Since this is a lab environment where you will act as both the customer and the agent, it would be challenging to accurately score a call under these conditions. Therefore, AutoCSAT is set to a default value of 4. In a production environment, AutoCSAT scores calls as designed based on the feature's functionality.
+<span style="color: red;">**[IMPORTANT]** Since this is a lab environment where you will act as both the customer and the agent, accurately scoring a call will be challenging. Additionally, AutoCSAT has not been taught due to the insufficient number of calls required for AI to learn and generate proper scoring. In this lab, we will use a Global Variable to store the score, which is also used for AutoCSAT teaching. With a sufficient number of provided scores, AutoCSAT will eventually be able to score calls automatically.</span>
 
+<details><summary>Auto CSAT configuration settings</summary>
+
+![profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)  
+
+</details>
 
 ## Call Flow Overview
 1. New call comes into the flow
 2. Call the Search API to find the last agent with which they had a good AutoCSAT
-3. AutoCSAT value is stored as a String type on Analyzer DB. We will convert it to Decimal.
-4. If the agent is available, we will route the call to that agent
-5. If the agent is not available or if no recent good AutoCSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
+3. If the AutoCSAT is greater or equal **4** and agent is available, we will route the call to that agent
+4. If the agent is not available or if no recent good AutoCSAT scores exist for the caller, we will route the call to the queue for the next available agent. 
 
 ## Mission Details
 
@@ -29,9 +32,6 @@ Your mission is to:
 3. Change the the string-type AutoCSAT variable to decimal-type in order to perform condition operations.</br>
 4. Prioritize the call if conditions match and route the call to agent.</br>
 
-
-<span style="color: red;">**[IMPORTANT]** Please note that the AutoCSAT feature is still in its Beta phase and currently lacks full reporting capabilities. For instance, the data is currently stored as a string-type value, which prevents filtering in Search API requests as well as use condition function in the flow. As an added benefit, we are including the production Search API, which will be functional once the feature is fully enabled in the near future.</span>
-
 !!! Note
     We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
 
@@ -40,7 +40,7 @@ Your mission is to:
 
 ### Preconfigured elements
 1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
-2. Connector for calling Webex Contact Center APIs
+2. AutoCSAT flow **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span> has been created to help contact centers efficiently gather customer feedback through a simple automated post-call survey using DTMF tones.
 
 ---
 
@@ -60,7 +60,7 @@ Your mission is to:
     - Variable to write HTTP Response into it:
     
       >
-      > Name: **ResponseJSON**<span class="copy-static" data-copy-text="ResponseJSON"><span class="copy" title="Click to copy!"></span></span>
+      > Name: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
@@ -68,15 +68,6 @@ Your mission is to:
 
     - String type AutoCSAT variable:
     
-      >
-      > Name: **AutoCSATStringVar**<span class="copy-static" data-copy-text="AutoCSATStringVar"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
-
-    - Decimal type AutoCSAT variable:
-      
       >
       > Name: **AutoCSATDecimalVar**<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
       >
@@ -125,48 +116,63 @@ Your mission is to:
     >
     > Copy this GraphQL query into the request body:
     ```JSON
-    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n        ]\n    }\n  ) {\n    tasks {\n      autoCsat\n      owner {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 1800000}}","to":"{{now() | epoch(inMillis=true) - 20000}}"}}
+     {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n       { status: { equals: \"ended\" } }\n       { doubleGlobalVariables: {name:{equals:\"AutoCSAT_GV\"}, value: {gte:4} } }\n\n        ]\n    }\n  ) {\n    tasks {\n      csatScore  \n      autoCsat\n      owner {\n        id\n        name\n      }\n      doubleGlobalVariables(name: \"AutoCSAT_GV\"){\n        name\n        value\n      }\n\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 604800000}}","to":"{{now() | epoch(inMillis=true)}}"}}
     ```
     > <details><summary>Expanded Query For Understanding (optional)</summary>
     ```GraphQL
+    
     query($from: Long!, $to: Long!)
-    {
-      taskDetails(
-          from: $from
-          to: $to
-        filter: {
-          and: [
-           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
-            ]
-        }
-      ) {
-        tasks {
-          autoCsat
-          owner {
-            id
-            name
+      {
+        taskDetails(
+            from: $from
+            to: $to
+          filter: {
+            and: [
+             { lastEntryPoint: { id: { equals: "479a04d4-2b8e-4720-bd8d-b394feaf8f9d" } } }
+             { status: { equals: "ended" } }
+             { doubleGlobalVariables: {name:{equals:"AutoCSAT_GV"}, value: {gte:4} } }
+      
+              ]
+          }
+        ) {
+          tasks {  
+            autoCsat
+            owner {
+              id
+              name
+            }
+            doubleGlobalVariables(name: "AutoCSAT_GV"){
+              name
+              value
+            }
+      
           }
         }
       }
-    }
+  
     ```
     ```JSON
     Expected Response:
     
     {
-    "data": {
-        "taskDetails": {
-            "tasks": [
-                {
-                    "autoCsat": "4",
-                    "owner": {
-                        "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
-                        "name": "Agent140 Lab"
+        "data": {
+            "taskDetails": {
+                "tasks": [
+                    {
+                        "csatScore": 0,
+                        "autoCsat": null,
+                        "owner": {
+                            "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
+                            "name": "Agent140 Lab"
+                        },
+                        "doubleGlobalVariables": {
+                            "name": "AutoCSAT_GV",
+                            "value": 4.0
+                        }
                     }
+                ]
             }
-          ]
         }
-      }
     }
     ```
     </details>
@@ -178,11 +184,11 @@ Your mission is to:
     > - Output Variable: `agentID`<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Output Variable: `AutoCSATStringVar`<span class="copy-static" data-copy-text="AutoCSATStringVar"><span class="copy" title="Click to copy!"></span></span>
-    > - Path Expression: `$.data.taskDetails.tasks[0].autoCsat`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].autoCsat"><span class="copy" title="Click to copy!"></span></span>
+    > - Output Variable: `AutoCSATDecimalVar`<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
-      ![profiles](../graphics/Lab2/L2M5_HTTPRequest.gif)
+      ![profiles](../graphics/Lab2/)
 
 4. Add **Set Variable** node
     
@@ -193,7 +199,7 @@ Your mission is to:
     >
     > We will connct **Set Variable** node in next step
     >
-    > Variable: **ResponseJSON**<span class="copy-static" data-copy-text="ResponseJSON"><span class="copy" title="Click to copy!"></span></span>
+    > Variable: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
     >
     > Set To Variable: **GraphQL_Query.httpResponseBody**<span class="copy-static" data-copy-text="GraphQL_Query.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -201,9 +207,11 @@ Your mission is to:
 5. Add a **Case** node
 
     >
+    > Activity Label: **Case_If_CSATEmpty**<span class="copy-static" data-copy-text="Case_If_CSATEmpty"><span class="copy" title="Click to copy!"></span></span>
+    > 
     > Connect the output node edge from teh **GraphQL_Response** node to this node
     >
-    > Expression: `{{AutoCSATStringVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATStringVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > Expression: `{{ AutoCSATDecimalVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATDecimalVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Change **Case 0** to **true**
     >
@@ -211,37 +219,25 @@ Your mission is to:
     >
     > We will connect the **true** and **false** in future steps.  
     
-    ![profiles](../graphics/Lab2/L2M5_Condition.gif)
+    ![profiles](../graphics/Lab2/)
 
-6. Add **Set Variable** node
-    
+6. Add a **Condition** node
+
     >
-    > Activity Label: **MakeCSATDecimal**<span class="copy-static" data-copy-text="MakeCSATDecimal"><span class="copy" title="Click to copy!"></span></span>
+    > Activity Label: **CheckCSATValue**<span class="copy-static" data-copy-text="CheckCSATValue"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect **false** exit of **Case** node to this node
-    >
-    > We will connct **Set Variable** node in next step
-    >
-    > Variable: **AutoCSATDecimalVar**<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Set Value: **{{AutoCSATStringVar}}**<span class="copy-static" data-copy-text="{{AutoCSATStringVar}}"><span class="copy" title="Click to copy!"></span></span>
-    >
-
-7. Add a **Condition** node
-
-    >
-    > Connect the output of **MakeCSATDecimal** node edge to this node
     > 
     > We will connect the **True** and **False** output edges in future steps.
     >
     > Expression: `{{AutoCSATDecimalVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATDecimalVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
     >
-      ![profiles](../graphics/Lab2/L2M5_Condition.gif)
+      ![profiles](../graphics/Lab2/)
 
-8.  Add a **Queue To Agent** node
+7.  Add a **Queue To Agent** node
 
     >
-    > Connect the **False** node edge of the **Condition** node created in previous step to this **Queue To Agent**.
+    > Connect the **True** node edge of the **CheckCSATValue** node created in previous step to this **Queue To Agent**.
     > 
     > Agent Variable: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -263,12 +259,12 @@ Your mission is to:
 
       ![profiles](../graphics/Lab2/L2M5_QtoAgent.gif)
 
-9. Add a **Queue Contact** node
+8. Add a **Queue Contact** node
 
     >
-    > Connect the **False** node edge from the **Condition** node created in **Step 5** to this node
+    > Connect the **False** node edge from the **CheckCSATValue** node created in **Step 6** to this node
     >
-    > Connect **true** node edge of **Case** node created in **Step 7** to this node
+    > Connect **true** node edge of **Case_If_CSATEmpty** node created in **Step 7** to this node
     > 
     > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
     >
@@ -279,7 +275,7 @@ Your mission is to:
       ![profiles](../graphics/Lab2/L2M5_QueueContact.gif)
 
 
-10. Add a **Subflow** node and **DisconnectContact** node
+9. Add a **Subflow** node and **DisconnectContact** node
 
     >
     > In the Activity Library pane on the left side of the screen, click **Subflows**
@@ -299,6 +295,18 @@ Your mission is to:
     > Subflow Output Variables: **None**
     >
       ![profiles](../graphics/Lab2/L2M5_Subflow.gif)   
+
+
+10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
+
+    >
+    > Destination Type: **Flow**
+    >
+    > Flow: **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Choose Version Label: **Latest**
+
+
 
     <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
@@ -334,18 +342,30 @@ Your mission is to:
 2. On your Agent Desktop, set your status to available
       1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      3. In the Agent Desktop you will see a new field **Auto CSAT** in Call Information section where you can edit the Simulated CSAT.
-      4. If it is empty, drop the call and wait about 20 secs so the backend can process and score the call.
-3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+      3. End the call from Agent Desktop and you should here an invitation to rate your experience with us on a scale of 1 to 5.
+      4. Select 4 on Webex App keypad.
+3. In your flow, open the debuger and select the latest call from the list (on top of the list).
+      1. Trace the steps taken in the flow
+      2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. They should be empty since there are no CSAT scores at the moment you made the first call.
+      3. **Case_If_CSATEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
+     
+4. Make sure your agent status is set to **Available**
+
+5. Using Webex App, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       1. You should be offered the call, click on the accept button.
       2. If everything set correctly you should see Auto CSAT set to **4.0**
       3. End the call and select a wrapup code if asked.
-4. In your Flow:
-      1. Open the debugger
-      2. Select the first interaction (at the bottom of the list)
-      3. Trace the steps taken in the flow
-      4. Open the last interaction 
-      5. Trace the steps taken in the flow
+6. In your flow, open the debuger and select the latest call from the list (on top of the list).
+      1. Trace the steps taken in the flow
+      2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. You should see that now **agentID** and **AutoCSATDecimalVar** have assigned values.
+      3. Select **GraphQLResponse**. In details panel on the right-hand side you should see **Modified Variables** has a JSON response.
+
+        !!! Note
+            In JSON Response the **autoCsat** is set to **null**.  This is expected because the lab environment lacks sufficient data to train the AI model for accurate scoring.
+            ![profiles](../graphics/Lab2/AutoCSAT_null.png)
+      
+      4. **Case_If_CSATEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
+      5. **CheckCSATValue** is now equals **4** which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
 
 ---
 
