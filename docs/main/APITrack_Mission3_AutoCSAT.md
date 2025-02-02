@@ -14,7 +14,7 @@ A common request for returning customers calling into a contact center is to wor
 
 <details><summary>Auto CSAT configuration settings</summary>
 
-![profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)  
+    ![profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)
 
 </details>
 
@@ -27,6 +27,7 @@ A common request for returning customers calling into a contact center is to wor
 ## Mission Details
 
 Your mission is to:
+
 1. Create a new flow by using pre-defined flow template. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Change the the string-type AutoCSAT variable to decimal-type in order to perform condition operations.</br>
@@ -69,7 +70,7 @@ Your mission is to:
     - String type AutoCSAT variable:
     
       >
-      > Name: **AutoCSATDecimalVar**<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
+      > Name: **AutoCSATVar**<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **Decimal**
       >
@@ -79,6 +80,7 @@ Your mission is to:
       >
       > Desktop Label: **Auto CSAT**
 
+      ![profiles](../graphics/Lab2/LAR_FlowVars.gif)
 
 2. Add a **Play Message** node 
     
@@ -184,7 +186,7 @@ Your mission is to:
     > - Output Variable: `agentID`<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Output Variable: `AutoCSATDecimalVar`<span class="copy-static" data-copy-text="AutoCSATDecimalVar"><span class="copy" title="Click to copy!"></span></span>
+    > - Output Variable: `AutoCSATVar`<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
@@ -211,7 +213,7 @@ Your mission is to:
     > 
     > Connect the output node edge from teh **GraphQL_Response** node to this node
     >
-    > Expression: `{{ AutoCSATDecimalVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATDecimalVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > Expression: `{{ AutoCSATVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Change **Case 0** to **true**
     >
@@ -230,7 +232,7 @@ Your mission is to:
     > 
     > We will connect the **True** and **False** output edges in future steps.
     >
-    > Expression: `{{AutoCSATDecimalVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATDecimalVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
+    > Expression: `{{AutoCSATVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
     >
       ![profiles](../graphics/Lab2/)
 
@@ -357,7 +359,7 @@ Your mission is to:
       3. End the call and select a wrapup code if asked.
 6. In your flow, open the debuger and select the latest call from the list (on top of the list).
       1. Trace the steps taken in the flow
-      2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. You should see that now **agentID** and **AutoCSATDecimalVar** have assigned values.
+      2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. You should see that now **agentID** and **AutoCSATVar** have assigned values.
       3. Select **GraphQLResponse**. In details panel on the right-hand side you should see **Modified Variables** has a JSON response.
 
         !!! Note
