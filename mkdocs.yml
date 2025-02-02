@@ -135,6 +135,8 @@ nav:
   - FINAL BOSS FIGHT:
       - Troubleshooting Mission:
             - "Production flow is failing!": ./main/FinalBossFight_Mission.md
+            - "Hint for Final Boss Fight Mission!": ./main/FinalBossFight_Hint1.md
+            - "Solution Guidance for Final Boss Fight Mission!": ./main/FinalBossFight_Solution.md
   - Quick Links: quicklinks.md
   - Ask a Question<i class="fa-solid fa-hand" style="color:#63E6BE;"></i>: slido-QA-iFrame.md
 
