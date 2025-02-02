@@ -95,9 +95,9 @@ Your mission is to:
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: ***Welcome to Mission 5 of Advanced Routing mission.***<span class="copy-static" data-copy-text="Welcome to Mission 5 of Advanced Routing mission."><span class="copy" title="Click to copy!"></span></span>
+    > Text-to-Speech Message: ***Welcome to last agent routing mission.***<span class="copy-static" data-copy-text="Welcome to last agent routing mission."><span class="copy" title="Click to copy!"></span></span>
 
-      ![profiles](../graphics/Lab2/L2M5_PlayMessage.gif)
+      ![profiles](../graphics/Lab2/LAR_PlayMessage.gif)
 
 3.  Add an **HTTPRequest** node for our query
     
@@ -190,7 +190,7 @@ Your mission is to:
     > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
-      ![profiles](../graphics/Lab2/)
+      ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif)
 
 4. Add **Set Variable** node
     
