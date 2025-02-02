@@ -42,55 +42,12 @@ redirected to the TAC Service number.</br>
 
 3. Use the following URL for unauthenticated API requests: ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
-> <details><summary>**Hints**</summary>
-> 
-> 1. Debug the flow using the Webex Contact Center Debug tool to inspect HTTP request logs.
->
-> 2. Use Flow Designer Analytics to analyze call flow behavior and spot issues in logic execution.
->
-> 3. To find out correct JSON path to **Queue_140** use **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://74481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
-> 
->> - Replace {DNIS} with the provided Support Number number stripping +1
->> 
->> - <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/lowdesigner/Lab/DynVars?dn=4694096861***
->>
->> - Open Chrome browser and past your URL. You should get the follwoing result
->> 
->> ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
->> 
->> - Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
->> 
->> - Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
->>
->> - Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
->>
->> - In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
->>
->> ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
-> </details>
 
 ## Competition & Rewards
 A real IP phone is placed in the middle of the room and and an agent logged into Webex Desktop with using that phone as a telephony option. Once the call flow is successfully fixed, the phone will ring and agent accepts the call.</br>
 The first three participants who successfully make the phone ring will win a prize. This encourages fast and accurate troubleshooting, making the exercise more engaging and competitive.
 
 ---
-
-## Solution Guidance **<span style="color: orange;">[the following will be a separate page that we are going to open the phone remains silent for 10 mins]</span></summary>**
-If the issue remains unresolved after 10 minutes, provide attendees with the following hints or solutions:</br>
-1. Authentication Issue: Ensure the HTTP request node is configured as unauthenticated.</br>
-2. JSON Path Issue: The correct JSON path must match the structure of the API response. Attendees should compare the API response format with the path used in the node.</br>
-3. Condition Issue: The HTTP status check should be looking for 200, not 201. Adjust the condition logic accordingly.</br>
-4. Queue Configuration Issue: Ensure the queue node dynamically references the required queue name instead of using a static value.</br>
-
-
-## Validation & Success Criteria
-1. The flow should correctly execute the HTTP request and retrieve the expected value.
-2. The condition node should correctly validate the 200 status code and proceed to queueing logic.
-3. The queue node should reference the queue dynamically using a variable, ensuring that calls are directed to Queue_140.
-4. Calls should land in the intended queue instead of being redirected to the TAC Service number.
-5. If the queue value is incorrect, the flow should play an error message and drop the call.
-6. The phone in the middle of the room should ring, signaling a successful fix.
-
 This exercise will help attendees practice debugging and resolving common Webex Contact Center API integration issues. Ensure they document their troubleshooting steps to reinforce learning.
 
 
