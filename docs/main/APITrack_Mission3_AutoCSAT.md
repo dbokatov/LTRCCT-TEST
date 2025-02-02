@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 5: Last Agent Routing **<span style="color: orange;">[Under reconstructions]</span></summary>**
+# Mission 5: Last Agent Routing
 
 ## Story
 A common request for returning customers calling into a contact center is to work with the last person with which they had a good experience.  This may be because they are already familiar with what the customer needs or it may just be that the customer is familiar with the agent and enjoyed their last interaction. With the new Auto CSAT feature in the Webex Contact Center we can automatically account for this request and route to the last agent which had a high Auto CSAT with the customer.  
@@ -14,7 +14,7 @@ A common request for returning customers calling into a contact center is to wor
 
 <details><summary>Auto CSAT configuration settings</summary>
 
-    ![profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)
+  ![profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)
 
 </details>
 
@@ -30,8 +30,7 @@ Your mission is to:
 
 1. Create a new flow by using pre-defined flow template. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
-3. Change the the string-type AutoCSAT variable to decimal-type in order to perform condition operations.</br>
-4. Prioritize the call if conditions match and route the call to agent.</br>
+3. Prioritize the call if conditions match and route the call to agent.</br>
 
 !!! Note
     We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
@@ -95,7 +94,7 @@ Your mission is to:
     >
     > Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: ***Welcome to last agent routing mission.***<span class="copy-static" data-copy-text="Welcome to last agent routing mission."><span class="copy" title="Click to copy!"></span></span>
+    > Text-to-Speech Message: ***Welcome to the last agent routing mission.***<span class="copy-static" data-copy-text="Welcome to the last agent routing mission."><span class="copy" title="Click to copy!"></span></span>
 
       ![profiles](../graphics/Lab2/LAR_PlayMessage.gif)
 
@@ -118,7 +117,7 @@ Your mission is to:
     >
     > Copy this GraphQL query into the request body:
     ```JSON
-     {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n       { status: { equals: \"ended\" } }\n       { doubleGlobalVariables: {name:{equals:\"AutoCSAT_GV\"}, value: {gte:4} } }\n\n        ]\n    }\n  ) {\n    tasks {\n      csatScore  \n      autoCsat\n      owner {\n        id\n        name\n      }\n      doubleGlobalVariables(name: \"AutoCSAT_GV\"){\n        name\n        value\n      }\n\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 604800000}}","to":"{{now() | epoch(inMillis=true)}}"}}
+     {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n       { status: { equals: \"ended\" } }\n       { doubleGlobalVariables: {name:{equals:\"AutoCSAT_GV\"}, value: {gte:4} } }\n\n        ]\n    }\n  ) {\n    tasks {\n      csatScore  \n      autoCsat\n      owner {\n        id\n        name\n      }\n      doubleGlobalVariables(name: \"AutoCSAT_GV\"){\n        name\n        value\n      }\n\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 1800000}}","to":"{{now() | epoch(inMillis=true)}}"}}
     ```
     > <details><summary>Expanded Query For Understanding (optional)</summary>
     ```GraphQL
@@ -130,7 +129,7 @@ Your mission is to:
             to: $to
           filter: {
             and: [
-             { lastEntryPoint: { id: { equals: "479a04d4-2b8e-4720-bd8d-b394feaf8f9d" } } }
+             { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
              { status: { equals: "ended" } }
              { doubleGlobalVariables: {name:{equals:"AutoCSAT_GV"}, value: {gte:4} } }
       
@@ -238,6 +237,7 @@ Your mission is to:
     >
     > Expression: `{{AutoCSATVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
     >
+    >
 
     ![profiles](../graphics/Lab2/LAR_Condition.gif)
 
@@ -310,7 +310,7 @@ Your mission is to:
     >
     > Choose Version Label: **Latest**
 
-    <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
+    <details><summary>Check your Main Flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
 11.  Publish your flow
 
@@ -347,13 +347,13 @@ Your mission is to:
       1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
       2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
       3. End the call from Agent Desktop and you should here an invitation to rate your experience with us on a scale of 1 to 5.
-      4. Select 4 on Webex App keypad.
+      4. Select **4** or **5** on Webex App keypad.
 3. In your flow, open the debuger and select the latest call from the list (on top of the list).
       1. Trace the steps taken in the flow
       2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. They should be empty since there are no CSAT scores at the moment you made the first call.
       3. **Case_If_AgentIDEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
 
-
+   ![profiles](../graphics/Lab2/LAR_Test1.gif) 
 
 4. Make sure your agent status is set to **Available**
 
@@ -371,8 +371,9 @@ Your mission is to:
             ![profiles](../graphics/Lab2/AutoCSAT_null.png)
       
       4. **Case_If_AgentIDEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
-      5. **CheckCSATValue** is now equals **4** which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
+      5. **CheckCSATValue** is now either equals **4** or **5** (depends on what you selected on previous call) which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
 
+   ![profiles](../graphics/Lab2/LAR_Test2.gif) 
 ---
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed Last Agent Routing mission! 🎉🎉 </strong></p>
