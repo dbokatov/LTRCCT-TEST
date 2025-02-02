@@ -206,6 +206,8 @@ Your mission is to:
     > Set To Variable: **GraphQL_Query.httpResponseBody**<span class="copy-static" data-copy-text="GraphQL_Query.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
 
+      ![profiles](../graphics/Lab2/LAR_GraphQL_Response.gif)
+
 5. Add a **Case** node
 
     >
@@ -213,7 +215,9 @@ Your mission is to:
     > 
     > Connect the output node edge from teh **GraphQL_Response** node to this node
     >
-    > Expression: `{{ AutoCSATVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > Select **Build Expression**
+    >
+    Expression: `{{ AutoCSATVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Change **Case 0** to **true**
     >
@@ -221,7 +225,7 @@ Your mission is to:
     >
     > We will connect the **true** and **false** in future steps.  
     
-    ![profiles](../graphics/Lab2/)
+    ![profiles](../graphics/Lab2/LAR_Case.gif)
 
 6. Add a **Condition** node
 
@@ -234,7 +238,6 @@ Your mission is to:
     >
     > Expression: `{{AutoCSATVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
     >
-      ![profiles](../graphics/Lab2/)
 
 7.  Add a **Queue To Agent** node
 
@@ -259,8 +262,6 @@ Your mission is to:
     >
 
 
-      ![profiles](../graphics/Lab2/L2M5_QtoAgent.gif)
-
 8. Add a **Queue Contact** node
 
     >
@@ -274,7 +275,6 @@ Your mission is to:
     >
     > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-      ![profiles](../graphics/Lab2/L2M5_QueueContact.gif)
 
 
 9. Add a **Subflow** node and **DisconnectContact** node
@@ -296,7 +296,6 @@ Your mission is to:
     >
     > Subflow Output Variables: **None**
     >
-      ![profiles](../graphics/Lab2/L2M5_Subflow.gif)   
 
 
 10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
