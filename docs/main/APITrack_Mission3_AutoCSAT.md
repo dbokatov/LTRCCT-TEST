@@ -211,13 +211,13 @@ Your mission is to:
 5. Add a **Case** node
 
     >
-    > Activity Label: **Case_If_CSATEmpty**<span class="copy-static" data-copy-text="Case_If_CSATEmpty"><span class="copy" title="Click to copy!"></span></span>
+    > Activity Label: **Case_If_AgentIDEmpty**<span class="copy-static" data-copy-text="Case_If_AgentIDEmpty"><span class="copy" title="Click to copy!"></span></span>
     > 
     > Connect the output node edge from teh **GraphQL_Response** node to this node
     >
     > Select **Build Expression**
     >
-    Expression: `{{ AutoCSATVar is empty}}`<span class="copy-static" data-copy-text="{{ AutoCSATVar is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    Expression: `{{agentid is empty}}`<span class="copy-static" data-copy-text="{{ agentid is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Change **Case 0** to **true**
     >
@@ -238,6 +238,8 @@ Your mission is to:
     >
     > Expression: `{{AutoCSATVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
     >
+
+    ![profiles](../graphics/Lab2/LAR_Condition.gif)
 
 7.  Add a **Queue To Agent** node
 
@@ -261,13 +263,14 @@ Your mission is to:
     > Recovery Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
 
+    ![profiles](../graphics/Lab2/LAR_QtoAgent.gif)
 
 8. Add a **Queue Contact** node
 
     >
     > Connect the **False** node edge from the **CheckCSATValue** node created in **Step 6** to this node
     >
-    > Connect **true** node edge of **Case_If_CSATEmpty** node created in **Step 7** to this node
+    > Connect **true** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
     > 
     > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
     >
@@ -275,7 +278,7 @@ Your mission is to:
     >
     > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-
+    ![profiles](../graphics/Lab2/LAR_QueueContact.gif)
 
 9. Add a **Subflow** node and **DisconnectContact** node
 
@@ -296,7 +299,7 @@ Your mission is to:
     >
     > Subflow Output Variables: **None**
     >
-
+    ![profiles](../graphics/Lab2/LAR_Wait.gif)
 
 10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
 
@@ -306,8 +309,6 @@ Your mission is to:
     > Flow: **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span>
     >
     > Choose Version Label: **Latest**
-
-
 
     <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
@@ -323,6 +324,8 @@ Your mission is to:
     >
     > Click **Publish** Flow
 
+   ![profiles](../graphics/Lab2/LAR_EventGoTo.gif)
+
 12. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
@@ -335,7 +338,7 @@ Your mission is to:
     >
     > Click Save in the lower right corner of the screen
 
-      ![profiles](../graphics/Lab2/L2M5_Publish&EPmap.gif)  
+   ![profiles](../graphics/Lab2/LAR_Channel.gif) 
 ---
 
 ## Testing
@@ -348,8 +351,10 @@ Your mission is to:
 3. In your flow, open the debuger and select the latest call from the list (on top of the list).
       1. Trace the steps taken in the flow
       2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. They should be empty since there are no CSAT scores at the moment you made the first call.
-      3. **Case_If_CSATEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
-     
+      3. **Case_If_AgentIDEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
+
+
+
 4. Make sure your agent status is set to **Available**
 
 5. Using Webex App, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
@@ -365,7 +370,7 @@ Your mission is to:
             In JSON Response the **autoCsat** is set to **null**.  This is expected because the lab environment lacks sufficient data to train the AI model for accurate scoring.
             ![profiles](../graphics/Lab2/AutoCSAT_null.png)
       
-      4. **Case_If_CSATEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
+      4. **Case_If_AgentIDEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
       5. **CheckCSATValue** is now equals **4** which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
 
 ---
