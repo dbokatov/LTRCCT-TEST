@@ -45,6 +45,10 @@ Example Use Case: Deleting a scheduled callback request if the customer no longe
 Analogy: Receiving an SMS alert when your package is out for delivery. Instead of requesting updates repeatedly, you get notified when something happens.
 Example Use Case: Notifying an agent when a VIP customer joins the queue.
 
+7. **SEARCH API (GraphQL Queries) – Retrieving Specific Data Efficiently**</br>
+Analogy: Using a restaurant menu app to filter only "vegan dishes under $10" instead of browsing the entire menu. Unlike traditional GET requests that return all data, GraphQL allows users to request exactly what they need.
+Example Use Case: Searching for all unresolved support tickets assigned to a specific agent without loading unnecessary ticket details.
+
 APIs streamline operations by automating tasks, integrating systems, and enhancing customer experiences. Understanding these core calls helps optimize workflows in platforms like Webex Contact Center.
 </details>
 
