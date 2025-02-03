@@ -271,6 +271,8 @@ Your mission is to:
     > Connect the **False** node edge from the **CheckCSATValue** node created in **Step 6** to this node
     >
     > Connect **true** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
+    >
+    > Connect **Default** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
     > 
     > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
     >
@@ -303,6 +305,8 @@ Your mission is to:
 
 10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
 
+    >
+    > Connect **AgentDisconnect** event node edge this node
     >
     > Destination Type: **Flow**
     >
