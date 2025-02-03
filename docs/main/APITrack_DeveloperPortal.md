@@ -61,17 +61,57 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 1. Open [**Developer Portal**](https://developer.webex-cx.com/){:target="_blank"} and click on **Sign In**. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
-2. Click on **Documentation** which is on top right corner of the protal page.
+2. Click on **Documentation** which is on top right corner of the portal page.
 
     ![profiles](../graphics/Lab2/DevPortalLogin.gif)
 
-3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Adress Book**. Observe available 
+3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Adress Book**. Observe available API calls
 
     !!!Note
         **Address Book Overview**</br>
         Address Book is available in the Webex Contact Center Agent Desktop. Agents can make outbound calls using Address Books, selecting numbers from pre-configured lists instead of entering them manually in the 'Start a New Call' field. Administrators can configure and manage Address Books via the Webex Contact Center APIs.
 
-### Create a New Address Book (POST)
+4. Scroll down and click on **Create a new Address Book**, then click on **Try Out**.
+
+    ![profiles](../graphics/Lab2/DevPortal_TryOut.gif)
+
+5. Clear **Request Body** content and paste the following body
+
+   ``` JSON
+    {
+      "name": "AddressBook_<Your_Attendee_ID>",
+      "parentType": "ORGANIZATION"
+    }
+    ```
+    ```
+    Expected Response
+
+    201 Response
+
+    {
+      "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+      "id": "4aa50a6b-a520-4221-bc9d-a050c111061f",
+      "version": 0,
+      "name": "AddressBook_140",
+      "parentType": "ORGANIZATION",
+      "createdTime": 1738585491913,
+      "lastUpdatedTime": 1738585491913
+    }
+    ```
+
+    ![profiles](../graphics/Lab1/DevPortal_AddressBookCreate.gif)
+
+6. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
+   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+
+    ![profiles](../graphics/Lab1/1-CH_Login.gif)
+
+7. Navigate to Address Book and locate your new created **<span class="attendee-id-container">Address_Book_<span class="attendee-id-placeholder" data-prefix="Address_Book_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+
+
+8. Navigate back to **Developer Portal** and select **Address Book** again from left menu pane.
+
+**To be Continued...**
 
 ### Update Address Book Description (PUT)
 
