@@ -1,18 +1,15 @@
 # Conclusion 
 
-We hope you found the Advanced Labs both challenging and rewarding as you deepened your expertise with Webex Contact Center. In this session, you explored sophisticated techniques for optimizing call routing and flow design through API integrations, showcasing how to streamline and simplify even the most complex workflows.
+We hope you found the CallBack track both challenging and rewarding as you deepened your expertise with Webex Contact Center. In this session, you explored key strategies for implementing and refining the Callback feature to enhance customer experience and operational efficiency.
 
 Key missions included:
 
-HTTP API POST to Control Hub, enabling dynamic changes such as emergency configuration updates.
-Enhancing Routing Facilitation to improve precision and efficiency.
-Preventing Callback Duplication to maintain seamless customer interactions.
-Perfecting AI-to-Human Agent Handoffs for smooth transitions during escalations.
-Implementing advanced techniques like Last Agent Routing and Routing Returning Callers, fostering continuity and personalization in customer interactions.
-Adding a personal touch with Agent Greetings, improving the overall customer experience.
-Utilizing the Custom Code Execution Node, empowering you to address unique use cases with tailored solutions.
-These advanced topics have provided you with practical experience and innovative strategies to enhance your Webex Contact Center capabilities. By leveraging these tools and techniques, you are now well-equipped to design efficient, scalable, and customer-centric workflows for any scenario.
+ - **Adding Basic Callback** – Ensuring customers have the option to request a return call instead of waiting in the queue.</br>
+ - **Scheduling a Callback on Errors** – Handling unexpected issues by automatically scheduling a callback when an error occurs.</br>
+ - **Preventing Duplicate Callbacks** – Implementing safeguards to avoid redundant callback requests, improving efficiency and customer satisfaction.</br>
 
-Should you have any questions or require assistance, please reach out or join the Webex discussion forums. We’re excited to see how you apply these advanced skills in your future projects!
+By mastering these techniques, you are now equipped to design more efficient and customer-friendly callback workflows within Webex Contact Center.
 
-Thank you for completing Part 2 of the lab, and we look forward to your continued growth and exploration with Webex Contact Center.
+Should you have any questions or need further assistance, feel free to reach out or join the Webex discussion forums. We’re excited to see how you apply these skills in your future projects!
+
+Thank you for completing the Callback track, and we look forward to your continued growth with Webex Contact Center.
