@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Using Webex Contact Center Developer Portal <span style="color: red;">[Building new mission]</span></summary>**
+# Using Webex Contact Center Developer Portal <span style="color: red;">[Building new mission]</span></summary>
 
 ## Story
 
@@ -17,37 +17,37 @@ In this mission, attendees will learn how to interact with Webex Contact Center 
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 
-**<Understanding API Calls with Real-Life Comparisons**<
+**Understanding API Calls with Real-Life Comparisons**
 
 APIs (Application Programming Interfaces) allow different systems to communicate by sending and receiving structured requests. Here are the most common API call types, explained with real-world analogies:
 
 1. **GET – Retrieving Information**</br>
-Analogy: Checking your bank balance at an ATM. You request information, and the system provides it without making any changes.</br>
-Example Use Case: Retrieving a customer’s interaction history in Webex Contact Center before routing their call.</br>
+**Analogy**: Checking your bank balance at an ATM. You request information, and the system provides it without making any changes.</br>
+**Example Use Case**: Retrieving a customer’s interaction history in Webex Contact Center before routing their call.</br>
 
 2. **POST – Creating New Data**</br>
-Analogy: Ordering a new item online. You submit details, and a new order (or record) is created in the system.</br>
-Example Use Case: Creating a new customer support ticket when an issue is reported during a call.</br>
+**Analogy**: Ordering a new item online. You submit details, and a new order (or record) is created in the system.</br>
+**Example Use Case**: Creating a new customer support ticket when an issue is reported during a call.</br>
 
 3. **PUT – Updating Existing Data**</br>
-Analogy: Changing your home address in an online banking system. Instead of adding a new address, the existing one is replaced.</br>
-Example Use Case: Updating a customer’s preferred contact method in a CRM system.</br>
+**Analogy**: Changing your home address in an online banking system. Instead of adding a new address, the existing one is replaced.</br>
+**Example Use Case**: Updating a customer’s preferred contact method in a CRM system.</br>
 
 4. **PATCH – Modifying Partial Data**</br>
-Analogy: Updating your phone number on a social media profile without changing other details like your name or email.</br>
-Example Use Case: Changing only the priority level of an existing support ticket.</br>
+**Analogy**: Updating your phone number on a social media profile without changing other details like your name or email.</br>
+**Example Use Case**: Changing only the priority level of an existing support ticket.</br>
 
 5. **DELETE – Removing Data**</br>
-Analogy: Canceling a hotel reservation. The record is removed, preventing further use.</br>
-Example Use Case: Deleting a scheduled callback request if the customer no longer needs assistance.</br>
+**Analogy**: Canceling a hotel reservation. The record is removed, preventing further use.</br>
+**Example Use Case**: Deleting a scheduled callback request if the customer no longer needs assistance.</br>
 
 6. **Webhooks – Automated Notifications**</br>
-Analogy: Receiving an SMS alert when your package is out for delivery. Instead of requesting updates repeatedly, you get notified when something happens.</br>
-Example Use Case: Notifying an agent when a VIP customer joins the queue.</br>
+**Analogy**: Receiving an SMS alert when your package is out for delivery. Instead of requesting updates repeatedly, you get notified when something happens.</br>
+**Example Use Case**: Notifying an agent when a VIP customer joins the queue.</br>
 
 7. **SEARCH API (GraphQL Queries) – Retrieving Specific Data Efficiently**</br>
-Analogy: Using a restaurant menu app to filter only "vegan dishes under $10" instead of browsing the entire menu. Unlike traditional GET requests that return all data, GraphQL allows users to request exactly what they need.</br>
-Example Use Case: Searching for all unresolved support tickets assigned to a specific agent without loading unnecessary ticket details.</br>
+**Analogy**: Using a restaurant menu app to filter only "vegan dishes under $10" instead of browsing the entire menu. Unlike traditional GET requests that return all data, GraphQL allows users to request exactly what they need.</br>
+**Example Use Case**: Searching for all unresolved support tickets assigned to a specific agent without loading unnecessary ticket details.</br>
 
 APIs streamline operations by automating tasks, integrating systems, and enhancing customer experiences. Understanding these core calls helps optimize workflows in platforms like Webex Contact Center.
 </details>
@@ -77,14 +77,16 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
 5. Clear **Request Body** content and paste the following body
 
-   ``` JSON
+    > 
+    > Request Body:
+    ``` JSON
     {
-      "name": "AddressBook_<Your_Attendee_ID>",
-      "parentType": "ORGANIZATION"
+        "name": "AddressBook_<Your_Attendee_ID>",
+        "parentType": "ORGANIZATION"
     }
     ```
-    ```
-    Expected Response
+
+    ```Expected Response
 
     201 Response
 
@@ -97,9 +99,10 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
       "createdTime": 1738585491913,
       "lastUpdatedTime": 1738585491913
     }
+
     ```
 
-    ![profiles](../graphics/Lab1/DevPortal_AddressBookCreate.gif)
+  ![profiles](../graphics/Lab1/DevPortal_AddressBookCreate.gif)
 
 6. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
