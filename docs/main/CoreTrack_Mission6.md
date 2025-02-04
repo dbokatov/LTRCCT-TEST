@@ -25,9 +25,9 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
 
 ### How to Use the Debug Tool
 
-1. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** in Flow Designer and navigate to the Debug Tool.
+1. Switch to the Flow Designer and open your flow, **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then, click the **Debug** button at the bottom of the Flow Designer.
 
-2. So far we have already made couple of calls so you can select latest one by clicking on any interaction.
+2. You can view the calls you've made today during the previous exercises. Please click on the one at the top.
     
     > 
     > 1. You can search your call by **Intercation ID**
@@ -38,7 +38,7 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
         You might see an allert as on the following screenshot. Click refresh button to reload the diagram. 
         ![profiles](../graphics/Lab1/DebugRefresh.jpg)       
 
-3. Observe the execution path, with visual indicators highlighting the flow nodes being executed.
+3. Observe the execution path, with visual indicators highlighting the flow nodes being executed. You can switch between Event Flows and Main Flows to see all nodes executed.
 4. By clicking on each activity name you will see it's details. ***Examples: Entry point ID, Flow Label, DNIS, selected Business Hours, also TTS value and what events were triggered.***
 
     ![profiles](../graphics/Lab1/FlowDebug1.gif)
@@ -73,7 +73,7 @@ Flow Analytics feature is designed to provide flow developer, administrators and
 
 ### How to Use the Flow Analytics Tool
 
-1. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** in Flow Designer and navigate to the Flow Analytics Tool.
+1. On the Flow Designer, click on the **Analyze** tab at the bottom of the Flow Designer to open the Flow Analytics Tool
 
 2. Specify a DateTime range for the report. All calls we made happened today hence select **Today** option.
 

@@ -79,10 +79,11 @@ Your mission is to:
 </details>
 
 ## Build
-1. Explore preconfigured survey **PCS-2025**. In Control Hub go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
+1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **PCS-2025** Survey and click on it to familiarise yourself with it's configuration.  
+
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
-2. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
+2. Switch to the Flow Designer. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
 
 3. Add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
   ![profiles](../graphics/Lab1/PCS_addGV.gif)
@@ -104,7 +105,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
-5. Open Event tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTPRequest** node connected to it. Delete the connection between **HTTPRequest** node and **DisconnectContact**.
+5. Open **Event FLows**  tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTPRequest** node connected to it. Delete the connection between **HTTPRequest** node and **DisconnectContact**.
 
 6. Drag **FeedbackV2** and **Play Message**
     
@@ -141,7 +142,7 @@ Your mission is to:
 2. Make a test call to the Support Number and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 
 4. Now the caller should hear prompts configured in **PCS-2025**. Complete the survey.
-5. To check survey responses, go to ***Control Hub -> Contact Center -> Surveys***. For **PCS-2025** click on **Download**, and get a CSV file with the provided answers.
+5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **PCS-2025** survey and click on the **Download** button on the right hand side to download a CSV file with the provided Survey responses.
     
     !!! Note
         If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
