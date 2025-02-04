@@ -28,7 +28,7 @@ Your mission is to: </br>
 
 ## Build
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
+1. Switch to Flow Designer where your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** should be open and make sure **Edit** toggle is **ON**.
 2. Delete  connection from **Queue** node to **Music** 
 3. Drag **Menu** node:
 

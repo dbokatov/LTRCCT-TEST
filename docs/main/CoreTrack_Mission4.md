@@ -45,8 +45,19 @@ Event flows enable a wide range of scenarios, with one common use case being the
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow and navigate to Even Flows tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
+4. Go back to your flow and navigate to Even Flows tab, delete **EndFlow_xkf** node which is connected to **AgentDisconnect** 
+
+5. Add **HTTPRequest** and **DisconnectContact** node in between these nodes.
       
+    > 
+    > Connect **AgentDisconnect** to **HTTPRequest** node
+    >
+    > Connect **HTTPRequest** to **DisconnectContact**
+    > 
+
+6. Modify **HTTPRequest** node settings:
+    
+    >
     > Use Authenticated Endpoint: **Off**
     >
     > Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook.site/</span>*.
@@ -73,7 +84,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 5. Modify **Screenpop** configuration in the same flow
 
-    > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.ciscolive.com/emea/faqs.html"><span class="copy"></span></span>
+    > Screen Pop URL: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.ciscolive.com/emea/faqs.html"><span class="copy"></span></span>
     >
     > Screen Pop Desktop Label: **Cisco Live Amsterdam 2025 FAQ**<span class="copy-static" title="Click to copy!" data-copy-text="Cisco Live Amsterdam 2025 FAQ"><span class="copy"></span></span>
     >
@@ -87,8 +98,9 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 1. Make sure you're logged into Webex CC Desktop application as Agent **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and set status to **Available**.
 2. Make a call to the Support Number and if success you should hear Welcome message and then accept the call by agent.
-3. In agent interaction panel change **Who Is Calling?** to any text you like then click **Save** and End the call.
-4. On **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 
+3. Upon accepting the call, a new browser tab will be opened with the Screen Pop URL configured in **Step 4**.
+3. Switch back to the Agent Desktop. In agent interaction panel change **Who Is Calling?** to any text you like then click **Save** and End the call.
+4. Switch to the **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 
 
 ![profiles](../graphics/Lab1/AM2_Testing.gif)
 

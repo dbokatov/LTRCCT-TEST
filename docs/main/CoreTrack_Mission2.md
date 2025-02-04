@@ -35,7 +35,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
-2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
+2. Switch to Flow Designer. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
 3. Drag and drop following nodes to the canvas:
 
     > - **Business Hours**
@@ -76,7 +76,7 @@ Your mission is to:
     ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
    
-8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
+8. We are going to use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** entity. Switch to Control Hub and open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **Overrides_Hours** from Override dropdown list. Then click **Save**.
 
     !!! Note
         Override Hours entity was configured to overwrite Working Hours and set to duration of current Cisco Live lab 

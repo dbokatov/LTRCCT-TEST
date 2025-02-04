@@ -104,9 +104,9 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
-5. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
+5. Open Event tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTPRequest** node connected to it. Delete the connection between **HTTPRequest** node and **DisconnectContact**.
 
-6. Drag **FeedbackV2**, **Play Message** and **DisconnectContact**
+6. Drag **FeedbackV2** and **Play Message**
     
     **FeedbacV2**
     
