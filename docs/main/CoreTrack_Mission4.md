@@ -45,7 +45,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow and navigate to Even Flows tab, delete **EndFlow_xkf** node which is connected to **AgentDisconnect** 
+4. Go back to your flow and navigate to **Even Flows** tab, delete **EndFlow_xkf** node which is connected to **AgentDisconnect** 
 
 5. Add **HTTPRequest** and **DisconnectContact** node in between these nodes.
       
@@ -103,5 +103,18 @@ Event flows enable a wide range of scenarios, with one common use case being the
 4. Switch to the **[Webhook.site](https://webhook.site/){:target="_blank"}** you should see the request which came right after Agent dropped the call with all the needed data 
 
 ![profiles](../graphics/Lab1/AM2_Testing.gif)
+
+
+## Post Testing Steps
+
+We recommend removing the ScreenPop node after testing. Otherwise, every time you make a new call to the Main Flow, a pop-up will appear, which may be distracting.
+
+1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
+
+2. Navigate to **Even Flows** and delete **Screenpop** node
+
+3. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+
+![profiles](../graphics/Lab1/AM2_Screenpop_delete.gif)
 
 **Congratulations on completing another mission where you have learnt how to use events in your flows.**

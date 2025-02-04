@@ -200,4 +200,5 @@ Your mission is to:
 
 ![profiles](../graphics/Lab2/L2M3-6.gif)
 
+
 **Congratulations on completing another mission.**

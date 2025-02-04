@@ -63,7 +63,7 @@ Flow Templates are designed to empower developers, speed up the development life
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
-7. **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On**. Select **Play Message** node with label **WelcomePrompt** and on the Node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+7. **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On**. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
 8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list
     
@@ -130,8 +130,9 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
 ### Build
 
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change **Edit: Off** mode to **Edit: On**.
-2. Add a **Global Variable** named **Global_Language**
+1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
+
+2. On the right hand side you will see the **Global Flow Properties** Panel. Scroll down and Locate the **Predefined Variables** section. Click on the **Add Global Variables** button. Search for **Global_Language** variable and click on **Add** button.
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
@@ -161,8 +162,5 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
 5. Verify if the TTS language changed
-
-## Summary
-This lab may feel straight forward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
 **Congratulations on completing another mission.**
