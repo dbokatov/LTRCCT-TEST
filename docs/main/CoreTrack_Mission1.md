@@ -131,7 +131,8 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 ### Build
 
 1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
-2. Add a **Global Variable** named **Global_Language**
+
+2. On the right hand side you will see the **Global Flow Properties** Panel. Scroll down and Locate the **Predefined Variables** section. Click on the **Add Global Variables** button. Search for **Global_Language** variable and click on **Add** button.
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
@@ -161,8 +162,5 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
 5. Verify if the TTS language changed
-
-## Summary
-This lab may feel straight forward for some, which is understandable; however, it is essential for those encountering this material for the first time. As we progress, we will delve deeper into complex configurations, enabling you to create highly advanced flows.
 
 **Congratulations on completing another mission.**

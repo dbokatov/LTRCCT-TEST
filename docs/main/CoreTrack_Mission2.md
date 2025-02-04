@@ -19,7 +19,7 @@ Business Hours allows you to configure the operational hours of the contact cent
 
 Your mission is to:
 
-  - Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** we created in previous Mission 1 of the Fundamental Lab.
+  - Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** we created in previous Mission.
 
   - Add Business Hours functionality **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** to your flow. Business Hours entity has been configured for you and contains the following settings:
     
@@ -94,6 +94,6 @@ Your mission is to:
 
      ![profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif) 
 
-2. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of Main Mission of Fundamental Lab.
+2. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of previous Mission.
 
 **Congratulations on completing another mission.**
