@@ -130,7 +130,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
 ### Build
 
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and change **Edit: Off** mode to **Edit: On**.
+1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
 2. Add a **Global Variable** named **Global_Language**
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)

@@ -82,11 +82,13 @@ Your mission is to:
 1. Explore preconfigured survey **PCS-2025**. In Control Hub go to **Contact Center**, then click **Survey** in Customer Expirience section on left hand side menu.    
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
-2. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, switch **Edit: Off** mode to **Edit: On** and add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+2. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
+
+3. Add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
   ![profiles](../graphics/Lab1/PCS_addGV.gif)
 
 
-3. Drag **Set Variable** node to canvas:
+4. Drag **Set Variable** node to canvas:
 
     > Activity Name: **FeedbackSet**<span class="copy-static" title="Click to copy!" data-copy-text="FeedbackSet"><span class="copy"></span></span>
     >
@@ -102,9 +104,9 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/PCS_SetVar.gif)
 
-4. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
+5. Open Event tab and locate **AgentDisconected** node. If you completed Mission 3 of Fundamental Lab you should have **HTTPRequest** node connected to it. Delete **EndFlow_xkf** that follows **HTTPRequest** node.
 
-5. Drag **FeedbackV2**, **Play Message** and **DisconnectContact**
+6. Drag **FeedbackV2**, **Play Message** and **DisconnectContact**
     
     **FeedbacV2**
     
@@ -131,7 +133,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
 
-6. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
+7. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
 
 
 ## Testing

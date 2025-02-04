@@ -49,7 +49,7 @@ Your mission is to:
     **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
 
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Edit: Off** mode to **Edit: On**.
+1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
 2. Add following 4 flow variables to your flow: 
 
     - Outdial Entry Point Variable :

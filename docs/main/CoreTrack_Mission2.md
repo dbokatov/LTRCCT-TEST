@@ -35,7 +35,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
-2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and switch **Edit: Off** mode to **Edit: On**.
+2. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
 3. Drag and drop following nodes to the canvas:
 
     > - **Business Hours**

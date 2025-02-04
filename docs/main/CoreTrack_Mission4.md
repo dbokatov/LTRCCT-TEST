@@ -33,17 +33,19 @@ Event flows enable a wide range of scenarios, with one common use case being the
 !!! Note
     The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. You <span style="color: red;">**DO NOT**</span> need to modify it here.
              
-1. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Add **WhoIsCalling**<span class="copy-static" title="Click to copy!" data-copy-text="WhoIsCalling"><span class="copy"></span></span> Global Variable to the flow.
+1. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Make sure **Edit** toggle is **ON**
+
+2. Add **WhoIsCalling**<span class="copy-static" title="Click to copy!" data-copy-text="WhoIsCalling"><span class="copy"></span></span> Global Variable to the flow.
     
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
 
-2. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
+3. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
 **<span style="color: red;">DO NOT close this Tab</span>**
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-3. Go back to your flow and navigate to Even Flows tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
+4. Go back to your flow and navigate to Even Flows tab, remove connection between **AgentDisconnect** and **EndFlow_xkf** and add **HTTP Request** node in between these nodes.
       
     > Use Authenticated Endpoint: **Off**
     >
@@ -69,7 +71,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
     ![profiles](../graphics/Lab1/AM2_httpevent.gif)
     
-6. Modify **Screenpop** configuration in the same flow
+5. Modify **Screenpop** configuration in the same flow
 
     > URL Settings: **[https://www.ciscolive.com/emea/faqs.html](https://www.ciscolive.com/emea/faqs.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.ciscolive.com/emea/faqs.html"><span class="copy"></span></span>
     >
@@ -79,7 +81,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
   
     ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
     
-7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+6. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
     
 ## Testing
     

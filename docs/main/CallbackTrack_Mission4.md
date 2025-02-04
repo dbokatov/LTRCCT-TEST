@@ -32,7 +32,7 @@ Your mission is to:
 
 ## Build
 
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and switch **Edit: Off** mode to **Edit: On**.
+1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and make sure **Edit** toggle is **ON**.
 
 2. Add 3 new flow variables: 
 
