@@ -5,10 +5,7 @@ icon: material/medal
 
 
 
-# Mission 1: Callback on Global Error
-
-!!! Note
-    This task relies on completing Mission 3 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
+# Mission 3: Callback on Global Error
 
 ## Story 
 Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to an unexpected error in the flow. This unplanned interruption leaves the customer disconnected without completing their request. In this scenario we are going to configure our flow to schedule a callback to the caller when such failure scenario occurs.
@@ -49,8 +46,8 @@ Your mission is to:
     **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
 
 
-1. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
-2. Add following 4 flow variables to your flow: 
+1. Switch to the Flow Designer. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
+2. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following 4 flow variables:  
 
     - Outdial Entry Point Variable :
     
@@ -219,24 +216,24 @@ Your mission is to:
     ```
     ![profiles](../graphics/Lab2/AM2_EventHTTP.gif) 
 
-8. Add **Condition** node. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
+9. Add **Condition** node. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
     
     > 
     > Activity Label: **HTTPStatusCode**<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the output node edge from the **CallBackAPI_HTTPRequest** node to this node
     >
-    > Connect both to **EndFlow** node. We will be able to see in Debug tool whether request was succsesful or not. 
+    > Connect both **True** and **False** exists to **EndFlow** node. We will be able to see in Debug tool whether request was succsesful or not. 
     >
     > In the Expression section write an expresion ***{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
-9. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+10. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
     ![profiles](../graphics/Lab2/AM2_EventCondition.gif) 
 
-10. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
-11. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-12. In **Entry Point** settings section change the following, then click **Save** button:
+11.  Switch to **Control Hub**. Navigate to **Channels** under **Customer Experience Section**, locate your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
+12. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+13. In **Entry Point** settings section change the following, then click **Save** button:
     
     >
     > Routing Flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
@@ -254,10 +251,10 @@ Your mission is to:
 4. If everything configured correctly your call should be disconnected.
 5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. Look for **WantCallback** in Activity Name column and make sure the call left **WantCallback** out of Option 3 and continue through **GET_CBID**.
 
-6. Click on either **GET_CBID** node of th flow or on Activity Name **GET_CBID** in the Debug tool and scroll to the bottom the right hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a wellknown Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in Lab 3 of Fundamental Labs. This time we used an external database as well as GET API call to extract that number.
+6. Click on either **GET_CBID** node of the flow or on Activity Name **GET_CBID** n the Debug tool and scroll to the bottom the right hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a well known Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in previous exercise.  This time we used an external database as well as GET API call to extract that number.
 
-7. While still on Debug tool, click on **SetGetResult** to see full response from HTTP request that we wrote into **getruselt** flow variable.
-8. Make sure **SimulateGlobalError** activity name has an ***Error** next to it in **Outcome** column. That mean you succesfully simulated **Global Error** event.
+7. While still on Debug tool, click on **SetGetResult** to see full response from HTTP request that we wrote into **getresult** flow variable.
+8. Make sure **SimulateGlobalError** activity name has an **Error** next to it in **Outcome** column. That mean you succesfully simulated **Global Error** event.
 
 9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automaticaly will open **Event Flows** tab.
 

@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 2: Preventing Callback duplication
+# Mission 4: Preventing Callback duplication
 
 > !!! Note
       This task relies on completing Mission 3 of Fundamental Labs. Ensure that mission is completed to have a fully functional callback feature in your flow.
@@ -32,9 +32,9 @@ Your mission is to:
 
 ## Build
 
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and make sure **Edit** toggle is **ON**.
+1. Switch to the Flow Designer. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and make sure **Edit** toggle is **ON**.
 
-2. Add 3 new flow variables: 
+2. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following 3 flow variables: 
 
     - Callback Status variable:
     
@@ -67,6 +67,8 @@ Your mission is to:
 
 3. Add an **HTTP Request** node for our query as shown in the following video.
     
+    >
+    > Remove the existing connection between **VerifyNumber** Option 1 and **Callback** node
     >
     > Connect **VerifyNumber** Option 1 to this HTTP node
     >
@@ -130,9 +132,13 @@ Your mission is to:
     >
     > Click **Add New**
     > 
-    > Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+    > - Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
+    >
     > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
     >
+    </br>
+    </br>
+    
       ![profiles](../graphics/Lab2/L2M3-2.gif)
 ---     
 
@@ -179,7 +185,7 @@ Your mission is to:
       >
       > Delete the Selection for Audio File
       >
-      > Connect **True** exit path of **Condition** node created in **Step 7** to **Play Message** node
+      > Connect **True** exit path of **Condition** node created in previous step to **Play Message** node
       > Connect this **Play Message** to **Disconnect Contact** node
 
       ![profiles](../graphics/Lab2/L2M3-5.gif)
