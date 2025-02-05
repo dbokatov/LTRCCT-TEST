@@ -229,7 +229,7 @@ Your mission is to:
     ![Profiles](../graphics/Lab2/GV_True.png) </br>
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
-5. Add **Condition**: 
+6. Add **Condition** node: 
     
     > Connect the output node edge of the **NewPhoneContact** node to this node
     > 
@@ -241,8 +241,10 @@ Your mission is to:
         
     ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
 
+    !!! Note
+        Depending on which Track you have followed after the Core Track, you may have **NewPhoneContact** connected either to **FeedbackSet** node or to **SetVariable** node. Remove this connection and add a **Condition** node in between. 
 
-6. Add a **Play Message** node and **Disconnect node**.
+7. Add a **Play Message** node and **DisconnectContact node**.
     
     > Connect the **TRUE** output node edge of the **Condition Node** node to this node
     > 
@@ -259,8 +261,20 @@ Your mission is to:
     > Text-to-Speech Message: ***Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.***<span class="copy-static" data-copy-text="Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later."><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-Test6-GV.gif)
-        
-7. Because we are using only one number to make calls we need to map your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** back to the **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+
+8. Publish your flow
+
+    > Turn on Validation at the bottom right corner of the flow builder
+    >
+    > If there are no Flow Errors, Click **Publish**
+    >
+    > Add a publish note
+    >
+    > Add Version Label(s): **Latest**
+    >
+    > Click **Publish Flow**
+
+9. Because we are using only one number to make calls we need to map your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** back to the **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     
     > Navigate to Control Hub > Contact Center > Channels
     >
@@ -273,9 +287,9 @@ Your mission is to:
     > Click **Save** in the lower right corner of the screen
     
 
-8. Make a call and you should hear the message we configured on **Step 6**.
+10. Make a call and you should hear the message we configured on **Step 7**.
     
-9. Revert the Global Variable value from **True** to **False** in Control Hub. In Control Hub Flows page open Global Variables tab and create new Global Variable. 
+11. Revert the Global Variable value from **True** to **False** in Control Hub and click **Save**.
 
     > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** 
     
@@ -286,8 +300,7 @@ Your mission is to:
     ![Profiles](../graphics/Lab2/BM1-Test11-GV.gif)
     
     
-10. Make a test call again and you should hear the message configured in Basic Lab at the very beginning.
+12. Make a test call again and you should hear the Welcome Prompt.
 
-
-## Summary
-This lab shows how to quickly change the behavior of your contact center logic in extreme situation without even login-in in to Control Hub.
+---
+<p style="text-align:center"><strong>Congratulations, you have completed Emergency Config mission! 🎉🎉 </strong></p>
