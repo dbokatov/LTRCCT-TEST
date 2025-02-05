@@ -208,7 +208,7 @@ Request Body:
     }
     ```
 
-    Expected Response: 200 Response
+Expected Response: 200 Response
 
     ``` JSON
     {
