@@ -190,10 +190,13 @@ We will retrieve information about your newly created address book using a GET A
 
     ![profiles](../graphics/Lab2/DevPortal_PUT_ABNavigate.gif)
 
-3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. 
+3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy **name** and **id** by switching back to Control Hub. 
 
 4. Clear **Request Body** content and paste the following body. Then click **Run**.
     
+    > Replace value ***YourAddressBook_Name*** to your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    >
+    > Replace ***YouAddressBook_ID*** to actual AddressBook_<span class="attendee-id-placeholder">AddressBook_</span> **ID**
     > 
     > Request Body:
     ``` JSON
