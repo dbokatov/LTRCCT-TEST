@@ -52,11 +52,11 @@ APIs (Application Programming Interfaces) allow different systems to communicate
 APIs streamline operations by automating tasks, integrating systems, and enhancing customer experiences. Understanding these core calls helps optimize workflows in platforms like Webex Contact Center.
 </details>
 
-
+---
 
 ## Build
 
-### Access the Developer Portal
+### Create a New Address Book entity by using POST
 
 1. Open [**Developer Portal**](https://developer.webex-cx.com/){:target="_blank"} and click on **Sign In**. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
@@ -86,9 +86,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
     }
     ```
 
-    ```Expected Response
-
-    201 Response
+    ``` JSON
+    
+    Expected Response: 201 Response
 
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
@@ -102,17 +102,126 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ```
 
-  ![profiles](../graphics/Lab1/DevPortal_AddressBookCreate.gif)
+  ![profiles](../graphics/Lab2/DevPortal_AddressBookCreate.gif)
 
-6. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+6. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"} and navigate to **Address Book**. Locate your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
 
-    ![profiles](../graphics/Lab1/1-CH_Login.gif)
+7. You should see your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. There are still no Address Book entries os let's add them.
 
-7. Navigate to Address Book and locate your new created **<span class="attendee-id-container">Address_Book_<span class="attendee-id-placeholder" data-prefix="Address_Book_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+8. On the same **Address Book** configuration page, copy the **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into notepad.
+
+  ![profiles](../graphics/Lab2/DevPortal_VerifyAB.gif)
+
+9. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
+
+  ![profiles](../graphics/Lab2/DevPortal_gotoABEntry.gif)
+
+10. Click on **Create a new Address Book Entry**, then switch to **Try Out** tab within the same page. 
+
+11. In the **Parameters** section paste ID you copied on **Step 8** of the current mission.
+
+12. Clear **Request Body** content and paste the following body
 
 
-8. Navigate back to **Developer Portal** and select **Address Book** again from left menu pane.
+    > 
+    > Request Body:
+    ``` JSON
+    {
+      "name": "TAC Number",
+      "number": "+14085267209"
+    }
+    ```
+
+    ``` JSON
+    
+    Expected Response: 201 Response
+
+    {
+      "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+      "id": "133ec7d9-7873-40b6-be40-43e071430268",
+      "version": 0,
+      "name": "TAC Number",
+      "number": "+14085267209",
+      "createdTime": 1738773041509,
+      "lastUpdatedTime": 1738773041509
+    }
+    ```
+
+  ![profiles](../graphics/Lab2/DevPortal_CreateABEntry.gif)
+
+12. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. You **Addres Book** configuration page should still be open. But if not, navigate to and open **Address Book**. Locate and open your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+
+13. You should see your new created **Entry List** with Name **Tac Number** and Contact Number **+14085267209**.
+
+  ![profiles](../graphics/Lab2/DevPortal_VerifyABEntry.gif)
+
+---
+
+### Retrieve Address Book Entry by ID (GET)
+
+We will retrieve information about your newly created address book using a GET API call.
+
+1. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
+
+2. Locate and open **Get specific Address Book by ID**, then switch to **Try Out** tab.
+
+ ![profiles](../graphics/Lab2/DevPortal_GET_Entry1.gif)
+
+3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. Then click **Run**.
+
+    Expected Response: 200 Response
+    ``` JSON
+    {
+      "id": "115358d7-5c46-4988-9a50-e7f40c3b7daf",
+      "name": "AddressBook_140",
+      "description": "",
+      "parentType": "ORGANIZATION",
+      "createdTime": 1738771074000,
+      "lastUpdatedTime": 1738773007000
+    }
+    ```
+ ![profiles](../graphics/Lab2/DevPortal_GET_Entry2.gif)
+
+
+### Update Address Book Description by using PUT
+
+1. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
+
+2. Locate and open **Update specific Address Book by ID**, then switch to **Try Out** tab.
+
+ ![profiles](../graphics/Lab2/DevPortal_PUT_ABNavigate.gif)
+
+3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. 
+
+4. Clear **Request Body** content and paste the following body. Then click **Run**.
+
+Request Body:
+
+    ``` JSON
+    {
+      "name": "YourAddressBook_Name",
+      "id": "YouAddressBook_ID",
+      "parentType": "ORGANIZATION",
+      "description": "Testing PUT requests from Develeper Portal"
+    }
+    ```
+
+    Expected Response: 200 Response
+
+    ``` JSON
+    {
+      "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+      "id": "115358d7-5c46-4988-9a50-e7f40c3b7daf",
+      "version": 5,
+      "name": "AddressBook_140",
+      "description": "Testing PUT requests from Developer Portal",
+      "parentType": "ORGANIZATION",
+      "createdTime": 1738771074000,
+      "lastUpdatedTime": 1738775594832
+    }
+    ```
+
+ ![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
 
 **To be Continued...**
 
