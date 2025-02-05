@@ -102,23 +102,23 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ```
 
-  ![profiles](../graphics/Lab2/DevPortal_AddressBookCreate.gif)
+    ![profiles](../graphics/Lab2/DevPortal_AddressBookCreate.gif)
 
 6. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"} and navigate to **Address Book**. Locate your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
 
-7. You should see your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. There are still no Address Book entries os let's add them.
+7. You should see your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. There are still no Address Book entries so let's add them.
 
-8. On the same **Address Book** configuration page, copy the **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into notepad.
+8. On the same **Address Book** configuration page, copy the **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** **ID** into notepad.
 
-  ![profiles](../graphics/Lab2/DevPortal_VerifyAB.gif)
+    ![profiles](../graphics/Lab2/DevPortal_VerifyAB.gif)
 
 9. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
 
-  ![profiles](../graphics/Lab2/DevPortal_gotoABEntry.gif)
+    ![profiles](../graphics/Lab2/DevPortal_gotoABEntry.gif)
 
 10. Click on **Create a new Address Book Entry**, then switch to **Try Out** tab within the same page. 
 
-11. In the **Parameters** section paste ID you copied on **Step 8** of the current mission.
+11. In the **Parameters** section paste **ID** you copied on **Step 8** of the current mission.
 
 12. Clear **Request Body** content and paste the following body
 
@@ -147,13 +147,15 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
     }
     ```
 
-  ![profiles](../graphics/Lab2/DevPortal_CreateABEntry.gif)
+    ![profiles](../graphics/Lab2/DevPortal_CreateABEntry.gif)
 
-12. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. You **Addres Book** configuration page should still be open. But if not, navigate to and open **Address Book**. Locate and open your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+12. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. You **Addres Book** configuration page should still be open. **Refresh** the page.
 
-13. You should see your new created **Entry List** with Name **Tac Number** and Contact Number **+14085267209**.
+13. But if not open, locate and open your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
 
-  ![profiles](../graphics/Lab2/DevPortal_VerifyABEntry.gif)
+14. You should see your new created **Entry List** with Name **Tac Number** and Contact Number **+14085267209**.
+
+    ![profiles](../graphics/Lab2/DevPortal_VerifyABEntry.gif)
 
 ---
 
@@ -165,9 +167,9 @@ We will retrieve information about your newly created address book using a GET A
 
 2. Locate and open **Get specific Address Book by ID**, then switch to **Try Out** tab.
 
- ![profiles](../graphics/Lab2/DevPortal_GET_Entry1.gif)
+    ![profiles](../graphics/Lab2/DevPortal_GET_Entry1.gif)
 
-3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. Then click **Run**.
+3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** **ID** into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. Then click **Run**.
 
     Expected Response: 200 Response
     ``` JSON
@@ -180,7 +182,7 @@ We will retrieve information about your newly created address book using a GET A
       "lastUpdatedTime": 1738773007000
     }
     ```
- ![profiles](../graphics/Lab2/DevPortal_GET_Entry2.gif)
+    ![profiles](../graphics/Lab2/DevPortal_GET_Entry2.gif)
 
 
 ### Update Address Book Description by using PUT
@@ -189,7 +191,7 @@ We will retrieve information about your newly created address book using a GET A
 
 2. Locate and open **Update specific Address Book by ID**, then switch to **Try Out** tab.
 
- ![profiles](../graphics/Lab2/DevPortal_PUT_ABNavigate.gif)
+    ![profiles](../graphics/Lab2/DevPortal_PUT_ABNavigate.gif)
 
 3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. 
 
@@ -221,17 +223,10 @@ Request Body:
     }
     ```
 
- ![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
+    ![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
 
-**To be Continued...**
 
-### Update Address Book Description (PUT)
-
-### Create a New Address Book Entry (POST)
-
-### Retrieve Address Book Entry by ID (GET)
 
 ### Use Search API to retrieve data from Analyzer DB.
 
-## Summary
-This mission shows how to quickly change the behavior of your contact center logic in extreme situation without even login-in in to Control Hub.
+**To be Continued...**
