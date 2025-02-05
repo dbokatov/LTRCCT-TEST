@@ -223,7 +223,7 @@ Request Body:
     }
     ```
 
-  ![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
+![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
 
 
 
