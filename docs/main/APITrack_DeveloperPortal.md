@@ -9,7 +9,7 @@ icon: material/medal
 
 ## Story
 
-Webex Contact Center APIs enable automation, customization, and integration with external applications. By leveraging these APIs, administrators can streamline processes, enhance agent efficiency, and improve customer interactions. In this lab, we will explore how to interact with the Developer Portal and execute API calls to manage Address Books.
+Webex Contact Center APIs enable automation, customization, and integration with external applications. By leveraging these APIs, administrators can streamline processes, enhance agent efficiency, and improve customer interactions. In this introduction mission, we will explore how to interact with the Developer Portal and execute different types of API calls.
 
 
 ## Mission Details
@@ -85,11 +85,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
         "parentType": "ORGANIZATION"
     }
     ```
-
+    > 
+    > Expected Response: **201 Response**
     ``` JSON
-    
-    Expected Response: 201 Response
-
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
       "id": "4aa50a6b-a520-4221-bc9d-a050c111061f",
@@ -131,11 +129,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
       "number": "+14085267209"
     }
     ```
-
+    >
+    > Expected Response: **201 Response**
     ``` JSON
-    
-    Expected Response: 201 Response
-
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
       "id": "133ec7d9-7873-40b6-be40-43e071430268",
@@ -171,7 +167,8 @@ We will retrieve information about your newly created address book using a GET A
 
 3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** **ID** into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. Then click **Run**.
 
-    Expected Response: 200 Response
+    >
+    > Expected Response: **200 Response**
     ``` JSON
     {
       "id": "115358d7-5c46-4988-9a50-e7f40c3b7daf",
@@ -196,9 +193,9 @@ We will retrieve information about your newly created address book using a GET A
 3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. 
 
 4. Clear **Request Body** content and paste the following body. Then click **Run**.
-
-Request Body:
-
+    
+    > 
+    > Request Body:
     ``` JSON
     {
       "name": "YourAddressBook_Name",
@@ -207,9 +204,8 @@ Request Body:
       "description": "Testing PUT requests from Develeper Portal"
     }
     ```
-
-Expected Response: 200 Response
-
+    > 
+    > Expected Response: **200 Response**
     ``` JSON
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
