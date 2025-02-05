@@ -33,9 +33,9 @@ Your mission is to:
 1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
 
     >
-    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**<
+    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
-    > Type: **Boolean**<
+    > Type: **Boolean**
     >
     > Default Value: **False**
     > 
