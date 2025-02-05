@@ -32,11 +32,14 @@ Your mission is to:
 
 1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
 
-    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-    > Type: **Boolean**
+    >
+    > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**<
+    >
+    > Type: **Boolean**<
+    >
     > Default Value: **False**
     > 
-    > Copy your new created **Global Variable** **ID** and **Name** to a notepad. We are going to use them in API request in further steps.
+    > Copy your new created **Global Variable** **ID** and save to a notepad. We are going to use them in API request in further steps.
     >
 
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
@@ -219,8 +222,11 @@ Your mission is to:
 3. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
 
-4. Now the fun part. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** we created in Mission 1 of Core track, make sure **Edit** toggle is **ON** and add Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False** in General Settings of the flow.
+4. Now, let’s get to the fun part. Open the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** we created in Mission 1 of Core track, make sure **Edit** toggle is **ON** 
 
+5. Add Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False** in General Settings of the flow as shown on the following picture.
+
+    ![Profiles](../graphics/Lab2/GV_True.png) </br>
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
 5. Add **Condition**: 
