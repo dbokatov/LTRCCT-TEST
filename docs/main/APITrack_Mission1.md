@@ -94,7 +94,7 @@ Your mission is to:
         
     ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
     
-6. Add **HTTP Request** node. We are going to use {**Update Global Variable API PUT**](https://developer.webex-cx.com/documentation/global-variables/v1/update-global-variables){:target="_blank"} request in the node configuration. 
+6. Add **HTTP Request** node. We are going to use [**Update Global Variable API PUT**](https://developer.webex-cx.com/documentation/global-variables/v1/update-global-variables){:target="_blank"} request in the node configuration. 
 
     > 
     > Activity Label: **HTTP_PUT**<span class="copy-static" data-copy-text="HTTP_PUT"><span class="copy" title="Click to copy!"></span></span>
