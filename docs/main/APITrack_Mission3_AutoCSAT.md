@@ -12,11 +12,7 @@ A common request for returning customers calling into a contact center is to wor
 
 <span style="color: red;">**[IMPORTANT]** Since this is a lab environment where you will act as both the customer and the agent, accurately scoring a call will be challenging. Additionally, AutoCSAT has not been taught due to the insufficient number of calls required for AI to learn and generate proper scoring. In this lab, we will use a Global Variable to store the score, which is also used for AutoCSAT teaching. With a sufficient number of provided scores, AutoCSAT will eventually be able to score calls automatically.</span>
 
-<details><summary>Auto CSAT configuration settings</summary>
-
-  ![profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)
-
-</details>
+<details><summary>Auto CSAT configuration settings</summary>![Profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)</details>
 
 ## Call Flow Overview
 1. New call comes into the flow
