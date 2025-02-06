@@ -236,7 +236,7 @@ We will retrieve information about your newly created address book using a GET A
 
 ![profiles](../graphics/Lab2/DevPortal_SearchAPI1.gif)
 
-3. Click on **Mazimize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
+3. Click on **Maximize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
 
     !!! Note
        When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
