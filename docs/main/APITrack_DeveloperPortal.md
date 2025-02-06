@@ -241,11 +241,11 @@ We will retrieve information about your newly created address book using a GET A
     !!! Note
         Current query is configured to search calls with following details from Analyzer database:
 
-        1. Time range: From **Monday, January 13, 2025 15:52:00** to **Monday, January 13, 2025 19:58:57** CET.
+        1. Time range: From **Thursday, February 6, 2025 9:25:21 AM** to **Thursday, February 6, 2025 10:38:21 AM GMT+01:00**.
 
         2. Telephony inbound calls only.
 
-        3. Calls only from **+3227045654**.
+        3. Calls only from **+14694097607**.
 
         4. Ended calls only.
 
@@ -257,13 +257,13 @@ We will retrieve information about your newly created address book using a GET A
       #Global CAD Variables: Usage of taskDetails Object to retrieve the Value of Global Variables
       taskDetails(
         # NOTE: from and to are mandatory arguments that take the Epoch timestamp in milliseconds
-        from: 1736779920000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
-        to: 1736794737000 #This can be set to Date.now() in millis
+        from: 1738833921000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
+        to: 1738834701000 #This can be set to Date.now() in millis
         filter: {
           #Filter the type of Task
           and: [
             { channelType: { equals: telephony } } #Telephony calls only
-            { origin: { equals: "+3227045654" } } #Customer ANI
+            { origin: { equals: "+14694097607" } } #Customer ANI
             { status: { equals: "ended" } } #Final Disposition
             { direction: { equals: "inbound" } } #Inbound call only
             { isActive: { equals: false } } #Resolved call only
@@ -317,18 +317,18 @@ We will retrieve information about your newly created address book using a GET A
         "taskDetails": {
           "tasks": [
             {
-              "id": "f519cbb9-f649-4df2-a7ee-aa0c413c9b83",
+              "id": "d1364618-49a4-41f5-8b5f-a8da4d12e56c",
               "status": "ended",
-              "totalDuration": 18780,
-              "origin": "+3227045654",
-              "destination": "+19302017936",
+              "totalDuration": 35562,
+              "origin": "+14694097607",
+              "destination": "+14694096861",
               "lastAgent": {
-                "id": "a8082142-e05f-493b-845a-f07dbb284519",
-                "name": "Supervisor140 Lab"
+                "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
+                "name": "Agent140 Lab"
               },
               "stringGlobalVariables": {
                 "name": "Global_Language",
-                "value": "en_US"
+                "value": "en-AU"
               }
             }
           ]
@@ -348,7 +348,7 @@ We will retrieve information about your newly created address book using a GET A
 
 6. Switch back to JSON Path tool and paste the response into the **Document** section.
 
-7. Test the following JSONPath by pasting then into **JSONPath Query** adress line one by one.
+7. Test the following paths by pasting them into **JSONPath Query** adress line one by one:
 
     >
     > `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span> - Interaction ID of the call.
