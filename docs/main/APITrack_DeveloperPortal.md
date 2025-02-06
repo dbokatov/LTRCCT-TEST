@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Using Webex Contact Center Developer Portal <span style="color: red;">[Building new mission]</span></summary>
+# Using Webex Contact Center Developer Portal
 
 ## Story
 
@@ -239,17 +239,9 @@ We will retrieve information about your newly created address book using a GET A
 3. Click on **Mazimize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
 
     !!! Note
-        Current query is configured to search calls with following details from Analyzer database:
-
-        1. Time range: From **Thursday, February 6, 2025 9:25:21 AM** to **Thursday, February 6, 2025 10:38:21 AM GMT+01:00**.
-
-        2. Telephony inbound calls only.
-
-        3. Calls only from **+14694097607**.
-
-        4. Ended calls only.
-
-        5. Calls that were assigned to an owner (agent).
+       When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
+       If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
+       Ensure that your queries and filters use the correct time format to retrieve accurate results.
 
     > Request Body:
     ``` JSON
@@ -292,24 +284,20 @@ We will retrieve information about your newly created address book using a GET A
     } 
     ```
 
-    !!! Note 
-        Output of the query is configured to represent the following information
+    !!! Note
+        Current query is configured to search calls with following details from Analyzer database:
 
-        1. **ID** of the call
+        1. Time range: From **Thursday, February 6, 2025 9:25:21 AM** to **Thursday, February 6, 2025 10:38:21 AM GMT+01:00**.
 
-        2. Status of the call
+        2. Telephony inbound calls only.
 
-        3. Total duration of the call
+        3. Calls only from **+14694097607**.
 
-        4. Origin of the call. Who called.
+        4. Ended calls only.
 
-        5. Destination of the call. Entry Point number.
+        5. Calls that were assigned to an owner (agent).
 
-        6. Agent, whoc accepted the call: ID and Name
-
-        7. Language selected by the caller. Represented as **Global_Language** variable
-
-    > 
+     > 
     > Expected Response: **200 Response**
     ``` JSON
     {
@@ -336,17 +324,34 @@ We will retrieve information about your newly created address book using a GET A
       }
     }
     ```
+   !!! Note 
+        Output of the query is configured to represent the following information
+
+        1. **ID** of the call
+
+        2. Status of the call
+
+        3. Total duration of the call
+
+        4. Origin of the call. Who called.
+
+        5. Destination of the call. Entry Point number.
+
+        6. Agent, whoc accepted the call: ID and Name
+
+        7. Language selected by the caller. Represented as **Global_Language** variable
 
     ![profiles](../graphics/Lab2/DevPortal_SearchAPI2.gif)
 
 
 4. Open JSON Path tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} to test your **GraphQL** response. Clear the content from **Document** section and from **JSONPath Query** adress line.
 
-    ![profiles](../graphics/Lab2/DevPortal_SearchAPI3.gif)
-
 5. Switch to **Developer Portal** and copy the response 
 
 6. Switch back to JSON Path tool and paste the response into the **Document** section.
+
+    ![profiles](../graphics/Lab2/DevPortal_SearchAPI3.gif)
+
 
 7. Test the following paths by pasting them into **JSONPath Query** adress line one by one:
 
@@ -363,10 +368,12 @@ We will retrieve information about your newly created address book using a GET A
     > 
     > `$.data.taskDetails.tasks[0].lastAgent.name`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].lastAgent.name"><span class="copy" title="Click to copy!"></span></span> - Agent name who accepted the call.
     > 
-    - `$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language"><span     class="copy" title="Click to copy!"></span></span> - Language Global Variable that was used in the flow.
+    > `$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language"><span     class="copy" title="Click to copy!"></span></span> - Language Global Variable that was used in the flow.
     > 
     > `$.data.taskDetails.tasks[0].stringGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span> - Language selected by a caller.
     > 
+    
+![profiles](../graphics/Lab2/DevPortal_SearchAPI4.gif)
 
 
 **To be Continued...**
