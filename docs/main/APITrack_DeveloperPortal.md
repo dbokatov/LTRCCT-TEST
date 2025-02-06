@@ -222,10 +222,137 @@ We will retrieve information about your newly created address book using a GET A
     }
     ```
 
+5. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. You **Addres Book** configuration page should still be open. **Refresh** the page to validate Description change.
+
 ![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
 
 
 
 ### Use Search API to retrieve data from Analyzer DB.
+
+1. Switch to **Developer Portal** then locate and select **Search** from **API REFERENCE** menu
+
+2. Click on **Search tasks** and then switch to **Try Out** tab
+
+![profiles](../graphics/Lab2/DevPortal_SearchAPI1.gif)
+
+3. Click on **Mazimize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
+
+    !!! Note
+        Current query is configured to search calls with following details from Analyzer database:
+
+        1. Time range: From **Monday, January 13, 2025 15:52:00** to **Monday, January 13, 2025 19:58:57** CET.
+
+        2. Telephony inbound calls only.
+
+        3. Calls only from **+3227045654**.
+
+        4. Ended calls only.
+
+        5. Calls that were assigned to an owner (agent).
+
+    > Request Body:
+    ``` JSON
+    {
+      #Global CAD Variables: Usage of taskDetails Object to retrieve the Value of Global Variables
+      taskDetails(
+        # NOTE: from and to are mandatory arguments that take the Epoch timestamp in milliseconds
+        from: 1736779920000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
+        to: 1736794737000 #This can be set to Date.now() in millis
+        filter: {
+          #Filter the type of Task
+          and: [
+            { channelType: { equals: telephony } } #Telephony calls only
+            { origin: { equals: "+3227045654" } } #Customer ANI
+            { status: { equals: "ended" } } #Final Disposition
+            { direction: { equals: "inbound" } } #Inbound call only
+            { isActive: { equals: false } } #Resolved call only
+            { owner: { notequals: { id: null } } } #Only calls that had an Owner
+          ]
+        }
+      ) {
+        tasks {
+          id #TaskId-SessionId-CallId      
+          status #Status
+          totalDuration #CallTime
+          origin #ANI
+          destination #DNIS
+          lastAgent {
+            #Agent
+            id
+            name
+          }
+          stringGlobalVariables(name: "Global_Language") {
+            #GlobalCADVariable
+            name
+            value
+          }
+        }
+      }
+    } 
+    ```
+
+    !!! Note 
+        Output of the query is configured to represent the following information
+
+        1. **ID** of the call
+
+        2. Status of the call
+
+        3. Total duration of the call
+
+        4. Origin of the call. Who called.
+
+        5. Destination of the call. Entry Point number.
+
+        6. Agent, whoc accepted the call: ID and Name
+
+        7. Language selected by the caller. Represented as **Global_Language** variable
+
+    > 
+    > Expected Response: **200 Response**
+    ``` JSON
+    {
+      "data": {
+        "taskDetails": {
+          "tasks": [
+            {
+              "id": "f519cbb9-f649-4df2-a7ee-aa0c413c9b83",
+              "status": "ended",
+              "totalDuration": 18780,
+              "origin": "+3227045654",
+              "destination": "+19302017936",
+              "lastAgent": {
+                "id": "a8082142-e05f-493b-845a-f07dbb284519",
+                "name": "Supervisor140 Lab"
+              },
+              "stringGlobalVariables": {
+                "name": "Global_Language",
+                "value": "en_US"
+              }
+            }
+          ]
+        }
+      }
+    }
+    ```
+
+    ![profiles](../graphics/Lab2/DevPortal_SearchAPI2.gif)
+
+
+4. Open JSON Path tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} to test your **GraphQL** response. Clear the content from **Document** section and from **JSONPath Query** adress line.
+
+    ![profiles](../graphics/Lab2/DevPortal_SearchAPI3.gif)
+
+5. Switch to **Developer Portal** and copy the response 
+
+6. Switch back to JSON Path tool and paste the response into the **Document** section.
+
+7. Test the following JSONPath by pasting then into **JSONPath Query** adress line one by one.
+
+  - $.......
+  - 
+  - 
+
 
 **To be Continued...**
