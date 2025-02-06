@@ -126,9 +126,9 @@ nav:
             - "Mission 3: Last Agent Routing": ./main/APITrack_Mission3_AutoCSAT.md
             - "Mission 4: Routing Returning Callers": ./main/APITrack_Mission4.md
       - Conclusion: ./main/APITrack_Conclusion.md
-##  - AI AGENT TRACK:
-##      - Lab Guide:
-##            - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
+  - AI AGENT TRACK:
+      - Lab Guide:
+            - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
 ##            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
 ##            - "Mission 3: Seamless AI to Human Agent Handoffs": ./main/AIAgentTrack_Mission3.md
 ##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
