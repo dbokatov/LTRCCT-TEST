@@ -70,19 +70,18 @@ Your mission is to:
 
 10. New section **Add the essential details** will appear. Provide the following information, then click **Create**:
 
-  > Agent Name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**
-  >
-  > System ID is created automatically
-  >
-  > AI engine: **Nova**
-  >
-  > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span></span>**
-  > 
-  > Agent's goal: ***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information.***<span class="copy-static" title="Click to copy!" data-copy-text="You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog and general help information."><span class="copy"></span></span>
-  > 
+    > Agent Name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span   class="copy" title="Click to copy!"></span></span>**
+    >
+    > System ID is created automatically
+    >
+    > AI engine: **Nova**
+    >
+    > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></  span></span>**
+    > 
+    > Agent's goal: ***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what   transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule,   registration information, session catalog and general help information.***<span class="copy-static" title="Click to copy!" data-copy-text="You are a helpful, polite   agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In   addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog   and general help information."><span class="copy"></span></span>
 
 
-   ![Profiles](../graphics/Lab1/AITrack_AIAgentCreate.gif)
+    ![Profiles](../graphics/Lab1/AITrack_AIAgentCreate.gif)
 
 
 11. Switch to **Actions** tab ans make sure **Agent handover** togle is turned on. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.
