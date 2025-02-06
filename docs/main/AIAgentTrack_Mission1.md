@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 7: AI in Action (Autonomous Agent)
+# Mission 7: AI Autonomous Agent in Action <span style="color: blue;">(BONUS)</span></summary>**
 
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
@@ -94,7 +94,7 @@ Your mission is to:
 
 14. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**<span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to RAI."><span class="copy"></span></span>
 
-    ![Profiles](../graphics/Lab1/L1M7_AIAgentPreview.png)
+    ![Profiles](../graphics/Lab1/AITrack_AIAgentPreview.png)
 
 ---
 
