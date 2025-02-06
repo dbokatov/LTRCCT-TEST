@@ -68,7 +68,7 @@ Your mission is to:
 8. Select **Start from Scratch** and click **Next**
 9. On **Create an AI agent** page select the following select the type of agent: **Autonomous**
 
-10.New section **Add the essential details** will appear. Provide te following information, then click **Create**:
+10.New section **Add the essential details** will appear. Provide the following information, then click **Create**:
 
   > Agent Name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**
   >
@@ -84,11 +84,13 @@ Your mission is to:
   ![Profiles](../graphics/Lab1/AITrack_AIAgentCreate.gif)
 
 
-==============================  To fix from here
+11. Switch to **Actions** tab ans make sure **Agent handover** togle is turned on. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.
 
-11. Toggle **Allow agent handover** setting on **AI agent settings** page and click **Save Changes**. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.
+12. Switch to **Knowledge** tab and from **Knowledge base** drop-down list select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy" title="Click to copy!"></span></span>**
 
-    ![Profiles](../graphics/Lab1/L1M7_AIAgentAllowHandoff.png)
+13. Click **Save Changes**, then click **Publish**. Provide any version name in popped up window (ex. "1.0").
+
+    ![Profiles](../graphics/Lab1/AITrack_AIAgentaMapKB.gif)
 
 12. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**<span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to RAI."><span class="copy"></span></span>
 
