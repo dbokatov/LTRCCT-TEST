@@ -350,22 +350,22 @@ We will retrieve information about your newly created address book using a GET A
 
 7. Test the following JSONPath by pasting then into **JSONPath Query** adress line one by one.
 
-
-    - `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span> - Interaction ID of the call.
-    - 
-    - `$.data.taskDetails.tasks[0].status`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].status"><span class="copy" title="Click to copy!"></span></span> - Status of the call.
-    - 
-    - `$.data.taskDetails.tasks[0].totalDuration`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].totalDuration"><span class="copy" title="Click to copy!"></span></span> - Total Duration of the call.
-    - 
-    - `$.data.taskDetails.tasks[0].destination`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].destination"><span class="copy" title="Click to copy!"></span></span> - Call destination. This is the number essigned to Entry Point.
-    - 
-    - `$.data.taskDetails.tasks[0].lastAgent.id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].lastAgent.id"><span class="copy" title="Click to copy!"></span></span> - Agent ID who accepted the call.
-    - 
-    - `$.data.taskDetails.tasks[0].lastAgent.name`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].lastAgent.name"><span class="copy" title="Click to copy!"></span></span> - Agent name who accepted the call.
-    - 
+    >
+    > `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span> - Interaction ID of the call.
+    >  
+    > `$.data.taskDetails.tasks[0].status`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].status"><span class="copy" title="Click to copy!"></span></span> - Status of the call.
+    > 
+    > `$.data.taskDetails.tasks[0].totalDuration`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].totalDuration"><span class="copy" title="Click to copy!"></span></span> - Total Duration of the call.
+    > 
+    > `$.data.taskDetails.tasks[0].destination`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].destination"><span class="copy" title="Click to copy!"></span></span> - Call destination. This is the number essigned to Entry Point.
+    > 
+    > `$.data.taskDetails.tasks[0].lastAgent.id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].lastAgent.id"><span class="copy" title="Click to copy!"></span></span> - Agent ID who accepted the call.
+    > 
+    > `$.data.taskDetails.tasks[0].lastAgent.name`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].lastAgent.name"><span class="copy" title="Click to copy!"></span></span> - Agent name who accepted the call.
+    > 
     - `$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language"><span     class="copy" title="Click to copy!"></span></span> - Language Global Variable that was used in the flow.
-    - 
-    - `$.data.taskDetails.tasks[0].stringGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span> - Language selected by a caller.
-    - 
+    > 
+    > `$.data.taskDetails.tasks[0].stringGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span> - Language selected by a caller.
+    > 
 
 **To be Continued...**
