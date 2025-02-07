@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 7: AI Autonomous Agent in Action <span style="color: blue;">(BONUS)</span></summary>**
+# Mission 7: AI Autonomous Agent in Action <span style="color: blue;">(BONUS)</span></summary>
 
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
@@ -76,7 +76,7 @@ Your mission is to:
     >
     > AI engine: **Nova**
     >
-    > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></  span></span>**
+    > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span>**
     > 
     > Agent's goal: ***You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what   transport can be used to get there. In addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule,   registration information, session catalog and general help information.***<span class="copy-static" title="Click to copy!" data-copy-text="You are a helpful, polite   agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there. In   addition, you as an agent can provide comprehensive information about Cisco Live 2025 Amsterdam event such as schedule, registration information, session catalog   and general help information."><span class="copy"></span></span>
 
