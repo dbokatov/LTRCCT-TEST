@@ -3,9 +3,6 @@
 icon: material/bullseye-arrow
 ---
 
-## Solution Guidance for Final Boss Fight Mission!
-
-
 1. **Missing GET URL**: Ensure the **HTTPrequest** node is configured as unauthenticated and has URL configured ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
 2. **Wrong Parsing**: Ensure **HTTPRequest** has the following **Parse Settings**
