@@ -21,9 +21,8 @@ A common request for returning customers calling into a contact center is to wor
 4. If the agent is not available or if no recent good CSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
 
 !!! Note
-    We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.
-
-    Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
+  We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.</br>
+  Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
 
 
 ## Preconfigured elements
@@ -162,9 +161,11 @@ A common request for returning customers calling into a contact center is to wor
     > - Content Type: **JSON**
     >
     > - Output Variable: `agentID`<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+    >
     > - Path Expression: `$.data.task.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
     >
     > - Output Variable: `queriedCSAT`<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
+    >
     > - Path Expression: `$.data.task.tasks[0].simulatedCSAT.value`<span class="copy-static" data-copy-text="$.data.task.tasks[0].simulatedCSAT.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
