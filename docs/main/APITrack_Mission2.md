@@ -38,22 +38,17 @@ Your mission is to:
 
 ## Steps
 
-1. Login into Control Hub [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile if your session has been expired.
-    Your login will be the Admin Name in the email you received. It will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-    ![Profiles](../graphics/Lab1/1-CH_Login.gif)
+2. New Tab will be opened. Navigate to **Flow Templates**
 
-2. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+3. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
-3. New Tab will be opened. Navigate to **Flow Templates**
-
-4. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
-
-5. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow.
+4. Name you flow as **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow.
 
     ![Profiles](../graphics/Lab2/BM2_2-7_DynFlowCreate.gif)
 
-6. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
+5. Observe preconfigured nodes and flow variables. If you have questions please reach out to lab proctor.
     
     - **FetchFlowSettings** node is used to access external database over API and parse the result by writing response result into respective Flow Variables which have been preconfigured for you already.
     - **SetVariable_mwn** node writes complete API response into debug variable so you could see the complete API call result in Debug tool. It's been taken from **FetchFlowSettings.httpResponseBody** output variable of **FetchFlowSettings** node
@@ -64,7 +59,7 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
 
-7. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
+6. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
     ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
  
@@ -91,13 +86,13 @@ Your mission is to:
     > ![Profiles](../graphics/Lab2/BM2-9-10-JSONPath.gif)
     > </details>
 
-8. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
+7. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
  
     ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
 
-9. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
+8. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
-10. Open **GoTo_x19** node and set:
+9. Open **GoTo_x19** node and set:
 
     > Destination Type: **Flow**
     >
@@ -107,7 +102,7 @@ Your mission is to:
     >
     > Choose Version Label: **Latest**
     
-11. Open **GoTo_8ca** and set:
+10. Open **GoTo_8ca** and set:
 
     > Destination Type: **Entry Point**
     >
@@ -116,19 +111,18 @@ Your mission is to:
     > Entry Point: **CLTS_ErrorHandling_Channel**
 
  
-12. Repeat node settings in **Step 14** for **GoTo_uyn**
+11. Repeat node settings in **Step 9** for **GoTo_uyn**
 
-13. Repeat node settings in **Step 15** for **GoTo_dbr**
+12. Repeat node settings in **Step 10** for **GoTo_dbr**
 
     ![Profiles](../graphics/Lab2/BM2-11-15-FallbackQ.gif)
 
-14. **Validate** and **Publish** flow
+13. **Validate** and **Publish** flow
 
-15. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
+14. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
 
-16. Map your flow to your inbound channel
+15. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
     
-    > Navigate to Control Hub > Contact Center > Channels
     > 
     > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     > 
@@ -155,7 +149,7 @@ Your mission is to:
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
-5. You can do the same trick we did in Mission 2 Step 8 of Fundamental Lab and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
+5. You can do the same trick we did in Mission 2 of Core Track and use **Override** option to change the logic. Overrides as well as Business hours have been preconfigured for you. Now we need to apply it on your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** entity. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **Overrides_Hours** from Override dropdown list. Then click Save.
     
     !!! Note
         Override Hours entity overwrites Working Hours and set to duration of current Cisco Live lab 

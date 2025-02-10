@@ -10,6 +10,10 @@ icon: material/medal
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 
+## Disclaimer
+Please note that the AI Agent is scheduled for General Availability (GA) in Q1 of the 2025 calendar year (CY25). This exercise is designed to provide you with an early glimpse and understanding of the feature's capabilities. We appreciate your participation and value your feedback as we refine this offering ahead of its official release.
+
+
 ### AI Autonomous Agent Overview
 
 The Autonomous AI Agent for performing actions can handle various tasks, including:
