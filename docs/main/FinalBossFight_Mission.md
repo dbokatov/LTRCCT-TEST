@@ -33,10 +33,11 @@ Your task is to identify and fix the issues causing this behavior. Specifically:
 
 
 ## Competition & Rewards
-A real IP phone is placed in the middle of the room and and an agent logged into Webex Desktop with using that phone as a telephony option. Once the call flow is successfully fixed, the phone will ring and agent accepts the call.</br>
-The first three participants who successfully make the phone ring will win a prize. This encourages fast and accurate troubleshooting, making the exercise more engaging and competitive.
+A real IP phone is placed in the middle of the room, and an agent logs into Webex Desktop using that phone as the telephony option. Once the call flow is successfully fixed, the phone will ring, and the agent will accept the call.</br>
+The first three participants to successfully make the phone ring will win a prize. This encourages fast and accurate troubleshooting, making the exercise more engaging and competitive.
 
 ---
+
 This exercise will help attendees practice debugging and resolving common Webex Contact Center API integration issues. Ensure they document their troubleshooting steps to reinforce learning.
 
 
