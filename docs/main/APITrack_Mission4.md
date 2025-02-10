@@ -25,7 +25,7 @@ When a customer calls back into the contact center within ten minutes of their l
 ## Mission Details
 
 Your mission is to:</br>
-1. Create a new flow by using pre-defined flow template. </br>
+1. Create a new flow from scratch. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Build a condition that matches use case scenario and route the call to agent.</br>
 
@@ -149,6 +149,8 @@ Your mission is to:</br>
     > 
     > Content Type: **`JSON`**
     >
+    > **Output Variable**: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
+    >
     > Path Expression: `$.data.task.tasks[0].id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
    
 
@@ -240,9 +242,8 @@ Your mission is to:</br>
     > Click **Publish** Flow
 
 
-11. Map your flow to your inbound channel
-    
-    > Navigate to Control Hub > Contact Center > Channels
+11. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
+  
     >
     > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     >

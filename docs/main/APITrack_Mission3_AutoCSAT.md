@@ -23,7 +23,7 @@ A common request for returning customers calling into a contact center is to wor
 
 Your mission is to:
 
-1. Create a new flow by using pre-defined flow template. </br>
+1. Create a new flow from the scratch. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Prioritize the call if conditions match and route the call to agent.</br>
 
