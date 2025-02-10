@@ -149,7 +149,7 @@ Your mission is to:</br>
     > 
     > Content Type: **`JSON`**
     >
-    > **Output Variable**: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
+    > Output Variable: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
     >
     > Path Expression: `$.data.task.tasks[0].id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
    
