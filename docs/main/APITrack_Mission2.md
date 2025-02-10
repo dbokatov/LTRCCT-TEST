@@ -163,5 +163,4 @@ Your mission is to:
     ![Profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif)
 
 
-## Summary
-In this mission you successfully implemented Dynamic Variable usage on different types of nodes. By doing this you can significantly reduce the size of production flows and simplify it's configuration by just changing values in you database instead of adjusting many nodes in flows.
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Routing Facilitation mission! 🎉🎉 </strong></p>

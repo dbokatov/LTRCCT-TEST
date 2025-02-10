@@ -375,4 +375,4 @@ We will retrieve information about your newly created address book using a GET A
 ![profiles](../graphics/Lab2/DevPortal_SearchAPI4.gif)
 
 
-<p style="text-align:center"><strong>Congratulations, you have officially completed Introduction to Developer Portal mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Introduction to Developer Portal mission! 🎉🎉 </strong></p>
