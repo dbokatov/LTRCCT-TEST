@@ -75,7 +75,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_TryOut.gif)
 
-5. Clear **Request Body** content and paste the following body
+5. Clear **Request Body** content. Paste the following body and replace the *<Your_Attendee_ID>* with your **attendee ID**. Click on **Run**.
 
     > 
     > Request Body:
@@ -102,7 +102,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_AddressBookCreate.gif)
 
-6. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"} and navigate to **Address Book**. Locate your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+6. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"} and navigate to **Address Book** under **Desktop Experience Section**. Locate your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
 
 7. You should see your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. There are still no Address Book entries so let's add them.
 
@@ -118,8 +118,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
 11. In the **Parameters** section paste **ID** you copied on **Step 8** of the current mission.
 
-12. Clear **Request Body** content and paste the following body
-
+12. Clear **Request Body** content and paste the following body, then click on **Run** button.
 
     > 
     > Request Body:
@@ -145,7 +144,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_CreateABEntry.gif)
 
-12. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. You **Addres Book** configuration page should still be open. **Refresh** the page.
+12. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Your **Addres Book** configuration page should still be open. **Refresh** the page.
 
 13. But if not open, locate and open your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
 
