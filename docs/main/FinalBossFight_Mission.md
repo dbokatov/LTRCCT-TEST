@@ -17,20 +17,9 @@ A customer reports a critical issue with their call flow: callers cannot land in
 Your task is to identify and fix the issues causing this behavior. Specifically:
 
 1. The flow should correctly execute the HTTP request and retrieve the expected value of Queue_140 ID.</br>
-2. The condition node should correctly validate the 200 status code and proceed to queueing logic.</br>
-3. The queue node should reference the queue dynamically using a variable, ensuring that calls are directed to Queue_140.</br>
-4. Calls should land in the intended queue instead of being redirected to the TAC Service number.</br>
-5. The phone in the middle of the room should ring, signaling a successful fix.</br>
-
-## Flow Overview
-The call flow includes an HTTP request node that:
-
-1. Uses an unauthenticated API GET request.</br>
-2. Parses the JSON response to extract a specific value of Queue_140 ID using a JSON path.</br>
-3. Utilizes a condition node to verify that the HTTP status code is 200 before proceeding to the queue node.</br>
-4. If the HTTP request fails or the status code is not as intended, the flow will loop back to the HTTP request node and retry up to three attempts. If all attempts fail, the call will be 
-redirected to the TAC Service number.</br>
-5. If the HTTP request is successful, a condition node checks whether the parsed queue value matches the intended Queue_140 ID. If it does not match, a message will play informing the caller that the flow has not been fixed, followed by a call drop.</br>
+2. The queue node should reference the queue dynamically using a variable, ensuring that calls are directed to Queue_140.</br>
+3. Calls should land in the intended queue instead of being redirected to the TAC Service number.</br>
+4. The phone in the middle of the room should ring, signaling a successful fix.</br>
 
 ## Before you start
 
