@@ -27,7 +27,8 @@ Your mission is to:
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Prioritize the call if conditions match and route the call to agent.</br>
 
-    !!! Note: Configuration page of AutoCSAT
+    !!! Note
+      **Configuration page of AutoCSAT**</br>
       We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.</br>
       Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
 
@@ -322,7 +323,7 @@ Your mission is to:
     >
     > Click **Publish** Flow
 
-   ![profiles](../graphics/Lab2/LAR_EventGoTo.gif)
+     ![profiles](../graphics/Lab2/LAR_EventGoTo.gif)
 
 12. Map your flow to your inbound channel
     
