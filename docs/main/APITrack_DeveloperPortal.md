@@ -232,8 +232,7 @@ We will retrieve information about your newly created address book using a GET A
 1. Switch to **Developer Portal** then locate and select **Search** from **API REFERENCE** menu
 
 2. Click on **Search tasks** and then switch to **Try Out** tab
-
-![profiles](../graphics/Lab2/DevPortal_SearchAPI1.gif)
+  ![profiles](../graphics/Lab2/DevPortal_SearchAPI1.gif)
 
 3. Click on **Maximize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
 
@@ -323,21 +322,15 @@ We will retrieve information about your newly created address book using a GET A
       }
     }
     ```
-   !!! Note 
-        Output of the query is configured to represent the following information
-
+   
+    !!! Note 
+      Output of the query is configured to represent the following information<\br>
         1. **ID** of the call
-
         2. Status of the call
-
         3. Total duration of the call
-
         4. Origin of the call. Who called.
-
         5. Destination of the call. Entry Point number.
-
         6. Agent, whoc accepted the call: ID and Name
-
         7. Language selected by the caller. Represented as **Global_Language** variable
 
     ![profiles](../graphics/Lab2/DevPortal_SearchAPI2.gif)

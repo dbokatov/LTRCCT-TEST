@@ -26,17 +26,17 @@ This track introduces the fundamental features of Flow Designer. Participants wi
 
 ![profiles](../graphics/overview/CoreTrack.png)
 
-## Track 2: CallBack Track
-
-The Callback track includes a series of labs focused on various callback scenarios. It begins with basic callback configuration and progresses to advanced GraphQL techniques to eliminate duplicate callbacks.
-
-![profiles](../graphics/overview/CallBackTrack.png)
-
-## Track 3: API Track
+## Track 2: API Track
 
 In this track, participants will work on customizing flows using a variety of API requests to interact with different data sources.
 
 ![profiles](../graphics/overview/APITrack.png)
+
+## Track 3: CallBack Track
+
+The Callback track includes a series of labs focused on various callback scenarios. It begins with basic callback configuration and progresses to advanced GraphQL techniques to eliminate duplicate callbacks.
+
+![profiles](../graphics/overview/CallBackTrack.png)
 
 ## Track 4: AI Agent Track
 

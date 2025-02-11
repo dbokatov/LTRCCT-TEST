@@ -80,7 +80,6 @@ Your mission is to:
 
 ## Build
 1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **PCS-2025** Survey and click on it to familiarise yourself with it's configuration.  
-
   ![profiles](../graphics/Lab1/PCS_Explore.gif)
 
 2. Switch to the Flow Designer. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
