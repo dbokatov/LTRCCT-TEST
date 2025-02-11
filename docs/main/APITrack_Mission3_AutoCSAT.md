@@ -11,6 +11,7 @@ A common request for returning customers calling into a contact center is to wor
 <span style="color: red;">**[IMPORTANT]** Since this is a lab environment where you will act as both the customer and the agent, accurately scoring a call will be challenging. Additionally, AutoCSAT has not been taught due to the insufficient number of calls required for AI to learn and generate proper scoring. In this lab, we will use a Global Variable to store the score, which is also used for AutoCSAT teaching. With a sufficient number of provided scores, AutoCSAT will eventually be able to score calls automatically.</span>
 
 !!! Note
+    **Configuration page of AutoCSAT**
     ![Profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)
 
 ## Call Flow Overview
@@ -26,12 +27,6 @@ Your mission is to:
 1. Create a new flow from the scratch. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Prioritize the call if conditions match and route the call to agent.</br>
-
-    !!! Note
-      **Configuration page of AutoCSAT**</br>
-      We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.</br>
-      Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
-
 
 ### Preconfigured elements
 1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
@@ -351,8 +346,7 @@ Your mission is to:
       1. Trace the steps taken in the flow
       2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. They should be empty since there are no CSAT scores at the moment you made the first call.
       3. **Case_If_AgentIDEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
-
-   ![profiles](../graphics/Lab2/LAR_Test1.gif) 
+      ![profiles](../graphics/Lab2/LAR_Test1.gif) 
 
 4. Make sure your agent status is set to **Available**
 

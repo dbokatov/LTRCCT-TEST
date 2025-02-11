@@ -229,6 +229,11 @@ We will retrieve information about your newly created address book using a GET A
 
 ### Use Search API to retrieve data from Analyzer DB.
 
+!!! Note
+  When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
+  If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
+  Ensure that your queries and filters use the correct time format to retrieve accurate results.
+
 1. Switch to **Developer Portal** then locate and select **Search** from **API REFERENCE** menu
 
 2. Click on **Search tasks** and then switch to **Try Out** tab
@@ -236,10 +241,6 @@ We will retrieve information about your newly created address book using a GET A
 
 3. Click on **Maximize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
 
-    !!! Note
-      When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
-      If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
-       Ensure that your queries and filters use the correct time format to retrieve accurate results.
 
     > Request Body:
     ``` JSON

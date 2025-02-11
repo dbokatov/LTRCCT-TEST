@@ -3,7 +3,7 @@
 icon: material/bullseye-arrow
 ---
 
-## Welcome Final Boss Fight Mission!
+## Welcome Final Challenge Mission!
 
 ## Story
 In this short troubleshooting task you're are going to play a technical engineer who got a request from end customer regarding broken production flow. You as an engineer must fix the reported issue before contact center opens in just 20 mins. </br>
