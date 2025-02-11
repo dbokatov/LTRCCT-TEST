@@ -3,7 +3,7 @@
 icon: material/bullseye-arrow
 ---
 
-### Browser Setup <span style="color: red;">[TEMP PAGE]</span>
+### Browser Setup
 
 Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab. For Agent Desktop, use Agent Desktop Application  ![profiles](../graphics/overview/Desktop_Icon40x40.png) pre-insalled on your working station by using Agent profile. 
 </br>
