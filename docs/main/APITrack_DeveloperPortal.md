@@ -237,8 +237,8 @@ We will retrieve information about your newly created address book using a GET A
 3. Click on **Maximize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
 
     !!! Note
-       When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
-       If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
+      When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
+      If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
        Ensure that your queries and filters use the correct time format to retrieve accurate results.
 
     > Request Body:
@@ -324,13 +324,20 @@ We will retrieve information about your newly created address book using a GET A
     ```
    
     !!! Note 
-      Output of the query is configured to represent the following information<\br>
+        Output of the query is configured to represent the following information
+
         1. **ID** of the call
+        
         2. Status of the call
+        
         3. Total duration of the call
+        
         4. Origin of the call. Who called.
+        
         5. Destination of the call. Entry Point number.
+        
         6. Agent, whoc accepted the call: ID and Name
+        
         7. Language selected by the caller. Represented as **Global_Language** variable
 
     ![profiles](../graphics/Lab2/DevPortal_SearchAPI2.gif)
@@ -341,8 +348,7 @@ We will retrieve information about your newly created address book using a GET A
 5. Switch to **Developer Portal** and copy the response 
 
 6. Switch back to JSON Path tool and paste the response into the **Document** section.
-
-    ![profiles](../graphics/Lab2/DevPortal_SearchAPI3.gif)
+  ![profiles](../graphics/Lab2/DevPortal_SearchAPI3.gif)
 
 
 7. Test the following paths by pasting them into **JSONPath Query** adress line one by one:
