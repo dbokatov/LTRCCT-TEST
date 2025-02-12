@@ -88,7 +88,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     >
     > Screen Pop Desktop Label: **Cisco Live Amsterdam 2025 FAQ**<span class="copy-static" title="Click to copy!" data-copy-text="Cisco Live Amsterdam 2025 FAQ"><span class="copy"></span></span>
     >
-    > Display Settings: New browser Tab.
+    > Display Settings: **Inside Desktop**
   
     ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
     
